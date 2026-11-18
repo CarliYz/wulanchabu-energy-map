@@ -1,0 +1,84 @@
+{
+  "renderer": "live Blender 5.2.1 EEVEE",
+  "resolution": [
+    640,
+    400
+  ],
+  "temporary_scene_removed": true,
+  "source_blend": "outputs/m8-c1/AGRI_018_dual_loop_v1.blend",
+  "asset_sha256": "f5f6c93d4abb4a576f5d9904ff2dc8940727625d851366c6f646666e88262aab",
+  "images": [
+    {
+      "object_id": "AGRI_014",
+      "file": "web/map-viewer/assets/facilities-v1/AGRI_014.png",
+      "sha256": "da409dbc53856f8f124f1d41211d22d32c371f5b119994051c8b0c1184d8296d",
+      "bytes": 197866
+    },
+    {
+      "object_id": "AGRI_015",
+      "file": "web/map-viewer/assets/facilities-v1/AGRI_015.png",
+      "sha256": "4baafd2d38232cfe728c949c6444813386ac80f5d98fdb77e39d40ea84031ba0",
+      "bytes": 184042
+    },
+    {
+      "object_id": "AGRI_016",
+      "file": "web/map-viewer/assets/facilities-v1/AGRI_016.png",
+      "sha256": "45c9a3bde75a337976432af77d52ced7e6930caa0e3655e57deba9c50046f5f7",
+      "bytes": 206696
+    },
+    {
+      "object_id": "AGRI_017",
+      "file": "web/map-viewer/assets/facilities-v1/AGRI_017.png",
+      "sha256": "b305fae818178918a7e9aa1dc269d3b868ac30df38377fc9b2ea9d2ad401a836",
+      "bytes": 206721
+    },
+    {
+      "object_id": "AGRI_018",
+      "file": "web/map-viewer/assets/facilities-v1/AGRI_018.png",
+      "sha256": "9a091b1ad868f233c05c0c7794bc1680fb070043e78f660f2bac8c8b014f2ccf",
+      "bytes": 229996
+    },
+    {
+      "object_id": "DC_004",
+      "file": "web/map-viewer/assets/facilities-v1/DC_004.png",
+      "sha256": "292ef6b1a81e73ea10d0922256c5cd8cfe3ce9b717a91c6df8204c50e52c57b6",
+      "bytes": 184342
+    },
+    {
+      "object_id": "DC_005",
+      "file": "web/map-viewer/assets/facilities-v1/DC_005.png",
+      "sha256": "9e293b02068ee29f8f8c4546c34d05e5bf0eb63fe1de96b34a67ff064b3cd8f3",
+      "bytes": 184226
+    },
+    {
+      "object_id": "DC_006",
+      "file": "web/map-viewer/assets/facilities-v1/DC_006.png",
+      "sha256": "f94034b5f4358bc296487dd0f5821e162f687442647094e8e751ca1ed2650c9b",
+      "bytes": 183382
+    },
+    {
+      "object_id": "DEMO_013",
+      "file": "web/map-viewer/assets/facilities-v1/DEMO_013.png",
+      "sha256": "101ab702fb234457bdf5a9b187ccfef18e4c3f87ad7cc592204fd6102114aa65",
+      "bytes": 167290
+    },
+    {
+      "object_id": "DRY_019",
+      "file": "web/map-viewer/assets/facilities-v1/DRY_019.png",
+      "sha256": "213bd172ff9258a67809dfa124b40d74d111ae06bb38bb5f973d0796e4d93c3b",
+      "bytes": 179069
+    },
+    {
+      "object_id": "HUB_011",
+      "file": "web/map-viewer/assets/facilities-v1/HUB_011.png",
+      "sha256": "7ebfb62d94ff6f590ffc48fe361a1073291eb0fdb56a157461b4118a304e8e8e",
+      "bytes": 220223
+    },
+    {
+      "object_id": "STORE_012",
+      "file": "web/map-viewer/assets/facilities-v1/STORE_012.png",
+      "sha256": "0f3d7762effffc7ee45885a188c3dce04bd7261d6da91b0ca4ba444098f1577d",
+      "bytes": 195275
+    }
+  ]
+}

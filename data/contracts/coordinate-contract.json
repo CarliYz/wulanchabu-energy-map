@@ -1,0 +1,117 @@
+{
+  "schema_version": "energy-contracts-v1",
+  "geographic_crs": "EPSG:4326",
+  "projected_crs": "EPSG:32649",
+  "origin_utm_egm2008_m": [
+    687361.2359406124,
+    4540425.231254176,
+    1200.0
+  ],
+  "unit": "m",
+  "height_multiplier": 1,
+  "local_axes": [
+    "east",
+    "north",
+    "up"
+  ],
+  "local_formula": [
+    "E-origin_E",
+    "N-origin_N",
+    "H_EGM2008-origin_H"
+  ],
+  "blender_to_glb_matrix_row_major": [
+    [
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      -1,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1
+    ]
+  ],
+  "glb_to_local_matrix_row_major": [
+    [
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      -1,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1
+    ]
+  ],
+  "vertical_reference": "EGM2008 orthometric; not ellipsoid height",
+  "map_transform_status": "requires independent corridor registration; do not reuse roundtrip as registration pass",
+  "map_transform_recipe": "GLB -> local via inverse axis matrix -> UTM origin -> inverse EPSG:32649 -> WGS84 -> map world projection; convert EGM2008 height with a verified geoid model before ellipsoid placement",
+  "map_world_matrix": null,
+  "independent_registration_status": "not_run",
+  "projection_self_checks": [
+    {
+      "lonlat": [
+        113.2275,
+        40.9935
+      ],
+      "utm": [
+        687361.2359406124,
+        4540425.231254176
+      ],
+      "roundtrip_error_m": 9.615332772497167e-10
+    },
+    {
+      "lonlat": [
+        113.2045,
+        41.016
+      ],
+      "utm": [
+        685363.4141000309,
+        4542874.096998669
+      ],
+      "roundtrip_error_m": 0.0
+    },
+    {
+      "lonlat": [
+        113.185,
+        41.0335
+      ],
+      "utm": [
+        683675.0050894443,
+        4544775.727665247
+      ],
+      "roundtrip_error_m": 1.102879075799892e-09
+    }
+  ],
+  "independent_control_points": [],
+  "geoid_correction_model": null,
+  "source_manifest_sha256": "5f354e4efa1e83cf53ce705f8cc87b8da2aab2313cab3a9002718126f8796d0d"
+}

@@ -1,0 +1,49 @@
+{
+  "requirement_revision": "ui-design-v2+c-zone-completeness-v1",
+  "source_file": "/path/to/wulanchabu-energy-map/outputs/map-v2/乌兰察布_真实地理场景_v2.blend",
+  "live_file_dirty": true,
+  "evidence_scope": "live in-memory model; saved file identity is recorded by host",
+  "asset_id": "AGRI_018",
+  "connection_status": "future_candidate_not_P1_connected",
+  "child_count": 476,
+  "equipment": {
+    "circulation_pump": [],
+    "temperature_valve": [],
+    "temperature_sensor": [],
+    "control_cabinet": [],
+    "nutrient_tank": [],
+    "nutrient_pump": []
+  },
+  "header_joins": [
+    {
+      "circuit": "supply",
+      "header": "温室供水.006",
+      "inlet_to_terminal_centerline_gap_m": 0,
+      "pass": true
+    },
+    {
+      "circuit": "supply",
+      "header": "温室供水.007",
+      "inlet_to_terminal_centerline_gap_m": 67,
+      "pass": false
+    },
+    {
+      "circuit": "return",
+      "header": "温室回水.006",
+      "inlet_to_terminal_centerline_gap_m": 1.5015,
+      "pass": false
+    },
+    {
+      "circuit": "return",
+      "header": "温室回水.007",
+      "inlet_to_terminal_centerline_gap_m": 68.5,
+      "pass": false
+    }
+  ],
+  "pass": false,
+  "exclusions": [
+    "Hydraulic and thermal sizing",
+    "nutrient flow simulation",
+    "candidate external route is not an operating heat connection"
+  ]
+}

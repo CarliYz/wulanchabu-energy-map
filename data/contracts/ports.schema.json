@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://energy.local/contracts/ports.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "energy-contracts-v1"
+    },
+    "circuits": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "circuit_id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "medium": {
+            "enum": [
+              "water",
+              "nutrient",
+              "co2",
+              "electricity",
+              "signal"
+            ]
+          },
+          "scope_object_id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "purpose": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "circuit_id",
+          "medium",
+          "scope_object_id",
+          "purpose"
+        ]
+      }
+    },
+    "ports": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "port_id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "object_id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "circuit_id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "medium": {
+            "enum": [
+              "water",
+              "nutrient",
+              "co2",
+              "electricity",
+              "signal"
+            ]
+          },
+          "direction": {
+            "enum": [
+              "in",
+              "out"
+            ]
+          },
+          "role": {
+            "type": "string",
+            "minLength": 1
+          },
+          "position": {
+            "$ref": "common.schema.json#/$defs/position"
+          },
+          "source_ids": {
+            "type": "array",
+            "items": {
+              "$ref": "common.schema.json#/$defs/id"
+            },
+            "minItems": 1
+          }
+        },
+        "required": [
+          "port_id",
+          "object_id",
+          "circuit_id",
+          "medium",
+          "direction",
+          "role",
+          "position",
+          "source_ids"
+        ]
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "circuits",
+    "ports"
+  ]
+}

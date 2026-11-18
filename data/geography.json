@@ -1,0 +1,22 @@
+{
+  "anchor_id": "ANCHOR_AWS_000760",
+  "label": "乌兰察布位置参考（非供热能力）",
+  "longitude": 113.245406,
+  "latitude": 40.989458,
+  "coordinate_order": "longitude,latitude",
+  "crs": "GPS per source; treated WGS84 for context only, not survey-validated",
+  "source_id": "anchor-announcement-2024.pdf",
+  "source_page": 2,
+  "vertical_datum": null,
+  "elevation_m": null,
+  "aoi_bbox": [
+    113.23945,
+    40.98496,
+    113.25136,
+    40.99396
+  ],
+  "aoi_note": "约1km研究窗口，非地块或批准边界",
+  "background": "原创拓扑台座，未获取DEM/建筑/影像",
+  "scene_georeferenced": false,
+  "thermal_capacity_mw": null
+}

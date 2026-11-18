@@ -1,0 +1,404 @@
+{
+  "schema_version": 2,
+  "generated_at": "2026-11-17T13:32:06.772Z",
+  "branch": "codex/energy-map-v2",
+  "runtime_revision": "m14-sensors-integrated-v1 · M13公开地理复核交互",
+  "requirement_revision": "M11+phase2-system-contract+M12-C2-proposal+M13-public-geographic-review+M14-four-visible-sensors",
+  "blender": {
+    "version": "5.2.1 LTS",
+    "render_engine": "BLENDER_EEVEE",
+    "scene_name": "06 | 全区整合交互",
+    "scene_file": "outputs/m14-sensors-integrated-v1/乌兰察布_测点整合场景_v1.blend",
+    "scene_file_sha256": "741cf1ac5a405ee52c3fd9039f1deaa1117cae6565d18591ec566cadd6a77531"
+  },
+  "web_model": {
+    "path": "web/map-viewer/assets/integrated-v3/facilities.glb",
+    "sha256": "aa00fa4c3502197f77851c3a2eb6617875462862c0bbd7351ceeaf4c0cf1869f",
+    "pickable_objects": 85,
+    "terrain_source": "Copernicus GLO30 actual elevations",
+    "satellite_source": "EOxCloudless Sentinel-2 2024 | CC BY-NC-SA 4.0",
+    "ab_terminal_model": {
+      "path": "web/map-viewer/assets/integrated-v3/facilities.glb",
+      "sha256": "aa00fa4c3502197f77851c3a2eb6617875462862c0bbd7351ceeaf4c0cf1869f",
+      "blend_path": "outputs/m14-sensors-integrated-v1/乌兰察布_测点整合场景_v1.blend",
+      "blend_sha256": "741cf1ac5a405ee52c3fd9039f1deaa1117cae6565d18591ec566cadd6a77531",
+      "objects": 32,
+      "ports": 60,
+      "connections": 60,
+      "status": "candidate_unverified · original A1/A2/B1/B2 corrected"
+    },
+    "m10_system_model": {
+      "path": "web/map-viewer/assets/integrated-v3/facilities.glb",
+      "sha256": "aa00fa4c3502197f77851c3a2eb6617875462862c0bbd7351ceeaf4c0cf1869f",
+      "blend_path": "outputs/m14-sensors-integrated-v1/乌兰察布_测点整合场景_v1.blend",
+      "blend_sha256": "741cf1ac5a405ee52c3fd9039f1deaa1117cae6565d18591ec566cadd6a77531",
+      "objects": 30,
+      "connections": 83,
+      "render_paths": [
+        "web/map-viewer/assets/integrated-v2/DRY_019.png",
+        "web/map-viewer/assets/integrated-v2/STORE_012.png",
+        "web/map-viewer/assets/integrated-v2/HUB_011.png",
+        "web/map-viewer/assets/integrated-v2/BOILER_CAND_001.png"
+      ],
+      "render_sha256": {
+        "web/map-viewer/assets/integrated-v2/DRY_019.png": "8c578d8bd0ca823e21dc5150d0b5a824edea6ffed5ef92eba0b5de56f4b7a392",
+        "web/map-viewer/assets/integrated-v2/STORE_012.png": "e891b30dee734c0cec782eee595f24a5b0fafb3402790540f5934be1b01d90f3",
+        "web/map-viewer/assets/integrated-v2/HUB_011.png": "ffbbda6e1f0e667b8a8bff62af3070fc91c7dfadfe6ed15a7105ef5cc3f96b47",
+        "web/map-viewer/assets/integrated-v2/BOILER_CAND_001.png": "75d7ba9d656c2b8db594360f3f2334ea727c0f340cd4d87c84619547927009a1"
+      },
+      "status": "候选规划 · 示意补模 · 未施工、未投运、未完成水力验算",
+      "included_in_integrated_asset": "web/map-viewer/assets/integrated-v3/facilities.glb",
+      "ports": 90
+    },
+    "major_facilities": 12
+  },
+  "sources": {
+    "facility_registry_path": "web/map-prototype/facility-registry.json",
+    "facility_registry_sha256": "b0c07d5d6b3f7a86289978eceb64f97a32db73f26ff09ebaee781bfaf29fda20",
+    "c1_runtime_path": "web/map-prototype/c1-runtime.json",
+    "c1_runtime_sha256": "01aa25b2ef6b1d21fb428a312318fd6d049da1bbd9c8f1e9d35294607055cb73",
+    "ab_runtime_path": "web/map-prototype/ab-terminal-runtime.json",
+    "ab_runtime_sha256": "0c605f4c557d54ebf8c5ec9c2ac0f7bf9913dfed065e1d87446df785f532067a",
+    "ab_relations_path": "web/map-prototype/ab-relations.mjs",
+    "ab_relations_sha256": "4afc3d9266e697e721d29ff166812792ad74bb95f7f1293793b1ac038e7724f6",
+    "routes_path": "data/map-v2/routes.json",
+    "routes_sha256": "b1f5544c37c4b574913a6fed18709b9382dbc98ddb0acfb6c5112d53c22fba83",
+    "m10_runtime_path": "web/map-prototype/m10-system-runtime.json",
+    "m10_runtime_sha256": "dcaacd5d6eada03b024cdf0925695d75018cc03dcc2479995eb91e7bdd108b0c",
+    "m10_relations_path": "web/map-prototype/m10-relations.mjs",
+    "m10_relations_sha256": "646b9f049e94fef31629c48955b5024a3264a1dee233f7b74424c2be0fe3e5ab",
+    "m10_graph_path": "web/map-prototype/m10-graph.mjs",
+    "m10_graph_sha256": "f1bde80df35e515d05782cb345a4554be21037c3615a9628df8f793891da11ed"
+  },
+  "analysis": {
+    "binding_path": "web/map-prototype/analysis-bindings.json",
+    "binding_sha256": "9abdd05a682bed857364fd5c25bb1fc88c1878690e854bc09aa24b59eb70d8f6",
+    "source_path": "web/map-viewer/assets/analysis-results.json",
+    "source_sha256": "e5819a31bb537a41b357bfccf960240bb918c4c0abea76c648a8705bd98cd603",
+    "basis": "synthetic teaching, no local operational validation",
+    "bound_objects": [
+      "AGRI_018"
+    ],
+    "unbound_objects": [
+      "HUB_011",
+      "DC_004",
+      "DC_005",
+      "DC_006",
+      "STORE_012",
+      "DEMO_013",
+      "AGRI_014",
+      "AGRI_015",
+      "AGRI_016",
+      "AGRI_017",
+      "DRY_019"
+    ],
+    "time_binding": "object_id + scenario_id + hour_index；timestamp 待真实时序源接入"
+  },
+  "status_counts": {
+    "verified": 18,
+    "candidate": 23,
+    "pending": 18
+  },
+  "limitations": [
+    "候选设施、候选管线、历史坐标和概念参数仍需工程核验",
+    "当前展示不表达管径、埋深、水力、热分层、经济性或当地运营验证",
+    "标准地图当前使用带署名的 OpenStreetMap 区域归档图；未接入 Google Maps API key 或 Google 外部瓦片服务",
+    "AGRI_018 分析结果是合成教学数据，不是乌兰察布现场实测，也没有绑定水力、热力或设备铭牌参数",
+    "C1 外接线路仍是候选预留，不能解释为已施工或已投运",
+    "M10 条件绿电电锅炉保持位置待核、默认禁用、异常/尖峰候选，不提供数据中心备用电",
+    "A/B为32个候选设备、60端口、60连接；A2食用菌归属已纠正，B1/B2独立末端已补模；未完成工程计算。",
+    "系统30对象/90端口/83条候选模型连接；C2并联接管为新设计提案，现场喷嘴、独立配准、水力和工程穿越未验收。",
+    "M13公开快照观察：C1模型场坪及P2回水候选线与红海子水体几何相交；原坐标未移动，独立测量与工程核验仍未执行。",
+    "M14四农业测点已有可见仪表示意网格；样件未接管，无PLC信号端口、厂家、量程、实测读数或现场安装依据。"
+  ],
+  "source_inventory": [
+    {
+      "label": "网页运行时",
+      "path": "web/map-prototype/app.mjs",
+      "version": "m12-connected-v1",
+      "sha256": "168d5d40af8d9138a741be50324b887f82ffa1a78290792d01d78bafcf40af30",
+      "status": "verified",
+      "status_label": "统一GLB接入·候选"
+    },
+    {
+      "label": "分析绑定规则",
+      "path": "web/map-prototype/analysis-runtime.mjs",
+      "version": "d7fe2bd1cf16",
+      "sha256": "b7746a7a7012b289690a6536dca0733aaa6cf68b2d40c85f112b35a73d256965",
+      "status": "verified",
+      "status_label": "已核验"
+    },
+    {
+      "label": "对象与工况绑定清单",
+      "path": "web/map-prototype/analysis-bindings.json",
+      "version": "9abdd05a682b",
+      "sha256": "9abdd05a682bed857364fd5c25bb1fc88c1878690e854bc09aa24b59eb70d8f6",
+      "status": "verified",
+      "status_label": "已核验"
+    },
+    {
+      "label": "分析结果资产",
+      "path": "web/map-viewer/assets/analysis-results.json",
+      "version": "e5819a31bb53",
+      "sha256": "e5819a31bb537a41b357bfccf960240bb918c4c0abea76c648a8705bd98cd603",
+      "status": "candidate",
+      "status_label": "合成教学·待现场数据"
+    },
+    {
+      "label": "设施注册表",
+      "path": "web/map-prototype/facility-registry.json",
+      "version": "b0c07d5d6b3f",
+      "sha256": "b0c07d5d6b3f7a86289978eceb64f97a32db73f26ff09ebaee781bfaf29fda20",
+      "status": "candidate",
+      "status_label": "位置待独立配准"
+    },
+    {
+      "label": "候选线路表",
+      "path": "data/map-v2/routes.json",
+      "version": "b1f5544c37c4",
+      "sha256": "b1f5544c37c4b574913a6fed18709b9382dbc98ddb0acfb6c5112d53c22fba83",
+      "status": "candidate",
+      "status_label": "穿越与水力待核"
+    },
+    {
+      "label": "Blender 场景",
+      "path": "outputs/m14-sensors-integrated-v1/乌兰察布_测点整合场景_v1.blend",
+      "version": "m14-sensors-integrated-v1",
+      "sha256": "741cf1ac5a405ee52c3fd9039f1deaa1117cae6565d18591ec566cadd6a77531",
+      "status": "candidate",
+      "status_label": "资产绑定·全区待验收"
+    },
+    {
+      "label": "网页 GLB",
+      "path": "web/map-viewer/assets/integrated-v3/facilities.glb",
+      "version": "m14-sensors-integrated-v1",
+      "sha256": "aa00fa4c3502197f77851c3a2eb6617875462862c0bbd7351ceeaf4c0cf1869f",
+      "status": "candidate",
+      "status_label": "同版资产·全区待验收"
+    },
+    {
+      "label": "A/B 末端运行注册表",
+      "path": "web/map-prototype/ab-terminal-runtime.json",
+      "version": "m14-sensors-integrated-v1",
+      "sha256": "0c605f4c557d54ebf8c5ec9c2ac0f7bf9913dfed065e1d87446df785f532067a",
+      "status": "candidate",
+      "status_label": "A1/A2/B1/B2归属已纠正·候选补模"
+    },
+    {
+      "label": "A/B 末端关系模块",
+      "path": "web/map-prototype/ab-relations.mjs",
+      "version": "m9-ab-terminals-v1",
+      "sha256": "4afc3d9266e697e721d29ff166812792ad74bb95f7f1293793b1ac038e7724f6",
+      "status": "candidate",
+      "status_label": "父子关系·回路与供回方向"
+    },
+    {
+      "label": "M10 系统设备运行注册表",
+      "path": "web/map-prototype/m10-system-runtime.json",
+      "version": "m12-connected-v1",
+      "sha256": "dcaacd5d6eada03b024cdf0925695d75018cc03dcc2479995eb91e7bdd108b0c",
+      "status": "candidate",
+      "status_label": "29对象·24候选关系·规划示意"
+    },
+    {
+      "label": "M10 候选关系模块",
+      "path": "web/map-prototype/m10-relations.mjs",
+      "version": "m12-connected-v1",
+      "sha256": "646b9f049e94fef31629c48955b5024a3264a1dee233f7b74424c2be0fe3e5ab",
+      "status": "candidate",
+      "status_label": "候选方向·未施工·未通流"
+    },
+    {
+      "label": "M10 系统设备 GLB",
+      "path": "web/map-viewer/assets/integrated-v3/facilities.glb",
+      "version": "m14-sensors-integrated-v1",
+      "sha256": "aa00fa4c3502197f77851c3a2eb6617875462862c0bbd7351ceeaf4c0cf1869f",
+      "status": "candidate",
+      "status_label": "Blender实渲切片·工程待核"
+    },
+    {
+      "label": "M10 Blender 副本",
+      "path": "outputs/m14-sensors-integrated-v1/乌兰察布_测点整合场景_v1.blend",
+      "version": "m14-sensors-integrated-v1",
+      "sha256": "741cf1ac5a405ee52c3fd9039f1deaa1117cae6565d18591ec566cadd6a77531",
+      "status": "candidate",
+      "status_label": "桌面副本·候选示意"
+    },
+    {
+      "label": "C2 系统渲染图",
+      "path": "web/map-viewer/assets/integrated-v2/DRY_019.png",
+      "version": "m12-connected-v1",
+      "sha256": "8c578d8bd0ca823e21dc5150d0b5a824edea6ffed5ef92eba0b5de56f4b7a392",
+      "status": "candidate",
+      "status_label": "Blender实渲·候选示意"
+    },
+    {
+      "label": "PTES 系统渲染图",
+      "path": "web/map-viewer/assets/integrated-v2/STORE_012.png",
+      "version": "m12-connected-v1",
+      "sha256": "e891b30dee734c0cec782eee595f24a5b0fafb3402790540f5934be1b01d90f3",
+      "status": "candidate",
+      "status_label": "Blender实渲·候选示意"
+    },
+    {
+      "label": "HUB 角色映射渲染图",
+      "path": "web/map-viewer/assets/integrated-v2/HUB_011.png",
+      "version": "m12-connected-v1",
+      "sha256": "ffbbda6e1f0e667b8a8bff62af3070fc91c7dfadfe6ed15a7105ef5cc3f96b47",
+      "status": "candidate",
+      "status_label": "Blender实渲·候选示意"
+    },
+    {
+      "label": "条件电锅炉候选渲染图",
+      "path": "web/map-viewer/assets/integrated-v2/BOILER_CAND_001.png",
+      "version": "m12-connected-v1",
+      "sha256": "75d7ba9d656c2b8db594360f3f2334ea727c0f340cd4d87c84619547927009a1",
+      "status": "candidate",
+      "status_label": "Blender实渲·候选示意"
+    },
+    {
+      "label": "统一模型语义绑定",
+      "path": "web/map-prototype/integrated-asset.json",
+      "sha256": "1bfddf4a79b28a7738046a56d59801ec5ab8530cabef7bb6adb99673a0922c2f",
+      "version": "m14-sensors-integrated-v1",
+      "status": "candidate",
+      "status_label": "84对象·位置待独立配准"
+    },
+    {
+      "label": "AGRI_014 同版模型图",
+      "path": "web/map-viewer/assets/integrated-v3/AGRI_014.png",
+      "version": "m14-sensors-integrated-v1",
+      "sha256": "0c7ebf4920fde0e759572c0a17bffee9448b85fabf3cba93e63015c01071618f",
+      "status": "candidate",
+      "status_label": "当前整合场景实渲·规划示意"
+    },
+    {
+      "label": "AGRI_015 同版模型图",
+      "path": "web/map-viewer/assets/integrated-v3/AGRI_015.png",
+      "version": "m14-sensors-integrated-v1",
+      "sha256": "ba0d12b9b4f458c9a8d98a5f0c3a0cf5538dd06ef04ced81aa7ea4f6b8810ecf",
+      "status": "candidate",
+      "status_label": "当前整合场景实渲·规划示意"
+    },
+    {
+      "label": "AGRI_016 同版模型图",
+      "path": "web/map-viewer/assets/integrated-v3/AGRI_016.png",
+      "version": "m14-sensors-integrated-v1",
+      "sha256": "42cbe6665613f223cb6d91a1c252ca796ef57054cacb4e5aa6c5b74757a9aff8",
+      "status": "candidate",
+      "status_label": "当前整合场景实渲·规划示意"
+    },
+    {
+      "label": "AGRI_017 同版模型图",
+      "path": "web/map-viewer/assets/integrated-v3/AGRI_017.png",
+      "version": "m14-sensors-integrated-v1",
+      "sha256": "99f97e1ff0dc210ba51e662ba560a4a1534c60315379c9c40c0e2488bb31d63e",
+      "status": "candidate",
+      "status_label": "当前整合场景实渲·规划示意"
+    },
+    {
+      "label": "系统候选端口校验",
+      "path": "web/map-prototype/m10-graph.mjs",
+      "version": "m12-connected-v1",
+      "sha256": "f1bde80df35e515d05782cb345a4554be21037c3615a9628df8f793891da11ed",
+      "status": "verified",
+      "status_label": "合同校验代码；非工程验收"
+    },
+    {
+      "label": "农业模型图 AGRI_014_SENSOR",
+      "path": "web/map-viewer/assets/integrated-v3/AGRI_014_SENSOR.png",
+      "version": "m14-sensors-integrated-v1",
+      "sha256": "f6b4b9eaf83359cb00d48f44f009e180e6bf1726f2d399e846dfff2ab1e844a8",
+      "status": "candidate",
+      "status_label": "同版候选模型；测点未接管"
+    },
+    {
+      "label": "农业模型图 AGRI_015_SENSOR",
+      "path": "web/map-viewer/assets/integrated-v3/AGRI_015_SENSOR.png",
+      "version": "m14-sensors-integrated-v1",
+      "sha256": "f075792ba816f9a98255cb3b30deb9e5597bc1987487b945908eea1161fb91b5",
+      "status": "candidate",
+      "status_label": "同版候选模型；测点未接管"
+    },
+    {
+      "label": "农业模型图 AGRI_016_SENSOR",
+      "path": "web/map-viewer/assets/integrated-v3/AGRI_016_SENSOR.png",
+      "version": "m14-sensors-integrated-v1",
+      "sha256": "dba1fb5fe5a1f798bfab5200c8897ded51d71b62336ff2181549c863bce4b00e",
+      "status": "candidate",
+      "status_label": "同版候选模型；测点未接管"
+    },
+    {
+      "label": "农业模型图 AGRI_017_SENSOR",
+      "path": "web/map-viewer/assets/integrated-v3/AGRI_017_SENSOR.png",
+      "version": "m14-sensors-integrated-v1",
+      "sha256": "d9ab2798ec9afd88d050b284434df104619bcb0d0fe4cc015c45188720b54f76",
+      "status": "candidate",
+      "status_label": "同版候选模型；测点未接管"
+    },
+    {
+      "label": "公开地物复核报告",
+      "path": "qc/m14-sensors-integrated-v1/geography/geographic-review.json",
+      "version": "m14-sensors-integrated-v1",
+      "sha256": "98d0d1723d124a5243b90cf872e86b0f82f4404adb904ce8b5f7aa4070148020",
+      "status": "candidate",
+      "status_label": "293条公开观察·工程blocked"
+    },
+    {
+      "label": "公开地物几何",
+      "path": "qc/m14-sensors-integrated-v1/geography/public-features.geojson",
+      "version": "m14-sensors-integrated-v1",
+      "sha256": "7c4241f1b2f1155e9633f7609ed268e4cd69373a4212f88e363d84afbc68f41d",
+      "status": "candidate",
+      "status_label": "2814个公开地物·28个水体含3关系"
+    },
+    {
+      "label": "实际模型场坪提取",
+      "path": "qc/m14-sensors-integrated-v1/geography/display-pads.json",
+      "version": "m14-sensors-integrated-v1",
+      "sha256": "dbed7db86b41c8b427f497731603870d4777c0b6bc97065427e70a36310cbc43",
+      "status": "candidate",
+      "status_label": "12模型场坪·非现场占地"
+    },
+    {
+      "label": "地图地理复核交互",
+      "path": "web/map-prototype/geographic-review.mjs",
+      "version": "m14-sensors-integrated-v1",
+      "sha256": "c1e88c5de8e4b380cae41b1ebe3b3a92f7120b3132a26967157aea7b2a1e7a0c",
+      "status": "candidate",
+      "status_label": "M13界面·独立工程核验未执行"
+    },
+    {
+      "label": "公开地物原始快照 highway",
+      "path": "qc/m11-integrated-v1/public-screening/public-highway-2026-11-17.json",
+      "version": "m14-sensors-integrated-v1",
+      "sha256": "0bd42292928abb836d840102c0d09da59a869977db4d71c2df196e476444de41",
+      "status": "candidate",
+      "status_label": "2026-11-17 OSM快照·非现场测量"
+    },
+    {
+      "label": "公开地物原始快照 railway",
+      "path": "qc/m11-integrated-v1/public-screening/public-railway-2026-11-17.json",
+      "version": "m14-sensors-integrated-v1",
+      "sha256": "184829920875e1e31ea3bfa765397ffe942adc5c9b01b50524e2604b6b665ce2",
+      "status": "candidate",
+      "status_label": "2026-11-17 OSM快照·非现场测量"
+    },
+    {
+      "label": "公开地物原始快照 waterway",
+      "path": "qc/m11-integrated-v1/public-screening/public-waterway-2026-11-17.json",
+      "version": "m14-sensors-integrated-v1",
+      "sha256": "ce937770d491e2d7d314ebb69d42dc4203a0d6a540201211bf3949b983cb2b2c",
+      "status": "candidate",
+      "status_label": "2026-11-17 OSM快照·非现场测量"
+    },
+    {
+      "label": "公开地物原始快照 waterbody",
+      "path": "qc/m11-integrated-v1/public-screening/public-waterbody-2026-11-17.json",
+      "version": "m14-sensors-integrated-v1",
+      "sha256": "61e1bfc2489fc20ad8d90884062244bc2250e810fb9f19ded115d7b23e63e9ea",
+      "status": "candidate",
+      "status_label": "2026-11-17 OSM快照·非现场测量"
+    }
+  ]
+}

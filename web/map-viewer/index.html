@@ -1,0 +1,959 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>乌兰察布｜能源地图决策分析平台</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --canvas: #f4f7fa;
+      --surface: #ffffff;
+      --surface-soft: #f8fafc;
+      --map: #e9eff3;
+      --line: #d8e1ea;
+      --line-strong: #c5d0db;
+      --text: #162536;
+      --muted: #5d6b79;
+      --faint: #8793a0;
+      --blue: #0b78c8;
+      --blue-soft: #e7f3fc;
+      --orange: #d9822b;
+      --orange-soft: #fff1e2;
+      --green: #3b9b69;
+      --green-soft: #e4f4eb;
+      --purple: #8064c7;
+      --purple-soft: #eee9fb;
+      --shadow: 0 12px 32px rgba(31, 55, 78, .08);
+    }
+    * { box-sizing: border-box; }
+    html, body { width:100%; height:100%; margin:0; overflow:hidden; background:var(--canvas); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+    button, input { font:inherit; }
+    button { cursor:pointer; }
+    #app { position:relative; width:100%; height:100%; background:var(--canvas); }
+    .panel { position:absolute; z-index:2; background:var(--surface); border:1px solid var(--line); border-radius:12px; box-shadow:var(--shadow); }
+    .panel-heading { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+    .panel-heading h2 { margin:0; font-size:15px; line-height:22px; letter-spacing:.01em; }
+    .count { min-width:52px; padding:5px 9px; border:1px solid var(--line); border-radius:14px; background:var(--surface-soft); color:var(--muted); font-size:11px; text-align:center; }
+    .section-eyebrow { margin:22px 0 10px; padding-bottom:8px; border-bottom:1px solid var(--line); color:var(--text); font-size:12px; font-weight:650; }
+    .section-eyebrow:first-of-type { margin-top:20px; }
+    #header { top:0; left:0; right:0; height:64px; z-index:5; display:flex; align-items:center; gap:18px; padding:12px 28px; border-width:0 0 1px; border-radius:0; box-shadow:none; }
+    #header h1 { margin:0; font-size:18px; line-height:22px; letter-spacing:.02em; }
+    #header p { margin:3px 0 0; color:var(--muted); font-size:11px; }
+    .header-chip { display:inline-flex; align-items:center; height:30px; padding:0 11px; border:1px solid var(--line); border-radius:16px; background:var(--blue-soft); color:var(--text); font-size:12px; font-weight:650; }
+    .header-chip.scenario { border-color:var(--orange); background:var(--orange-soft); color:var(--orange); }
+    #scenario-select { height:30px; padding:0 28px 0 11px; border:1px solid var(--orange); border-radius:16px; background:var(--orange-soft); color:var(--orange); font-size:12px; font-weight:650; }
+    #scenario-select:focus { outline:2px solid rgba(217,130,43,.22); outline-offset:1px; }
+    .header-source { margin-left:auto; color:var(--muted); font-size:11px; }
+    .header-status { display:flex; align-items:center; gap:7px; color:var(--muted); font-size:11px; }
+    .dot { width:8px; height:8px; border-radius:50%; background:var(--orange); }
+    .header-icon { width:32px; height:32px; padding:0; border:1px solid var(--line); border-radius:8px; background:var(--surface); color:var(--text); }
+    .header-icon:hover { border-color:var(--blue); color:var(--blue); }
+    .avatar { width:32px; height:32px; border:1px solid var(--blue); border-radius:50%; background:var(--blue-soft); color:var(--blue); font-weight:700; }
+    #audit-backdrop { position:absolute; inset:64px 0 96px; z-index:6; display:none; background:rgba(22,37,54,.14); backdrop-filter:blur(2px); }
+    #audit-backdrop.open { display:block; }
+    #audit-panel { position:absolute; top:84px; left:50%; z-index:7; display:none; width:min(820px,calc(100% - 40px)); max-height:calc(100% - 160px); padding:22px; overflow:auto; transform:translateX(-50%); }
+    #audit-panel.open { display:block; }
+    #audit-head { display:flex; align-items:flex-start; gap:14px; }
+    #audit-head h2 { margin:0; font-size:17px; }
+    #audit-head p { margin:4px 0 0; color:var(--muted); font-size:11px; line-height:1.5; }
+    #audit-close { width:32px; height:32px; margin-left:auto; border:1px solid var(--line); border-radius:8px; background:var(--surface); color:var(--text); }
+    #audit-close:hover { border-color:var(--blue); color:var(--blue); }
+    .audit-toolbar { display:flex; gap:8px; margin-top:16px; }
+    .audit-toolbar button { height:30px; padding:0 12px; border:1px solid var(--blue); border-radius:15px; background:var(--blue); color:#fff; font-size:11px; font-weight:650; }
+    .audit-toolbar button.secondary { border-color:var(--line-strong); background:var(--surface); color:var(--text); }
+    .audit-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:16px; }
+    .audit-card { padding:14px; border:1px solid var(--line-strong); border-radius:10px; background:var(--canvas); }
+    .audit-card.wide { grid-column:span 2; }
+    .audit-card h3 { margin:0; font-size:11px; }
+    .audit-card p { margin:8px 0 0; color:var(--muted); font-size:11px; line-height:1.6; word-break:break-word; }
+    .audit-card code { color:var(--text); font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:10px; }
+    .audit-state { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+    .audit-state span { padding:5px 9px; border:1px solid; border-radius:14px; font-size:10px; font-weight:650; }
+    .audit-state .verified { border-color:var(--green); background:var(--green-soft); color:var(--green); }
+    .audit-state .candidate { border-color:var(--orange); background:var(--orange-soft); color:var(--orange); }
+    .audit-state .pending { border-color:var(--purple); background:var(--purple-soft); color:var(--purple); }
+    .audit-list { margin:8px 0 0; padding-left:18px; color:var(--muted); font-size:11px; line-height:1.7; }
+    #toolbar { top:84px; left:20px; bottom:116px; width:280px; padding:16px 18px; z-index:3; overflow:hidden; transition:width .18s ease, padding .18s ease, transform .18s ease; }
+    #toolbar.collapsed { width:64px; padding:16px 12px; }
+    #toolbar.collapsed .panel-heading { justify-content:center; }
+    #toolbar.collapsed .panel-heading h2, #toolbar.collapsed .count, #toolbar.collapsed .section-eyebrow, #toolbar.collapsed #search, #toolbar.collapsed .tree, #toolbar.collapsed .status-pills { display:none; }
+    #toolbar.collapsed #collapse-tree { transform:rotate(180deg); }
+    #collapse-tree { width:32px; height:32px; padding:0; border:1px solid var(--line); border-radius:8px; background:var(--surface); color:var(--text); font-size:18px; }
+    #collapse-tree:hover { border-color:var(--blue); color:var(--blue); }
+    #search { width:100%; height:36px; margin:0; padding:0 12px; border:1px solid var(--line-strong); border-radius:8px; outline:none; background:var(--surface); color:var(--text); font-size:12px; }
+    #search:focus { border-color:var(--blue); box-shadow:0 0 0 3px rgba(11,120,200,.12); }
+    .tree { max-height:calc(100% - 260px); overflow:auto; padding-right:3px; }
+    .tree-group { margin:0; }
+    .tree-group-title { display:flex; align-items:center; justify-content:space-between; width:100%; min-height:32px; padding:0 10px; border:0; border-radius:7px; background:transparent; color:var(--text); text-align:left; font-size:12px; }
+    .tree-group-title:hover { background:var(--blue-soft); }
+    .tree-group-title .tree-count { min-width:28px; padding:4px 7px; border-radius:13px; background:var(--surface-soft); color:var(--muted); text-align:center; }
+    .tree-group-items { padding:2px 0 4px 16px; }
+    .location { display:block; width:100%; min-height:34px; padding:7px 8px; border:0; border-radius:7px; background:transparent; color:var(--muted); text-align:left; }
+    .location:hover, .location.active { background:var(--blue-soft); color:var(--blue); }
+    .location.active { outline:1px solid rgba(11,120,200,.28); }
+    .location strong { display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-size:12px; font-weight:600; }
+    .location small { display:block; margin-top:2px; color:var(--faint); font-size:10px; }
+    .status-pills { display:flex; flex-wrap:wrap; gap:8px; }
+    .status-pill { padding:6px 10px; border:1px solid; border-radius:14px; font-size:11px; font-weight:650; }
+    .status-pill.verified { border-color:var(--green); background:var(--green-soft); color:var(--green); }
+    .status-pill.candidate { border-color:var(--orange); background:var(--orange-soft); color:var(--orange); }
+    .status-pill.pending { border-color:var(--purple); background:var(--purple-soft); color:var(--purple); }
+    #workspace { position:absolute; inset:64px 0 96px; z-index:1; }
+    #map-frame { position:absolute; inset:0; overflow:hidden; border:0; border-radius:0; background:transparent; box-shadow:none; }
+    #map-header { position:absolute; top:0; left:0; right:0; height:56px; display:flex; align-items:center; padding:0 28px; z-index:2; pointer-events:none; }
+    #map-breadcrumb { font-size:12px; font-weight:650; }
+    #map-actions { display:flex; align-items:center; gap:8px; margin-left:auto; margin-right:340px; pointer-events:auto; }
+    .map-action { height:32px; min-width:32px; padding:0 10px; border:1px solid var(--line-strong); border-radius:8px; background:var(--surface); color:var(--text); font-size:12px; font-weight:650; }
+    .map-action:hover, .map-action.active { border-color:var(--blue); color:var(--blue); background:var(--blue-soft); }
+    .map-action.icon { padding:0; }
+    #map-viewport { position:absolute; inset:0; overflow:hidden; border:0; border-radius:0; background:var(--map); }
+    #map-viewport::before { content:""; position:absolute; inset:0; pointer-events:none; background-image:linear-gradient(rgba(197,208,219,.5) 1px, transparent 1px), linear-gradient(90deg, rgba(197,208,219,.5) 1px, transparent 1px); background-size:56px 56px; opacity:.42; }
+    #map-viewport.standard::before { opacity:.18; background-image:radial-gradient(rgba(139,154,168,.45) 1px, transparent 1px); background-size:14px 14px; }
+    #map-viewport canvas { position:absolute; inset:0; width:100%; height:100%; display:block; }
+    .map-legend { position:absolute; left:20px; bottom:10px; z-index:2; display:flex; gap:8px; }
+    .legend-pill { padding:6px 11px; border:1px solid; border-radius:14px; background:var(--surface); font-size:11px; font-weight:650; }
+    .legend-pill.supply { border-color:var(--orange); color:var(--orange); }
+    .legend-pill.return { border-color:var(--blue); color:var(--blue); }
+    .legend-pill.co2 { border-color:var(--purple); color:var(--purple); }
+    .legend-pill.storage { border-color:var(--green); color:var(--green); }
+    #map-footnote { position:absolute; right:20px; bottom:14px; max-width:min(560px,calc(100% - 40px)); color:var(--faint); font-size:10px; line-height:1.4; text-align:right; z-index:2; pointer-events:none; }
+    #details { top:84px; right:20px; bottom:116px; width:320px; padding:16px 18px; z-index:3; overflow:auto; transition:transform .18s ease, opacity .18s ease; }
+    #details.collapsed { transform:translateX(calc(100% - 52px)); opacity:.94; }
+    #collapse-panel { width:32px; height:32px; padding:0; border:1px solid var(--line); border-radius:8px; background:var(--surface); color:var(--text); font-size:18px; }
+    #collapse-panel:hover { border-color:var(--blue); color:var(--blue); }
+    .segmented { display:flex; gap:8px; }
+    .segment { flex:1; height:30px; padding:0 8px; border:1px solid var(--line); border-radius:15px; background:var(--surface-soft); color:var(--muted); font-size:11px; font-weight:650; }
+    .segment.active { border-color:var(--blue); background:var(--blue-soft); color:var(--blue); }
+    .toggle-row { display:flex; align-items:center; justify-content:space-between; min-height:40px; color:var(--muted); font-size:12px; }
+    .toggle-input { position:absolute; opacity:0; pointer-events:none; }
+    .switch { position:relative; width:44px; height:24px; border:1px solid var(--line-strong); border-radius:14px; background:var(--surface-soft); transition:.15s ease; }
+    .switch::after { content:""; position:absolute; top:3px; left:3px; width:16px; height:16px; border-radius:50%; background:var(--text); transition:.15s ease; }
+    .toggle-input:checked + .switch { border-color:var(--blue); background:var(--blue-soft); }
+    .toggle-input:checked + .switch::after { left:23px; }
+    .toggle-row.energy .toggle-input:checked + .switch { border-color:var(--orange); background:var(--orange-soft); }
+    .toggle-row.agri .toggle-input:checked + .switch { border-color:var(--green); background:var(--green-soft); }
+    .toggle-row.routes .toggle-input:checked + .switch { border-color:var(--purple); background:var(--purple-soft); }
+    #current-view-title { margin:0; font-size:15px; line-height:22px; }
+    #selection-chip { float:right; padding:5px 10px; border:1px solid var(--green); border-radius:14px; background:var(--green-soft); color:var(--green); font-size:11px; font-weight:650; }
+    #current-view-copy { margin:8px 0 0; color:var(--muted); font-size:11px; line-height:1.6; }
+    #object-detail { margin-top:16px; padding:14px; border:1px solid var(--line-strong); border-radius:10px; background:var(--canvas); }
+    #detail-preview { display:grid; place-items:center; height:90px; margin:0 0 12px; border:1px solid var(--line); border-radius:8px; background:linear-gradient(135deg,#eef4f7,#dfe8ee); color:var(--faint); font-size:10px; letter-spacing:.08em; }
+    #detail-title { margin:0; font-size:14px; line-height:20px; }
+    .detail-k { margin-top:10px; color:var(--faint); font-size:10px; }
+    .detail-v { margin-top:2px; color:var(--text); font-size:11px; line-height:1.5; }
+    #focus { width:100%; height:32px; margin-top:14px; border:1px solid var(--blue); border-radius:8px; background:var(--blue); color:#fff; font-size:11px; font-weight:650; }
+    #focus:hover { background:#0867ad; }
+    #analysis { left:20px; right:20px; bottom:20px; min-height:96px; z-index:4; padding:16px 22px; border-radius:12px; box-shadow:0 12px 32px rgba(31,55,78,.12); }
+    #analysis-head { display:flex; align-items:center; gap:16px; min-height:32px; }
+    #analysis-toggle { width:32px; height:28px; padding:0; border:1px solid var(--blue); border-radius:14px; background:var(--blue-soft); color:var(--blue); }
+    #analysis-title { margin:0; font-size:15px; }
+    .analysis-status { padding:5px 10px; border:1px solid var(--green); border-radius:14px; background:var(--green-soft); color:var(--green); font-size:11px; font-weight:650; }
+    .analysis-status.warning { border-color:var(--orange); background:var(--orange-soft); color:var(--orange); }
+    .analysis-status.risk { border-color:#bd3e3e; background:#fce9e9; color:#bd3e3e; }
+    #analysis-summary { margin-left:12px; color:var(--muted); font-size:12px; }
+    #analysis-why { margin-left:auto; color:var(--text); font-size:11px; font-weight:650; }
+    #analysis-expand { height:30px; padding:0 12px; border:1px solid var(--blue); border-radius:15px; background:var(--blue); color:#fff; font-size:11px; font-weight:650; }
+    #analysis-body { display:none; grid-template-columns:repeat(3, minmax(0,1fr)); gap:16px; margin-top:14px; }
+    #analysis.expanded { min-height:210px; }
+    #analysis.expanded #analysis-body { display:grid; }
+    .analysis-card { min-height:108px; padding:14px; border:1px solid var(--line-strong); border-radius:10px; background:var(--canvas); }
+    .analysis-card h3 { margin:0; font-size:11px; font-weight:650; }
+    .analysis-card strong { display:block; margin-top:10px; font-size:20px; }
+    .analysis-card p { margin:7px 0 0; color:var(--muted); font-size:10px; line-height:1.5; }
+    .chart { display:grid; grid-template-columns:repeat(24,minmax(0,1fr)); align-items:end; gap:2px; height:62px; margin-top:10px; padding-top:8px; border-top:1px solid var(--line); }
+    .chart-group { display:flex; align-items:flex-end; justify-content:center; gap:1px; height:100%; min-width:0; }
+    .bar { width:45%; min-height:2px; border-radius:2px 2px 0 0; background:var(--blue); }
+    .bar.demand { background:var(--orange); }
+    .bar.risk { background:#bd3e3e; }
+    .chart-legend { display:flex; gap:10px; margin-top:7px; color:var(--muted); font-size:10px; }
+    .chart-legend span::before { content:""; display:inline-block; width:7px; height:7px; margin-right:4px; border-radius:2px; background:var(--blue); }
+    .chart-legend .demand::before { background:var(--orange); }
+    .chart-legend .risk::before { background:#bd3e3e; }
+    .analysis-card.wide { grid-column:span 3; }
+    .derived-note { color:var(--orange) !important; font-weight:650; }
+    #tooltip { position:absolute; z-index:8; display:none; pointer-events:none; padding:7px 9px; border:1px solid var(--blue); border-radius:8px; background:var(--surface); color:var(--text); box-shadow:var(--shadow); font-size:11px; white-space:nowrap; }
+    #loading { position:absolute; inset:0; z-index:10; display:grid; place-items:center; background:var(--canvas); color:var(--text); font-size:14px; }
+    #loading.done { display:none; }
+    .error { color:#bd3e3e; }
+    @media (max-width: 1100px) { #toolbar { width:240px; } #details { width:280px; } #map-actions { margin-right:300px; } #analysis-summary { display:none; } }
+    @media (max-width: 760px) { #toolbar { top:76px; left:12px; bottom:auto; width:calc(50% - 18px); max-height:42vh; border-radius:12px; } #details { top:76px; right:12px; bottom:auto; width:calc(50% - 18px); max-height:42vh; border-radius:12px; } #workspace { top:64px; left:0; right:0; bottom:96px; } #header { padding-left:16px; padding-right:16px; } .header-chip, .header-source { display:none; } #map-actions { margin-right:calc(50% - 12px); } #analysis { left:12px; right:12px; bottom:12px; } #analysis-why { display:none; } #analysis-body { grid-template-columns:repeat(2,minmax(0,1fr)); } .analysis-card.wide { grid-column:span 2; } }
+  </style>
+</head>
+<body>
+<div id="app">
+  <div id="loading">正在加载 Blender 三维模型…</div>
+  <header id="header" class="panel">
+    <div>
+      <h1>乌兰察布能源优先区</h1>
+      <p>真实地理 3D 决策分析平台 · Light Theme v2</p>
+    </div>
+    <span class="header-chip">DEM + 卫星影像 · v2</span>
+    <select id="scenario-select" title="切换分析工况" aria-label="切换分析工况">
+      <option value="normal">正常工况</option>
+      <option value="source-outage">源退出</option>
+      <option value="storage-depleted">储能耗尽（派生）</option>
+    </select>
+    <span class="header-status"><span id="status-dot" class="dot"></span><span id="status">加载中</span></span>
+    <span class="header-source">数据版本 2026-11-15</span>
+    <button id="audit-toggle" class="header-icon" type="button" title="审计与系统状态">☷</button>
+    <button class="header-icon" type="button" title="设置">⚙</button>
+    <button class="avatar" type="button" title="当前用户">I</button>
+  </header>
+
+  <aside id="toolbar" class="panel collapsed">
+    <div class="panel-heading"><h2>实体索引</h2><span id="object-count" class="count">59 objects</span><button id="collapse-tree" type="button" title="展开实体索引">›</button></div>
+    <div class="section-eyebrow">区域与设施</div>
+    <input id="search" type="search" placeholder="搜索区域、设备或管线" />
+    <div id="locations" class="tree"></div>
+    <div class="section-eyebrow">当前状态</div>
+    <div class="status-pills">
+      <span class="status-pill verified">已核验 · 18</span>
+      <span class="status-pill candidate">候选 · 23</span>
+      <span class="status-pill pending">待核 · 18</span>
+    </div>
+  </aside>
+
+  <main id="workspace">
+    <section id="map-frame" class="panel">
+      <div id="map-header">
+        <span id="map-breadcrumb">3D 地理工作区&nbsp; / &nbsp;1.2 km²</span>
+        <div id="map-actions">
+          <button id="view-mode" class="map-action" type="button">自由视角</button>
+          <button id="reset" class="map-action icon" type="button" title="复位视角">↺</button>
+          <button id="pan-mode" class="map-action icon" type="button" title="小手平移">✋</button>
+          <button id="zoom-in" class="map-action icon" type="button" title="放大">＋</button>
+        </div>
+      </div>
+      <div id="map-viewport">
+        <div class="map-legend">
+          <span class="legend-pill supply">供水</span>
+          <span class="legend-pill return">回水</span>
+          <span class="legend-pill co2">CO₂</span>
+          <span class="legend-pill storage">储热</span>
+        </div>
+        <span id="map-footnote">正在加载标准导航地图…</span>
+      </div>
+    </section>
+  </main>
+
+  <aside id="details" class="panel">
+    <div class="panel-heading"><h2>图层与状态</h2><button id="collapse-panel" type="button" title="收起面板">›</button></div>
+    <div class="section-eyebrow">底图</div>
+    <div class="segmented">
+      <button id="map-satellite" class="segment active" type="button">● 卫星地图</button>
+      <button id="map-standard" class="segment" type="button">○ 标准地图</button>
+    </div>
+    <div class="section-eyebrow">业务图层</div>
+    <label class="toggle-row"><span>地形起伏</span><input id="layer-terrain" class="toggle-input" type="checkbox" checked /><span class="switch"></span></label>
+    <label class="toggle-row energy"><span>能源设施</span><input id="layer-energy" class="toggle-input" type="checkbox" checked /><span class="switch"></span></label>
+    <label class="toggle-row agri"><span>农业设施</span><input id="layer-agri" class="toggle-input" type="checkbox" checked /><span class="switch"></span></label>
+    <label class="toggle-row routes"><span>供回管线</span><input id="layer-network" class="toggle-input" type="checkbox" checked /><span class="switch"></span></label>
+    <div class="section-eyebrow">当前视图</div>
+    <div><span id="selection-chip">overview</span><h3 id="current-view-title">能源枢纽</h3></div>
+    <p id="current-view-copy">总览视图<br />点击树节点或地图设施查看对象详情</p>
+    <div id="object-detail">
+      <div id="detail-preview">3D MODEL PREVIEW</div>
+      <h3 id="detail-title">对象详情</h3>
+      <div class="detail-k">对象 ID</div><div id="detail-id" class="detail-v">—</div>
+      <div class="detail-k">类型与阶段</div><div id="detail-type" class="detail-v">—</div>
+      <div class="detail-k">空间状态</div><div id="detail-status" class="detail-v">方案空间展示 / 状态待核</div>
+      <div class="detail-k">用途说明</div><div id="detail-note" class="detail-v">点击地图设施或左侧实体查看对象职责、来源和关联管线。</div>
+      <button id="focus" type="button">聚焦此对象</button>
+    </div>
+  </aside>
+
+  <div id="audit-backdrop"></div>
+  <section id="audit-panel" class="panel" aria-label="审计与系统状态">
+    <div id="audit-head">
+      <div><h2>审计与系统状态</h2><p>核对地图、模型、分析资产、版本和当前工程边界。</p></div>
+      <button id="audit-close" type="button" title="关闭审计页">×</button>
+    </div>
+    <div class="audit-toolbar"><button id="audit-export" type="button">导出审计 JSON</button><button id="audit-refresh" class="secondary" type="button">重新读取来源</button></div>
+    <div class="audit-grid">
+      <article class="audit-card"><h3>代码与页面版本</h3><p id="audit-code">正在读取…</p></article>
+      <article class="audit-card"><h3>Blender 工程</h3><p id="audit-blender">正在读取…</p></article>
+      <article class="audit-card"><h3>地图与模型来源</h3><p id="audit-map-source">正在读取…</p></article>
+      <article class="audit-card"><h3>分析结果资产</h3><p id="audit-analysis-source">正在读取…</p></article>
+      <article class="audit-card wide"><h3>对象状态</h3><div id="audit-status-pills" class="audit-state"></div></article>
+      <article class="audit-card wide"><h3>边界与待核信息</h3><ul id="audit-limitations" class="audit-list"><li>正在读取…</li></ul></article>
+    </div>
+  </section>
+
+  <section id="analysis" class="panel">
+    <div id="analysis-head">
+      <button id="analysis-toggle" type="button" title="展开或收起决策分析">⌃</button>
+      <h2 id="analysis-title">决策分析</h2>
+      <span id="analysis-status" class="analysis-status">正常工况</span>
+      <span id="analysis-summary">正在加载分析结果…</span>
+      <span id="analysis-why">为什么推荐？</span>
+      <button id="analysis-expand" type="button">展开分析 ›</button>
+    </div>
+    <div id="analysis-body">
+      <article class="analysis-card"><h3>能量账</h3><strong id="energy-balance-value">—</strong><p id="energy-balance-copy">—</p></article>
+      <article class="analysis-card"><h3>PTES 库存</h3><strong id="storage-value">—</strong><p id="storage-copy">—</p></article>
+      <article class="analysis-card"><h3>推荐动作</h3><strong id="recommendation-value">—</strong><p id="recommendation-copy">—</p></article>
+      <article class="analysis-card wide"><h3>逐时热负荷 / 源热</h3><div id="hourly-chart" class="chart" aria-label="逐时热负荷与源热柱状图"></div><div class="chart-legend"><span>源热</span><span class="demand">热负荷</span><span class="risk">未供热时段</span></div></article>
+    </div>
+  </section>
+  <div id="tooltip"></div>
+</div>
+
+<script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js"
+    }
+  }
+</script>
+<script type="module">
+  import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js';
+  import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/controls/OrbitControls.js';
+  import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/loaders/GLTFLoader.js';
+
+  const MODEL = './assets/乌兰察布_真实地理场景_v2.glb';
+  const locations = [
+    {id:'DC_004', group:'energy', area:'data', name:'华为云乌兰察布数据中心', type:'数据中心', phase:'现状语境 / 坐标待核', note:'历史地图体量代理。作为余热源区的空间语境，不证明权属、签约或精确建筑位置。'},
+    {id:'DC_005', group:'energy', area:'data', name:'阿里巴巴乌兰察布数据中心', type:'数据中心', phase:'现状语境 / 坐标待核', note:'历史地图体量代理。用于展示多源余热接口的空间关系。'},
+    {id:'DC_006', group:'energy', area:'data', name:'益武堂数据中心组团', type:'数据中心组团', phase:'候选 / 坐标待核', note:'历史地图体量代理，包含多个项目标注，不代表单体测绘。'},
+    {id:'HUB_011', group:'energy', area:'hub', name:'CO₂跨临界热泵枢纽站', type:'能源设备', phase:'拟建候选', note:'源侧水经隔离换热后进入站内 CO₂ 闭环，再把热量交给用户水回路。'},
+    {id:'STORE_012', group:'energy', area:'hub', name:'PTES池式储热', type:'储热设施', phase:'拟建候选', note:'池式热储的剖面示意，体积、功率和可用容量仍需工程核验。'},
+    {id:'DEMO_013', group:'energy', area:'hub', name:'CO₂冷热与土壤储热科研示范', type:'科研示范', phase:'拟建候选', note:'独立科研范围，土壤 U 管与站内冷热回路单列。'},
+    {id:'AGRI_014', group:'agri', area:'A', name:'脱毒种薯组培楼＋原原种温室', type:'A区农业设施', phase:'近端候选', note:'洁净组培、苗床和种薯温室代表模型。'},
+    {id:'AGRI_015', group:'agri', area:'A', name:'工厂化食用菌', type:'A区农业设施', phase:'近端候选', note:'封闭保温菌房、多层菌袋架和空气处理支路。'},
+    {id:'AGRI_016', group:'agri', area:'B', name:'冬季番茄连栋温室', type:'B区农业设施', phase:'中段候选', note:'高跨温室、吊蔓番茄、栽培槽与分拣集配。'},
+    {id:'AGRI_017', group:'agri', area:'B', name:'冬春草莓高架温室', type:'B区农业设施', phase:'中段候选', note:'较低温室、高架槽和采摘通道，与番茄用户分开。'},
+    {id:'AGRI_018', group:'agri', area:'C', name:'叶菜水培＋冷凉蔬菜种苗', type:'C区农业设施', phase:'后续候选', note:'水培槽、叶菜苗盘、育苗和包装空间；后续支线以候选样式表达。'},
+    {id:'DRY_019', group:'agri', area:'C', name:'秋季低温烘干中心', type:'C区农业设施', phase:'后续候选', note:'燕麦/脱水蔬菜的料仓、输送、烘干和提温模块。'}
+  ];
+  const byId = new Map(locations.map(item => [item.id, item]));
+  const loading = document.getElementById('loading');
+  const status = document.getElementById('status');
+  const tooltip = document.getElementById('tooltip');
+  const viewport = document.getElementById('map-viewport');
+  const toolbar = document.getElementById('toolbar');
+  const details = document.getElementById('details');
+  const detailTitle = document.getElementById('detail-title');
+  const detailId = document.getElementById('detail-id');
+  const detailType = document.getElementById('detail-type');
+  const detailStatus = document.getElementById('detail-status');
+  const detailNote = document.getElementById('detail-note');
+  const detailPreview = document.getElementById('detail-preview');
+  const selectionChip = document.getElementById('selection-chip');
+  const currentViewTitle = document.getElementById('current-view-title');
+  const currentViewCopy = document.getElementById('current-view-copy');
+  const scenarioSelect = document.getElementById('scenario-select');
+  const analysisStatus = document.getElementById('analysis-status');
+  const analysisSummary = document.getElementById('analysis-summary');
+  const analysisWhy = document.getElementById('analysis-why');
+  const mapFootnote = document.getElementById('map-footnote');
+  const energyBalanceValue = document.getElementById('energy-balance-value');
+  const energyBalanceCopy = document.getElementById('energy-balance-copy');
+  const storageValue = document.getElementById('storage-value');
+  const storageCopy = document.getElementById('storage-copy');
+  const recommendationValue = document.getElementById('recommendation-value');
+  const recommendationCopy = document.getElementById('recommendation-copy');
+  const hourlyChart = document.getElementById('hourly-chart');
+  const auditPanel = document.getElementById('audit-panel');
+  const auditBackdrop = document.getElementById('audit-backdrop');
+  const auditCode = document.getElementById('audit-code');
+  const auditBlender = document.getElementById('audit-blender');
+  const auditMapSource = document.getElementById('audit-map-source');
+  const auditAnalysisSource = document.getElementById('audit-analysis-source');
+  const auditStatusPills = document.getElementById('audit-status-pills');
+  const auditLimitations = document.getElementById('audit-limitations');
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0xe9eff3);
+  const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 100000);
+  const renderer = new THREE.WebGLRenderer({ antialias:true, logarithmicDepthBuffer:true });
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+  renderer.setClearColor(0xe9eff3, 1);
+  viewport.appendChild(renderer.domElement);
+  const controls = new OrbitControls(camera, renderer.domElement);
+  controls.enableDamping = true;
+  controls.dampingFactor = .08;
+  controls.screenSpacePanning = true;
+  controls.minDistance = 12;
+  controls.maxDistance = 50000;
+  controls.mouseButtons.LEFT = THREE.MOUSE.ROTATE;
+  controls.target.set(0, 0, 140);
+  const ambient = new THREE.HemisphereLight(0xf2f7fa, 0x647987, 2.2);
+  scene.add(ambient);
+  const sun = new THREE.DirectionalLight(0xffffff, 2.8);
+  sun.position.set(5000, 9000, 3000);
+  scene.add(sun);
+  const modelRoot = new THREE.Group();
+  scene.add(modelRoot);
+  const pickables = [];
+  const objectById = new Map();
+  let selected = null;
+  let defaultTarget = controls.target.clone();
+  let defaultPosition = camera.position.clone();
+  let panMode = false;
+  const highlightedObjects = [];
+  const terrainObjects = [];
+  let standardMapGroup = null;
+  let currentMapStyle = 'standard';
+  let terrainLayerEnabled = true;
+  let analysisData = null;
+  let auditManifest = null;
+  let activeScenarioId = 'normal';
+  const standardMapBbox = { west:113.065, south:40.935, east:113.328, north:41.0883 };
+  const standardMapZoom = 12;
+  const standardMapTileUrl = (x, y, z) => `https://tile.openstreetmap.org/${z}/${x}/${y}.png`;
+  let standardMapState = 'loading';
+
+  const scenarioDefinitions = {
+    normal: {
+      resultId: 'MVP_NORMAL',
+      label: '正常工况',
+      recommendation: '近端直供 + 余热入库',
+      reason: '源热高于热负荷，余量进入 PTES；当前结果无未供热。',
+      statusClass: '',
+    },
+    'source-outage': {
+      resultId: 'MVP_SOURCE_OUTAGE',
+      label: '源退出',
+      recommendation: 'PTES 放热补峰',
+      reason: '源侧在 h4–h7 退出，先由 PTES 缓冲；后续出现未供热缺口。',
+      statusClass: 'warning',
+    },
+    'storage-depleted': {
+      resultId: 'MVP_SOURCE_OUTAGE',
+      label: '储能耗尽（派生）',
+      recommendation: '降低低优先级负荷',
+      reason: '此视图从源退出结果中定位首次库存为 0 的时段，用于审查缺口，不是新的热力求解。',
+      statusClass: 'risk',
+      derived: true,
+    },
+  };
+
+  function formatMwh(value) {
+    return `${Number(value || 0).toFixed(1)} MWh`;
+  }
+
+  function formatMw(value) {
+    return `${Number(value || 0).toFixed(1)} MW`;
+  }
+
+  function selectAnalysisRow(rows, scenarioId) {
+    if (scenarioId === 'storage-depleted') {
+      return rows.find(row => row.storage_end_mwh <= 0) || rows[rows.length - 1];
+    }
+    if (scenarioId === 'source-outage') {
+      return rows.find(row => row.source_mw === 0) || rows[0];
+    }
+    return rows.find(row => row.hour_index === 14) || rows[14] || rows[rows.length - 1];
+  }
+
+  function updateHourlyChart(rows) {
+    const maxValue = Math.max(1, ...rows.flatMap(row => [row.source_mw, row.demand_mw]));
+    hourlyChart.innerHTML = rows.map(row => {
+      const sourceHeight = Math.max(3, row.source_mw / maxValue * 100);
+      const demandHeight = Math.max(3, row.demand_mw / maxValue * 100);
+      const demandClass = row.unserved_mw > 0 ? 'bar demand risk' : 'bar demand';
+      const title = `h${row.hour_index} · 源热 ${formatMw(row.source_mw)} · 热负荷 ${formatMw(row.demand_mw)}${row.unserved_mw > 0 ? ` · 未供热 ${formatMw(row.unserved_mw)}` : ''}`;
+      return `<span class="chart-group" title="${title}"><i class="bar" style="height:${sourceHeight}%"></i><i class="${demandClass}" style="height:${demandHeight}%"></i></span>`;
+    }).join('');
+  }
+
+  function updateMapFootnote() {
+    if (!analysisData) return;
+    const definition = scenarioDefinitions[activeScenarioId] || scenarioDefinitions.normal;
+    const mapLabel = currentMapStyle === 'standard'
+      ? (standardMapState === 'ready' ? '标准导航地图（OpenStreetMap 标准瓦片）' : '标准导航地图（正在加载）')
+      : '卫星地图（GLB Sentinel-2 + DEM）';
+    const scenarioLabel = definition.derived
+      ? '派生分析：源退出结果首次库存为 0 的时段，线路仍为方案展示'
+      : `${definition.label} · 线路为方案展示，未表达管径、埋深或水力计算`;
+    const attribution = currentMapStyle === 'standard' && standardMapState === 'ready' ? ' · © OpenStreetMap contributors' : '';
+    mapFootnote.textContent = `${mapLabel}${attribution} · ${scenarioLabel}`;
+  }
+
+  function renderAnalysis(scenarioId) {
+    if (!analysisData) return;
+    const definition = scenarioDefinitions[scenarioId] || scenarioDefinitions.normal;
+    const rows = analysisData.rows.filter(row => row.scenario_id === definition.resultId);
+    if (!rows.length) return;
+    const summary = analysisData.summary[definition.resultId];
+    const currentRow = selectAnalysisRow(rows, scenarioId);
+    const storageMwh = currentRow.storage_end_mwh;
+    const storageState = storageMwh <= 0 ? '库存已耗尽' : currentRow.discharge_mw > 0 ? '正在放热' : currentRow.charge_mw > 0 ? '正在充热' : '库存保持';
+    const derivedPrefix = definition.derived ? '派生分析 · ' : '';
+
+    activeScenarioId = scenarioId;
+    scenarioSelect.value = scenarioId;
+    analysisStatus.textContent = definition.label;
+    analysisStatus.className = `analysis-status ${definition.statusClass}`.trim();
+    analysisSummary.textContent = `${derivedPrefix}h${currentRow.hour_index} · 热负荷 ${formatMw(currentRow.demand_mw)} · 源热 ${formatMw(currentRow.source_mw)} · PTES ${formatMwh(storageMwh)}`;
+    analysisWhy.textContent = definition.derived ? '缺口从何而来？' : '为什么推荐？';
+    updateMapFootnote();
+
+    energyBalanceValue.textContent = `${formatMwh(summary.source_mwh)} → ${formatMwh(summary.delivered_mwh)}`;
+    energyBalanceCopy.textContent = `未供热 ${formatMwh(summary.unserved_mwh)} · 弃热 ${formatMwh(summary.curtailed_mwh)} · 泵电 ${formatMwh(summary.pump_electricity_mwh)}`;
+    storageValue.textContent = formatMwh(storageMwh);
+    storageCopy.textContent = `${storageState} · 末值 ${formatMwh(summary.final_storage_mwh)} · 容量上限按当前示意参数`;
+    recommendationValue.textContent = definition.recommendation;
+    recommendationCopy.textContent = definition.derived ? `${definition.reason} 首次耗尽时段：h${currentRow.hour_index}。` : definition.reason;
+    recommendationCopy.classList.toggle('derived-note', Boolean(definition.derived));
+    updateHourlyChart(rows);
+
+    const url = new URL(window.location.href);
+    url.searchParams.set('scenarioId', scenarioId);
+    window.history.replaceState({}, '', url);
+  }
+
+  async function loadAnalysisData() {
+    try {
+      const response = await fetch('./assets/analysis-results.json', { cache: 'no-store' });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      analysisData = await response.json();
+      const requested = new URLSearchParams(window.location.search).get('scenarioId');
+      const scenarioId = Object.prototype.hasOwnProperty.call(scenarioDefinitions, requested) ? requested : 'normal';
+      renderAnalysis(scenarioId);
+    } catch (error) {
+      analysisSummary.textContent = '分析结果加载失败';
+      analysisStatus.textContent = '数据不可用';
+      analysisStatus.className = 'analysis-status risk';
+      mapFootnote.textContent = `分析结果加载失败：${error.message || '未知错误'}`;
+      setStatus('分析数据加载失败', false);
+    }
+  }
+
+  function renderAuditManifest() {
+    if (!auditManifest) return;
+    const blender = auditManifest.blender;
+    const model = auditManifest.web_model;
+    const analysis = auditManifest.analysis;
+    const commitLabels = { 'audit-baseline':'审计基线提交', 'tested-code-head':'测试代码提交', 'delivery-head':'交付提交' };
+    const commitLabel = commitLabels[auditManifest.git_commit_role] || '提交';
+    auditCode.innerHTML = `分支 <code>${auditManifest.branch}</code><br />${commitLabel} <code>${auditManifest.git_commit.slice(0, 12)}</code><br />生成日期 ${auditManifest.generated_at}`;
+    auditBlender.innerHTML = `${blender.version} · ${blender.render_engine}<br />场景 <code>${blender.scene_name}</code><br />顶层对象 ${blender.top_level_objects} · 网格 ${blender.mesh_objects}<br />BLEND <code>${blender.scene_file_sha256.slice(0, 16)}…</code>`;
+    auditMapSource.innerHTML = `GLB <code>${model.sha256.slice(0, 16)}…</code><br />可拾取对象 ${model.pickable_objects}<br />DEM：${model.terrain_source}<br />卫星：${model.satellite_source}`;
+    auditAnalysisSource.innerHTML = `资产 <code>${analysis.sha256.slice(0, 16)}…</code><br />输入 <code>${analysis.source_sha256.slice(0, 16)}…</code><br />场景 ${analysis.scenarios.join('、')}<br />基线：${analysis.basis}`;
+    auditStatusPills.innerHTML = `<span class="verified">已核验 · ${auditManifest.status_counts.verified}</span><span class="candidate">候选 · ${auditManifest.status_counts.candidate}</span><span class="pending">待核 · ${auditManifest.status_counts.pending}</span>`;
+    auditLimitations.innerHTML = auditManifest.limitations.map(item => `<li>${item}</li>`).join('');
+  }
+
+  async function loadAuditManifest() {
+    try {
+      const response = await fetch('./assets/audit-manifest.json', { cache:'no-store' });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      auditManifest = await response.json();
+      renderAuditManifest();
+    } catch (error) {
+      auditCode.textContent = `来源清单加载失败：${error.message || '未知错误'}`;
+      auditBlender.textContent = '当前无法确认 Blender 工程版本。';
+      auditMapSource.textContent = '当前无法确认 GLB、DEM 或卫星影像版本。';
+      auditAnalysisSource.textContent = '当前无法确认分析资产版本。';
+      auditStatusPills.innerHTML = '<span class="pending">来源待核</span>';
+      auditLimitations.innerHTML = '<li>审计清单加载失败，不能把当前状态视为已核验。</li>';
+    }
+  }
+
+  function setAuditOpen(open) {
+    auditPanel.classList.toggle('open', open);
+    auditBackdrop.classList.toggle('open', open);
+  }
+
+  function exportAuditJson() {
+    if (!auditManifest) return;
+    const payload = { audit: auditManifest, analysis: analysisData };
+    const blob = new Blob([JSON.stringify(payload, null, 2)], { type:'application/json' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `energy-map-audit-${auditManifest.generated_at}.json`;
+    link.click();
+    URL.revokeObjectURL(url);
+  }
+
+  function isTerrainObject(obj) {
+    if (!obj) return false;
+    const materials = obj.isMesh ? (Array.isArray(obj.material) ? obj.material : [obj.material]) : [];
+    return /TERRAIN|Copernicus|satellite|DEM/i.test(obj.name || '') || materials.some(material => /EOxCloudless|Sentinel-2/i.test(material?.name || ''));
+  }
+
+  function lonToTilePixel(lon, zoom) {
+    return (lon + 180) / 360 * (2 ** zoom) * 256;
+  }
+
+  function latToTilePixel(lat, zoom) {
+    const radians = THREE.MathUtils.degToRad(lat);
+    return (1 - Math.log(Math.tan(radians) + (1 / Math.cos(radians))) / Math.PI) / 2 * (2 ** zoom) * 256;
+  }
+
+  function loadStandardMapTexture(bounds, baseMesh) {
+    const zoom = standardMapZoom;
+    const left = lonToTilePixel(standardMapBbox.west, zoom);
+    const right = lonToTilePixel(standardMapBbox.east, zoom);
+    const top = latToTilePixel(standardMapBbox.north, zoom);
+    const bottom = latToTilePixel(standardMapBbox.south, zoom);
+    const tileSize = 256;
+    const minTileX = Math.floor(left / tileSize);
+    const maxTileX = Math.floor((right - 1) / tileSize);
+    const minTileY = Math.floor(top / tileSize);
+    const maxTileY = Math.floor((bottom - 1) / tileSize);
+    const canvas = document.createElement('canvas');
+    canvas.width = Math.max(1, Math.ceil(right - left));
+    canvas.height = Math.max(1, Math.ceil(bottom - top));
+    const context = canvas.getContext('2d');
+    context.fillStyle = '#f8fafc';
+    context.fillRect(0, 0, canvas.width, canvas.height);
+    const loadTile = (x, y) => new Promise((resolve, reject) => {
+      const image = new Image();
+      image.crossOrigin = 'anonymous';
+      image.onload = () => {
+        context.drawImage(image, x * tileSize - left, y * tileSize - top, tileSize, tileSize);
+        resolve();
+      };
+      image.onerror = () => reject(new Error(`标准地图瓦片加载失败：${x}/${y}/${zoom}`));
+      image.src = standardMapTileUrl(x, y, zoom);
+    });
+    const tiles = [];
+    for (let x = minTileX; x <= maxTileX; x += 1) {
+      for (let y = minTileY; y <= maxTileY; y += 1) tiles.push(loadTile(x, y));
+    }
+    Promise.all(tiles).then(() => {
+      const texture = new THREE.CanvasTexture(canvas);
+      texture.colorSpace = THREE.SRGBColorSpace;
+      texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
+      baseMesh.material.map = texture;
+      baseMesh.material.color.set(0xffffff);
+      baseMesh.material.needsUpdate = true;
+      standardMapState = 'ready';
+      setStatus('已加载 · 59 个可拾取对象 · 标准地图已就绪');
+      updateMapFootnote();
+    }).catch(error => {
+      standardMapState = 'error';
+      setStatus('模型已加载 · 标准地图加载失败', false);
+      mapFootnote.textContent = `${error.message || '标准地图瓦片加载失败'} · 当前显示本地白底备用层`;
+    });
+  }
+
+  function createStandardMap(bounds) {
+    const group = new THREE.Group();
+    group.name = 'STANDARD_MAP_VECTOR_LAYER';
+    group.renderOrder = -10;
+    const width = bounds.size.x * 1.12;
+    const depth = bounds.size.z * 1.12;
+    const y = bounds.min.y - Math.max(bounds.size.y * .015, .25);
+    const mapPoint = ([x, z], height = 0) => new THREE.Vector3(bounds.center.x + x * width * .5, y + height, bounds.center.z + z * depth * .5);
+
+    const base = new THREE.Mesh(
+      new THREE.PlaneGeometry(width, depth),
+      new THREE.MeshBasicMaterial({ color:0xf8fafc, side:THREE.DoubleSide })
+    );
+    base.rotation.x = -Math.PI / 2;
+    base.position.set(bounds.center.x, y, bounds.center.z);
+    base.renderOrder = -10;
+    group.add(base);
+    group.userData.baseMesh = base;
+
+    const addPolygon = (points, color) => {
+      const vertices = [];
+      for (let i = 1; i < points.length - 1; i += 1) {
+        [points[0], points[i], points[i + 1]].forEach(point => {
+          const vector = mapPoint(point, .04);
+          vertices.push(vector.x, vector.y, vector.z);
+        });
+      }
+      const geometry = new THREE.BufferGeometry();
+      geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+      const mesh = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color, transparent:true, opacity:.28, side:THREE.DoubleSide, depthWrite:false }));
+      mesh.renderOrder = -8;
+      group.add(mesh);
+      const outlineGeometry = new THREE.BufferGeometry().setFromPoints(points.map(point => mapPoint(point, .065)).concat([mapPoint(points[0], .065)]));
+      const outline = new THREE.Line(outlineGeometry, new THREE.LineBasicMaterial({ color, transparent:true, opacity:.75 }));
+      outline.renderOrder = -7;
+      group.add(outline);
+    };
+
+    addPolygon([[-.47,-.26],[-.22,-.42],[-.02,-.22],[-.17,.02]], 0x9ac7b0);
+    addPolygon([[-.02,-.22],[.23,-.32],[.43,-.08],[.22,.16]], 0xf0c58e);
+    addPolygon([[.22,.16],[.43,-.08],[.46,.35],[.12,.46]], 0xa9c5e5);
+    addPolygon([[-.17,.02],[.22,.16],[.12,.46],[-.22,.3]], 0xc9b7e8);
+    return group;
+  }
+
+  function restoreSelectionHighlight() {
+    highlightedObjects.splice(0).forEach(obj => {
+      if (obj.userData.originalMaterial) {
+        obj.material = obj.userData.originalMaterial;
+        delete obj.userData.originalMaterial;
+      }
+      if (obj.userData.originalColor && obj.color) {
+        obj.color.copy(obj.userData.originalColor);
+        delete obj.userData.originalColor;
+      }
+    });
+  }
+
+  function applySelectionHighlight(item) {
+    restoreSelectionHighlight();
+    if (!item) return;
+    modelRoot.traverse(obj => {
+      if (obj.userData.viewerId !== item.id) return;
+      if (obj.isMesh) {
+        obj.userData.originalMaterial = obj.material;
+        const materials = Array.isArray(obj.material) ? obj.material : [obj.material];
+        obj.material = materials.map(material => {
+          const highlighted = material.clone();
+          if (highlighted.emissive) {
+            highlighted.emissive.set(0x0b78c8);
+            highlighted.emissiveIntensity = Math.max(highlighted.emissiveIntensity || 0, .6);
+          } else if (highlighted.color) {
+            highlighted.color.lerp(new THREE.Color(0x0b78c8), .35);
+          }
+          return highlighted;
+        });
+        if (!Array.isArray(obj.userData.originalMaterial)) obj.material = obj.material[0];
+        highlightedObjects.push(obj);
+      } else if ((obj.isLine || obj.isPoints) && obj.color) {
+        obj.userData.originalColor = obj.color.clone();
+        obj.color.set(0x0b78c8);
+        highlightedObjects.push(obj);
+      }
+    });
+  }
+
+  function setStatus(text, good=true) {
+    status.textContent = text;
+    const dot = document.getElementById('status-dot');
+    if (!dot) return;
+    dot.style.background = good ? 'var(--green)' : '#bd3e3e';
+    dot.style.boxShadow = good ? '0 0 12px rgba(59,155,105,.35)' : '0 0 12px rgba(189,62,62,.35)';
+  }
+  function resizeRenderer() {
+    const width = Math.max(viewport.clientWidth, 1);
+    const height = Math.max(viewport.clientHeight, 1);
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
+    renderer.setSize(width, height, false);
+  }
+  function typeForObject(obj) {
+    const name = obj.name || '';
+    return locations.find(item => name.includes(item.id)) || null;
+  }
+  function registerObjects(rootObject) {
+    rootObject.traverse(obj => {
+      if (isTerrainObject(obj)) terrainObjects.push(obj);
+      if (!obj.isMesh && !obj.isLine && !obj.isPoints) return;
+      const item = typeForObject(obj);
+      if (!item) return;
+      if (!objectById.has(item.id)) objectById.set(item.id, obj);
+      pickables.push(obj);
+      obj.userData.viewerId = item.id;
+    });
+  }
+  function showDetails(item) {
+    if (!item) return;
+    selected = item;
+    applySelectionHighlight(item);
+    detailTitle.textContent = item.name;
+    detailId.textContent = item.id;
+    detailType.textContent = item.type + ' · ' + item.phase;
+    detailStatus.textContent = '方案空间展示 / 状态待核';
+    detailNote.textContent = item.note;
+    detailPreview.textContent = item.type + ' · 3D MODEL PREVIEW';
+    currentViewTitle.textContent = item.name;
+    currentViewCopy.innerHTML = item.id + ' · ' + item.phase + '<br />地图、树和详情卡保持同步';
+    selectionChip.textContent = 'selected';
+    viewport.dataset.selectedId = item.id;
+    document.querySelectorAll('.location').forEach(button => button.classList.toggle('active', button.dataset.id === item.id));
+  }
+  function focusObject(item) {
+    showDetails(item);
+    const obj = objectById.get(item.id);
+    if (!obj) return;
+    const box = new THREE.Box3().setFromObject(obj);
+    const center = box.getCenter(new THREE.Vector3());
+    const size = box.getSize(new THREE.Vector3());
+    const radius = Math.max(size.x, size.y, size.z, 20);
+    controls.target.copy(center);
+    camera.position.copy(center).add(new THREE.Vector3(radius * 1.8, radius * 1.5, radius * 1.8));
+    controls.update();
+    viewport.dataset.focusedId = item.id;
+  }
+  function resetView() {
+    controls.target.copy(defaultTarget);
+    camera.position.copy(defaultPosition);
+    controls.update();
+    selected = null;
+    restoreSelectionHighlight();
+    detailTitle.textContent = '对象详情';
+    detailId.textContent = '—';
+    detailType.textContent = '—';
+    detailStatus.textContent = '方案空间展示 / 状态待核';
+    detailNote.textContent = '点击地图设施或左侧实体查看对象职责、来源和关联管线。';
+    detailPreview.textContent = '3D MODEL PREVIEW';
+    currentViewTitle.textContent = '能源枢纽';
+    currentViewCopy.innerHTML = '总览视图<br />点击树节点或地图设施查看对象详情';
+    selectionChip.textContent = 'overview';
+    delete viewport.dataset.selectedId;
+    delete viewport.dataset.focusedId;
+    document.querySelectorAll('.location').forEach(button => button.classList.remove('active'));
+  }
+  function makeLocationList() {
+    const list = document.getElementById('locations');
+    const groups = [
+      {key:'A', title:'A 区 · 种薯 / 食用菌', items:locations.filter(item => item.area === 'A')},
+      {key:'B', title:'B 区 · 番茄 / 草莓温室', items:locations.filter(item => item.area === 'B')},
+      {key:'C', title:'C 区 · 叶菜 / 育苗', items:locations.filter(item => item.area === 'C')},
+      {key:'data', title:'数据中心', items:locations.filter(item => item.area === 'data')},
+      {key:'hub', title:'能源枢纽', items:locations.filter(item => item.area === 'hub')}
+    ];
+    const render = query => {
+      const q = query.trim().toLowerCase();
+      list.innerHTML = '';
+      groups.forEach(group => {
+        const items = group.items.filter(item => !q || (item.id + ' ' + item.name + ' ' + item.type + ' ' + item.phase).toLowerCase().includes(q));
+        if (!items.length) return;
+        const wrapper = document.createElement('div');
+        wrapper.className = 'tree-group';
+        const title = document.createElement('button');
+        title.className = 'tree-group-title';
+        title.innerHTML = '<span>⌄ ' + group.title + '</span><span class="tree-count">' + items.length + '</span>';
+        wrapper.appendChild(title);
+        const children = document.createElement('div');
+        children.className = 'tree-group-items';
+        items.forEach(item => {
+          const button = document.createElement('button');
+          button.className = 'location';
+          button.dataset.id = item.id;
+          button.innerHTML = '<strong>↳ ' + item.name + '</strong><small>' + item.id + ' · ' + item.phase + '</small>';
+          button.addEventListener('click', () => focusObject(item));
+          children.appendChild(button);
+        });
+        wrapper.appendChild(children);
+        list.appendChild(wrapper);
+      });
+    };
+    document.getElementById('search').addEventListener('input', event => render(event.target.value));
+    render('');
+  }
+  function setLayer(inputId, matcher) {
+    document.getElementById(inputId).addEventListener('change', event => {
+      if (inputId === 'layer-terrain') terrainLayerEnabled = event.target.checked;
+      modelRoot.traverse(obj => {
+        if (!matcher(obj)) return;
+        obj.visible = inputId === 'layer-terrain' ? terrainLayerEnabled && currentMapStyle === 'satellite' : event.target.checked;
+      });
+    });
+  }
+  function setMapStyle(style) {
+    const standard = style === 'standard';
+    currentMapStyle = standard ? 'standard' : 'satellite';
+    viewport.classList.toggle('standard', standard);
+    scene.background.set(standard ? 0xf8fafc : 0xe9eff3);
+    renderer.setClearColor(standard ? 0xf8fafc : 0xe9eff3, 1);
+    terrainObjects.forEach(obj => { obj.visible = !standard && terrainLayerEnabled; });
+    if (standardMapGroup) standardMapGroup.visible = standard;
+    document.getElementById('map-satellite').classList.toggle('active', !standard);
+    document.getElementById('map-standard').classList.toggle('active', standard);
+    updateMapFootnote();
+  }
+  setLayer('layer-terrain', obj => /TERRAIN|satellite|地形|DEM/i.test(obj.name || ''));
+  setLayer('layer-energy', obj => locations.some(item => item.group === 'energy' && (obj.name || '').includes(item.id)));
+  setLayer('layer-agri', obj => locations.some(item => item.group === 'agri' && (obj.name || '').includes(item.id)));
+  setLayer('layer-network', obj => /route|供水|回水|管网|PIPE|P1|P2/i.test(obj.name || ''));
+  document.getElementById('reset').addEventListener('click', resetView);
+  document.getElementById('focus').addEventListener('click', () => selected && focusObject(selected));
+  document.getElementById('collapse-tree').addEventListener('click', event => {
+    toolbar.classList.toggle('collapsed');
+    const collapsed = toolbar.classList.contains('collapsed');
+    event.currentTarget.textContent = collapsed ? '›' : '‹';
+    event.currentTarget.title = collapsed ? '展开实体索引' : '收起实体索引';
+  });
+  document.getElementById('audit-toggle').addEventListener('click', () => setAuditOpen(true));
+  document.getElementById('audit-close').addEventListener('click', () => setAuditOpen(false));
+  auditBackdrop.addEventListener('click', () => setAuditOpen(false));
+  document.getElementById('audit-refresh').addEventListener('click', loadAuditManifest);
+  document.getElementById('audit-export').addEventListener('click', exportAuditJson);
+  document.getElementById('map-satellite').addEventListener('click', () => setMapStyle('satellite'));
+  document.getElementById('map-standard').addEventListener('click', () => setMapStyle('standard'));
+  document.getElementById('pan-mode').addEventListener('click', event => {
+    panMode = !panMode;
+    controls.mouseButtons.LEFT = panMode ? THREE.MOUSE.PAN : THREE.MOUSE.ROTATE;
+    event.currentTarget.classList.toggle('active', panMode);
+    event.currentTarget.title = panMode ? '小手平移已开启' : '小手平移';
+  });
+  document.getElementById('zoom-in').addEventListener('click', () => {
+    camera.position.lerp(controls.target, .12);
+    controls.update();
+  });
+  scenarioSelect.addEventListener('change', event => renderAnalysis(event.target.value));
+  document.getElementById('analysis-toggle').addEventListener('click', () => document.getElementById('analysis').classList.toggle('expanded'));
+  document.getElementById('analysis-expand').addEventListener('click', () => {
+    const analysis = document.getElementById('analysis');
+    analysis.classList.toggle('expanded');
+    document.getElementById('analysis-expand').textContent = analysis.classList.contains('expanded') ? '收起分析 ⌃' : '展开分析 ›';
+  });
+  document.getElementById('collapse-panel').addEventListener('click', event => {
+    details.classList.toggle('collapsed');
+    event.currentTarget.textContent = details.classList.contains('collapsed') ? '‹' : '›';
+  });
+  makeLocationList();
+  setMapStyle('standard');
+  loadAnalysisData();
+  loadAuditManifest();
+
+  const raycaster = new THREE.Raycaster();
+  const pointer = new THREE.Vector2();
+  function pick(event) {
+    const rect = renderer.domElement.getBoundingClientRect();
+    pointer.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+    pointer.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+    raycaster.setFromCamera(pointer, camera);
+    return raycaster.intersectObjects(pickables, true).find(hit => hit.object.visible);
+  }
+  renderer.domElement.addEventListener('pointermove', event => {
+    const hit = pick(event);
+    if (!hit) { tooltip.style.display = 'none'; return; }
+    const item = byId.get(hit.object.userData.viewerId);
+    if (!item) return;
+    tooltip.textContent = item.name + ' · 点击查看详情';
+    tooltip.style.left = (event.clientX + 12) + 'px';
+    tooltip.style.top = (event.clientY + 12) + 'px';
+    tooltip.style.display = 'block';
+  });
+  renderer.domElement.addEventListener('click', event => {
+    const hit = pick(event);
+    if (hit) focusObject(byId.get(hit.object.userData.viewerId));
+  });
+  renderer.domElement.addEventListener('dblclick', event => {
+    const hit = pick(event);
+    if (hit) focusObject(byId.get(hit.object.userData.viewerId));
+  });
+
+  new GLTFLoader().load(MODEL, gltf => {
+    modelRoot.add(gltf.scene);
+    registerObjects(gltf.scene);
+    const box = new THREE.Box3().setFromObject(gltf.scene);
+    const center = box.getCenter(new THREE.Vector3());
+    const size = box.getSize(new THREE.Vector3());
+    const radius = Math.max(size.x, size.y, size.z);
+    standardMapGroup = createStandardMap({ min:box.min, center, size, max:box.max });
+    scene.add(standardMapGroup);
+    loadStandardMapTexture({ min:box.min, center, size, max:box.max }, standardMapGroup.userData.baseMesh);
+    setMapStyle(currentMapStyle);
+    controls.target.copy(center);
+    camera.position.copy(center).add(new THREE.Vector3(radius * .75, radius * .65, radius * .75));
+    controls.maxDistance = radius * 8;
+    defaultTarget.copy(controls.target);
+    defaultPosition.copy(camera.position);
+    controls.update();
+    resizeRenderer();
+    setStatus('已加载 · ' + pickables.length + ' 个可拾取对象');
+    loading.classList.add('done');
+  }, undefined, error => {
+    loading.innerHTML = '<span class="error">模型加载失败：' + (error.message || '请确认已用 HTTP 服务打开页面') + '</span>';
+    setStatus('加载失败', false);
+  });
+  addEventListener('resize', resizeRenderer);
+  function animate() { requestAnimationFrame(animate); controls.update(); renderer.render(scene, camera); }
+  animate();
+</script>
+</body>
+</html>

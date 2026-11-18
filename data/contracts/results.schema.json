@@ -1,0 +1,250 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://energy.local/contracts/results.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "energy-contracts-v1"
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "result_id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "scenario_id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "object_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1
+          },
+          "binding_status": {
+            "enum": [
+              "bound",
+              "unbound"
+            ]
+          },
+          "unbound_reason": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1
+          },
+          "timestamp": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "hour_index": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "data_kind": {
+            "enum": [
+              "synthetic",
+              "planning",
+              "computed",
+              "measured",
+              "unknown"
+            ]
+          },
+          "status": {
+            "enum": [
+              "available",
+              "missing_inputs"
+            ]
+          },
+          "input_sha256": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "parameters_sha256": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "metrics": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "metric": {
+                  "enum": [
+                    "heat_delivered",
+                    "storage_energy",
+                    "supply_temperature"
+                  ]
+                },
+                "value": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "unit": {
+                  "enum": [
+                    "MW",
+                    "MWh",
+                    "degC"
+                  ]
+                }
+              },
+              "required": [
+                "metric",
+                "value",
+                "unit"
+              ]
+            },
+            "minItems": 1
+          },
+          "source_ids": {
+            "type": "array",
+            "items": {
+              "$ref": "common.schema.json#/$defs/id"
+            },
+            "minItems": 1
+          }
+        },
+        "required": [
+          "result_id",
+          "scenario_id",
+          "object_id",
+          "binding_status",
+          "unbound_reason",
+          "timestamp",
+          "hour_index",
+          "data_kind",
+          "status",
+          "input_sha256",
+          "parameters_sha256",
+          "metrics",
+          "source_ids"
+        ],
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "binding_status": {
+                  "const": "bound"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "object_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "unbound_reason": {
+                  "type": "null"
+                }
+              }
+            },
+            "else": {
+              "properties": {
+                "object_id": {
+                  "type": "null"
+                },
+                "unbound_reason": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          },
+          {
+            "anyOf": [
+              {
+                "properties": {
+                  "timestamp": {
+                    "type": "string"
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "hour_index": {
+                    "type": "integer"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "if": {
+              "properties": {
+                "status": {
+                  "const": "available"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "input_sha256": {
+                  "type": "string"
+                },
+                "parameters_sha256": {
+                  "type": "string"
+                },
+                "data_kind": {
+                  "not": {
+                    "const": "unknown"
+                  }
+                },
+                "metrics": {
+                  "items": {
+                    "properties": {
+                      "value": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "else": {
+              "properties": {
+                "data_kind": {
+                  "const": "unknown"
+                },
+                "metrics": {
+                  "items": {
+                    "properties": {
+                      "value": {
+                        "type": "null"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "results"
+  ]
+}

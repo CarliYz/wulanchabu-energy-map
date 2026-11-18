@@ -1,0 +1,320 @@
+{
+  "revision": "facilities-runtime-v1",
+  "source_export": "web/map-viewer/assets/facilities-v1/export-receipt.json",
+  "asset_url": "../map-viewer/assets/facilities-v1/facilities.glb",
+  "sha256": "f5f6c93d4abb4a576f5d9904ff2dc8940727625d851366c6f646666e88262aab",
+  "sources": {
+    "data/map-v2/geographic-manifest.json": "5f354e4efa1e83cf53ce705f8cc87b8da2aab2313cab3a9002718126f8796d0d",
+    "docs/UI_DESIGN_PLAN_V2.md": "830f3e92727296831c856cf62d08ca130cf0c9995dc2b17ab8459763c2ea3058"
+  },
+  "objects": [
+    {
+      "object_id": "DC_004",
+      "name": "华为云数据中心",
+      "short_name": "DC1",
+      "group": "dc",
+      "description": "余热候选接口；建筑为体量代理，未取得机房实测与接入协议。",
+      "installation_status": "候选规划 · 位置与接入待核",
+      "planning_area": null,
+      "model_footprint_m2": 41125,
+      "model_root_xyz": [
+        980.7730102539062,
+        158.40359497070312,
+        132.14169311523438
+      ],
+      "model_revision": "geographic-v2-representative",
+      "source": "historical project map/data.py",
+      "gaps": [
+        "未取得设施级独立定位",
+        "尚无实测工况与热潜力结果",
+        "非厂家采购或施工模型"
+      ],
+      "preview_url": "../map-viewer/assets/facilities-v1/DC_004.png",
+      "gltf_root_index": 3205
+    },
+    {
+      "object_id": "DC_005",
+      "name": "阿里巴巴数据中心",
+      "short_name": "DC2",
+      "group": "dc",
+      "description": "余热候选接口；建筑为体量代理，未取得机房实测与接入协议。",
+      "installation_status": "候选规划 · 位置与接入待核",
+      "planning_area": null,
+      "model_footprint_m2": 41125,
+      "model_root_xyz": [
+        1334.3602294921875,
+        -1154.5439453125,
+        126.2979507446289
+      ],
+      "model_revision": "geographic-v2-representative",
+      "source": "historical project map/data.py",
+      "gaps": [
+        "未取得设施级独立定位",
+        "尚无实测工况与热潜力结果",
+        "非厂家采购或施工模型"
+      ],
+      "preview_url": "../map-viewer/assets/facilities-v1/DC_005.png",
+      "gltf_root_index": 3229
+    },
+    {
+      "object_id": "DC_006",
+      "name": "益武堂数据中心组团",
+      "short_name": "DC3",
+      "group": "dc",
+      "description": "算力组团体量代理；源水经隔离换热后供给候选热路。",
+      "installation_status": "候选规划 · 位置与接入待核",
+      "planning_area": null,
+      "model_footprint_m2": 41125,
+      "model_root_xyz": [
+        234.40029907226562,
+        -938.3110961914062,
+        129.32919311523438
+      ],
+      "model_revision": "geographic-v2-representative",
+      "source": "historical project map/data.py",
+      "gaps": [
+        "未取得设施级独立定位",
+        "尚无实测工况与热潜力结果",
+        "非厂家采购或施工模型"
+      ],
+      "preview_url": "../map-viewer/assets/facilities-v1/DC_006.png",
+      "gltf_root_index": 3253
+    },
+    {
+      "object_id": "HUB_011",
+      "name": "CO₂跨临界热泵枢纽",
+      "short_name": "热泵",
+      "group": "energy",
+      "description": "源侧水、站内CO₂制冷剂、用户水分回路；近端隔离直供与远端提温分别规划。CO₂为闭合制冷循环，不向温室输送CO₂气体。",
+      "installation_status": "候选规划 · 位置与接入待核",
+      "planning_area": null,
+      "model_footprint_m2": 31500,
+      "model_root_xyz": [
+        0,
+        0,
+        137.67196655273438
+      ],
+      "model_revision": "geographic-v2-representative",
+      "source": "historical project map/data.py",
+      "gaps": [
+        "未取得设施级独立定位",
+        "尚无实测工况与热潜力结果",
+        "非厂家采购或施工模型"
+      ],
+      "preview_url": "../map-viewer/assets/facilities-v1/HUB_011.png",
+      "gltf_root_index": 3387
+    },
+    {
+      "object_id": "STORE_012",
+      "name": "PTES池式储热",
+      "short_name": "PTES",
+      "group": "energy",
+      "description": "日/周调节的池式储热；半盖剖面为表达示意，规划50万m³并不等于当前几何容量。",
+      "installation_status": "候选规划 · 位置与接入待核",
+      "planning_area": null,
+      "model_footprint_m2": 76800,
+      "model_root_xyz": [
+        -352.02801513671875,
+        602.0391235351562,
+        136.95858764648438
+      ],
+      "model_revision": "geographic-v2-representative",
+      "source": "historical project map/data.py",
+      "gaps": [
+        "未取得设施级独立定位",
+        "尚无实测工况与热潜力结果",
+        "非厂家采购或施工模型"
+      ],
+      "preview_url": "../map-viewer/assets/facilities-v1/STORE_012.png",
+      "gltf_root_index": 3416
+    },
+    {
+      "object_id": "DEMO_013",
+      "name": "独立CO₂冷热与土壤储热科研",
+      "short_name": "A3",
+      "group": "a",
+      "description": "独立5–10MW科研示范，抬升土壤剖面用来展示换热U管，不能读取为实际埋深。",
+      "installation_status": "候选规划 · 位置与接入待核",
+      "planning_area": null,
+      "model_footprint_m2": 20925,
+      "model_root_xyz": [
+        -532.9663696289062,
+        1097.3516845703125,
+        139.96249389648438
+      ],
+      "model_revision": "geographic-v2-representative",
+      "source": "historical project map/data.py",
+      "gaps": [
+        "未取得设施级独立定位",
+        "尚无实测工况与热潜力结果",
+        "非厂家采购或施工模型"
+      ],
+      "preview_url": "../map-viewer/assets/facilities-v1/DEMO_013.png",
+      "gltf_root_index": 3272
+    },
+    {
+      "object_id": "AGRI_014",
+      "name": "种薯组培与原原种温室",
+      "short_name": "A1",
+      "group": "a",
+      "description": "组培楼与原原种温室分设；利用近端低品位热进行环境温控。",
+      "installation_status": "候选规划 · 位置与接入待核",
+      "planning_area": {
+        "min": 50000,
+        "max": 50000,
+        "unit": "m2"
+      },
+      "model_footprint_m2": 46800,
+      "model_root_xyz": [
+        104.9166030883789,
+        835.8801879882812,
+        136.12460327148438
+      ],
+      "model_revision": "geographic-v2-representative",
+      "source": "historical project map/data.py",
+      "gaps": [
+        "未取得设施级独立定位",
+        "尚无实测工况与热潜力结果",
+        "非厂家采购或施工模型"
+      ],
+      "preview_url": "../map-viewer/assets/facilities-v1/AGRI_014.png",
+      "gltf_root_index": 504
+    },
+    {
+      "object_id": "AGRI_015",
+      "name": "工厂化食用菌",
+      "short_name": "A2",
+      "group": "a",
+      "description": "保温菌房、菌架及空气处理设备的代表模型；生产温湿度和能耗待核。",
+      "installation_status": "候选规划 · 位置与接入待核",
+      "planning_area": {
+        "min": 20000,
+        "max": 20000,
+        "unit": "m2"
+      },
+      "model_footprint_m2": 20700,
+      "model_root_xyz": [
+        493.3507995605469,
+        456.9804992675781,
+        134.09677124023438
+      ],
+      "model_revision": "geographic-v2-representative",
+      "source": "historical project map/data.py",
+      "gaps": [
+        "未取得设施级独立定位",
+        "尚无实测工况与热潜力结果",
+        "非厂家采购或施工模型"
+      ],
+      "preview_url": "../map-viewer/assets/facilities-v1/AGRI_015.png",
+      "gltf_root_index": 762
+    },
+    {
+      "object_id": "AGRI_016",
+      "name": "冬季番茄连栋温室",
+      "short_name": "B1",
+      "group": "b",
+      "description": "吊蔓温室与分拣集配建筑；用户水温度、负荷和水力设计仍待核。",
+      "installation_status": "候选规划 · 位置与接入待核",
+      "planning_area": {
+        "min": 200000,
+        "max": 200000,
+        "unit": "m2"
+      },
+      "model_footprint_m2": 55000,
+      "model_root_xyz": [
+        -1997.82177734375,
+        2448.86572265625,
+        150.48739624023438
+      ],
+      "model_revision": "geographic-v2-representative",
+      "source": "historical project map/data.py",
+      "gaps": [
+        "未取得设施级独立定位",
+        "尚无实测工况与热潜力结果",
+        "非厂家采购或施工模型"
+      ],
+      "preview_url": "../map-viewer/assets/facilities-v1/AGRI_016.png",
+      "gltf_root_index": 1936
+    },
+    {
+      "object_id": "AGRI_017",
+      "name": "冬春草莓高架温室",
+      "short_name": "B2",
+      "group": "b",
+      "description": "高架栽培与温室支路代表模型；候选中段接入尚未落实。",
+      "installation_status": "候选规划 · 位置与接入待核",
+      "planning_area": {
+        "min": 50000,
+        "max": 50000,
+        "unit": "m2"
+      },
+      "model_footprint_m2": 29450,
+      "model_root_xyz": [
+        -2360.832763671875,
+        1828.698974609375,
+        143.30136108398438
+      ],
+      "model_revision": "geographic-v2-representative",
+      "source": "historical project map/data.py",
+      "gaps": [
+        "未取得设施级独立定位",
+        "尚无实测工况与热潜力结果",
+        "非厂家采购或施工模型"
+      ],
+      "preview_url": "../map-viewer/assets/facilities-v1/AGRI_017.png",
+      "gltf_root_index": 2532
+    },
+    {
+      "object_id": "AGRI_018",
+      "name": "叶菜水培与冷凉种苗",
+      "short_name": "C1",
+      "group": "c",
+      "description": "两组温室分设热水与营养液循环，板换、泵阀、PLC和测点已补入示意模型；C1原坐标保留，临水疑点待核。",
+      "installation_status": "候选规划 · 位置与接入待核",
+      "planning_area": {
+        "min": 10000,
+        "max": 80000,
+        "unit": "m2"
+      },
+      "model_footprint_m2": 28500,
+      "model_root_xyz": [
+        -3686.23095703125,
+        4350.49658203125,
+        146.38973999023438
+      ],
+      "model_revision": "c1-dual-loop-v1",
+      "source": "historical project map/data.py",
+      "gaps": [
+        "未取得设施级独立定位",
+        "尚无实测工况与热潜力结果",
+        "非厂家采购或施工模型"
+      ],
+      "preview_url": "../map-viewer/assets/facilities-v1/AGRI_018.png",
+      "gltf_root_index": 3181
+    },
+    {
+      "object_id": "DRY_019",
+      "name": "秋季低温烘干中心",
+      "short_name": "C2",
+      "group": "c",
+      "description": "燕麦与脱水蔬菜秋烘；料仓、输送廊道、热风换热器和提温模块。50–55℃热风需另行提温。",
+      "installation_status": "候选规划 · 位置与接入待核",
+      "planning_area": null,
+      "model_footprint_m2": 29450,
+      "model_root_xyz": [
+        -4120.44140625,
+        4895.0869140625,
+        165.29354858398438
+      ],
+      "model_revision": "geographic-v2-representative",
+      "source": "historical project map/data.py",
+      "gaps": [
+        "未取得设施级独立定位",
+        "尚无实测工况与热潜力结果",
+        "非厂家采购或施工模型"
+      ],
+      "preview_url": "../map-viewer/assets/facilities-v1/DRY_019.png",
+      "gltf_root_index": 3307
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "bbox_wgs84": [
+    113.12,
+    40.974,
+    113.29,
+    41.054
+  ],
+  "crs": "EPSG:3857",
+  "osm_zoom": 12,
+  "standard_provider": "osmde",
+  "tile_urls": [
+    "https://tile.openstreetmap.de/12/3335/1534.png",
+    "https://tile.openstreetmap.de/12/3335/1535.png",
+    "https://tile.openstreetmap.de/12/3335/1536.png",
+    "https://tile.openstreetmap.de/12/3336/1534.png",
+    "https://tile.openstreetmap.de/12/3336/1535.png",
+    "https://tile.openstreetmap.de/12/3336/1536.png"
+  ],
+  "standard_tiles_status": "loaded",
+  "files": {
+    "standard-base.png": "f4a2517793c5ef08ea8f82b3e5d35f23a23d2b0c0a26799ae2b6758e0b6ec633",
+    "standard-design-map.png": "345f63d47182b2f7713e83fc24d2a29e23516e343486aa0a46dd84e4df28e8d2",
+    "standard-overlay.svg": "407e501ff631bbad8b0c2c90ed14b9366b702bab98b0f02926e5b4b42b59f6d7",
+    "satellite-base.png": "88252306c547d2794f7735280a0c9cf6440c59527a390816191cb6e32836405c",
+    "satellite-design-map.png": "676fe92b1e1d9568e9d6af6044b76e95264e4f91ca07138af05a34b41105b529",
+    "satellite-overlay.svg": "b413380559fa5400e8c843f24eaff11b4e74a0b76130678f3fef064cc0d0d288",
+    "data-base.png": "1094b002db6d972970ef916703aa5b59f5538d0a1ef43236b9386586fcb45c0a",
+    "data-design-map.png": "e91f4368624016a99fec51b402ec82f1477e2bf73399f9e919feffeb79c57689",
+    "data-overlay.svg": "407e501ff631bbad8b0c2c90ed14b9366b702bab98b0f02926e5b4b42b59f6d7",
+    "map-marks.json": "529367bb02839650ca7fdba35f5f109b7ec8c933c07f4d57bb146d38f77fd1e6"
+  },
+  "facility_identity": "candidate_unverified",
+  "data_layer": "DEM elevation, no inferred thermal potential",
+  "purpose": "Figma design backgrounds; not registration or interactive product acceptance",
+  "input_sha256": {
+    "data/map-v2/geographic-manifest.json": "5f354e4efa1e83cf53ce705f8cc87b8da2aab2313cab3a9002718126f8796d0d",
+    "data/map-v2/zones-and-assets.json": "fd78bf5089e43343cbc4177019e9f8c5c37f05df848a5eab5d930755655a307a",
+    "data/map-v2/routes.json": "b1f5544c37c4b574913a6fed18709b9382dbc98ddb0acfb6c5112d53c22fba83",
+    "data/contracts/coordinate-contract.json": "f6228cc10fc206fdd5c06ebd92f68ffe921084b390a1771ceada6bf2ad7a9261",
+    "outputs/map-v2/satellite-utm49n.jpg": "ad0da8f798ff59b79ea5187ae285ad4fda810d1e63dd07b70ac6f55d90944e16",
+    "outputs/map-v2/terrain-utm49n.tif": "6bc7620c53f65beb67befb5759cc63e231417b68d510bcaa4a000e41e6ab4f78"
+  },
+  "transform": {
+    "recipe": "local UTM grid -> EPSG:3857 image pixels; no 3D registration",
+    "origin_utm_egm2008_m": [
+      687361.2359406124,
+      4540425.231254176,
+      1200.0
+    ],
+    "blender_to_glb_matrix_row_major": [
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "vertical_reference": "EGM2008 orthometric; not ellipsoid height",
+    "independent_registration_status": "not_run"
+  }
+}

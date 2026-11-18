@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://energy.local/contracts/connections.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "energy-contracts-v1"
+    },
+    "connections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "connection_id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "from_port_id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "to_port_id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "phase": {
+            "$ref": "common.schema.json#/$defs/phase"
+          },
+          "design_status": {
+            "enum": [
+              "proposed",
+              "verified"
+            ]
+          },
+          "model_status": {
+            "enum": [
+              "not_built",
+              "gap",
+              "connected_verified"
+            ]
+          },
+          "source_ids": {
+            "type": "array",
+            "items": {
+              "$ref": "common.schema.json#/$defs/id"
+            },
+            "minItems": 1
+          }
+        },
+        "required": [
+          "connection_id",
+          "from_port_id",
+          "to_port_id",
+          "phase",
+          "design_status",
+          "model_status",
+          "source_ids"
+        ]
+      }
+    },
+    "energy_transfers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "transfer_id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "object_id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "from_circuit_id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "to_circuit_id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "kind": {
+            "const": "heat_transfer_no_mass_flow"
+          },
+          "power_kw": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "source_ids": {
+            "type": "array",
+            "items": {
+              "$ref": "common.schema.json#/$defs/id"
+            },
+            "minItems": 1
+          }
+        },
+        "required": [
+          "transfer_id",
+          "object_id",
+          "from_circuit_id",
+          "to_circuit_id",
+          "kind",
+          "power_kw",
+          "source_ids"
+        ]
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "connections",
+    "energy_transfers"
+  ]
+}

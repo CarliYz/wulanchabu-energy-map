@@ -1,0 +1,556 @@
+{
+  "schema_version": "energy-contracts-v1",
+  "sources": {
+    "PLAN": {
+      "path": "docs/ARCHITECTURE.md",
+      "locator": "公开业务合同：C1热水/营养液隔离、CO2站内循环与候选状态",
+      "nature": "planning",
+      "sha256": "59f915586bb4f8feebcd9f38ce09d9ea615effc8278200896b5b742c4f7f5b2c"
+    },
+    "GEO": {
+      "path": "data/map-v2/geographic-manifest.json",
+      "locator": "features: AGRI_018/HUB_011/STORE_012",
+      "nature": "schematic",
+      "sha256": "5f354e4efa1e83cf53ce705f8cc87b8da2aab2313cab3a9002718126f8796d0d"
+    },
+    "AUDIT": {
+      "path": "qc/c-zone-audit-before.json",
+      "locator": "内存模型快照，非磁盘/现场验收",
+      "nature": "model_audit",
+      "sha256": "80dc3c868cf1187b6fb1789601d40d7c5231f62ec8ae426f1d453aab6a4c9936"
+    },
+    "LEGACY": {
+      "path": "web/map-viewer/assets/analysis-results.json",
+      "locator": "48行无object_id教学结果",
+      "nature": "synthetic",
+      "sha256": "e5819a31bb537a41b357bfccf960240bb918c4c0abea76c648a8705bd98cd603"
+    }
+  },
+  "objects": [
+    {
+      "object_id": "AGRI_018",
+      "asset_id": null,
+      "parent_id": null,
+      "name": "C1 叶菜水培与冷凉种苗",
+      "kind": "facility",
+      "phase": "future_candidate",
+      "installation_status": "candidate_unverified",
+      "model_status": "existing_schematic",
+      "position": {
+        "space": "local_utm_z_up",
+        "xyz_m": [
+          -3686.2309,
+          4350.4964,
+          141.5281
+        ],
+        "status": "schematic"
+      },
+      "planning_area": {
+        "min": 10000,
+        "max": 80000,
+        "unit": "m2"
+      },
+      "model_footprint_m2": 28500,
+      "focus_bounds": null,
+      "source_ids": [
+        "PLAN",
+        "GEO",
+        "AUDIT"
+      ],
+      "gaps": [
+        "位置及投运待核",
+        "两组温室支管及循环控制设备待补模"
+      ]
+    },
+    {
+      "object_id": "AGRI_018_HX",
+      "asset_id": null,
+      "parent_id": "AGRI_018",
+      "name": "隔离板换",
+      "kind": "heat_exchanger",
+      "phase": "future_candidate",
+      "installation_status": "candidate_unverified",
+      "model_status": "missing",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "focus_bounds": null,
+      "source_ids": [
+        "PLAN"
+      ],
+      "gaps": [
+        "模型及几何端口待验证"
+      ]
+    },
+    {
+      "object_id": "AGRI_018_PUMP",
+      "asset_id": null,
+      "parent_id": "AGRI_018",
+      "name": "二次热水泵",
+      "kind": "pump",
+      "phase": "future_candidate",
+      "installation_status": "candidate_unverified",
+      "model_status": "missing",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "focus_bounds": null,
+      "source_ids": [
+        "PLAN"
+      ],
+      "gaps": [
+        "模型及几何端口待验证"
+      ]
+    },
+    {
+      "object_id": "AGRI_018_VALVE",
+      "asset_id": null,
+      "parent_id": "AGRI_018",
+      "name": "混水调节阀",
+      "kind": "valve",
+      "phase": "future_candidate",
+      "installation_status": "candidate_unverified",
+      "model_status": "missing",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "focus_bounds": null,
+      "source_ids": [
+        "PLAN"
+      ],
+      "gaps": [
+        "模型及几何端口待验证"
+      ]
+    },
+    {
+      "object_id": "AGRI_018_HEADER",
+      "asset_id": null,
+      "parent_id": "AGRI_018",
+      "name": "供回分集水器",
+      "kind": "manifold",
+      "phase": "future_candidate",
+      "installation_status": "candidate_unverified",
+      "model_status": "missing",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "focus_bounds": null,
+      "source_ids": [
+        "PLAN"
+      ],
+      "gaps": [
+        "模型及几何端口待验证"
+      ]
+    },
+    {
+      "object_id": "AGRI_018_GH1",
+      "asset_id": null,
+      "parent_id": "AGRI_018",
+      "name": "第一组温室",
+      "kind": "greenhouse",
+      "phase": "future_candidate",
+      "installation_status": "candidate_unverified",
+      "model_status": "missing",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "focus_bounds": null,
+      "source_ids": [
+        "PLAN"
+      ],
+      "gaps": [
+        "模型及几何端口待验证"
+      ]
+    },
+    {
+      "object_id": "AGRI_018_GH2",
+      "asset_id": null,
+      "parent_id": "AGRI_018",
+      "name": "第二组温室",
+      "kind": "greenhouse",
+      "phase": "future_candidate",
+      "installation_status": "candidate_unverified",
+      "model_status": "missing",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "focus_bounds": null,
+      "source_ids": [
+        "PLAN"
+      ],
+      "gaps": [
+        "模型及几何端口待验证"
+      ]
+    },
+    {
+      "object_id": "AGRI_018_TANK",
+      "asset_id": null,
+      "parent_id": "AGRI_018",
+      "name": "营养液箱",
+      "kind": "tank",
+      "phase": "future_candidate",
+      "installation_status": "candidate_unverified",
+      "model_status": "missing",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "focus_bounds": null,
+      "source_ids": [
+        "PLAN"
+      ],
+      "gaps": [
+        "模型及几何端口待验证"
+      ]
+    },
+    {
+      "object_id": "AGRI_018_NPUMP",
+      "asset_id": null,
+      "parent_id": "AGRI_018",
+      "name": "营养液专用泵",
+      "kind": "pump",
+      "phase": "future_candidate",
+      "installation_status": "candidate_unverified",
+      "model_status": "missing",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "focus_bounds": null,
+      "source_ids": [
+        "PLAN"
+      ],
+      "gaps": [
+        "模型及几何端口待验证"
+      ]
+    },
+    {
+      "object_id": "AGRI_018_NHEADER",
+      "asset_id": null,
+      "parent_id": "AGRI_018",
+      "name": "营养液分配回收集管",
+      "kind": "manifold",
+      "phase": "future_candidate",
+      "installation_status": "candidate_unverified",
+      "model_status": "missing",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "focus_bounds": null,
+      "source_ids": [
+        "PLAN"
+      ],
+      "gaps": [
+        "模型及几何端口待验证"
+      ]
+    },
+    {
+      "object_id": "AGRI_018_SENSOR",
+      "asset_id": null,
+      "parent_id": "AGRI_018",
+      "name": "温度流量测点",
+      "kind": "sensor",
+      "phase": "future_candidate",
+      "installation_status": "candidate_unverified",
+      "model_status": "missing",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "focus_bounds": null,
+      "source_ids": [
+        "PLAN"
+      ],
+      "gaps": [
+        "模型及几何端口待验证"
+      ]
+    },
+    {
+      "object_id": "AGRI_018_CTRL",
+      "asset_id": null,
+      "parent_id": "AGRI_018",
+      "name": "控制柜",
+      "kind": "controller",
+      "phase": "future_candidate",
+      "installation_status": "candidate_unverified",
+      "model_status": "missing",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "focus_bounds": null,
+      "source_ids": [
+        "PLAN"
+      ],
+      "gaps": [
+        "模型及几何端口待验证"
+      ]
+    },
+    {
+      "object_id": "HUB_011",
+      "asset_id": null,
+      "parent_id": null,
+      "name": "CO2 跨临界热泵枢纽站",
+      "kind": "hub",
+      "phase": "p2_candidate",
+      "installation_status": "candidate_unverified",
+      "model_status": "existing_schematic",
+      "position": {
+        "space": "local_utm_z_up",
+        "xyz_m": [
+          0.0,
+          0.0,
+          134.3546
+        ],
+        "status": "schematic"
+      },
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "focus_bounds": null,
+      "source_ids": [
+        "PLAN",
+        "GEO"
+      ],
+      "gaps": [
+        "位置及投运待核"
+      ]
+    },
+    {
+      "object_id": "HUB_011_EVAP",
+      "asset_id": null,
+      "parent_id": "HUB_011",
+      "name": "源侧换热器",
+      "kind": "heat_pump_equipment",
+      "phase": "p2_candidate",
+      "installation_status": "candidate_unverified",
+      "model_status": "missing",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "focus_bounds": null,
+      "source_ids": [
+        "PLAN"
+      ],
+      "gaps": [
+        "模型及几何端口待验证"
+      ]
+    },
+    {
+      "object_id": "HUB_011_COMP",
+      "asset_id": null,
+      "parent_id": "HUB_011",
+      "name": "CO2压缩机",
+      "kind": "heat_pump_equipment",
+      "phase": "p2_candidate",
+      "installation_status": "candidate_unverified",
+      "model_status": "missing",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "focus_bounds": null,
+      "source_ids": [
+        "PLAN"
+      ],
+      "gaps": [
+        "模型及几何端口待验证"
+      ]
+    },
+    {
+      "object_id": "HUB_011_GAS",
+      "asset_id": null,
+      "parent_id": "HUB_011",
+      "name": "用户侧气冷器",
+      "kind": "heat_pump_equipment",
+      "phase": "p2_candidate",
+      "installation_status": "candidate_unverified",
+      "model_status": "missing",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "focus_bounds": null,
+      "source_ids": [
+        "PLAN"
+      ],
+      "gaps": [
+        "模型及几何端口待验证"
+      ]
+    },
+    {
+      "object_id": "HUB_011_EXP",
+      "asset_id": null,
+      "parent_id": "HUB_011",
+      "name": "节流阀",
+      "kind": "heat_pump_equipment",
+      "phase": "p2_candidate",
+      "installation_status": "candidate_unverified",
+      "model_status": "missing",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "focus_bounds": null,
+      "source_ids": [
+        "PLAN"
+      ],
+      "gaps": [
+        "模型及几何端口待验证"
+      ]
+    },
+    {
+      "object_id": "HUB_011_WATER",
+      "asset_id": null,
+      "parent_id": "HUB_011",
+      "name": "用户侧供回集管",
+      "kind": "heat_pump_equipment",
+      "phase": "p2_candidate",
+      "installation_status": "candidate_unverified",
+      "model_status": "missing",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "focus_bounds": null,
+      "source_ids": [
+        "PLAN"
+      ],
+      "gaps": [
+        "模型及几何端口待验证"
+      ]
+    },
+    {
+      "object_id": "STORE_012",
+      "asset_id": null,
+      "parent_id": null,
+      "name": "PTES 日周调节热库",
+      "kind": "storage",
+      "phase": "p2_candidate",
+      "installation_status": "candidate_unverified",
+      "model_status": "existing_schematic",
+      "position": {
+        "space": "local_utm_z_up",
+        "xyz_m": [
+          -352.028,
+          602.0391,
+          135.1245
+        ],
+        "status": "schematic"
+      },
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "focus_bounds": null,
+      "source_ids": [
+        "PLAN",
+        "GEO"
+      ],
+      "gaps": [
+        "位置及投运待核"
+      ]
+    },
+    {
+      "object_id": "CONCEPT_SOURCE",
+      "asset_id": null,
+      "parent_id": null,
+      "name": "未绑定具名机房的概念源",
+      "kind": "concept_source",
+      "phase": "concept",
+      "installation_status": "candidate_unverified",
+      "model_status": "missing",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "focus_bounds": null,
+      "source_ids": [
+        "PLAN"
+      ],
+      "gaps": [
+        "模型及几何端口待验证"
+      ]
+    },
+    {
+      "object_id": "DEMO_USER",
+      "asset_id": null,
+      "parent_id": null,
+      "name": "独立教学用户",
+      "kind": "demo",
+      "phase": "concept",
+      "installation_status": "candidate_unverified",
+      "model_status": "missing",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "focus_bounds": null,
+      "source_ids": [
+        "PLAN"
+      ],
+      "gaps": [
+        "模型及几何端口待验证"
+      ]
+    }
+  ]
+}

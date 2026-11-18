@@ -1,0 +1,9 @@
+# Portable registration template. Supply ENERGY_PROJECT_ROOT in the parent environment.
+# This file does not load itself into Codex or change the registered local server.
+[mcp_servers.energy_e2e]
+command = "sh"
+args = ["-c", 'root=${ENERGY_PROJECT_ROOT:?Set ENERGY_PROJECT_ROOT to the repository directory}; exec node "$root/qa/agent-e2e/node_modules/e2e/dist/cli/bin.js" mcp --config "$root/qa/agent-e2e/e2e.config.js"']
+env_vars = ["ENERGY_PROJECT_ROOT"]
+
+[mcp_servers.energy_e2e.env]
+E2E_TELEMETRY_DISABLED = "1"

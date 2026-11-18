@@ -1,0 +1,1035 @@
+{
+  "schema_version": "energy-contracts-v1",
+  "circuits": [
+    {
+      "circuit_id": "SOURCE",
+      "medium": "water",
+      "scope_object_id": "HUB_011",
+      "purpose": "概念源侧水"
+    },
+    {
+      "circuit_id": "CO2",
+      "medium": "co2",
+      "scope_object_id": "HUB_011",
+      "purpose": "站内制冷剂"
+    },
+    {
+      "circuit_id": "USER",
+      "medium": "water",
+      "scope_object_id": "HUB_011",
+      "purpose": "候选用户侧及PTES支路"
+    },
+    {
+      "circuit_id": "C1_HEAT",
+      "medium": "water",
+      "scope_object_id": "AGRI_018",
+      "purpose": "隔离后二次热水"
+    },
+    {
+      "circuit_id": "C1_NUTRIENT",
+      "medium": "nutrient",
+      "scope_object_id": "AGRI_018",
+      "purpose": "独立营养液"
+    },
+    {
+      "circuit_id": "C1_CONTROL",
+      "medium": "signal",
+      "scope_object_id": "AGRI_018",
+      "purpose": "监测执行信号"
+    }
+  ],
+  "ports": [
+    {
+      "port_id": "CONCEPT_SOURCE:SOURCE:out:flow",
+      "object_id": "CONCEPT_SOURCE",
+      "circuit_id": "SOURCE",
+      "medium": "water",
+      "direction": "out",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "HUB_011_EVAP:SOURCE:in:flow",
+      "object_id": "HUB_011_EVAP",
+      "circuit_id": "SOURCE",
+      "medium": "water",
+      "direction": "in",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "HUB_011_EVAP:SOURCE:out:flow",
+      "object_id": "HUB_011_EVAP",
+      "circuit_id": "SOURCE",
+      "medium": "water",
+      "direction": "out",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "CONCEPT_SOURCE:SOURCE:in:flow",
+      "object_id": "CONCEPT_SOURCE",
+      "circuit_id": "SOURCE",
+      "medium": "water",
+      "direction": "in",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "HUB_011_EVAP:CO2:out:flow",
+      "object_id": "HUB_011_EVAP",
+      "circuit_id": "CO2",
+      "medium": "co2",
+      "direction": "out",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "HUB_011_COMP:CO2:in:flow",
+      "object_id": "HUB_011_COMP",
+      "circuit_id": "CO2",
+      "medium": "co2",
+      "direction": "in",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "HUB_011_COMP:CO2:out:flow",
+      "object_id": "HUB_011_COMP",
+      "circuit_id": "CO2",
+      "medium": "co2",
+      "direction": "out",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "HUB_011_GAS:CO2:in:flow",
+      "object_id": "HUB_011_GAS",
+      "circuit_id": "CO2",
+      "medium": "co2",
+      "direction": "in",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "HUB_011_GAS:CO2:out:flow",
+      "object_id": "HUB_011_GAS",
+      "circuit_id": "CO2",
+      "medium": "co2",
+      "direction": "out",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "HUB_011_EXP:CO2:in:flow",
+      "object_id": "HUB_011_EXP",
+      "circuit_id": "CO2",
+      "medium": "co2",
+      "direction": "in",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "HUB_011_EXP:CO2:out:flow",
+      "object_id": "HUB_011_EXP",
+      "circuit_id": "CO2",
+      "medium": "co2",
+      "direction": "out",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "HUB_011_EVAP:CO2:in:flow",
+      "object_id": "HUB_011_EVAP",
+      "circuit_id": "CO2",
+      "medium": "co2",
+      "direction": "in",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "HUB_011_GAS:USER:out:flow",
+      "object_id": "HUB_011_GAS",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "out",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "HUB_011_WATER:USER:in:flow",
+      "object_id": "HUB_011_WATER",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "in",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "HUB_011_WATER:USER:out:flow",
+      "object_id": "HUB_011_WATER",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "out",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "AGRI_018_HX:USER:in:flow",
+      "object_id": "AGRI_018_HX",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "in",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "AGRI_018_HX:USER:out:flow",
+      "object_id": "AGRI_018_HX",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "out",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "HUB_011_GAS:USER:in:flow",
+      "object_id": "HUB_011_GAS",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "in",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "HUB_011_WATER:USER:out:charge",
+      "object_id": "HUB_011_WATER",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "out",
+      "role": "charge",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "STORE_012:USER:in:charge",
+      "object_id": "STORE_012",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "in",
+      "role": "charge",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "STORE_012:USER:out:charge_return",
+      "object_id": "STORE_012",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "out",
+      "role": "charge_return",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "HUB_011_WATER:USER:in:charge_return",
+      "object_id": "HUB_011_WATER",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "in",
+      "role": "charge_return",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "STORE_012:USER:out:discharge",
+      "object_id": "STORE_012",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "out",
+      "role": "discharge",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "HUB_011_WATER:USER:in:discharge",
+      "object_id": "HUB_011_WATER",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "in",
+      "role": "discharge",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "HUB_011_WATER:USER:out:discharge_return",
+      "object_id": "HUB_011_WATER",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "out",
+      "role": "discharge_return",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "STORE_012:USER:in:discharge_return",
+      "object_id": "STORE_012",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "in",
+      "role": "discharge_return",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "AGRI_018_HX:C1_HEAT:out:flow",
+      "object_id": "AGRI_018_HX",
+      "circuit_id": "C1_HEAT",
+      "medium": "water",
+      "direction": "out",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "AGRI_018_PUMP:C1_HEAT:in:flow",
+      "object_id": "AGRI_018_PUMP",
+      "circuit_id": "C1_HEAT",
+      "medium": "water",
+      "direction": "in",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "AGRI_018_PUMP:C1_HEAT:out:flow",
+      "object_id": "AGRI_018_PUMP",
+      "circuit_id": "C1_HEAT",
+      "medium": "water",
+      "direction": "out",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "AGRI_018_VALVE:C1_HEAT:in:flow",
+      "object_id": "AGRI_018_VALVE",
+      "circuit_id": "C1_HEAT",
+      "medium": "water",
+      "direction": "in",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "AGRI_018_VALVE:C1_HEAT:out:flow",
+      "object_id": "AGRI_018_VALVE",
+      "circuit_id": "C1_HEAT",
+      "medium": "water",
+      "direction": "out",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "AGRI_018_HEADER:C1_HEAT:in:flow",
+      "object_id": "AGRI_018_HEADER",
+      "circuit_id": "C1_HEAT",
+      "medium": "water",
+      "direction": "in",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "AGRI_018_HEADER:C1_HEAT:out:flow",
+      "object_id": "AGRI_018_HEADER",
+      "circuit_id": "C1_HEAT",
+      "medium": "water",
+      "direction": "out",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "AGRI_018_HX:C1_HEAT:in:flow",
+      "object_id": "AGRI_018_HX",
+      "circuit_id": "C1_HEAT",
+      "medium": "water",
+      "direction": "in",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "AGRI_018_HEADER:C1_HEAT:out:AGRI_018_GH1_supply",
+      "object_id": "AGRI_018_HEADER",
+      "circuit_id": "C1_HEAT",
+      "medium": "water",
+      "direction": "out",
+      "role": "AGRI_018_GH1_supply",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "AGRI_018_GH1:C1_HEAT:in:AGRI_018_GH1_supply",
+      "object_id": "AGRI_018_GH1",
+      "circuit_id": "C1_HEAT",
+      "medium": "water",
+      "direction": "in",
+      "role": "AGRI_018_GH1_supply",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "AGRI_018_GH1:C1_HEAT:out:AGRI_018_GH1_return",
+      "object_id": "AGRI_018_GH1",
+      "circuit_id": "C1_HEAT",
+      "medium": "water",
+      "direction": "out",
+      "role": "AGRI_018_GH1_return",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "AGRI_018_HEADER:C1_HEAT:in:AGRI_018_GH1_return",
+      "object_id": "AGRI_018_HEADER",
+      "circuit_id": "C1_HEAT",
+      "medium": "water",
+      "direction": "in",
+      "role": "AGRI_018_GH1_return",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "AGRI_018_HEADER:C1_HEAT:out:AGRI_018_GH2_supply",
+      "object_id": "AGRI_018_HEADER",
+      "circuit_id": "C1_HEAT",
+      "medium": "water",
+      "direction": "out",
+      "role": "AGRI_018_GH2_supply",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "AGRI_018_GH2:C1_HEAT:in:AGRI_018_GH2_supply",
+      "object_id": "AGRI_018_GH2",
+      "circuit_id": "C1_HEAT",
+      "medium": "water",
+      "direction": "in",
+      "role": "AGRI_018_GH2_supply",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "AGRI_018_GH2:C1_HEAT:out:AGRI_018_GH2_return",
+      "object_id": "AGRI_018_GH2",
+      "circuit_id": "C1_HEAT",
+      "medium": "water",
+      "direction": "out",
+      "role": "AGRI_018_GH2_return",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "AGRI_018_HEADER:C1_HEAT:in:AGRI_018_GH2_return",
+      "object_id": "AGRI_018_HEADER",
+      "circuit_id": "C1_HEAT",
+      "medium": "water",
+      "direction": "in",
+      "role": "AGRI_018_GH2_return",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "AGRI_018_TANK:C1_NUTRIENT:out:flow",
+      "object_id": "AGRI_018_TANK",
+      "circuit_id": "C1_NUTRIENT",
+      "medium": "nutrient",
+      "direction": "out",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "AGRI_018_NPUMP:C1_NUTRIENT:in:flow",
+      "object_id": "AGRI_018_NPUMP",
+      "circuit_id": "C1_NUTRIENT",
+      "medium": "nutrient",
+      "direction": "in",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "AGRI_018_NPUMP:C1_NUTRIENT:out:flow",
+      "object_id": "AGRI_018_NPUMP",
+      "circuit_id": "C1_NUTRIENT",
+      "medium": "nutrient",
+      "direction": "out",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "AGRI_018_NHEADER:C1_NUTRIENT:in:flow",
+      "object_id": "AGRI_018_NHEADER",
+      "circuit_id": "C1_NUTRIENT",
+      "medium": "nutrient",
+      "direction": "in",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "AGRI_018_NHEADER:C1_NUTRIENT:out:flow",
+      "object_id": "AGRI_018_NHEADER",
+      "circuit_id": "C1_NUTRIENT",
+      "medium": "nutrient",
+      "direction": "out",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "AGRI_018_TANK:C1_NUTRIENT:in:flow",
+      "object_id": "AGRI_018_TANK",
+      "circuit_id": "C1_NUTRIENT",
+      "medium": "nutrient",
+      "direction": "in",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "AGRI_018_NHEADER:C1_NUTRIENT:out:AGRI_018_GH1_supply",
+      "object_id": "AGRI_018_NHEADER",
+      "circuit_id": "C1_NUTRIENT",
+      "medium": "nutrient",
+      "direction": "out",
+      "role": "AGRI_018_GH1_supply",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "AGRI_018_GH1:C1_NUTRIENT:in:AGRI_018_GH1_supply",
+      "object_id": "AGRI_018_GH1",
+      "circuit_id": "C1_NUTRIENT",
+      "medium": "nutrient",
+      "direction": "in",
+      "role": "AGRI_018_GH1_supply",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "AGRI_018_GH1:C1_NUTRIENT:out:AGRI_018_GH1_return",
+      "object_id": "AGRI_018_GH1",
+      "circuit_id": "C1_NUTRIENT",
+      "medium": "nutrient",
+      "direction": "out",
+      "role": "AGRI_018_GH1_return",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "AGRI_018_NHEADER:C1_NUTRIENT:in:AGRI_018_GH1_return",
+      "object_id": "AGRI_018_NHEADER",
+      "circuit_id": "C1_NUTRIENT",
+      "medium": "nutrient",
+      "direction": "in",
+      "role": "AGRI_018_GH1_return",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "AGRI_018_NHEADER:C1_NUTRIENT:out:AGRI_018_GH2_supply",
+      "object_id": "AGRI_018_NHEADER",
+      "circuit_id": "C1_NUTRIENT",
+      "medium": "nutrient",
+      "direction": "out",
+      "role": "AGRI_018_GH2_supply",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "AGRI_018_GH2:C1_NUTRIENT:in:AGRI_018_GH2_supply",
+      "object_id": "AGRI_018_GH2",
+      "circuit_id": "C1_NUTRIENT",
+      "medium": "nutrient",
+      "direction": "in",
+      "role": "AGRI_018_GH2_supply",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "AGRI_018_GH2:C1_NUTRIENT:out:AGRI_018_GH2_return",
+      "object_id": "AGRI_018_GH2",
+      "circuit_id": "C1_NUTRIENT",
+      "medium": "nutrient",
+      "direction": "out",
+      "role": "AGRI_018_GH2_return",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "AGRI_018_NHEADER:C1_NUTRIENT:in:AGRI_018_GH2_return",
+      "object_id": "AGRI_018_NHEADER",
+      "circuit_id": "C1_NUTRIENT",
+      "medium": "nutrient",
+      "direction": "in",
+      "role": "AGRI_018_GH2_return",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "AGRI_018_SENSOR:C1_CONTROL:out:measurement",
+      "object_id": "AGRI_018_SENSOR",
+      "circuit_id": "C1_CONTROL",
+      "medium": "signal",
+      "direction": "out",
+      "role": "measurement",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "AGRI_018_CTRL:C1_CONTROL:in:measurement",
+      "object_id": "AGRI_018_CTRL",
+      "circuit_id": "C1_CONTROL",
+      "medium": "signal",
+      "direction": "in",
+      "role": "measurement",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "AGRI_018_CTRL:C1_CONTROL:out:command",
+      "object_id": "AGRI_018_CTRL",
+      "circuit_id": "C1_CONTROL",
+      "medium": "signal",
+      "direction": "out",
+      "role": "command",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "AGRI_018_PUMP:C1_CONTROL:in:command",
+      "object_id": "AGRI_018_PUMP",
+      "circuit_id": "C1_CONTROL",
+      "medium": "signal",
+      "direction": "in",
+      "role": "command",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "AGRI_018_VALVE:C1_CONTROL:in:command",
+      "object_id": "AGRI_018_VALVE",
+      "circuit_id": "C1_CONTROL",
+      "medium": "signal",
+      "direction": "in",
+      "role": "command",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "AGRI_018_NPUMP:C1_CONTROL:in:command",
+      "object_id": "AGRI_018_NPUMP",
+      "circuit_id": "C1_CONTROL",
+      "medium": "signal",
+      "direction": "in",
+      "role": "command",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": null,
+        "status": "unknown"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    }
+  ]
+}

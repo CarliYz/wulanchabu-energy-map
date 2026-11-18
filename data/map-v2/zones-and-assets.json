@@ -1,0 +1,214 @@
+{
+  "revision": "map-design-v2",
+  "basis": "report section 4.3 table 6 and original seed GeoJSON",
+  "zones": [
+    {
+      "zone_id": "ZONE_AGRIA",
+      "name": "A近端0-3km",
+      "asset_ids": [
+        "AGRI_014",
+        "AGRI_015",
+        "DEMO_013"
+      ],
+      "asset_types": [
+        "potato_tissue_culture_and_greenhouse",
+        "mushroom_insulated_house",
+        "independent_CO2_and_ground_storage_research"
+      ],
+      "phase": "P1_candidate_except_independent_research",
+      "source_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              113.214,
+              40.996
+            ],
+            [
+              113.236,
+              40.996
+            ],
+            [
+              113.236,
+              41.0065
+            ],
+            [
+              113.214,
+              41.0065
+            ],
+            [
+              113.214,
+              40.996
+            ]
+          ]
+        ]
+      },
+      "source_geometry_status": "schematic_unverified_not_cadastral",
+      "assets": [
+        {
+          "object_id": "AGRI_014",
+          "source_geometry": {
+            "type": "Point",
+            "coordinates": [
+              113.229,
+              41.001
+            ]
+          },
+          "status": "candidate_unverified"
+        },
+        {
+          "object_id": "AGRI_015",
+          "source_geometry": {
+            "type": "Point",
+            "coordinates": [
+              113.2335,
+              40.9975
+            ]
+          },
+          "status": "candidate_unverified"
+        },
+        {
+          "object_id": "DEMO_013",
+          "source_geometry": {
+            "type": "Point",
+            "coordinates": [
+              113.2215,
+              41.0035
+            ]
+          },
+          "status": "candidate_unverified"
+        }
+      ]
+    },
+    {
+      "zone_id": "ZONE_AGRIB",
+      "name": "B中段3-7km",
+      "asset_ids": [
+        "AGRI_016",
+        "AGRI_017"
+      ],
+      "asset_types": [
+        "tomato_multispan_greenhouse",
+        "strawberry_bench_greenhouse"
+      ],
+      "phase": "P2_candidate",
+      "source_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              113.193,
+              41.007
+            ],
+            [
+              113.214,
+              41.007
+            ],
+            [
+              113.214,
+              41.022
+            ],
+            [
+              113.193,
+              41.022
+            ],
+            [
+              113.193,
+              41.007
+            ]
+          ]
+        ]
+      },
+      "source_geometry_status": "schematic_unverified_not_cadastral",
+      "assets": [
+        {
+          "object_id": "AGRI_016",
+          "source_geometry": {
+            "type": "Point",
+            "coordinates": [
+              113.2045,
+              41.016
+            ]
+          },
+          "status": "candidate_unverified"
+        },
+        {
+          "object_id": "AGRI_017",
+          "source_geometry": {
+            "type": "Point",
+            "coordinates": [
+              113.2,
+              41.0105
+            ]
+          },
+          "status": "candidate_unverified"
+        }
+      ]
+    },
+    {
+      "zone_id": "ZONE_AGRIC",
+      "name": "C近城7-11km",
+      "asset_ids": [
+        "AGRI_018",
+        "DRY_019"
+      ],
+      "asset_types": [
+        "hydroponic_leaf_and_seedling",
+        "oat_and_vegetable_drying_workshop"
+      ],
+      "phase": "future_candidate_not_P1_connected",
+      "source_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              113.17,
+              41.028
+            ],
+            [
+              113.192,
+              41.028
+            ],
+            [
+              113.192,
+              41.042
+            ],
+            [
+              113.17,
+              41.042
+            ],
+            [
+              113.17,
+              41.028
+            ]
+          ]
+        ]
+      },
+      "source_geometry_status": "schematic_unverified_not_cadastral",
+      "assets": [
+        {
+          "object_id": "AGRI_018",
+          "source_geometry": {
+            "type": "Point",
+            "coordinates": [
+              113.185,
+              41.0335
+            ]
+          },
+          "status": "candidate_unverified"
+        },
+        {
+          "object_id": "DRY_019",
+          "source_geometry": {
+            "type": "Point",
+            "coordinates": [
+              113.18,
+              41.0385
+            ]
+          },
+          "status": "candidate_unverified"
+        }
+      ]
+    }
+  ]
+}

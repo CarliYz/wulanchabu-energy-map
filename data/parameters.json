@@ -1,0 +1,10 @@
+{
+  "storage_initial_mwh": 0,
+  "storage_capacity_mwh": 4,
+  "charge_limit_mw": 1,
+  "discharge_limit_mw": 2,
+  "temperature_condition": "assumed_feasible",
+  "timezone": "Asia/Shanghai",
+  "efficiency": 1,
+  "loss": 0
+}

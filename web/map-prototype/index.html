@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>乌兰察布 · 区域能源设施工作台</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/maplibre-gl@5.6.1/dist/maplibre-gl.css">
+<link rel="stylesheet" href="./style.css?v=m13-geographic-review-1">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"}}</script>
+<div id="map" aria-label="候选走廊地图"></div>
+<header>
+  <div><strong>乌兰察布 / 算热储</strong><small>区域设施 · 热路关系 · 方案推演</small></div>
+  <div class="header-status"><span class="warning">规划位置与接入待核</span><span id="scope-note">正在接入主要设施…</span></div>
+  <div class="header-actions" aria-label="工作台状态">
+    <button id="analysis-open" title="打开决策分析" aria-controls="analysis-panel">分析</button>
+    <button id="audit-toggle" title="打开审计与系统状态" aria-controls="audit-panel">审计</button>
+  </div>
+</header>
+<nav id="toolbar" aria-label="地图工具">
+  <div class="tool-group" aria-label="地图视图">
+    <button data-view="standard" aria-pressed="true">标准地图</button>
+    <button data-view="satellite" aria-pressed="false">卫星</button>
+    <button data-view="data" aria-pressed="false">数据 / DEM</button>
+    <button id="return-view" hidden>返回底图</button>
+  </div>
+  <div class="tool-group">
+    <button id="layers-toggle" aria-expanded="false" aria-controls="layers-panel">图层</button>
+    <button id="geo-toggle" aria-expanded="false" aria-controls="geo-panel">地理复核</button>
+    <button id="pan" aria-pressed="false">小手平移</button>
+    <button id="angle" aria-pressed="false">倾斜视角</button>
+    <button id="overview">全区总览</button>
+    <button id="back-view" disabled>返回上个视角</button>
+  </div>
+  <div id="layers-panel" hidden>
+    <button id="layers-close" aria-label="关闭图层菜单">×</button>
+    <label><input id="models" type="checkbox" checked>设施模型与标签</label>
+    <label><input id="routes" type="checkbox" checked>候选供回线</label>
+    <label><input id="zones" type="checkbox" checked>区域边界</label>
+    <small>虚线为候选走廊，未完成贴路网和工程核算。</small>
+  </div>
+</nav>
+<aside id="geo-panel" hidden aria-label="地理复核" tabindex="-1">
+  <button id="geo-close" aria-label="关闭地理复核">×</button>
+  <h2>地理复核</h2>
+  <p id="geo-load-state" aria-live="polite">尚未读取公开复核数据</p>
+  <button id="geo-retry" hidden>重新加载复核数据</button>
+  <div class="geo-layer-controls" aria-label="公开地物图层">
+    <label><input id="geo-roads" type="checkbox" checked>道路</label>
+    <label><input id="geo-rail" type="checkbox" checked>铁路</label>
+    <label><input id="geo-water" type="checkbox" checked>水域</label>
+  </div>
+  <div id="geo-list-view">
+    <div class="search-row"><input id="geo-search" type="search" aria-label="搜索地理复核" placeholder="设施、线路或公开地物 ID"><button id="geo-clear-search" aria-label="清除地理复核搜索">×</button></div>
+    <label class="geo-filter">类型 <select id="geo-kind" aria-label="筛选复核类型"><option value="all">全部</option><option value="highway">道路</option><option value="railway">铁路</option><option value="waterway">线状水域</option><option value="waterbody">水体面</option></select></label>
+    <p id="geo-count"></p><div id="geo-list" aria-label="地理复核观察列表"></div>
+    <p id="geo-empty" hidden>没有匹配的观察项，可清除搜索或恢复图层。</p>
+  </div>
+  <section id="geo-observation" hidden aria-label="地理复核详情">
+    <button id="geo-back">返回复核列表</button>
+    <h3 id="geo-title"></h3><dl id="geo-properties"></dl>
+    <button id="geo-refocus">重新定位复核点</button>
+  </section>
+  <p class="geo-limits">红点：公开几何相交或包含；蓝点：邻近或最近观察。棕色虚框是模型场坪。30m 仅作筛查；公开地物与模型均需独立测量复核，未检出不代表不存在。</p>
+</aside>
+<aside id="index" aria-label="设施索引">
+  <div id="icon-rail">
+    <button id="project-home" title="全区总览" aria-label="项目总览">乌</button>
+    <div id="group-icons"></div>
+    <button id="index-toggle" aria-expanded="false" aria-controls="index-panel" aria-label="展开实体索引">›</button>
+  </div>
+  <section id="index-panel" hidden aria-label="实体索引内容">
+    <h2>实体索引 <small>12 个主要设施 · C1 含 11 个子设备</small></h2>
+    <div class="search-row"><input id="entity-search" type="search" aria-label="搜索设施" placeholder="搜索名称或实体 ID"><button id="clear-search" hidden aria-label="清除搜索">×</button></div>
+    <div id="entity-tree"></div><p id="empty-index" hidden>没有匹配的设施</p>
+    <div id="index-resize" role="separator" tabindex="0" aria-label="调整索引宽度" aria-orientation="vertical" aria-valuemin="220" aria-valuemax="420" aria-valuenow="288"></div>
+  </section>
+</aside>
+<aside id="detail" hidden aria-label="设施详情" tabindex="-1">
+  <button id="close" aria-label="关闭设施详情">×</button>
+  <button id="parent-facility" hidden>返回 C1 设施</button>
+  <button id="back-entity" hidden>返回上个实体</button>
+  <h2 id="detail-name"></h2><code id="detail-id"></code>
+  <p class="warning">候选规划 · 位置与接入待核 · 未验收投运</p>
+  <img id="model-preview" hidden alt="当前设施的同版Blender模型图"><p id="preview-status"></p><p id="model-revision"></p>
+  <p id="description"></p><dl id="properties"></dl>
+  <div class="detail-actions"><button id="focus">聚焦整座设施</button><button id="relations-toggle" aria-expanded="false" aria-controls="relations-panel">候选连接</button></div>
+  <section id="relations-panel" hidden aria-label="设施候选连接"><div id="relations-content"></div><p>关系来自方案线路表，不证明已接通；站内 CO₂ 循环与供暖水、营养液分别独立。</p></section>
+  <p id="gaps"></p><p id="position-note"></p>
+</aside>
+<aside id="route-detail" hidden aria-label="线路详情" tabindex="-1">
+  <button id="route-close" aria-label="关闭线路详情">×</button>
+  <button id="route-back" hidden>返回上个对象</button>
+  <h2 id="route-name"></h2><code id="route-id"></code>
+  <p class="warning">候选线路 · 未经路网与穿越核验</p>
+  <button id="route-focus">聚焦整段线路</button>
+  <div id="route-content"></div>
+</aside>
+<aside id="route-picker" hidden aria-label="选择重叠线路">
+  <button id="route-picker-close" aria-label="关闭线路选择">×</button>
+  <h2>选择此处线路</h2><small>供回线在当前比例下重叠，请选择具体管段。</small>
+  <div id="route-picker-list"></div>
+</aside>
+<section id="analysis-panel" hidden aria-label="决策分析" tabindex="-1">
+  <div class="analysis-head">
+    <div>
+      <h2>决策分析</h2>
+      <small id="analysis-object">请选择一个设施</small>
+    </div>
+    <span id="analysis-status" class="analysis-status pending">待绑定</span>
+    <label class="analysis-scenario">工况
+      <select id="analysis-scenario" aria-label="选择分析工况">
+        <option value="normal">正常工况</option>
+        <option value="source-outage">源退出</option>
+        <option value="storage-depleted">储能耗尽（派生）</option>
+      </select>
+    </label>
+    <label class="analysis-scenario">时段
+      <select id="analysis-hour" aria-label="选择分析时段">
+        <option value="0">h0</option><option value="1">h1</option><option value="2">h2</option><option value="3">h3</option>
+        <option value="4">h4</option><option value="5">h5</option><option value="6">h6</option><option value="7">h7</option>
+        <option value="8">h8</option><option value="9">h9</option><option value="10">h10</option><option value="11">h11</option>
+        <option value="12">h12</option><option value="13">h13</option><option value="14" selected>h14</option><option value="15">h15</option>
+        <option value="16">h16</option><option value="17">h17</option><option value="18">h18</option><option value="19">h19</option>
+        <option value="20">h20</option><option value="21">h21</option><option value="22">h22</option><option value="23">h23</option>
+      </select>
+    </label>
+    <span id="analysis-time-state" class="analysis-time-state">h14 · synthetic_teaching_not_local</span>
+    <button id="analysis-expand" aria-expanded="false" aria-controls="analysis-body">展开分析</button>
+    <button id="analysis-close" aria-label="关闭决策分析">×</button>
+  </div>
+  <p id="analysis-summary">选择设施后显示对象级结果；未绑定对象保持空态。</p>
+  <div id="analysis-empty" class="analysis-empty">当前对象暂无绑定的对象级分析结果。</div>
+  <div id="analysis-body" hidden>
+    <article class="analysis-card"><h3>能量账</h3><strong id="energy-balance-value">—</strong><p id="energy-balance-copy">—</p></article>
+    <article class="analysis-card"><h3>PTES 库存</h3><strong id="storage-value">—</strong><p id="storage-copy">—</p></article>
+    <article class="analysis-card"><h3>推荐动作</h3><strong id="recommendation-value">—</strong><p id="recommendation-copy">—</p></article>
+    <article class="analysis-card wide"><h3>逐时热负荷 / 源热</h3><div id="hourly-chart" aria-label="逐时热负荷与源热柱状图"></div><div class="chart-legend"><span>源热</span><span class="demand">热负荷</span><span class="risk">未供热时段</span></div><p>选择上方时段后，卡片数值与当前对象、工况和时段同步。</p></article>
+  </div>
+  <p id="analysis-limits" class="analysis-limits"></p>
+</section>
+<div id="audit-backdrop" hidden></div>
+<section id="audit-panel" hidden aria-label="审计与系统状态" tabindex="-1">
+  <div id="audit-head"><div><h2>审计与系统状态</h2><p>核对当前地图、模型、分析来源、版本和工程边界。</p></div><button id="audit-close" aria-label="关闭审计页">×</button></div>
+  <div class="audit-toolbar"><button id="audit-refresh">重新读取来源</button><button id="audit-export" class="secondary">导出审计 JSON</button></div>
+  <div class="audit-grid">
+    <article class="audit-card"><h3>当前代码与页面</h3><p id="audit-code">正在读取…</p></article>
+    <article class="audit-card"><h3>Blender 与 GLB</h3><p id="audit-blender">正在读取…</p></article>
+    <article class="audit-card"><h3>地图与线路来源</h3><p id="audit-map-source">正在读取…</p></article>
+    <article class="audit-card"><h3>分析绑定来源</h3><p id="audit-analysis-source">正在读取…</p></article>
+    <article class="audit-card wide"><h3>逐项来源清单</h3><div id="audit-sources" class="audit-sources">正在读取…</div></article>
+    <article class="audit-card wide"><h3>对象状态</h3><div id="audit-status-pills" class="audit-state"></div></article>
+    <article class="audit-card wide"><h3>边界与待核信息</h3><ul id="audit-limitations" class="audit-list"><li>正在读取…</li></ul></article>
+  </div>
+</section>
+<footer>
+  <div id="status" role="status">正在加载依赖和原始 GLB… 若依赖网络失败请查看下方错误。</div>
+  <div id="errors" role="alert"></div>
+  <div id="flow-legend">浅橙 供水 · 浅蓝 回水 · 青绿 源侧水 · 米黄/淡紫 储热支路 · 箭头仅为方案流向</div>
+  <div id="legend">OSM 道路与地名 · 候选位置/走廊未经核验</div>
+  <div id="state" hidden></div>
+  <div>高程：Copernicus DEM · EGM2008 · 1× · 约40m显示网格；垂向为相对1200m原点，非已核椭球高程</div>
+  <div id="credit">© OpenStreetMap contributors · FOSSGIS / z12归档区域图 · EOxCloudless / EOX · modified Copernicus Sentinel 2024 · CC BY-NC-SA 4.0 · 非商业研究</div>
+</footer>
+<script>
+window.m9BootErrors = [];
+window.addEventListener('error', event => {
+  const message = event.message || `依赖加载失败: ${event.target?.src || event.target?.href || 'unknown'}`;
+  window.m9BootErrors.push(message);
+  document.getElementById('errors').textContent = message;
+}, true);
+window.addEventListener('unhandledrejection', event => {
+  const message = String(event.reason?.stack || event.reason);
+  window.m9BootErrors.push(message);
+  document.getElementById('errors').textContent = message;
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/maplibre-gl@5.6.1/dist/maplibre-gl.js"></script>
+<script type="module" src="./app.mjs?v=m13-geographic-review-1"></script>
+</html>

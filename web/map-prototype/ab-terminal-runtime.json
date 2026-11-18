@@ -1,0 +1,2554 @@
+{
+  "schema_version": 1,
+  "revision": "m14-sensors-integrated-v1",
+  "requirement_revision": "地图场景方案_v2:A1-A2-B1-B2+m11-integrated-v1+M14-four-visible-sensors",
+  "asset_url": "../map-viewer/assets/integrated-v3/facilities.glb",
+  "asset_sha256": "aa00fa4c3502197f77851c3a2eb6617875462862c0bbd7351ceeaf4c0cf1869f",
+  "asset_format": "glTF Binary v2",
+  "blender_source": "outputs/m14-sensors-integrated-v1/乌兰察布_测点整合场景_v1.blend",
+  "blender_scene": "06 | 全区整合交互",
+  "candidate_status": "候选规划 · 示意补模 · 未施工、未投运、未完成水力验算",
+  "parent_facilities": [
+    {
+      "object_id": "AGRI_014",
+      "name": "种薯组培与原原种温室",
+      "zone": "A区"
+    },
+    {
+      "object_id": "AGRI_015",
+      "name": "工厂化食用菌",
+      "zone": "A区"
+    },
+    {
+      "object_id": "AGRI_016",
+      "name": "冬季番茄连栋温室",
+      "zone": "B区"
+    },
+    {
+      "object_id": "AGRI_017",
+      "name": "冬春草莓高架温室",
+      "zone": "B区"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "AGRI_014_HX",
+      "parent_id": "AGRI_014",
+      "name": "隔离板换：仅传热不混水",
+      "short_name": "板换",
+      "group": "a",
+      "kind": "heat_exchanger",
+      "zone_label": "A区种薯 / 温室",
+      "model_root_xyz": [
+        96.916603,
+        723.880188,
+        138.124603
+      ],
+      "model_revision": "m14-sensors-integrated-v1",
+      "installation_status": "候选规划 · 示意补模 · 未验收投运",
+      "model_status": "schematic_built",
+      "design_status": "proposed",
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "description": "隔离板换二次侧示意，强调两侧只传热不混水。",
+      "gaps": [
+        "非厂家采购或施工模型",
+        "无实测温度、流量、泵扬程或设备铭牌参数",
+        "未完成设施级独立配准与工程水力验算"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v3/AGRI_014.png",
+      "circuits": [
+        "AGRI_014_HEAT"
+      ]
+    },
+    {
+      "object_id": "AGRI_014_PUMP",
+      "parent_id": "AGRI_014",
+      "name": "二次侧循环泵",
+      "short_name": "泵",
+      "group": "a",
+      "kind": "pump",
+      "zone_label": "A区种薯 / 温室",
+      "model_root_xyz": [
+        96.916603,
+        713.880188,
+        138.124603
+      ],
+      "model_revision": "m14-sensors-integrated-v1",
+      "installation_status": "候选规划 · 示意补模 · 未验收投运",
+      "model_status": "schematic_built",
+      "design_status": "proposed",
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "description": "二次侧循环泵示意；流量、扬程与选型待核。",
+      "gaps": [
+        "非厂家采购或施工模型",
+        "无实测温度、流量、泵扬程或设备铭牌参数",
+        "未完成设施级独立配准与工程水力验算"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v3/AGRI_014.png",
+      "circuits": [
+        "AGRI_014_HEAT",
+        "AGRI_014_CONTROL"
+      ]
+    },
+    {
+      "object_id": "AGRI_014_VALVE",
+      "parent_id": "AGRI_014",
+      "name": "调节阀与隔离阀",
+      "short_name": "阀",
+      "group": "a",
+      "kind": "valve",
+      "zone_label": "A区种薯 / 温室",
+      "model_root_xyz": [
+        96.916603,
+        703.880188,
+        138.124603
+      ],
+      "model_revision": "m14-sensors-integrated-v1",
+      "installation_status": "候选规划 · 示意补模 · 未验收投运",
+      "model_status": "schematic_built",
+      "design_status": "proposed",
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "description": "调节阀与隔离阀示意；控制策略与口径待核。",
+      "gaps": [
+        "非厂家采购或施工模型",
+        "无实测温度、流量、泵扬程或设备铭牌参数",
+        "未完成设施级独立配准与工程水力验算"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v3/AGRI_014.png",
+      "circuits": [
+        "AGRI_014_HEAT",
+        "AGRI_014_CONTROL"
+      ]
+    },
+    {
+      "object_id": "AGRI_014_HEADER",
+      "parent_id": "AGRI_014",
+      "name": "供回分集水器",
+      "short_name": "集管",
+      "group": "a",
+      "kind": "header",
+      "zone_label": "A区种薯 / 温室",
+      "model_root_xyz": [
+        96.916603,
+        694.880188,
+        138.124603
+      ],
+      "model_revision": "m14-sensors-integrated-v1",
+      "installation_status": "候选规划 · 示意补模 · 未验收投运",
+      "model_status": "schematic_built",
+      "design_status": "proposed",
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "description": "供回分集水器示意；支路平衡与口径待核。",
+      "gaps": [
+        "非厂家采购或施工模型",
+        "无实测温度、流量、泵扬程或设备铭牌参数",
+        "未完成设施级独立配准与工程水力验算"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v3/AGRI_014.png",
+      "circuits": [
+        "AGRI_014_HEAT"
+      ]
+    },
+    {
+      "object_id": "AGRI_014_CTRL",
+      "parent_id": "AGRI_014",
+      "name": "PLC 控制柜",
+      "short_name": "PLC",
+      "group": "a",
+      "kind": "controller",
+      "zone_label": "A区种薯 / 温室",
+      "model_root_xyz": [
+        138.916603,
+        703.880188,
+        138.124603
+      ],
+      "model_revision": "m14-sensors-integrated-v1",
+      "installation_status": "候选规划 · 示意补模 · 未验收投运",
+      "model_status": "schematic_built",
+      "design_status": "proposed",
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "description": "PLC 控制柜示意；点表、联锁和通信协议待核。",
+      "gaps": [
+        "非厂家采购或施工模型",
+        "无实测温度、流量、泵扬程或设备铭牌参数",
+        "未完成设施级独立配准与工程水力验算"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v3/AGRI_014.png",
+      "circuits": [
+        "AGRI_014_CONTROL"
+      ]
+    },
+    {
+      "object_id": "AGRI_014_SENSOR",
+      "parent_id": "AGRI_014",
+      "name": "温度/流量测点",
+      "short_name": "测点",
+      "group": "a",
+      "kind": "sensor",
+      "zone_label": "A区种薯 / 温室",
+      "model_root_xyz": [
+        124.916603,
+        703.880188,
+        138.124603
+      ],
+      "model_revision": "m14-sensors-integrated-v1",
+      "installation_status": "候选规划 · 示意补模 · 未验收投运",
+      "model_status": "schematic_proxy_unconnected",
+      "design_status": "proposed",
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "description": "温度探杆与流量仪表示意样件，未接管；尚无信号端口、厂家、量程或实测读数，现场安装位置待核。",
+      "gaps": [
+        "非厂家采购或施工模型",
+        "无实测温度、流量、泵扬程或设备铭牌参数",
+        "未完成设施级独立配准与工程水力验算",
+        "当前为未接管样件，管路安装点与PLC信号端口待设计核验"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v3/AGRI_014_SENSOR.png",
+      "circuits": [
+        "AGRI_014_HEAT"
+      ]
+    },
+    {
+      "object_id": "AGRI_014_GH1",
+      "parent_id": "AGRI_014",
+      "name": "种薯温室 GH1",
+      "short_name": "GH1",
+      "group": "a",
+      "kind": "terminal",
+      "zone_label": "A区种薯 / 温室",
+      "model_root_xyz": [
+        52.916603,
+        693.880188,
+        138.124603
+      ],
+      "model_revision": "m14-sensors-integrated-v1",
+      "installation_status": "候选规划 · 示意补模 · 未验收投运",
+      "model_status": "schematic_built",
+      "design_status": "proposed",
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "description": "农业用户侧末端示意；负荷、盘管与控制参数待核。",
+      "gaps": [
+        "非厂家采购或施工模型",
+        "无实测温度、流量、泵扬程或设备铭牌参数",
+        "未完成设施级独立配准与工程水力验算"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v3/AGRI_014.png",
+      "circuits": [
+        "AGRI_014_HEAT"
+      ]
+    },
+    {
+      "object_id": "AGRI_014_GH2",
+      "parent_id": "AGRI_014",
+      "name": "种薯温室 GH2",
+      "short_name": "GH2",
+      "group": "a",
+      "kind": "terminal",
+      "zone_label": "A区种薯 / 温室",
+      "model_root_xyz": [
+        140.916603,
+        693.880188,
+        138.124603
+      ],
+      "model_revision": "m14-sensors-integrated-v1",
+      "installation_status": "候选规划 · 示意补模 · 未验收投运",
+      "model_status": "schematic_built",
+      "design_status": "proposed",
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "description": "农业用户侧末端示意；负荷、盘管与控制参数待核。",
+      "gaps": [
+        "非厂家采购或施工模型",
+        "无实测温度、流量、泵扬程或设备铭牌参数",
+        "未完成设施级独立配准与工程水力验算"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v3/AGRI_014.png",
+      "circuits": [
+        "AGRI_014_HEAT"
+      ]
+    },
+    {
+      "object_id": "AGRI_015_HX",
+      "parent_id": "AGRI_015",
+      "name": "隔离板换：仅传热不混水",
+      "short_name": "板换",
+      "group": "a",
+      "kind": "heat_exchanger",
+      "zone_label": "A区食用菌 / 菌房空气处理",
+      "model_root_xyz": [
+        485.3508,
+        384.980499,
+        136.096771
+      ],
+      "model_revision": "m14-sensors-integrated-v1",
+      "installation_status": "候选规划 · 示意补模 · 未验收投运",
+      "model_status": "schematic_built",
+      "design_status": "proposed",
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "description": "隔离板换二次侧示意，强调两侧只传热不混水。",
+      "gaps": [
+        "非厂家采购或施工模型",
+        "无实测温度、流量、泵扬程或设备铭牌参数",
+        "未完成设施级独立配准与工程水力验算"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v3/AGRI_015.png",
+      "circuits": [
+        "AGRI_015_HEAT"
+      ]
+    },
+    {
+      "object_id": "AGRI_015_PUMP",
+      "parent_id": "AGRI_015",
+      "name": "二次侧循环泵",
+      "short_name": "泵",
+      "group": "a",
+      "kind": "pump",
+      "zone_label": "A区食用菌 / 菌房空气处理",
+      "model_root_xyz": [
+        485.3508,
+        374.980499,
+        136.096771
+      ],
+      "model_revision": "m14-sensors-integrated-v1",
+      "installation_status": "候选规划 · 示意补模 · 未验收投运",
+      "model_status": "schematic_built",
+      "design_status": "proposed",
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "description": "二次侧循环泵示意；流量、扬程与选型待核。",
+      "gaps": [
+        "非厂家采购或施工模型",
+        "无实测温度、流量、泵扬程或设备铭牌参数",
+        "未完成设施级独立配准与工程水力验算"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v3/AGRI_015.png",
+      "circuits": [
+        "AGRI_015_HEAT",
+        "AGRI_015_CONTROL"
+      ]
+    },
+    {
+      "object_id": "AGRI_015_VALVE",
+      "parent_id": "AGRI_015",
+      "name": "调节阀与隔离阀",
+      "short_name": "阀",
+      "group": "a",
+      "kind": "valve",
+      "zone_label": "A区食用菌 / 菌房空气处理",
+      "model_root_xyz": [
+        485.3508,
+        364.980499,
+        136.096771
+      ],
+      "model_revision": "m14-sensors-integrated-v1",
+      "installation_status": "候选规划 · 示意补模 · 未验收投运",
+      "model_status": "schematic_built",
+      "design_status": "proposed",
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "description": "调节阀与隔离阀示意；控制策略与口径待核。",
+      "gaps": [
+        "非厂家采购或施工模型",
+        "无实测温度、流量、泵扬程或设备铭牌参数",
+        "未完成设施级独立配准与工程水力验算"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v3/AGRI_015.png",
+      "circuits": [
+        "AGRI_015_HEAT",
+        "AGRI_015_CONTROL"
+      ]
+    },
+    {
+      "object_id": "AGRI_015_HEADER",
+      "parent_id": "AGRI_015",
+      "name": "供回分集水器",
+      "short_name": "集管",
+      "group": "a",
+      "kind": "header",
+      "zone_label": "A区食用菌 / 菌房空气处理",
+      "model_root_xyz": [
+        485.3508,
+        355.980499,
+        136.096771
+      ],
+      "model_revision": "m14-sensors-integrated-v1",
+      "installation_status": "候选规划 · 示意补模 · 未验收投运",
+      "model_status": "schematic_built",
+      "design_status": "proposed",
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "description": "供回分集水器示意；支路平衡与口径待核。",
+      "gaps": [
+        "非厂家采购或施工模型",
+        "无实测温度、流量、泵扬程或设备铭牌参数",
+        "未完成设施级独立配准与工程水力验算"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v3/AGRI_015.png",
+      "circuits": [
+        "AGRI_015_HEAT"
+      ]
+    },
+    {
+      "object_id": "AGRI_015_CTRL",
+      "parent_id": "AGRI_015",
+      "name": "PLC 控制柜",
+      "short_name": "PLC",
+      "group": "a",
+      "kind": "controller",
+      "zone_label": "A区食用菌 / 菌房空气处理",
+      "model_root_xyz": [
+        527.3508,
+        364.980499,
+        136.096771
+      ],
+      "model_revision": "m14-sensors-integrated-v1",
+      "installation_status": "候选规划 · 示意补模 · 未验收投运",
+      "model_status": "schematic_built",
+      "design_status": "proposed",
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "description": "PLC 控制柜示意；点表、联锁和通信协议待核。",
+      "gaps": [
+        "非厂家采购或施工模型",
+        "无实测温度、流量、泵扬程或设备铭牌参数",
+        "未完成设施级独立配准与工程水力验算"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v3/AGRI_015.png",
+      "circuits": [
+        "AGRI_015_CONTROL"
+      ]
+    },
+    {
+      "object_id": "AGRI_015_SENSOR",
+      "parent_id": "AGRI_015",
+      "name": "温度/流量测点",
+      "short_name": "测点",
+      "group": "a",
+      "kind": "sensor",
+      "zone_label": "A区食用菌 / 菌房空气处理",
+      "model_root_xyz": [
+        513.3508,
+        364.980499,
+        136.096771
+      ],
+      "model_revision": "m14-sensors-integrated-v1",
+      "installation_status": "候选规划 · 示意补模 · 未验收投运",
+      "model_status": "schematic_proxy_unconnected",
+      "design_status": "proposed",
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "description": "温度探杆与流量仪表示意样件，未接管；尚无信号端口、厂家、量程或实测读数，现场安装位置待核。",
+      "gaps": [
+        "非厂家采购或施工模型",
+        "无实测温度、流量、泵扬程或设备铭牌参数",
+        "未完成设施级独立配准与工程水力验算",
+        "当前为未接管样件，管路安装点与PLC信号端口待设计核验"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v3/AGRI_015_SENSOR.png",
+      "circuits": [
+        "AGRI_015_HEAT"
+      ]
+    },
+    {
+      "object_id": "AGRI_015_AHU1",
+      "parent_id": "AGRI_015",
+      "name": "食用菌菌房 AHU1",
+      "short_name": "AHU1",
+      "group": "a",
+      "kind": "terminal",
+      "zone_label": "A区食用菌 / 菌房空气处理",
+      "model_root_xyz": [
+        451.3508,
+        354.980499,
+        136.096771
+      ],
+      "model_revision": "m14-sensors-integrated-v1",
+      "installation_status": "候选规划 · 示意补模 · 未验收投运",
+      "model_status": "schematic_built",
+      "design_status": "proposed",
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "description": "食用菌菌房 AHU 水盘管接板换二次侧闭式热水；仅向空气传热，不把热水混入空气或营养液，负荷与控制参数待核。",
+      "gaps": [
+        "非厂家采购或施工模型",
+        "无实测温度、流量、泵扬程或设备铭牌参数",
+        "未完成设施级独立配准与工程水力验算"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v3/AGRI_015.png",
+      "circuits": [
+        "AGRI_015_HEAT"
+      ]
+    },
+    {
+      "object_id": "AGRI_015_AHU2",
+      "parent_id": "AGRI_015",
+      "name": "食用菌菌房 AHU2",
+      "short_name": "AHU2",
+      "group": "a",
+      "kind": "terminal",
+      "zone_label": "A区食用菌 / 菌房空气处理",
+      "model_root_xyz": [
+        523.3508,
+        354.980499,
+        136.096771
+      ],
+      "model_revision": "m14-sensors-integrated-v1",
+      "installation_status": "候选规划 · 示意补模 · 未验收投运",
+      "model_status": "schematic_built",
+      "design_status": "proposed",
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "description": "食用菌菌房 AHU 水盘管接板换二次侧闭式热水；仅向空气传热，不把热水混入空气或营养液，负荷与控制参数待核。",
+      "gaps": [
+        "非厂家采购或施工模型",
+        "无实测温度、流量、泵扬程或设备铭牌参数",
+        "未完成设施级独立配准与工程水力验算"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v3/AGRI_015.png",
+      "circuits": [
+        "AGRI_015_HEAT"
+      ]
+    },
+    {
+      "object_id": "AGRI_016_HX",
+      "parent_id": "AGRI_016",
+      "name": "隔离板换：仅传热不混水",
+      "short_name": "板换",
+      "group": "b",
+      "kind": "heat_exchanger",
+      "zone_label": "B区番茄",
+      "model_root_xyz": [
+        -2005.821777,
+        2322.865723,
+        152.487396
+      ],
+      "model_revision": "m14-sensors-integrated-v1",
+      "installation_status": "候选规划 · 示意补模 · 未验收投运",
+      "model_status": "schematic_built",
+      "design_status": "proposed",
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "description": "隔离板换二次侧示意，强调两侧只传热不混水。",
+      "gaps": [
+        "非厂家采购或施工模型",
+        "无实测温度、流量、泵扬程或设备铭牌参数",
+        "未完成设施级独立配准与工程水力验算"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v3/AGRI_016.png",
+      "circuits": [
+        "AGRI_016_HEAT"
+      ]
+    },
+    {
+      "object_id": "AGRI_016_PUMP",
+      "parent_id": "AGRI_016",
+      "name": "二次侧循环泵",
+      "short_name": "泵",
+      "group": "b",
+      "kind": "pump",
+      "zone_label": "B区番茄",
+      "model_root_xyz": [
+        -2005.821777,
+        2312.865723,
+        152.487396
+      ],
+      "model_revision": "m14-sensors-integrated-v1",
+      "installation_status": "候选规划 · 示意补模 · 未验收投运",
+      "model_status": "schematic_built",
+      "design_status": "proposed",
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "description": "二次侧循环泵示意；流量、扬程与选型待核。",
+      "gaps": [
+        "非厂家采购或施工模型",
+        "无实测温度、流量、泵扬程或设备铭牌参数",
+        "未完成设施级独立配准与工程水力验算"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v3/AGRI_016.png",
+      "circuits": [
+        "AGRI_016_HEAT",
+        "AGRI_016_CONTROL"
+      ]
+    },
+    {
+      "object_id": "AGRI_016_VALVE",
+      "parent_id": "AGRI_016",
+      "name": "调节阀与隔离阀",
+      "short_name": "阀",
+      "group": "b",
+      "kind": "valve",
+      "zone_label": "B区番茄",
+      "model_root_xyz": [
+        -2005.821777,
+        2302.865723,
+        152.487396
+      ],
+      "model_revision": "m14-sensors-integrated-v1",
+      "installation_status": "候选规划 · 示意补模 · 未验收投运",
+      "model_status": "schematic_built",
+      "design_status": "proposed",
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "description": "调节阀与隔离阀示意；控制策略与口径待核。",
+      "gaps": [
+        "非厂家采购或施工模型",
+        "无实测温度、流量、泵扬程或设备铭牌参数",
+        "未完成设施级独立配准与工程水力验算"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v3/AGRI_016.png",
+      "circuits": [
+        "AGRI_016_HEAT",
+        "AGRI_016_CONTROL"
+      ]
+    },
+    {
+      "object_id": "AGRI_016_HEADER",
+      "parent_id": "AGRI_016",
+      "name": "供回分集水器",
+      "short_name": "集管",
+      "group": "b",
+      "kind": "header",
+      "zone_label": "B区番茄",
+      "model_root_xyz": [
+        -2005.821777,
+        2293.865723,
+        152.487396
+      ],
+      "model_revision": "m14-sensors-integrated-v1",
+      "installation_status": "候选规划 · 示意补模 · 未验收投运",
+      "model_status": "schematic_built",
+      "design_status": "proposed",
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "description": "供回分集水器示意；支路平衡与口径待核。",
+      "gaps": [
+        "非厂家采购或施工模型",
+        "无实测温度、流量、泵扬程或设备铭牌参数",
+        "未完成设施级独立配准与工程水力验算"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v3/AGRI_016.png",
+      "circuits": [
+        "AGRI_016_HEAT"
+      ]
+    },
+    {
+      "object_id": "AGRI_016_CTRL",
+      "parent_id": "AGRI_016",
+      "name": "PLC 控制柜",
+      "short_name": "PLC",
+      "group": "b",
+      "kind": "controller",
+      "zone_label": "B区番茄",
+      "model_root_xyz": [
+        -1963.821777,
+        2302.865723,
+        152.487396
+      ],
+      "model_revision": "m14-sensors-integrated-v1",
+      "installation_status": "候选规划 · 示意补模 · 未验收投运",
+      "model_status": "schematic_built",
+      "design_status": "proposed",
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "description": "PLC 控制柜示意；点表、联锁和通信协议待核。",
+      "gaps": [
+        "非厂家采购或施工模型",
+        "无实测温度、流量、泵扬程或设备铭牌参数",
+        "未完成设施级独立配准与工程水力验算"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v3/AGRI_016.png",
+      "circuits": [
+        "AGRI_016_CONTROL"
+      ]
+    },
+    {
+      "object_id": "AGRI_016_SENSOR",
+      "parent_id": "AGRI_016",
+      "name": "温度/流量测点",
+      "short_name": "测点",
+      "group": "b",
+      "kind": "sensor",
+      "zone_label": "B区番茄",
+      "model_root_xyz": [
+        -1977.821777,
+        2302.865723,
+        152.487396
+      ],
+      "model_revision": "m14-sensors-integrated-v1",
+      "installation_status": "候选规划 · 示意补模 · 未验收投运",
+      "model_status": "schematic_proxy_unconnected",
+      "design_status": "proposed",
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "description": "温度探杆与流量仪表示意样件，未接管；尚无信号端口、厂家、量程或实测读数，现场安装位置待核。",
+      "gaps": [
+        "非厂家采购或施工模型",
+        "无实测温度、流量、泵扬程或设备铭牌参数",
+        "未完成设施级独立配准与工程水力验算",
+        "当前为未接管样件，管路安装点与PLC信号端口待设计核验"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v3/AGRI_016_SENSOR.png",
+      "circuits": [
+        "AGRI_016_HEAT"
+      ]
+    },
+    {
+      "object_id": "AGRI_016_GH1",
+      "parent_id": "AGRI_016",
+      "name": "B区番茄温室 GH1",
+      "short_name": "GH1",
+      "group": "b",
+      "kind": "terminal",
+      "zone_label": "B区番茄",
+      "model_root_xyz": [
+        -2049.821777,
+        2292.865723,
+        152.487396
+      ],
+      "model_revision": "m14-sensors-integrated-v1",
+      "installation_status": "候选规划 · 示意补模 · 未验收投运",
+      "model_status": "schematic_built",
+      "design_status": "proposed",
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "description": "农业用户侧末端示意；负荷、盘管与控制参数待核。",
+      "gaps": [
+        "非厂家采购或施工模型",
+        "无实测温度、流量、泵扬程或设备铭牌参数",
+        "未完成设施级独立配准与工程水力验算"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v3/AGRI_016.png",
+      "circuits": [
+        "AGRI_016_HEAT"
+      ]
+    },
+    {
+      "object_id": "AGRI_016_GH2",
+      "parent_id": "AGRI_016",
+      "name": "B区番茄温室 GH2",
+      "short_name": "GH2",
+      "group": "b",
+      "kind": "terminal",
+      "zone_label": "B区番茄",
+      "model_root_xyz": [
+        -1961.821777,
+        2292.865723,
+        152.487396
+      ],
+      "model_revision": "m14-sensors-integrated-v1",
+      "installation_status": "候选规划 · 示意补模 · 未验收投运",
+      "model_status": "schematic_built",
+      "design_status": "proposed",
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "description": "农业用户侧末端示意；负荷、盘管与控制参数待核。",
+      "gaps": [
+        "非厂家采购或施工模型",
+        "无实测温度、流量、泵扬程或设备铭牌参数",
+        "未完成设施级独立配准与工程水力验算"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v3/AGRI_016.png",
+      "circuits": [
+        "AGRI_016_HEAT"
+      ]
+    },
+    {
+      "object_id": "AGRI_017_HX",
+      "parent_id": "AGRI_017",
+      "name": "隔离板换：仅传热不混水",
+      "short_name": "板换",
+      "group": "b",
+      "kind": "heat_exchanger",
+      "zone_label": "B区草莓",
+      "model_root_xyz": [
+        -2368.832764,
+        1734.698975,
+        145.301361
+      ],
+      "model_revision": "m14-sensors-integrated-v1",
+      "installation_status": "候选规划 · 示意补模 · 未验收投运",
+      "model_status": "schematic_built",
+      "design_status": "proposed",
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "description": "隔离板换二次侧示意，强调两侧只传热不混水。",
+      "gaps": [
+        "非厂家采购或施工模型",
+        "无实测温度、流量、泵扬程或设备铭牌参数",
+        "未完成设施级独立配准与工程水力验算"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v3/AGRI_017.png",
+      "circuits": [
+        "AGRI_017_HEAT"
+      ]
+    },
+    {
+      "object_id": "AGRI_017_PUMP",
+      "parent_id": "AGRI_017",
+      "name": "二次侧循环泵",
+      "short_name": "泵",
+      "group": "b",
+      "kind": "pump",
+      "zone_label": "B区草莓",
+      "model_root_xyz": [
+        -2368.832764,
+        1724.698975,
+        145.301361
+      ],
+      "model_revision": "m14-sensors-integrated-v1",
+      "installation_status": "候选规划 · 示意补模 · 未验收投运",
+      "model_status": "schematic_built",
+      "design_status": "proposed",
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "description": "二次侧循环泵示意；流量、扬程与选型待核。",
+      "gaps": [
+        "非厂家采购或施工模型",
+        "无实测温度、流量、泵扬程或设备铭牌参数",
+        "未完成设施级独立配准与工程水力验算"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v3/AGRI_017.png",
+      "circuits": [
+        "AGRI_017_HEAT",
+        "AGRI_017_CONTROL"
+      ]
+    },
+    {
+      "object_id": "AGRI_017_VALVE",
+      "parent_id": "AGRI_017",
+      "name": "调节阀与隔离阀",
+      "short_name": "阀",
+      "group": "b",
+      "kind": "valve",
+      "zone_label": "B区草莓",
+      "model_root_xyz": [
+        -2368.832764,
+        1714.698975,
+        145.301361
+      ],
+      "model_revision": "m14-sensors-integrated-v1",
+      "installation_status": "候选规划 · 示意补模 · 未验收投运",
+      "model_status": "schematic_built",
+      "design_status": "proposed",
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "description": "调节阀与隔离阀示意；控制策略与口径待核。",
+      "gaps": [
+        "非厂家采购或施工模型",
+        "无实测温度、流量、泵扬程或设备铭牌参数",
+        "未完成设施级独立配准与工程水力验算"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v3/AGRI_017.png",
+      "circuits": [
+        "AGRI_017_HEAT",
+        "AGRI_017_CONTROL"
+      ]
+    },
+    {
+      "object_id": "AGRI_017_HEADER",
+      "parent_id": "AGRI_017",
+      "name": "供回分集水器",
+      "short_name": "集管",
+      "group": "b",
+      "kind": "header",
+      "zone_label": "B区草莓",
+      "model_root_xyz": [
+        -2368.832764,
+        1705.698975,
+        145.301361
+      ],
+      "model_revision": "m14-sensors-integrated-v1",
+      "installation_status": "候选规划 · 示意补模 · 未验收投运",
+      "model_status": "schematic_built",
+      "design_status": "proposed",
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "description": "供回分集水器示意；支路平衡与口径待核。",
+      "gaps": [
+        "非厂家采购或施工模型",
+        "无实测温度、流量、泵扬程或设备铭牌参数",
+        "未完成设施级独立配准与工程水力验算"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v3/AGRI_017.png",
+      "circuits": [
+        "AGRI_017_HEAT"
+      ]
+    },
+    {
+      "object_id": "AGRI_017_CTRL",
+      "parent_id": "AGRI_017",
+      "name": "PLC 控制柜",
+      "short_name": "PLC",
+      "group": "b",
+      "kind": "controller",
+      "zone_label": "B区草莓",
+      "model_root_xyz": [
+        -2326.832764,
+        1714.698975,
+        145.301361
+      ],
+      "model_revision": "m14-sensors-integrated-v1",
+      "installation_status": "候选规划 · 示意补模 · 未验收投运",
+      "model_status": "schematic_built",
+      "design_status": "proposed",
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "description": "PLC 控制柜示意；点表、联锁和通信协议待核。",
+      "gaps": [
+        "非厂家采购或施工模型",
+        "无实测温度、流量、泵扬程或设备铭牌参数",
+        "未完成设施级独立配准与工程水力验算"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v3/AGRI_017.png",
+      "circuits": [
+        "AGRI_017_CONTROL"
+      ]
+    },
+    {
+      "object_id": "AGRI_017_SENSOR",
+      "parent_id": "AGRI_017",
+      "name": "温度/流量测点",
+      "short_name": "测点",
+      "group": "b",
+      "kind": "sensor",
+      "zone_label": "B区草莓",
+      "model_root_xyz": [
+        -2340.832764,
+        1714.698975,
+        145.301361
+      ],
+      "model_revision": "m14-sensors-integrated-v1",
+      "installation_status": "候选规划 · 示意补模 · 未验收投运",
+      "model_status": "schematic_proxy_unconnected",
+      "design_status": "proposed",
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "description": "温度探杆与流量仪表示意样件，未接管；尚无信号端口、厂家、量程或实测读数，现场安装位置待核。",
+      "gaps": [
+        "非厂家采购或施工模型",
+        "无实测温度、流量、泵扬程或设备铭牌参数",
+        "未完成设施级独立配准与工程水力验算",
+        "当前为未接管样件，管路安装点与PLC信号端口待设计核验"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v3/AGRI_017_SENSOR.png",
+      "circuits": [
+        "AGRI_017_HEAT"
+      ]
+    },
+    {
+      "object_id": "AGRI_017_GH1",
+      "parent_id": "AGRI_017",
+      "name": "B区草莓温室 GH1",
+      "short_name": "GH1",
+      "group": "b",
+      "kind": "terminal",
+      "zone_label": "B区草莓",
+      "model_root_xyz": [
+        -2412.832764,
+        1704.698975,
+        145.301361
+      ],
+      "model_revision": "m14-sensors-integrated-v1",
+      "installation_status": "候选规划 · 示意补模 · 未验收投运",
+      "model_status": "schematic_built",
+      "design_status": "proposed",
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "description": "农业用户侧末端示意；负荷、盘管与控制参数待核。",
+      "gaps": [
+        "非厂家采购或施工模型",
+        "无实测温度、流量、泵扬程或设备铭牌参数",
+        "未完成设施级独立配准与工程水力验算"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v3/AGRI_017.png",
+      "circuits": [
+        "AGRI_017_HEAT"
+      ]
+    },
+    {
+      "object_id": "AGRI_017_GH2",
+      "parent_id": "AGRI_017",
+      "name": "B区草莓温室 GH2",
+      "short_name": "GH2",
+      "group": "b",
+      "kind": "terminal",
+      "zone_label": "B区草莓",
+      "model_root_xyz": [
+        -2324.832764,
+        1704.698975,
+        145.301361
+      ],
+      "model_revision": "m14-sensors-integrated-v1",
+      "installation_status": "候选规划 · 示意补模 · 未验收投运",
+      "model_status": "schematic_built",
+      "design_status": "proposed",
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "description": "农业用户侧末端示意；负荷、盘管与控制参数待核。",
+      "gaps": [
+        "非厂家采购或施工模型",
+        "无实测温度、流量、泵扬程或设备铭牌参数",
+        "未完成设施级独立配准与工程水力验算"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v3/AGRI_017.png",
+      "circuits": [
+        "AGRI_017_HEAT"
+      ]
+    }
+  ],
+  "ports": [
+    {
+      "port_id": "AGRI_014_HX:AGRI_014_HEAT:out:flow",
+      "object_id": "AGRI_014_HX",
+      "circuit_id": "AGRI_014_HEAT",
+      "direction": "out",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "A区种薯 / 温室",
+      "parent_id": "AGRI_014"
+    },
+    {
+      "port_id": "AGRI_014_HX:AGRI_014_HEAT:in:flow",
+      "object_id": "AGRI_014_HX",
+      "circuit_id": "AGRI_014_HEAT",
+      "direction": "in",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "A区种薯 / 温室",
+      "parent_id": "AGRI_014"
+    },
+    {
+      "port_id": "AGRI_014_PUMP:AGRI_014_HEAT:in:flow",
+      "object_id": "AGRI_014_PUMP",
+      "circuit_id": "AGRI_014_HEAT",
+      "direction": "in",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "A区种薯 / 温室",
+      "parent_id": "AGRI_014"
+    },
+    {
+      "port_id": "AGRI_014_PUMP:AGRI_014_HEAT:out:flow",
+      "object_id": "AGRI_014_PUMP",
+      "circuit_id": "AGRI_014_HEAT",
+      "direction": "out",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "A区种薯 / 温室",
+      "parent_id": "AGRI_014"
+    },
+    {
+      "port_id": "AGRI_014_VALVE:AGRI_014_HEAT:in:flow",
+      "object_id": "AGRI_014_VALVE",
+      "circuit_id": "AGRI_014_HEAT",
+      "direction": "in",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "A区种薯 / 温室",
+      "parent_id": "AGRI_014"
+    },
+    {
+      "port_id": "AGRI_014_VALVE:AGRI_014_HEAT:out:flow",
+      "object_id": "AGRI_014_VALVE",
+      "circuit_id": "AGRI_014_HEAT",
+      "direction": "out",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "A区种薯 / 温室",
+      "parent_id": "AGRI_014"
+    },
+    {
+      "port_id": "AGRI_014_HEADER:AGRI_014_HEAT:out:flow",
+      "object_id": "AGRI_014_HEADER",
+      "circuit_id": "AGRI_014_HEAT",
+      "direction": "out",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "A区种薯 / 温室",
+      "parent_id": "AGRI_014"
+    },
+    {
+      "port_id": "AGRI_014_HEADER:AGRI_014_HEAT:in:flow",
+      "object_id": "AGRI_014_HEADER",
+      "circuit_id": "AGRI_014_HEAT",
+      "direction": "in",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "A区种薯 / 温室",
+      "parent_id": "AGRI_014"
+    },
+    {
+      "port_id": "AGRI_014_CTRL:AGRI_014_CONTROL:out:signal",
+      "object_id": "AGRI_014_CTRL",
+      "circuit_id": "AGRI_014_CONTROL",
+      "direction": "out",
+      "role": "signal",
+      "medium": "control",
+      "status": "candidate_unverified",
+      "zone_label": "A区种薯 / 温室",
+      "parent_id": "AGRI_014"
+    },
+    {
+      "port_id": "AGRI_014_VALVE:AGRI_014_CONTROL:in:signal",
+      "object_id": "AGRI_014_VALVE",
+      "circuit_id": "AGRI_014_CONTROL",
+      "direction": "in",
+      "role": "signal",
+      "medium": "control",
+      "status": "candidate_unverified",
+      "zone_label": "A区种薯 / 温室",
+      "parent_id": "AGRI_014"
+    },
+    {
+      "port_id": "AGRI_014_PUMP:AGRI_014_CONTROL:in:signal",
+      "object_id": "AGRI_014_PUMP",
+      "circuit_id": "AGRI_014_CONTROL",
+      "direction": "in",
+      "role": "signal",
+      "medium": "control",
+      "status": "candidate_unverified",
+      "zone_label": "A区种薯 / 温室",
+      "parent_id": "AGRI_014"
+    },
+    {
+      "port_id": "AGRI_014_GH1:AGRI_014_HEAT:in:flow",
+      "object_id": "AGRI_014_GH1",
+      "circuit_id": "AGRI_014_HEAT",
+      "direction": "in",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "A区种薯 / 温室",
+      "parent_id": "AGRI_014"
+    },
+    {
+      "port_id": "AGRI_014_GH1:AGRI_014_HEAT:out:flow",
+      "object_id": "AGRI_014_GH1",
+      "circuit_id": "AGRI_014_HEAT",
+      "direction": "out",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "A区种薯 / 温室",
+      "parent_id": "AGRI_014"
+    },
+    {
+      "port_id": "AGRI_014_GH2:AGRI_014_HEAT:in:flow",
+      "object_id": "AGRI_014_GH2",
+      "circuit_id": "AGRI_014_HEAT",
+      "direction": "in",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "A区种薯 / 温室",
+      "parent_id": "AGRI_014"
+    },
+    {
+      "port_id": "AGRI_014_GH2:AGRI_014_HEAT:out:flow",
+      "object_id": "AGRI_014_GH2",
+      "circuit_id": "AGRI_014_HEAT",
+      "direction": "out",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "A区种薯 / 温室",
+      "parent_id": "AGRI_014"
+    },
+    {
+      "port_id": "AGRI_015_HX:AGRI_015_HEAT:out:flow",
+      "object_id": "AGRI_015_HX",
+      "circuit_id": "AGRI_015_HEAT",
+      "direction": "out",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "A区食用菌 / 菌房空气处理",
+      "parent_id": "AGRI_015"
+    },
+    {
+      "port_id": "AGRI_015_HX:AGRI_015_HEAT:in:flow",
+      "object_id": "AGRI_015_HX",
+      "circuit_id": "AGRI_015_HEAT",
+      "direction": "in",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "A区食用菌 / 菌房空气处理",
+      "parent_id": "AGRI_015"
+    },
+    {
+      "port_id": "AGRI_015_PUMP:AGRI_015_HEAT:in:flow",
+      "object_id": "AGRI_015_PUMP",
+      "circuit_id": "AGRI_015_HEAT",
+      "direction": "in",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "A区食用菌 / 菌房空气处理",
+      "parent_id": "AGRI_015"
+    },
+    {
+      "port_id": "AGRI_015_PUMP:AGRI_015_HEAT:out:flow",
+      "object_id": "AGRI_015_PUMP",
+      "circuit_id": "AGRI_015_HEAT",
+      "direction": "out",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "A区食用菌 / 菌房空气处理",
+      "parent_id": "AGRI_015"
+    },
+    {
+      "port_id": "AGRI_015_VALVE:AGRI_015_HEAT:in:flow",
+      "object_id": "AGRI_015_VALVE",
+      "circuit_id": "AGRI_015_HEAT",
+      "direction": "in",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "A区食用菌 / 菌房空气处理",
+      "parent_id": "AGRI_015"
+    },
+    {
+      "port_id": "AGRI_015_VALVE:AGRI_015_HEAT:out:flow",
+      "object_id": "AGRI_015_VALVE",
+      "circuit_id": "AGRI_015_HEAT",
+      "direction": "out",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "A区食用菌 / 菌房空气处理",
+      "parent_id": "AGRI_015"
+    },
+    {
+      "port_id": "AGRI_015_HEADER:AGRI_015_HEAT:out:flow",
+      "object_id": "AGRI_015_HEADER",
+      "circuit_id": "AGRI_015_HEAT",
+      "direction": "out",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "A区食用菌 / 菌房空气处理",
+      "parent_id": "AGRI_015"
+    },
+    {
+      "port_id": "AGRI_015_HEADER:AGRI_015_HEAT:in:flow",
+      "object_id": "AGRI_015_HEADER",
+      "circuit_id": "AGRI_015_HEAT",
+      "direction": "in",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "A区食用菌 / 菌房空气处理",
+      "parent_id": "AGRI_015"
+    },
+    {
+      "port_id": "AGRI_015_CTRL:AGRI_015_CONTROL:out:signal",
+      "object_id": "AGRI_015_CTRL",
+      "circuit_id": "AGRI_015_CONTROL",
+      "direction": "out",
+      "role": "signal",
+      "medium": "control",
+      "status": "candidate_unverified",
+      "zone_label": "A区食用菌 / 菌房空气处理",
+      "parent_id": "AGRI_015"
+    },
+    {
+      "port_id": "AGRI_015_VALVE:AGRI_015_CONTROL:in:signal",
+      "object_id": "AGRI_015_VALVE",
+      "circuit_id": "AGRI_015_CONTROL",
+      "direction": "in",
+      "role": "signal",
+      "medium": "control",
+      "status": "candidate_unverified",
+      "zone_label": "A区食用菌 / 菌房空气处理",
+      "parent_id": "AGRI_015"
+    },
+    {
+      "port_id": "AGRI_015_PUMP:AGRI_015_CONTROL:in:signal",
+      "object_id": "AGRI_015_PUMP",
+      "circuit_id": "AGRI_015_CONTROL",
+      "direction": "in",
+      "role": "signal",
+      "medium": "control",
+      "status": "candidate_unverified",
+      "zone_label": "A区食用菌 / 菌房空气处理",
+      "parent_id": "AGRI_015"
+    },
+    {
+      "port_id": "AGRI_015_AHU1:AGRI_015_HEAT:in:flow",
+      "object_id": "AGRI_015_AHU1",
+      "circuit_id": "AGRI_015_HEAT",
+      "direction": "in",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "A区食用菌 / 菌房空气处理",
+      "parent_id": "AGRI_015"
+    },
+    {
+      "port_id": "AGRI_015_AHU1:AGRI_015_HEAT:out:flow",
+      "object_id": "AGRI_015_AHU1",
+      "circuit_id": "AGRI_015_HEAT",
+      "direction": "out",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "A区食用菌 / 菌房空气处理",
+      "parent_id": "AGRI_015"
+    },
+    {
+      "port_id": "AGRI_015_AHU2:AGRI_015_HEAT:in:flow",
+      "object_id": "AGRI_015_AHU2",
+      "circuit_id": "AGRI_015_HEAT",
+      "direction": "in",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "A区食用菌 / 菌房空气处理",
+      "parent_id": "AGRI_015"
+    },
+    {
+      "port_id": "AGRI_015_AHU2:AGRI_015_HEAT:out:flow",
+      "object_id": "AGRI_015_AHU2",
+      "circuit_id": "AGRI_015_HEAT",
+      "direction": "out",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "A区食用菌 / 菌房空气处理",
+      "parent_id": "AGRI_015"
+    },
+    {
+      "port_id": "AGRI_016_HX:AGRI_016_HEAT:out:flow",
+      "object_id": "AGRI_016_HX",
+      "circuit_id": "AGRI_016_HEAT",
+      "direction": "out",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "B区番茄",
+      "parent_id": "AGRI_016"
+    },
+    {
+      "port_id": "AGRI_016_HX:AGRI_016_HEAT:in:flow",
+      "object_id": "AGRI_016_HX",
+      "circuit_id": "AGRI_016_HEAT",
+      "direction": "in",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "B区番茄",
+      "parent_id": "AGRI_016"
+    },
+    {
+      "port_id": "AGRI_016_PUMP:AGRI_016_HEAT:in:flow",
+      "object_id": "AGRI_016_PUMP",
+      "circuit_id": "AGRI_016_HEAT",
+      "direction": "in",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "B区番茄",
+      "parent_id": "AGRI_016"
+    },
+    {
+      "port_id": "AGRI_016_PUMP:AGRI_016_HEAT:out:flow",
+      "object_id": "AGRI_016_PUMP",
+      "circuit_id": "AGRI_016_HEAT",
+      "direction": "out",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "B区番茄",
+      "parent_id": "AGRI_016"
+    },
+    {
+      "port_id": "AGRI_016_VALVE:AGRI_016_HEAT:in:flow",
+      "object_id": "AGRI_016_VALVE",
+      "circuit_id": "AGRI_016_HEAT",
+      "direction": "in",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "B区番茄",
+      "parent_id": "AGRI_016"
+    },
+    {
+      "port_id": "AGRI_016_VALVE:AGRI_016_HEAT:out:flow",
+      "object_id": "AGRI_016_VALVE",
+      "circuit_id": "AGRI_016_HEAT",
+      "direction": "out",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "B区番茄",
+      "parent_id": "AGRI_016"
+    },
+    {
+      "port_id": "AGRI_016_HEADER:AGRI_016_HEAT:out:flow",
+      "object_id": "AGRI_016_HEADER",
+      "circuit_id": "AGRI_016_HEAT",
+      "direction": "out",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "B区番茄",
+      "parent_id": "AGRI_016"
+    },
+    {
+      "port_id": "AGRI_016_HEADER:AGRI_016_HEAT:in:flow",
+      "object_id": "AGRI_016_HEADER",
+      "circuit_id": "AGRI_016_HEAT",
+      "direction": "in",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "B区番茄",
+      "parent_id": "AGRI_016"
+    },
+    {
+      "port_id": "AGRI_016_CTRL:AGRI_016_CONTROL:out:signal",
+      "object_id": "AGRI_016_CTRL",
+      "circuit_id": "AGRI_016_CONTROL",
+      "direction": "out",
+      "role": "signal",
+      "medium": "control",
+      "status": "candidate_unverified",
+      "zone_label": "B区番茄",
+      "parent_id": "AGRI_016"
+    },
+    {
+      "port_id": "AGRI_016_VALVE:AGRI_016_CONTROL:in:signal",
+      "object_id": "AGRI_016_VALVE",
+      "circuit_id": "AGRI_016_CONTROL",
+      "direction": "in",
+      "role": "signal",
+      "medium": "control",
+      "status": "candidate_unverified",
+      "zone_label": "B区番茄",
+      "parent_id": "AGRI_016"
+    },
+    {
+      "port_id": "AGRI_016_PUMP:AGRI_016_CONTROL:in:signal",
+      "object_id": "AGRI_016_PUMP",
+      "circuit_id": "AGRI_016_CONTROL",
+      "direction": "in",
+      "role": "signal",
+      "medium": "control",
+      "status": "candidate_unverified",
+      "zone_label": "B区番茄",
+      "parent_id": "AGRI_016"
+    },
+    {
+      "port_id": "AGRI_016_GH1:AGRI_016_HEAT:in:flow",
+      "object_id": "AGRI_016_GH1",
+      "circuit_id": "AGRI_016_HEAT",
+      "direction": "in",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "B区番茄",
+      "parent_id": "AGRI_016"
+    },
+    {
+      "port_id": "AGRI_016_GH1:AGRI_016_HEAT:out:flow",
+      "object_id": "AGRI_016_GH1",
+      "circuit_id": "AGRI_016_HEAT",
+      "direction": "out",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "B区番茄",
+      "parent_id": "AGRI_016"
+    },
+    {
+      "port_id": "AGRI_016_GH2:AGRI_016_HEAT:in:flow",
+      "object_id": "AGRI_016_GH2",
+      "circuit_id": "AGRI_016_HEAT",
+      "direction": "in",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "B区番茄",
+      "parent_id": "AGRI_016"
+    },
+    {
+      "port_id": "AGRI_016_GH2:AGRI_016_HEAT:out:flow",
+      "object_id": "AGRI_016_GH2",
+      "circuit_id": "AGRI_016_HEAT",
+      "direction": "out",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "B区番茄",
+      "parent_id": "AGRI_016"
+    },
+    {
+      "port_id": "AGRI_017_HX:AGRI_017_HEAT:out:flow",
+      "object_id": "AGRI_017_HX",
+      "circuit_id": "AGRI_017_HEAT",
+      "direction": "out",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "B区草莓",
+      "parent_id": "AGRI_017"
+    },
+    {
+      "port_id": "AGRI_017_HX:AGRI_017_HEAT:in:flow",
+      "object_id": "AGRI_017_HX",
+      "circuit_id": "AGRI_017_HEAT",
+      "direction": "in",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "B区草莓",
+      "parent_id": "AGRI_017"
+    },
+    {
+      "port_id": "AGRI_017_PUMP:AGRI_017_HEAT:in:flow",
+      "object_id": "AGRI_017_PUMP",
+      "circuit_id": "AGRI_017_HEAT",
+      "direction": "in",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "B区草莓",
+      "parent_id": "AGRI_017"
+    },
+    {
+      "port_id": "AGRI_017_PUMP:AGRI_017_HEAT:out:flow",
+      "object_id": "AGRI_017_PUMP",
+      "circuit_id": "AGRI_017_HEAT",
+      "direction": "out",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "B区草莓",
+      "parent_id": "AGRI_017"
+    },
+    {
+      "port_id": "AGRI_017_VALVE:AGRI_017_HEAT:in:flow",
+      "object_id": "AGRI_017_VALVE",
+      "circuit_id": "AGRI_017_HEAT",
+      "direction": "in",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "B区草莓",
+      "parent_id": "AGRI_017"
+    },
+    {
+      "port_id": "AGRI_017_VALVE:AGRI_017_HEAT:out:flow",
+      "object_id": "AGRI_017_VALVE",
+      "circuit_id": "AGRI_017_HEAT",
+      "direction": "out",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "B区草莓",
+      "parent_id": "AGRI_017"
+    },
+    {
+      "port_id": "AGRI_017_HEADER:AGRI_017_HEAT:out:flow",
+      "object_id": "AGRI_017_HEADER",
+      "circuit_id": "AGRI_017_HEAT",
+      "direction": "out",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "B区草莓",
+      "parent_id": "AGRI_017"
+    },
+    {
+      "port_id": "AGRI_017_HEADER:AGRI_017_HEAT:in:flow",
+      "object_id": "AGRI_017_HEADER",
+      "circuit_id": "AGRI_017_HEAT",
+      "direction": "in",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "B区草莓",
+      "parent_id": "AGRI_017"
+    },
+    {
+      "port_id": "AGRI_017_CTRL:AGRI_017_CONTROL:out:signal",
+      "object_id": "AGRI_017_CTRL",
+      "circuit_id": "AGRI_017_CONTROL",
+      "direction": "out",
+      "role": "signal",
+      "medium": "control",
+      "status": "candidate_unverified",
+      "zone_label": "B区草莓",
+      "parent_id": "AGRI_017"
+    },
+    {
+      "port_id": "AGRI_017_VALVE:AGRI_017_CONTROL:in:signal",
+      "object_id": "AGRI_017_VALVE",
+      "circuit_id": "AGRI_017_CONTROL",
+      "direction": "in",
+      "role": "signal",
+      "medium": "control",
+      "status": "candidate_unverified",
+      "zone_label": "B区草莓",
+      "parent_id": "AGRI_017"
+    },
+    {
+      "port_id": "AGRI_017_PUMP:AGRI_017_CONTROL:in:signal",
+      "object_id": "AGRI_017_PUMP",
+      "circuit_id": "AGRI_017_CONTROL",
+      "direction": "in",
+      "role": "signal",
+      "medium": "control",
+      "status": "candidate_unverified",
+      "zone_label": "B区草莓",
+      "parent_id": "AGRI_017"
+    },
+    {
+      "port_id": "AGRI_017_GH1:AGRI_017_HEAT:in:flow",
+      "object_id": "AGRI_017_GH1",
+      "circuit_id": "AGRI_017_HEAT",
+      "direction": "in",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "B区草莓",
+      "parent_id": "AGRI_017"
+    },
+    {
+      "port_id": "AGRI_017_GH1:AGRI_017_HEAT:out:flow",
+      "object_id": "AGRI_017_GH1",
+      "circuit_id": "AGRI_017_HEAT",
+      "direction": "out",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "B区草莓",
+      "parent_id": "AGRI_017"
+    },
+    {
+      "port_id": "AGRI_017_GH2:AGRI_017_HEAT:in:flow",
+      "object_id": "AGRI_017_GH2",
+      "circuit_id": "AGRI_017_HEAT",
+      "direction": "in",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "B区草莓",
+      "parent_id": "AGRI_017"
+    },
+    {
+      "port_id": "AGRI_017_GH2:AGRI_017_HEAT:out:flow",
+      "object_id": "AGRI_017_GH2",
+      "circuit_id": "AGRI_017_HEAT",
+      "direction": "out",
+      "role": "flow",
+      "medium": "water",
+      "status": "candidate_unverified",
+      "zone_label": "B区草莓",
+      "parent_id": "AGRI_017"
+    }
+  ],
+  "connections": [
+    {
+      "connection_id": "AGRI_014_HX_INTERNAL",
+      "circuit_id": "AGRI_014_HEAT",
+      "medium": "water",
+      "role": "internal",
+      "from_object_id": "AGRI_014_HX",
+      "to_object_id": "AGRI_014_HX",
+      "from_port_id": "AGRI_014_HX:AGRI_014_HEAT:out:flow",
+      "to_port_id": "AGRI_014_HX:AGRI_014_HEAT:in:flow",
+      "status": "candidate_unverified",
+      "zone_label": "A区种薯 / 温室",
+      "parent_id": "AGRI_014"
+    },
+    {
+      "connection_id": "AGRI_014_PUMP_INTERNAL",
+      "circuit_id": "AGRI_014_HEAT",
+      "medium": "water",
+      "role": "internal",
+      "from_object_id": "AGRI_014_PUMP",
+      "to_object_id": "AGRI_014_PUMP",
+      "from_port_id": "AGRI_014_PUMP:AGRI_014_HEAT:in:flow",
+      "to_port_id": "AGRI_014_PUMP:AGRI_014_HEAT:out:flow",
+      "status": "candidate_unverified",
+      "zone_label": "A区种薯 / 温室",
+      "parent_id": "AGRI_014"
+    },
+    {
+      "connection_id": "AGRI_014_VALVE_INTERNAL",
+      "circuit_id": "AGRI_014_HEAT",
+      "medium": "water",
+      "role": "internal",
+      "from_object_id": "AGRI_014_VALVE",
+      "to_object_id": "AGRI_014_VALVE",
+      "from_port_id": "AGRI_014_VALVE:AGRI_014_HEAT:in:flow",
+      "to_port_id": "AGRI_014_VALVE:AGRI_014_HEAT:out:flow",
+      "status": "candidate_unverified",
+      "zone_label": "A区种薯 / 温室",
+      "parent_id": "AGRI_014"
+    },
+    {
+      "connection_id": "AGRI_014_EDGE_01",
+      "circuit_id": "AGRI_014_HEAT",
+      "medium": "water",
+      "role": "supply",
+      "from_object_id": "AGRI_014_HX",
+      "to_object_id": "AGRI_014_PUMP",
+      "from_port_id": "AGRI_014_HX:AGRI_014_HEAT:out:flow",
+      "to_port_id": "AGRI_014_PUMP:AGRI_014_HEAT:in:flow",
+      "status": "candidate_unverified",
+      "zone_label": "A区种薯 / 温室",
+      "parent_id": "AGRI_014"
+    },
+    {
+      "connection_id": "AGRI_014_EDGE_02",
+      "circuit_id": "AGRI_014_HEAT",
+      "medium": "water",
+      "role": "supply",
+      "from_object_id": "AGRI_014_PUMP",
+      "to_object_id": "AGRI_014_VALVE",
+      "from_port_id": "AGRI_014_PUMP:AGRI_014_HEAT:out:flow",
+      "to_port_id": "AGRI_014_VALVE:AGRI_014_HEAT:in:flow",
+      "status": "candidate_unverified",
+      "zone_label": "A区种薯 / 温室",
+      "parent_id": "AGRI_014"
+    },
+    {
+      "connection_id": "AGRI_014_EDGE_03",
+      "circuit_id": "AGRI_014_HEAT",
+      "medium": "water",
+      "role": "supply",
+      "from_object_id": "AGRI_014_VALVE",
+      "to_object_id": "AGRI_014_HEADER",
+      "from_port_id": "AGRI_014_VALVE:AGRI_014_HEAT:out:flow",
+      "to_port_id": "AGRI_014_HEADER:AGRI_014_HEAT:out:flow",
+      "status": "candidate_unverified",
+      "zone_label": "A区种薯 / 温室",
+      "parent_id": "AGRI_014"
+    },
+    {
+      "connection_id": "AGRI_014_EDGE_04",
+      "circuit_id": "AGRI_014_HEAT",
+      "medium": "water",
+      "role": "return",
+      "from_object_id": "AGRI_014_HEADER",
+      "to_object_id": "AGRI_014_HX",
+      "from_port_id": "AGRI_014_HEADER:AGRI_014_HEAT:in:flow",
+      "to_port_id": "AGRI_014_HX:AGRI_014_HEAT:in:flow",
+      "status": "candidate_unverified",
+      "zone_label": "A区种薯 / 温室",
+      "parent_id": "AGRI_014"
+    },
+    {
+      "connection_id": "AGRI_014_EDGE_05",
+      "circuit_id": "AGRI_014_CONTROL",
+      "medium": "signal",
+      "role": "control",
+      "from_object_id": "AGRI_014_CTRL",
+      "to_object_id": "AGRI_014_VALVE",
+      "from_port_id": "AGRI_014_CTRL:AGRI_014_CONTROL:out:signal",
+      "to_port_id": "AGRI_014_VALVE:AGRI_014_CONTROL:in:signal",
+      "status": "candidate_unverified",
+      "zone_label": "A区种薯 / 温室",
+      "parent_id": "AGRI_014"
+    },
+    {
+      "connection_id": "AGRI_014_EDGE_06",
+      "circuit_id": "AGRI_014_CONTROL",
+      "medium": "signal",
+      "role": "control",
+      "from_object_id": "AGRI_014_CTRL",
+      "to_object_id": "AGRI_014_PUMP",
+      "from_port_id": "AGRI_014_CTRL:AGRI_014_CONTROL:out:signal",
+      "to_port_id": "AGRI_014_PUMP:AGRI_014_CONTROL:in:signal",
+      "status": "candidate_unverified",
+      "zone_label": "A区种薯 / 温室",
+      "parent_id": "AGRI_014"
+    },
+    {
+      "connection_id": "AGRI_014_GH1_INTERNAL",
+      "circuit_id": "AGRI_014_HEAT",
+      "medium": "water",
+      "role": "internal",
+      "from_object_id": "AGRI_014_GH1",
+      "to_object_id": "AGRI_014_GH1",
+      "from_port_id": "AGRI_014_GH1:AGRI_014_HEAT:in:flow",
+      "to_port_id": "AGRI_014_GH1:AGRI_014_HEAT:out:flow",
+      "status": "candidate_unverified",
+      "zone_label": "A区种薯 / 温室",
+      "parent_id": "AGRI_014"
+    },
+    {
+      "connection_id": "AGRI_014_EDGE_11",
+      "circuit_id": "AGRI_014_HEAT",
+      "medium": "water",
+      "role": "supply",
+      "from_object_id": "AGRI_014_HEADER",
+      "to_object_id": "AGRI_014_GH1",
+      "from_port_id": "AGRI_014_HEADER:AGRI_014_HEAT:out:flow",
+      "to_port_id": "AGRI_014_GH1:AGRI_014_HEAT:in:flow",
+      "status": "candidate_unverified",
+      "zone_label": "A区种薯 / 温室",
+      "parent_id": "AGRI_014"
+    },
+    {
+      "connection_id": "AGRI_014_EDGE_21",
+      "circuit_id": "AGRI_014_HEAT",
+      "medium": "water",
+      "role": "return",
+      "from_object_id": "AGRI_014_GH1",
+      "to_object_id": "AGRI_014_HEADER",
+      "from_port_id": "AGRI_014_GH1:AGRI_014_HEAT:out:flow",
+      "to_port_id": "AGRI_014_HEADER:AGRI_014_HEAT:in:flow",
+      "status": "candidate_unverified",
+      "zone_label": "A区种薯 / 温室",
+      "parent_id": "AGRI_014"
+    },
+    {
+      "connection_id": "AGRI_014_GH2_INTERNAL",
+      "circuit_id": "AGRI_014_HEAT",
+      "medium": "water",
+      "role": "internal",
+      "from_object_id": "AGRI_014_GH2",
+      "to_object_id": "AGRI_014_GH2",
+      "from_port_id": "AGRI_014_GH2:AGRI_014_HEAT:in:flow",
+      "to_port_id": "AGRI_014_GH2:AGRI_014_HEAT:out:flow",
+      "status": "candidate_unverified",
+      "zone_label": "A区种薯 / 温室",
+      "parent_id": "AGRI_014"
+    },
+    {
+      "connection_id": "AGRI_014_EDGE_12",
+      "circuit_id": "AGRI_014_HEAT",
+      "medium": "water",
+      "role": "supply",
+      "from_object_id": "AGRI_014_HEADER",
+      "to_object_id": "AGRI_014_GH2",
+      "from_port_id": "AGRI_014_HEADER:AGRI_014_HEAT:out:flow",
+      "to_port_id": "AGRI_014_GH2:AGRI_014_HEAT:in:flow",
+      "status": "candidate_unverified",
+      "zone_label": "A区种薯 / 温室",
+      "parent_id": "AGRI_014"
+    },
+    {
+      "connection_id": "AGRI_014_EDGE_22",
+      "circuit_id": "AGRI_014_HEAT",
+      "medium": "water",
+      "role": "return",
+      "from_object_id": "AGRI_014_GH2",
+      "to_object_id": "AGRI_014_HEADER",
+      "from_port_id": "AGRI_014_GH2:AGRI_014_HEAT:out:flow",
+      "to_port_id": "AGRI_014_HEADER:AGRI_014_HEAT:in:flow",
+      "status": "candidate_unverified",
+      "zone_label": "A区种薯 / 温室",
+      "parent_id": "AGRI_014"
+    },
+    {
+      "connection_id": "AGRI_015_HX_INTERNAL",
+      "circuit_id": "AGRI_015_HEAT",
+      "medium": "water",
+      "role": "internal",
+      "from_object_id": "AGRI_015_HX",
+      "to_object_id": "AGRI_015_HX",
+      "from_port_id": "AGRI_015_HX:AGRI_015_HEAT:out:flow",
+      "to_port_id": "AGRI_015_HX:AGRI_015_HEAT:in:flow",
+      "status": "candidate_unverified",
+      "zone_label": "A区食用菌 / 菌房空气处理",
+      "parent_id": "AGRI_015"
+    },
+    {
+      "connection_id": "AGRI_015_PUMP_INTERNAL",
+      "circuit_id": "AGRI_015_HEAT",
+      "medium": "water",
+      "role": "internal",
+      "from_object_id": "AGRI_015_PUMP",
+      "to_object_id": "AGRI_015_PUMP",
+      "from_port_id": "AGRI_015_PUMP:AGRI_015_HEAT:in:flow",
+      "to_port_id": "AGRI_015_PUMP:AGRI_015_HEAT:out:flow",
+      "status": "candidate_unverified",
+      "zone_label": "A区食用菌 / 菌房空气处理",
+      "parent_id": "AGRI_015"
+    },
+    {
+      "connection_id": "AGRI_015_VALVE_INTERNAL",
+      "circuit_id": "AGRI_015_HEAT",
+      "medium": "water",
+      "role": "internal",
+      "from_object_id": "AGRI_015_VALVE",
+      "to_object_id": "AGRI_015_VALVE",
+      "from_port_id": "AGRI_015_VALVE:AGRI_015_HEAT:in:flow",
+      "to_port_id": "AGRI_015_VALVE:AGRI_015_HEAT:out:flow",
+      "status": "candidate_unverified",
+      "zone_label": "A区食用菌 / 菌房空气处理",
+      "parent_id": "AGRI_015"
+    },
+    {
+      "connection_id": "AGRI_015_EDGE_01",
+      "circuit_id": "AGRI_015_HEAT",
+      "medium": "water",
+      "role": "supply",
+      "from_object_id": "AGRI_015_HX",
+      "to_object_id": "AGRI_015_PUMP",
+      "from_port_id": "AGRI_015_HX:AGRI_015_HEAT:out:flow",
+      "to_port_id": "AGRI_015_PUMP:AGRI_015_HEAT:in:flow",
+      "status": "candidate_unverified",
+      "zone_label": "A区食用菌 / 菌房空气处理",
+      "parent_id": "AGRI_015"
+    },
+    {
+      "connection_id": "AGRI_015_EDGE_02",
+      "circuit_id": "AGRI_015_HEAT",
+      "medium": "water",
+      "role": "supply",
+      "from_object_id": "AGRI_015_PUMP",
+      "to_object_id": "AGRI_015_VALVE",
+      "from_port_id": "AGRI_015_PUMP:AGRI_015_HEAT:out:flow",
+      "to_port_id": "AGRI_015_VALVE:AGRI_015_HEAT:in:flow",
+      "status": "candidate_unverified",
+      "zone_label": "A区食用菌 / 菌房空气处理",
+      "parent_id": "AGRI_015"
+    },
+    {
+      "connection_id": "AGRI_015_EDGE_03",
+      "circuit_id": "AGRI_015_HEAT",
+      "medium": "water",
+      "role": "supply",
+      "from_object_id": "AGRI_015_VALVE",
+      "to_object_id": "AGRI_015_HEADER",
+      "from_port_id": "AGRI_015_VALVE:AGRI_015_HEAT:out:flow",
+      "to_port_id": "AGRI_015_HEADER:AGRI_015_HEAT:out:flow",
+      "status": "candidate_unverified",
+      "zone_label": "A区食用菌 / 菌房空气处理",
+      "parent_id": "AGRI_015"
+    },
+    {
+      "connection_id": "AGRI_015_EDGE_04",
+      "circuit_id": "AGRI_015_HEAT",
+      "medium": "water",
+      "role": "return",
+      "from_object_id": "AGRI_015_HEADER",
+      "to_object_id": "AGRI_015_HX",
+      "from_port_id": "AGRI_015_HEADER:AGRI_015_HEAT:in:flow",
+      "to_port_id": "AGRI_015_HX:AGRI_015_HEAT:in:flow",
+      "status": "candidate_unverified",
+      "zone_label": "A区食用菌 / 菌房空气处理",
+      "parent_id": "AGRI_015"
+    },
+    {
+      "connection_id": "AGRI_015_EDGE_05",
+      "circuit_id": "AGRI_015_CONTROL",
+      "medium": "signal",
+      "role": "control",
+      "from_object_id": "AGRI_015_CTRL",
+      "to_object_id": "AGRI_015_VALVE",
+      "from_port_id": "AGRI_015_CTRL:AGRI_015_CONTROL:out:signal",
+      "to_port_id": "AGRI_015_VALVE:AGRI_015_CONTROL:in:signal",
+      "status": "candidate_unverified",
+      "zone_label": "A区食用菌 / 菌房空气处理",
+      "parent_id": "AGRI_015"
+    },
+    {
+      "connection_id": "AGRI_015_EDGE_06",
+      "circuit_id": "AGRI_015_CONTROL",
+      "medium": "signal",
+      "role": "control",
+      "from_object_id": "AGRI_015_CTRL",
+      "to_object_id": "AGRI_015_PUMP",
+      "from_port_id": "AGRI_015_CTRL:AGRI_015_CONTROL:out:signal",
+      "to_port_id": "AGRI_015_PUMP:AGRI_015_CONTROL:in:signal",
+      "status": "candidate_unverified",
+      "zone_label": "A区食用菌 / 菌房空气处理",
+      "parent_id": "AGRI_015"
+    },
+    {
+      "connection_id": "AGRI_015_AHU1_INTERNAL",
+      "circuit_id": "AGRI_015_HEAT",
+      "medium": "water",
+      "role": "internal",
+      "from_object_id": "AGRI_015_AHU1",
+      "to_object_id": "AGRI_015_AHU1",
+      "from_port_id": "AGRI_015_AHU1:AGRI_015_HEAT:in:flow",
+      "to_port_id": "AGRI_015_AHU1:AGRI_015_HEAT:out:flow",
+      "status": "candidate_unverified",
+      "zone_label": "A区食用菌 / 菌房空气处理",
+      "parent_id": "AGRI_015"
+    },
+    {
+      "connection_id": "AGRI_015_EDGE_11",
+      "circuit_id": "AGRI_015_HEAT",
+      "medium": "water",
+      "role": "supply",
+      "from_object_id": "AGRI_015_HEADER",
+      "to_object_id": "AGRI_015_AHU1",
+      "from_port_id": "AGRI_015_HEADER:AGRI_015_HEAT:out:flow",
+      "to_port_id": "AGRI_015_AHU1:AGRI_015_HEAT:in:flow",
+      "status": "candidate_unverified",
+      "zone_label": "A区食用菌 / 菌房空气处理",
+      "parent_id": "AGRI_015"
+    },
+    {
+      "connection_id": "AGRI_015_EDGE_21",
+      "circuit_id": "AGRI_015_HEAT",
+      "medium": "water",
+      "role": "return",
+      "from_object_id": "AGRI_015_AHU1",
+      "to_object_id": "AGRI_015_HEADER",
+      "from_port_id": "AGRI_015_AHU1:AGRI_015_HEAT:out:flow",
+      "to_port_id": "AGRI_015_HEADER:AGRI_015_HEAT:in:flow",
+      "status": "candidate_unverified",
+      "zone_label": "A区食用菌 / 菌房空气处理",
+      "parent_id": "AGRI_015"
+    },
+    {
+      "connection_id": "AGRI_015_AHU2_INTERNAL",
+      "circuit_id": "AGRI_015_HEAT",
+      "medium": "water",
+      "role": "internal",
+      "from_object_id": "AGRI_015_AHU2",
+      "to_object_id": "AGRI_015_AHU2",
+      "from_port_id": "AGRI_015_AHU2:AGRI_015_HEAT:in:flow",
+      "to_port_id": "AGRI_015_AHU2:AGRI_015_HEAT:out:flow",
+      "status": "candidate_unverified",
+      "zone_label": "A区食用菌 / 菌房空气处理",
+      "parent_id": "AGRI_015"
+    },
+    {
+      "connection_id": "AGRI_015_EDGE_12",
+      "circuit_id": "AGRI_015_HEAT",
+      "medium": "water",
+      "role": "supply",
+      "from_object_id": "AGRI_015_HEADER",
+      "to_object_id": "AGRI_015_AHU2",
+      "from_port_id": "AGRI_015_HEADER:AGRI_015_HEAT:out:flow",
+      "to_port_id": "AGRI_015_AHU2:AGRI_015_HEAT:in:flow",
+      "status": "candidate_unverified",
+      "zone_label": "A区食用菌 / 菌房空气处理",
+      "parent_id": "AGRI_015"
+    },
+    {
+      "connection_id": "AGRI_015_EDGE_22",
+      "circuit_id": "AGRI_015_HEAT",
+      "medium": "water",
+      "role": "return",
+      "from_object_id": "AGRI_015_AHU2",
+      "to_object_id": "AGRI_015_HEADER",
+      "from_port_id": "AGRI_015_AHU2:AGRI_015_HEAT:out:flow",
+      "to_port_id": "AGRI_015_HEADER:AGRI_015_HEAT:in:flow",
+      "status": "candidate_unverified",
+      "zone_label": "A区食用菌 / 菌房空气处理",
+      "parent_id": "AGRI_015"
+    },
+    {
+      "connection_id": "AGRI_016_HX_INTERNAL",
+      "circuit_id": "AGRI_016_HEAT",
+      "medium": "water",
+      "role": "internal",
+      "from_object_id": "AGRI_016_HX",
+      "to_object_id": "AGRI_016_HX",
+      "from_port_id": "AGRI_016_HX:AGRI_016_HEAT:out:flow",
+      "to_port_id": "AGRI_016_HX:AGRI_016_HEAT:in:flow",
+      "status": "candidate_unverified",
+      "zone_label": "B区番茄",
+      "parent_id": "AGRI_016"
+    },
+    {
+      "connection_id": "AGRI_016_PUMP_INTERNAL",
+      "circuit_id": "AGRI_016_HEAT",
+      "medium": "water",
+      "role": "internal",
+      "from_object_id": "AGRI_016_PUMP",
+      "to_object_id": "AGRI_016_PUMP",
+      "from_port_id": "AGRI_016_PUMP:AGRI_016_HEAT:in:flow",
+      "to_port_id": "AGRI_016_PUMP:AGRI_016_HEAT:out:flow",
+      "status": "candidate_unverified",
+      "zone_label": "B区番茄",
+      "parent_id": "AGRI_016"
+    },
+    {
+      "connection_id": "AGRI_016_VALVE_INTERNAL",
+      "circuit_id": "AGRI_016_HEAT",
+      "medium": "water",
+      "role": "internal",
+      "from_object_id": "AGRI_016_VALVE",
+      "to_object_id": "AGRI_016_VALVE",
+      "from_port_id": "AGRI_016_VALVE:AGRI_016_HEAT:in:flow",
+      "to_port_id": "AGRI_016_VALVE:AGRI_016_HEAT:out:flow",
+      "status": "candidate_unverified",
+      "zone_label": "B区番茄",
+      "parent_id": "AGRI_016"
+    },
+    {
+      "connection_id": "AGRI_016_EDGE_01",
+      "circuit_id": "AGRI_016_HEAT",
+      "medium": "water",
+      "role": "supply",
+      "from_object_id": "AGRI_016_HX",
+      "to_object_id": "AGRI_016_PUMP",
+      "from_port_id": "AGRI_016_HX:AGRI_016_HEAT:out:flow",
+      "to_port_id": "AGRI_016_PUMP:AGRI_016_HEAT:in:flow",
+      "status": "candidate_unverified",
+      "zone_label": "B区番茄",
+      "parent_id": "AGRI_016"
+    },
+    {
+      "connection_id": "AGRI_016_EDGE_02",
+      "circuit_id": "AGRI_016_HEAT",
+      "medium": "water",
+      "role": "supply",
+      "from_object_id": "AGRI_016_PUMP",
+      "to_object_id": "AGRI_016_VALVE",
+      "from_port_id": "AGRI_016_PUMP:AGRI_016_HEAT:out:flow",
+      "to_port_id": "AGRI_016_VALVE:AGRI_016_HEAT:in:flow",
+      "status": "candidate_unverified",
+      "zone_label": "B区番茄",
+      "parent_id": "AGRI_016"
+    },
+    {
+      "connection_id": "AGRI_016_EDGE_03",
+      "circuit_id": "AGRI_016_HEAT",
+      "medium": "water",
+      "role": "supply",
+      "from_object_id": "AGRI_016_VALVE",
+      "to_object_id": "AGRI_016_HEADER",
+      "from_port_id": "AGRI_016_VALVE:AGRI_016_HEAT:out:flow",
+      "to_port_id": "AGRI_016_HEADER:AGRI_016_HEAT:out:flow",
+      "status": "candidate_unverified",
+      "zone_label": "B区番茄",
+      "parent_id": "AGRI_016"
+    },
+    {
+      "connection_id": "AGRI_016_EDGE_04",
+      "circuit_id": "AGRI_016_HEAT",
+      "medium": "water",
+      "role": "return",
+      "from_object_id": "AGRI_016_HEADER",
+      "to_object_id": "AGRI_016_HX",
+      "from_port_id": "AGRI_016_HEADER:AGRI_016_HEAT:in:flow",
+      "to_port_id": "AGRI_016_HX:AGRI_016_HEAT:in:flow",
+      "status": "candidate_unverified",
+      "zone_label": "B区番茄",
+      "parent_id": "AGRI_016"
+    },
+    {
+      "connection_id": "AGRI_016_EDGE_05",
+      "circuit_id": "AGRI_016_CONTROL",
+      "medium": "signal",
+      "role": "control",
+      "from_object_id": "AGRI_016_CTRL",
+      "to_object_id": "AGRI_016_VALVE",
+      "from_port_id": "AGRI_016_CTRL:AGRI_016_CONTROL:out:signal",
+      "to_port_id": "AGRI_016_VALVE:AGRI_016_CONTROL:in:signal",
+      "status": "candidate_unverified",
+      "zone_label": "B区番茄",
+      "parent_id": "AGRI_016"
+    },
+    {
+      "connection_id": "AGRI_016_EDGE_06",
+      "circuit_id": "AGRI_016_CONTROL",
+      "medium": "signal",
+      "role": "control",
+      "from_object_id": "AGRI_016_CTRL",
+      "to_object_id": "AGRI_016_PUMP",
+      "from_port_id": "AGRI_016_CTRL:AGRI_016_CONTROL:out:signal",
+      "to_port_id": "AGRI_016_PUMP:AGRI_016_CONTROL:in:signal",
+      "status": "candidate_unverified",
+      "zone_label": "B区番茄",
+      "parent_id": "AGRI_016"
+    },
+    {
+      "connection_id": "AGRI_016_GH1_INTERNAL",
+      "circuit_id": "AGRI_016_HEAT",
+      "medium": "water",
+      "role": "internal",
+      "from_object_id": "AGRI_016_GH1",
+      "to_object_id": "AGRI_016_GH1",
+      "from_port_id": "AGRI_016_GH1:AGRI_016_HEAT:in:flow",
+      "to_port_id": "AGRI_016_GH1:AGRI_016_HEAT:out:flow",
+      "status": "candidate_unverified",
+      "zone_label": "B区番茄",
+      "parent_id": "AGRI_016"
+    },
+    {
+      "connection_id": "AGRI_016_EDGE_11",
+      "circuit_id": "AGRI_016_HEAT",
+      "medium": "water",
+      "role": "supply",
+      "from_object_id": "AGRI_016_HEADER",
+      "to_object_id": "AGRI_016_GH1",
+      "from_port_id": "AGRI_016_HEADER:AGRI_016_HEAT:out:flow",
+      "to_port_id": "AGRI_016_GH1:AGRI_016_HEAT:in:flow",
+      "status": "candidate_unverified",
+      "zone_label": "B区番茄",
+      "parent_id": "AGRI_016"
+    },
+    {
+      "connection_id": "AGRI_016_EDGE_21",
+      "circuit_id": "AGRI_016_HEAT",
+      "medium": "water",
+      "role": "return",
+      "from_object_id": "AGRI_016_GH1",
+      "to_object_id": "AGRI_016_HEADER",
+      "from_port_id": "AGRI_016_GH1:AGRI_016_HEAT:out:flow",
+      "to_port_id": "AGRI_016_HEADER:AGRI_016_HEAT:in:flow",
+      "status": "candidate_unverified",
+      "zone_label": "B区番茄",
+      "parent_id": "AGRI_016"
+    },
+    {
+      "connection_id": "AGRI_016_GH2_INTERNAL",
+      "circuit_id": "AGRI_016_HEAT",
+      "medium": "water",
+      "role": "internal",
+      "from_object_id": "AGRI_016_GH2",
+      "to_object_id": "AGRI_016_GH2",
+      "from_port_id": "AGRI_016_GH2:AGRI_016_HEAT:in:flow",
+      "to_port_id": "AGRI_016_GH2:AGRI_016_HEAT:out:flow",
+      "status": "candidate_unverified",
+      "zone_label": "B区番茄",
+      "parent_id": "AGRI_016"
+    },
+    {
+      "connection_id": "AGRI_016_EDGE_12",
+      "circuit_id": "AGRI_016_HEAT",
+      "medium": "water",
+      "role": "supply",
+      "from_object_id": "AGRI_016_HEADER",
+      "to_object_id": "AGRI_016_GH2",
+      "from_port_id": "AGRI_016_HEADER:AGRI_016_HEAT:out:flow",
+      "to_port_id": "AGRI_016_GH2:AGRI_016_HEAT:in:flow",
+      "status": "candidate_unverified",
+      "zone_label": "B区番茄",
+      "parent_id": "AGRI_016"
+    },
+    {
+      "connection_id": "AGRI_016_EDGE_22",
+      "circuit_id": "AGRI_016_HEAT",
+      "medium": "water",
+      "role": "return",
+      "from_object_id": "AGRI_016_GH2",
+      "to_object_id": "AGRI_016_HEADER",
+      "from_port_id": "AGRI_016_GH2:AGRI_016_HEAT:out:flow",
+      "to_port_id": "AGRI_016_HEADER:AGRI_016_HEAT:in:flow",
+      "status": "candidate_unverified",
+      "zone_label": "B区番茄",
+      "parent_id": "AGRI_016"
+    },
+    {
+      "connection_id": "AGRI_017_HX_INTERNAL",
+      "circuit_id": "AGRI_017_HEAT",
+      "medium": "water",
+      "role": "internal",
+      "from_object_id": "AGRI_017_HX",
+      "to_object_id": "AGRI_017_HX",
+      "from_port_id": "AGRI_017_HX:AGRI_017_HEAT:out:flow",
+      "to_port_id": "AGRI_017_HX:AGRI_017_HEAT:in:flow",
+      "status": "candidate_unverified",
+      "zone_label": "B区草莓",
+      "parent_id": "AGRI_017"
+    },
+    {
+      "connection_id": "AGRI_017_PUMP_INTERNAL",
+      "circuit_id": "AGRI_017_HEAT",
+      "medium": "water",
+      "role": "internal",
+      "from_object_id": "AGRI_017_PUMP",
+      "to_object_id": "AGRI_017_PUMP",
+      "from_port_id": "AGRI_017_PUMP:AGRI_017_HEAT:in:flow",
+      "to_port_id": "AGRI_017_PUMP:AGRI_017_HEAT:out:flow",
+      "status": "candidate_unverified",
+      "zone_label": "B区草莓",
+      "parent_id": "AGRI_017"
+    },
+    {
+      "connection_id": "AGRI_017_VALVE_INTERNAL",
+      "circuit_id": "AGRI_017_HEAT",
+      "medium": "water",
+      "role": "internal",
+      "from_object_id": "AGRI_017_VALVE",
+      "to_object_id": "AGRI_017_VALVE",
+      "from_port_id": "AGRI_017_VALVE:AGRI_017_HEAT:in:flow",
+      "to_port_id": "AGRI_017_VALVE:AGRI_017_HEAT:out:flow",
+      "status": "candidate_unverified",
+      "zone_label": "B区草莓",
+      "parent_id": "AGRI_017"
+    },
+    {
+      "connection_id": "AGRI_017_EDGE_01",
+      "circuit_id": "AGRI_017_HEAT",
+      "medium": "water",
+      "role": "supply",
+      "from_object_id": "AGRI_017_HX",
+      "to_object_id": "AGRI_017_PUMP",
+      "from_port_id": "AGRI_017_HX:AGRI_017_HEAT:out:flow",
+      "to_port_id": "AGRI_017_PUMP:AGRI_017_HEAT:in:flow",
+      "status": "candidate_unverified",
+      "zone_label": "B区草莓",
+      "parent_id": "AGRI_017"
+    },
+    {
+      "connection_id": "AGRI_017_EDGE_02",
+      "circuit_id": "AGRI_017_HEAT",
+      "medium": "water",
+      "role": "supply",
+      "from_object_id": "AGRI_017_PUMP",
+      "to_object_id": "AGRI_017_VALVE",
+      "from_port_id": "AGRI_017_PUMP:AGRI_017_HEAT:out:flow",
+      "to_port_id": "AGRI_017_VALVE:AGRI_017_HEAT:in:flow",
+      "status": "candidate_unverified",
+      "zone_label": "B区草莓",
+      "parent_id": "AGRI_017"
+    },
+    {
+      "connection_id": "AGRI_017_EDGE_03",
+      "circuit_id": "AGRI_017_HEAT",
+      "medium": "water",
+      "role": "supply",
+      "from_object_id": "AGRI_017_VALVE",
+      "to_object_id": "AGRI_017_HEADER",
+      "from_port_id": "AGRI_017_VALVE:AGRI_017_HEAT:out:flow",
+      "to_port_id": "AGRI_017_HEADER:AGRI_017_HEAT:out:flow",
+      "status": "candidate_unverified",
+      "zone_label": "B区草莓",
+      "parent_id": "AGRI_017"
+    },
+    {
+      "connection_id": "AGRI_017_EDGE_04",
+      "circuit_id": "AGRI_017_HEAT",
+      "medium": "water",
+      "role": "return",
+      "from_object_id": "AGRI_017_HEADER",
+      "to_object_id": "AGRI_017_HX",
+      "from_port_id": "AGRI_017_HEADER:AGRI_017_HEAT:in:flow",
+      "to_port_id": "AGRI_017_HX:AGRI_017_HEAT:in:flow",
+      "status": "candidate_unverified",
+      "zone_label": "B区草莓",
+      "parent_id": "AGRI_017"
+    },
+    {
+      "connection_id": "AGRI_017_EDGE_05",
+      "circuit_id": "AGRI_017_CONTROL",
+      "medium": "signal",
+      "role": "control",
+      "from_object_id": "AGRI_017_CTRL",
+      "to_object_id": "AGRI_017_VALVE",
+      "from_port_id": "AGRI_017_CTRL:AGRI_017_CONTROL:out:signal",
+      "to_port_id": "AGRI_017_VALVE:AGRI_017_CONTROL:in:signal",
+      "status": "candidate_unverified",
+      "zone_label": "B区草莓",
+      "parent_id": "AGRI_017"
+    },
+    {
+      "connection_id": "AGRI_017_EDGE_06",
+      "circuit_id": "AGRI_017_CONTROL",
+      "medium": "signal",
+      "role": "control",
+      "from_object_id": "AGRI_017_CTRL",
+      "to_object_id": "AGRI_017_PUMP",
+      "from_port_id": "AGRI_017_CTRL:AGRI_017_CONTROL:out:signal",
+      "to_port_id": "AGRI_017_PUMP:AGRI_017_CONTROL:in:signal",
+      "status": "candidate_unverified",
+      "zone_label": "B区草莓",
+      "parent_id": "AGRI_017"
+    },
+    {
+      "connection_id": "AGRI_017_GH1_INTERNAL",
+      "circuit_id": "AGRI_017_HEAT",
+      "medium": "water",
+      "role": "internal",
+      "from_object_id": "AGRI_017_GH1",
+      "to_object_id": "AGRI_017_GH1",
+      "from_port_id": "AGRI_017_GH1:AGRI_017_HEAT:in:flow",
+      "to_port_id": "AGRI_017_GH1:AGRI_017_HEAT:out:flow",
+      "status": "candidate_unverified",
+      "zone_label": "B区草莓",
+      "parent_id": "AGRI_017"
+    },
+    {
+      "connection_id": "AGRI_017_EDGE_11",
+      "circuit_id": "AGRI_017_HEAT",
+      "medium": "water",
+      "role": "supply",
+      "from_object_id": "AGRI_017_HEADER",
+      "to_object_id": "AGRI_017_GH1",
+      "from_port_id": "AGRI_017_HEADER:AGRI_017_HEAT:out:flow",
+      "to_port_id": "AGRI_017_GH1:AGRI_017_HEAT:in:flow",
+      "status": "candidate_unverified",
+      "zone_label": "B区草莓",
+      "parent_id": "AGRI_017"
+    },
+    {
+      "connection_id": "AGRI_017_EDGE_21",
+      "circuit_id": "AGRI_017_HEAT",
+      "medium": "water",
+      "role": "return",
+      "from_object_id": "AGRI_017_GH1",
+      "to_object_id": "AGRI_017_HEADER",
+      "from_port_id": "AGRI_017_GH1:AGRI_017_HEAT:out:flow",
+      "to_port_id": "AGRI_017_HEADER:AGRI_017_HEAT:in:flow",
+      "status": "candidate_unverified",
+      "zone_label": "B区草莓",
+      "parent_id": "AGRI_017"
+    },
+    {
+      "connection_id": "AGRI_017_GH2_INTERNAL",
+      "circuit_id": "AGRI_017_HEAT",
+      "medium": "water",
+      "role": "internal",
+      "from_object_id": "AGRI_017_GH2",
+      "to_object_id": "AGRI_017_GH2",
+      "from_port_id": "AGRI_017_GH2:AGRI_017_HEAT:in:flow",
+      "to_port_id": "AGRI_017_GH2:AGRI_017_HEAT:out:flow",
+      "status": "candidate_unverified",
+      "zone_label": "B区草莓",
+      "parent_id": "AGRI_017"
+    },
+    {
+      "connection_id": "AGRI_017_EDGE_12",
+      "circuit_id": "AGRI_017_HEAT",
+      "medium": "water",
+      "role": "supply",
+      "from_object_id": "AGRI_017_HEADER",
+      "to_object_id": "AGRI_017_GH2",
+      "from_port_id": "AGRI_017_HEADER:AGRI_017_HEAT:out:flow",
+      "to_port_id": "AGRI_017_GH2:AGRI_017_HEAT:in:flow",
+      "status": "candidate_unverified",
+      "zone_label": "B区草莓",
+      "parent_id": "AGRI_017"
+    },
+    {
+      "connection_id": "AGRI_017_EDGE_22",
+      "circuit_id": "AGRI_017_HEAT",
+      "medium": "water",
+      "role": "return",
+      "from_object_id": "AGRI_017_GH2",
+      "to_object_id": "AGRI_017_HEADER",
+      "from_port_id": "AGRI_017_GH2:AGRI_017_HEAT:out:flow",
+      "to_port_id": "AGRI_017_HEADER:AGRI_017_HEAT:in:flow",
+      "status": "candidate_unverified",
+      "zone_label": "B区草莓",
+      "parent_id": "AGRI_017"
+    }
+  ],
+  "zones": [
+    {
+      "parent_id": "AGRI_014",
+      "zone_label": "A区",
+      "semantic_root_nodes": {
+        "AGRI_014_HX": 43,
+        "AGRI_014_PUMP": 50,
+        "AGRI_014_VALVE": 95,
+        "AGRI_014_HEADER": 28,
+        "AGRI_014_CTRL": 5,
+        "AGRI_014_SENSOR": 88,
+        "AGRI_014_GH1": 14,
+        "AGRI_014_GH2": 23
+      },
+      "preview_url": "../map-viewer/assets/integrated-v3/AGRI_014.png"
+    },
+    {
+      "parent_id": "AGRI_015",
+      "zone_label": "A区",
+      "semantic_root_nodes": {
+        "AGRI_015_HX": 651,
+        "AGRI_015_PUMP": 658,
+        "AGRI_015_VALVE": 703,
+        "AGRI_015_HEADER": 636,
+        "AGRI_015_CTRL": 631,
+        "AGRI_015_SENSOR": 696,
+        "AGRI_015_AHU1": 619,
+        "AGRI_015_AHU2": 627
+      },
+      "preview_url": "../map-viewer/assets/integrated-v3/AGRI_015.png"
+    },
+    {
+      "parent_id": "AGRI_016",
+      "zone_label": "B区",
+      "semantic_root_nodes": {
+        "AGRI_016_HX": 1014,
+        "AGRI_016_PUMP": 1021,
+        "AGRI_016_VALVE": 1066,
+        "AGRI_016_HEADER": 999,
+        "AGRI_016_CTRL": 976,
+        "AGRI_016_SENSOR": 1059,
+        "AGRI_016_GH1": 985,
+        "AGRI_016_GH2": 994
+      },
+      "preview_url": "../map-viewer/assets/integrated-v3/AGRI_016.png"
+    },
+    {
+      "parent_id": "AGRI_017",
+      "zone_label": "B区",
+      "semantic_root_nodes": {
+        "AGRI_017_HX": 2293,
+        "AGRI_017_PUMP": 2300,
+        "AGRI_017_VALVE": 2345,
+        "AGRI_017_HEADER": 2278,
+        "AGRI_017_CTRL": 2255,
+        "AGRI_017_SENSOR": 2338,
+        "AGRI_017_GH1": 2264,
+        "AGRI_017_GH2": 2273
+      },
+      "preview_url": "../map-viewer/assets/integrated-v3/AGRI_017.png"
+    }
+  ],
+  "rendered_previews": [
+    {
+      "path": "../map-viewer/assets/integrated-v3/AGRI_014.png",
+      "sha256": "0c7ebf4920fde0e759572c0a17bffee9448b85fabf3cba93e63015c01071618f"
+    },
+    {
+      "path": "../map-viewer/assets/integrated-v3/AGRI_015.png",
+      "sha256": "ba0d12b9b4f458c9a8d98a5f0c3a0cf5538dd06ef04ced81aa7ea4f6b8810ecf"
+    },
+    {
+      "path": "../map-viewer/assets/integrated-v3/AGRI_016.png",
+      "sha256": "42cbe6665613f223cb6d91a1c252ca796ef57054cacb4e5aa6c5b74757a9aff8"
+    },
+    {
+      "path": "../map-viewer/assets/integrated-v3/AGRI_017.png",
+      "sha256": "99f97e1ff0dc210ba51e662ba560a4a1534c60315379c9c40c0e2488bb31d63e"
+    },
+    {
+      "path": "../map-viewer/assets/integrated-v3/AGRI_014_SENSOR.png",
+      "sha256": "f6b4b9eaf83359cb00d48f44f009e180e6bf1726f2d399e846dfff2ab1e844a8"
+    },
+    {
+      "path": "../map-viewer/assets/integrated-v3/AGRI_015_SENSOR.png",
+      "sha256": "f075792ba816f9a98255cb3b30deb9e5597bc1987487b945908eea1161fb91b5"
+    },
+    {
+      "path": "../map-viewer/assets/integrated-v3/AGRI_016_SENSOR.png",
+      "sha256": "dba1fb5fe5a1f798bfab5200c8897ded51d71b62336ff2181549c863bce4b00e"
+    },
+    {
+      "path": "../map-viewer/assets/integrated-v3/AGRI_017_SENSOR.png",
+      "sha256": "d9ab2798ec9afd88d050b284434df104619bcb0d0fe4cc015c45188720b54f76"
+    }
+  ],
+  "external_status": "A/B 末端回路仅作为父设施内的候选示意关系展示；未接入城市干线，也未证明现场连通。",
+  "hydraulic_validation": "not_run",
+  "engineering_gaps": [
+    "设施级独立配准和控制点未完成",
+    "道路/铁路/水域穿越待核",
+    "流量、泵扬程、管径和热负荷未完成计算"
+  ]
+}

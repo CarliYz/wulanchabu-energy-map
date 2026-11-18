@@ -1,0 +1,74 @@
+{
+  "schema_version": "energy-contracts-v1",
+  "results": [
+    {
+      "result_id": "RESULT_1",
+      "scenario_id": "MVP_NORMAL",
+      "object_id": "DEMO_USER",
+      "binding_status": "bound",
+      "unbound_reason": null,
+      "timestamp": null,
+      "hour_index": 0,
+      "data_kind": "synthetic",
+      "status": "available",
+      "input_sha256": "0f518fd73cbb0e1a35ce0be218f1f17140222a10e32429f9daac5b3d23907ddc",
+      "parameters_sha256": "45841eb7ac18dbd1a3802301fa3d03c701804043eb23478f4edc56451917a2e7",
+      "metrics": [
+        {
+          "metric": "heat_delivered",
+          "value": 2.0,
+          "unit": "MW"
+        }
+      ],
+      "source_ids": [
+        "LEGACY"
+      ]
+    },
+    {
+      "result_id": "RESULT_2",
+      "scenario_id": "MVP_NORMAL",
+      "object_id": "AGRI_018",
+      "binding_status": "bound",
+      "unbound_reason": null,
+      "timestamp": null,
+      "hour_index": 0,
+      "data_kind": "unknown",
+      "status": "missing_inputs",
+      "input_sha256": null,
+      "parameters_sha256": null,
+      "metrics": [
+        {
+          "metric": "heat_delivered",
+          "value": null,
+          "unit": "MW"
+        }
+      ],
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "result_id": "RESULT_3",
+      "scenario_id": "MVP_NORMAL",
+      "object_id": null,
+      "binding_status": "unbound",
+      "unbound_reason": "旧48行教学数据无设施绑定，禁止按名称分配",
+      "timestamp": null,
+      "hour_index": 0,
+      "data_kind": "synthetic",
+      "status": "available",
+      "input_sha256": "0f518fd73cbb0e1a35ce0be218f1f17140222a10e32429f9daac5b3d23907ddc",
+      "parameters_sha256": "45841eb7ac18dbd1a3802301fa3d03c701804043eb23478f4edc56451917a2e7",
+      "metrics": [
+        {
+          "metric": "heat_delivered",
+          "value": 2.0,
+          "unit": "MW"
+        }
+      ],
+      "source_ids": [
+        "LEGACY"
+      ]
+    }
+  ]
+}

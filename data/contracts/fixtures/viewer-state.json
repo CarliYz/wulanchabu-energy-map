@@ -1,0 +1,27 @@
+{
+  "selectedObjectId": null,
+  "selectedCircuitId": null,
+  "viewMode": "standard",
+  "lastBaseView": "standard",
+  "layerVisibility": {
+    "energy": true,
+    "agriculture": true,
+    "pipelines": true,
+    "terrain": true
+  },
+  "cameraHistory": [],
+  "detailTab": "properties",
+  "analysisScenarioId": "MVP_NORMAL",
+  "analysisTime": {
+    "hour_index": 0,
+    "timestamp": null
+  },
+  "overlayStack": [],
+  "indexExpanded": false,
+  "search": "",
+  "toolMode": "free",
+  "selectionRevision": 0,
+  "resultRequestRevision": 0,
+  "resultStatus": "idle",
+  "objectResults": []
+}

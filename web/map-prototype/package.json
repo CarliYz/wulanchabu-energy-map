@@ -1,0 +1,11 @@
+{
+  "name": "isolated-m9-map-prototype",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "serve": "python3 serve.py",
+    "validate": "node validate.mjs"
+  },
+  "dependencies": { "maplibre-gl": "5.6.1", "three": "0.180.0" }
+}

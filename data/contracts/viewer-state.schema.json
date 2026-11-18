@@ -1,0 +1,178 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://energy.local/contracts/viewer-state.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "selectedObjectId",
+    "selectedCircuitId",
+    "viewMode",
+    "lastBaseView",
+    "layerVisibility",
+    "cameraHistory",
+    "detailTab",
+    "analysisScenarioId",
+    "analysisTime",
+    "overlayStack",
+    "indexExpanded",
+    "search",
+    "toolMode",
+    "selectionRevision",
+    "resultRequestRevision",
+    "resultStatus",
+    "objectResults"
+  ],
+  "properties": {
+    "selectedObjectId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "selectedCircuitId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "viewMode": {
+      "enum": [
+        "standard",
+        "satellite",
+        "data"
+      ]
+    },
+    "lastBaseView": {
+      "enum": [
+        "standard",
+        "satellite"
+      ]
+    },
+    "layerVisibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "energy",
+        "agriculture",
+        "pipelines",
+        "terrain"
+      ],
+      "properties": {
+        "energy": {
+          "type": "boolean"
+        },
+        "agriculture": {
+          "type": "boolean"
+        },
+        "pipelines": {
+          "type": "boolean"
+        },
+        "terrain": {
+          "type": "boolean"
+        }
+      }
+    },
+    "cameraHistory": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "detailTab": {
+      "enum": [
+        "properties",
+        "relations",
+        "screenshots"
+      ]
+    },
+    "analysisScenarioId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "analysisTime": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "hour_index",
+        "timestamp"
+      ],
+      "properties": {
+        "hour_index": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "timestamp": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        }
+      },
+      "anyOf": [
+        {
+          "properties": {
+            "hour_index": {
+              "type": "integer"
+            }
+          }
+        },
+        {
+          "properties": {
+            "timestamp": {
+              "type": "string"
+            }
+          }
+        }
+      ]
+    },
+    "overlayStack": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "analysis",
+          "layers",
+          "audit",
+          "image"
+        ]
+      }
+    },
+    "indexExpanded": {
+      "type": "boolean"
+    },
+    "search": {
+      "type": "string"
+    },
+    "toolMode": {
+      "enum": [
+        "free",
+        "pan",
+        "rotate"
+      ]
+    },
+    "selectionRevision": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "resultRequestRevision": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "resultStatus": {
+      "enum": [
+        "idle",
+        "loading",
+        "available",
+        "missing_inputs",
+        "error"
+      ]
+    },
+    "objectResults": {
+      "$ref": "results.schema.json#/properties/results"
+    }
+  }
+}

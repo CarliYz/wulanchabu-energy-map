@@ -1,0 +1,179 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://energy.local/contracts/objects.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "energy-contracts-v1"
+    },
+    "sources": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "common.schema.json#/$defs/source"
+      }
+    },
+    "objects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "object_id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "asset_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1
+          },
+          "parent_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "type": "string",
+            "minLength": 1
+          },
+          "phase": {
+            "$ref": "common.schema.json#/$defs/phase"
+          },
+          "installation_status": {
+            "enum": [
+              "candidate_unverified",
+              "unknown",
+              "operational_verified"
+            ]
+          },
+          "model_status": {
+            "enum": [
+              "existing_schematic",
+              "missing",
+              "complete_verified"
+            ]
+          },
+          "position": {
+            "$ref": "common.schema.json#/$defs/position"
+          },
+          "planning_area": {
+            "anyOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "min": {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  "max": {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  "unit": {
+                    "const": "m2"
+                  }
+                },
+                "required": [
+                  "min",
+                  "max",
+                  "unit"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "model_footprint_m2": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "focus_bounds": {
+            "anyOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "min": {
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    },
+                    "minItems": 3,
+                    "maxItems": 3
+                  },
+                  "max": {
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    },
+                    "minItems": 3,
+                    "maxItems": 3
+                  },
+                  "space": {
+                    "const": "local_utm_z_up"
+                  }
+                },
+                "required": [
+                  "min",
+                  "max",
+                  "space"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "source_ids": {
+            "type": "array",
+            "items": {
+              "$ref": "common.schema.json#/$defs/id"
+            },
+            "minItems": 1
+          },
+          "gaps": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "required": [
+          "object_id",
+          "asset_id",
+          "parent_id",
+          "name",
+          "kind",
+          "phase",
+          "installation_status",
+          "model_status",
+          "position",
+          "planning_area",
+          "model_footprint_m2",
+          "focus_bounds",
+          "source_ids",
+          "gaps"
+        ]
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "sources",
+    "objects"
+  ]
+}

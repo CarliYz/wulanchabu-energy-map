@@ -1,0 +1,4011 @@
+{
+  "revision": "m12-connected-v1",
+  "requirement_revision": "M11+phase2-system-contract+M12-C2-proposal",
+  "asset_url": "../map-viewer/assets/integrated-v2/facilities.glb",
+  "asset_sha256": "f6de6a67351ce5e1c1ad0af207a822fa7c39eff13853be1866c906d5ceaaba54",
+  "blender_source": "outputs/m12-connected-v1/乌兰察布_连接整合场景_v1.blend",
+  "status": "候选规划 · 示意补模 · 未施工、未投运、未完成水力验算",
+  "objects": [
+    {
+      "object_id": "M10_C2_SYSTEM",
+      "parent_id": "DRY_019",
+      "name": "C2 三换热器 + 提温 + 电输入系统",
+      "short_name": "C2 系统",
+      "group": "c",
+      "model_root_xyz": [
+        -4120.44140625,
+        4895.0869140625,
+        177.29354858398438
+      ],
+      "model_revision": "m12-connected-v1",
+      "installation_status": "候选规划 · 示意补模 · 未施工、未投运",
+      "model_footprint_m2": null,
+      "planning_area": null,
+      "circuits": [
+        "DRY_019_HEAT",
+        "DRY_019_POWER",
+        "DRY_019_CONTROL"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v2/DRY_019.png",
+      "description": "C2 秋烘候选设备的系统级示意：三台换热器、提温模块、独立电输入和控制柜，供回水与控制线分开表达。",
+      "gaps": [
+        "设备型号、容量、位置和接合待核",
+        "未完成工程水力、热力、电力审查"
+      ]
+    },
+    {
+      "object_id": "DRY_019_HX_1",
+      "parent_id": "DRY_019",
+      "name": "C2 换热器 1 候选",
+      "short_name": "HX1",
+      "group": "c",
+      "model_root_xyz": [
+        -4166.44140625,
+        4875.0869140625,
+        187.29354858398438
+      ],
+      "model_revision": "m12-connected-v1",
+      "installation_status": "候选规划 · 示意补模",
+      "model_footprint_m2": null,
+      "planning_area": null,
+      "circuits": [
+        "C2_SECONDARY",
+        "DRY_019_CONTROL",
+        "DRY_019_HEAT"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v2/DRY_019.png",
+      "description": "C2 三台板换并联的候选设计提案；一次与二次水隔离，仅传热，接管方式待专业核定。",
+      "gaps": [
+        "型号、换热量、流量和端口坐标待核"
+      ]
+    },
+    {
+      "object_id": "DRY_019_HX_2",
+      "parent_id": "DRY_019",
+      "name": "C2 换热器 2 候选",
+      "short_name": "HX2",
+      "group": "c",
+      "model_root_xyz": [
+        -4120.44140625,
+        4875.0869140625,
+        187.29354858398438
+      ],
+      "model_revision": "m12-connected-v1",
+      "installation_status": "候选规划 · 示意补模",
+      "model_footprint_m2": null,
+      "planning_area": null,
+      "circuits": [
+        "C2_SECONDARY",
+        "DRY_019_CONTROL",
+        "DRY_019_HEAT"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v2/DRY_019.png",
+      "description": "C2 三台板换并联的候选设计提案；一次与二次水隔离，仅传热，接管方式待专业核定。",
+      "gaps": [
+        "工艺负荷、设备规格和管口位置待核"
+      ]
+    },
+    {
+      "object_id": "DRY_019_HX_3",
+      "parent_id": "DRY_019",
+      "name": "C2 换热器 3 候选",
+      "short_name": "HX3",
+      "group": "c",
+      "model_root_xyz": [
+        -4074.44140625,
+        4875.0869140625,
+        187.29354858398438
+      ],
+      "model_revision": "m12-connected-v1",
+      "installation_status": "候选规划 · 示意补模",
+      "model_footprint_m2": null,
+      "planning_area": null,
+      "circuits": [
+        "C2_SECONDARY",
+        "DRY_019_CONTROL",
+        "DRY_019_HEAT"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v2/DRY_019.png",
+      "description": "C2 三台板换并联的候选设计提案；一次与二次水隔离，仅传热，接管方式待专业核定。",
+      "gaps": [
+        "工艺负荷、设备规格和管口位置待核"
+      ]
+    },
+    {
+      "object_id": "DRY_019_BOOSTER",
+      "parent_id": "DRY_019",
+      "name": "C2 提温模块候选",
+      "short_name": "提温",
+      "group": "c",
+      "model_root_xyz": [
+        -4120.44140625,
+        4923.0869140625,
+        187.29354858398438
+      ],
+      "model_revision": "m12-connected-v1",
+      "installation_status": "候选规划 · 示意补模",
+      "model_footprint_m2": null,
+      "planning_area": null,
+      "circuits": [
+        "C2_SECONDARY",
+        "DRY_019_CONTROL",
+        "DRY_019_POWER"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v2/DRY_019.png",
+      "description": "秋烘 50–55℃热风的候选提温模块；与电输入和热水回路分开显示。",
+      "gaps": [
+        "提温方案、COP、输入功率和热端温度待核"
+      ]
+    },
+    {
+      "object_id": "DRY_019_POWER",
+      "parent_id": "DRY_019",
+      "name": "C2 电输入接口候选",
+      "short_name": "电输入",
+      "group": "c",
+      "model_root_xyz": [
+        -4058.44140625,
+        4923.0869140625,
+        182.29354858398438
+      ],
+      "model_revision": "m12-connected-v1",
+      "installation_status": "候选规划 · 示意补模",
+      "model_footprint_m2": null,
+      "planning_area": null,
+      "circuits": [
+        "DRY_019_POWER"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v2/DRY_019.png",
+      "description": "C2 提温设备独立电输入接口候选，不等同于机房备用电。",
+      "gaps": [
+        "容量、接入点、保护和电源来源待核"
+      ]
+    },
+    {
+      "object_id": "DRY_019_CTRL",
+      "parent_id": "DRY_019",
+      "name": "C2 控制柜候选",
+      "short_name": "控制",
+      "group": "c",
+      "model_root_xyz": [
+        -4182.44140625,
+        4923.0869140625,
+        180.29354858398438
+      ],
+      "model_revision": "m12-connected-v1",
+      "installation_status": "候选规划 · 示意补模",
+      "model_footprint_m2": null,
+      "planning_area": null,
+      "circuits": [
+        "DRY_019_CONTROL"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v2/DRY_019.png",
+      "description": "C2 换热器和提温模块的候选控制柜，供回水测点与执行器尚无现场信号。",
+      "gaps": [
+        "PLC、测点、阀泵执行器和联锁待核"
+      ]
+    },
+    {
+      "object_id": "M10_PTES_SYSTEM",
+      "parent_id": "STORE_012",
+      "name": "PTES 充放热阀泵与控制系统",
+      "short_name": "PTES 系统",
+      "group": "energy",
+      "model_root_xyz": [
+        -352.02801513671875,
+        602.0391235351562,
+        146.95858764648438
+      ],
+      "model_revision": "m12-connected-v1",
+      "installation_status": "候选规划 · 示意补模 · 未投运",
+      "model_footprint_m2": null,
+      "planning_area": null,
+      "circuits": [
+        "PTES_CHARGE",
+        "PTES_DISCHARGE",
+        "PTES_CONTROL"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v2/STORE_012.png",
+      "description": "PTES 充热和放热分列的阀、泵、止回与控制示意，默认 IDLE，不表达已通流。",
+      "gaps": [
+        "阀型、泵扬程、流量、层化和现场仪表待核",
+        "未完成工程水力审核"
+      ]
+    },
+    {
+      "object_id": "STORE_012_CHARGE_VHOT",
+      "parent_id": "STORE_012",
+      "name": "PTES 充热隔离阀候选",
+      "short_name": "充热阀",
+      "group": "energy",
+      "model_root_xyz": [
+        -202.02801513671875,
+        532.0391235351562,
+        151.95858764648438
+      ],
+      "model_revision": "m12-connected-v1",
+      "installation_status": "候选规划 · 示意补模",
+      "model_footprint_m2": null,
+      "planning_area": null,
+      "circuits": [
+        "PTES_CONTROL",
+        "USER"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v2/STORE_012.png",
+      "description": "PTES 充热支路的隔离阀候选。",
+      "gaps": [
+        "阀位反馈和现场管口待核"
+      ]
+    },
+    {
+      "object_id": "STORE_012_CHARGE_PUMP",
+      "parent_id": "STORE_012",
+      "name": "PTES 充热循环泵候选",
+      "short_name": "充热泵",
+      "group": "energy",
+      "model_root_xyz": [
+        -202.02801513671875,
+        577.0391235351562,
+        151.95858764648438
+      ],
+      "model_revision": "m12-connected-v1",
+      "installation_status": "候选规划 · 示意补模",
+      "model_footprint_m2": null,
+      "planning_area": null,
+      "circuits": [
+        "PTES_CONTROL",
+        "USER"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v2/STORE_012.png",
+      "description": "PTES 充热支路循环泵候选。",
+      "gaps": [
+        "泵扬程、流量和电输入待核"
+      ]
+    },
+    {
+      "object_id": "STORE_012_CHARGE_VRETURN",
+      "parent_id": "STORE_012",
+      "name": "PTES 充热回水隔离阀候选",
+      "short_name": "充热回水阀",
+      "group": "energy",
+      "model_root_xyz": [
+        -202.02801513671875,
+        622.0391235351562,
+        151.95858764648438
+      ],
+      "model_revision": "m12-connected-v1",
+      "installation_status": "候选规划 · 示意补模",
+      "model_footprint_m2": null,
+      "planning_area": null,
+      "circuits": [
+        "PTES_CONTROL",
+        "USER"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v2/STORE_012.png",
+      "description": "PTES 充热回水侧隔离阀候选。",
+      "gaps": [
+        "阀位反馈和现场管口待核"
+      ]
+    },
+    {
+      "object_id": "STORE_012_DIS_VHOT",
+      "parent_id": "STORE_012",
+      "name": "PTES 放热隔离阀候选",
+      "short_name": "放热阀",
+      "group": "energy",
+      "model_root_xyz": [
+        -502.02801513671875,
+        637.0391235351562,
+        151.95858764648438
+      ],
+      "model_revision": "m12-connected-v1",
+      "installation_status": "候选规划 · 示意补模",
+      "model_footprint_m2": null,
+      "planning_area": null,
+      "circuits": [
+        "PTES_CONTROL",
+        "USER"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v2/STORE_012.png",
+      "description": "PTES 放热支路隔离阀候选。",
+      "gaps": [
+        "阀位反馈和现场管口待核"
+      ]
+    },
+    {
+      "object_id": "STORE_012_DIS_PUMP",
+      "parent_id": "STORE_012",
+      "name": "PTES 放热循环泵候选",
+      "short_name": "放热泵",
+      "group": "energy",
+      "model_root_xyz": [
+        -502.02801513671875,
+        592.0391235351562,
+        151.95858764648438
+      ],
+      "model_revision": "m12-connected-v1",
+      "installation_status": "候选规划 · 示意补模",
+      "model_footprint_m2": null,
+      "planning_area": null,
+      "circuits": [
+        "PTES_CONTROL",
+        "USER"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v2/STORE_012.png",
+      "description": "PTES 放热支路循环泵候选。",
+      "gaps": [
+        "泵扬程、流量和电输入待核"
+      ]
+    },
+    {
+      "object_id": "STORE_012_DIS_CHECK",
+      "parent_id": "STORE_012",
+      "name": "PTES 放热出口止回阀候选",
+      "short_name": "止回阀",
+      "group": "energy",
+      "model_root_xyz": [
+        -502.02801513671875,
+        547.0391235351562,
+        151.95858764648438
+      ],
+      "model_revision": "m12-connected-v1",
+      "installation_status": "候选规划 · 示意补模",
+      "model_footprint_m2": null,
+      "planning_area": null,
+      "circuits": [
+        "USER"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v2/STORE_012.png",
+      "description": "PTES 放热出口止回阀候选，防止支路反向表达。",
+      "gaps": [
+        "阀型、压降和安装方向待核"
+      ]
+    },
+    {
+      "object_id": "STORE_012_CTRL",
+      "parent_id": "STORE_012",
+      "name": "PTES 阀泵控制柜候选",
+      "short_name": "PTES 控制",
+      "group": "energy",
+      "model_root_xyz": [
+        -167.02801513671875,
+        672.0391235351562,
+        152.95858764648438
+      ],
+      "model_revision": "m12-connected-v1",
+      "installation_status": "候选规划 · 示意补模",
+      "model_footprint_m2": null,
+      "planning_area": null,
+      "circuits": [
+        "PTES_CONTROL"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v2/STORE_012.png",
+      "description": "PTES 阀序、泵启停和模式互锁的候选控制柜。默认 IDLE。",
+      "gaps": [
+        "控制逻辑、阀位反馈和仪表接线待核"
+      ]
+    },
+    {
+      "object_id": "STORE_012_SENSOR",
+      "parent_id": "STORE_012",
+      "name": "PTES 温度分层/流量测点候选",
+      "short_name": "PTES 测点",
+      "group": "energy",
+      "model_root_xyz": [
+        -537.0280151367188,
+        672.0391235351562,
+        156.95858764648438
+      ],
+      "model_revision": "m12-connected-v1",
+      "installation_status": "候选规划 · 示意补模",
+      "model_footprint_m2": null,
+      "planning_area": null,
+      "circuits": [
+        "PTES_CONTROL"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v2/STORE_012.png",
+      "description": "PTES 温度分层和流量反馈测点候选，无现场读数。",
+      "gaps": [
+        "仪表类型、量程、位置和标定待核"
+      ]
+    },
+    {
+      "object_id": "BOILER_CAND_001",
+      "parent_id": null,
+      "name": "条件绿电电锅炉候选（异常/尖峰）",
+      "short_name": "电锅炉候选",
+      "group": "energy",
+      "model_root_xyz": [
+        150.0,
+        -95.0,
+        149.67196655273438
+      ],
+      "model_revision": "m12-connected-v1",
+      "installation_status": "候选预留 · 位置待核 · 默认禁用",
+      "model_footprint_m2": null,
+      "planning_area": null,
+      "circuits": [
+        "CONDITIONAL_POWER",
+        "USER"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v2/BOILER_CAND_001.png",
+      "description": "仅在异常或尖峰缺热且逐时绿电、容量、业主和安全条件通过后评估的候选支路；此处是示意占位。",
+      "gaps": [
+        "位置、容量、逐时绿电来源、接入和安全审查均待核",
+        "不提供数据中心备用电"
+      ]
+    },
+    {
+      "object_id": "GREEN_POWER_CAND_001",
+      "parent_id": "BOILER_CAND_001",
+      "name": "条件绿电输入预留接口",
+      "short_name": "绿电接口",
+      "group": "energy",
+      "model_root_xyz": [
+        150.0,
+        -61.0,
+        159.67196655273438
+      ],
+      "model_revision": "m12-connected-v1",
+      "installation_status": "候选预留 · 来源待核",
+      "model_footprint_m2": null,
+      "planning_area": null,
+      "circuits": [
+        "CONDITIONAL_POWER"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v2/BOILER_CAND_001.png",
+      "description": "条件电锅炉的逐时绿电输入预留接口。",
+      "gaps": [
+        "逐时来源、容量和电气保护待核"
+      ]
+    },
+    {
+      "object_id": "BOILER_CAND_001_RETURN_VALVE",
+      "parent_id": "BOILER_CAND_001",
+      "name": "锅炉回水隔离阀预留",
+      "short_name": "锅炉回水阀",
+      "group": "energy",
+      "model_root_xyz": [
+        118.0,
+        -95.0,
+        159.67196655273438
+      ],
+      "model_revision": "m12-connected-v1",
+      "installation_status": "候选预留 · 未启用",
+      "model_footprint_m2": null,
+      "planning_area": null,
+      "circuits": [
+        "USER"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v2/BOILER_CAND_001.png",
+      "description": "条件锅炉回水侧隔离阀预留。",
+      "gaps": [
+        "位置、阀型和接入对象待核"
+      ]
+    },
+    {
+      "object_id": "BOILER_CAND_001_PUMP",
+      "parent_id": "BOILER_CAND_001",
+      "name": "锅炉热侧循环泵预留",
+      "short_name": "锅炉循环泵",
+      "group": "energy",
+      "model_root_xyz": [
+        182.0,
+        -95.0,
+        159.67196655273438
+      ],
+      "model_revision": "m12-connected-v1",
+      "installation_status": "候选预留 · 未启用",
+      "model_footprint_m2": null,
+      "planning_area": null,
+      "circuits": [
+        "USER"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v2/BOILER_CAND_001.png",
+      "description": "条件锅炉热侧循环泵预留。",
+      "gaps": [
+        "扬程、流量、电输入和接入对象待核"
+      ]
+    },
+    {
+      "object_id": "BOILER_CAND_001_CHECK",
+      "parent_id": "BOILER_CAND_001",
+      "name": "锅炉出口止回阀预留",
+      "short_name": "锅炉止回阀",
+      "group": "energy",
+      "model_root_xyz": [
+        205.0,
+        -95.0,
+        159.67196655273438
+      ],
+      "model_revision": "m12-connected-v1",
+      "installation_status": "候选预留 · 未启用",
+      "model_footprint_m2": null,
+      "planning_area": null,
+      "circuits": [
+        "USER"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v2/BOILER_CAND_001.png",
+      "description": "条件锅炉出口止回阀预留。",
+      "gaps": [
+        "阀型、压降和安装方向待核"
+      ]
+    },
+    {
+      "object_id": "HUB_011_ROLE_MAPPING",
+      "parent_id": "HUB_011",
+      "name": "HUB CO₂闭环、用户水与独立电输入角色映射",
+      "short_name": "HUB 映射",
+      "group": "energy",
+      "model_root_xyz": [
+        0.0,
+        0.0,
+        155.67196655273438
+      ],
+      "model_revision": "m12-connected-v1",
+      "installation_status": "候选规划 · 角色映射示意",
+      "model_footprint_m2": null,
+      "planning_area": null,
+      "circuits": [
+        "CO2",
+        "USER",
+        "HUB_POWER"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v2/HUB_011.png",
+      "description": "把现有热泵站内 CO₂ 闭环、用户水和压缩机独立电输入分成三个可读角色层。",
+      "gaps": [
+        "设备喷嘴、双列拆分、端口坐标和电气容量待核"
+      ]
+    },
+    {
+      "object_id": "HUB_011_EVAP",
+      "parent_id": "HUB_011",
+      "name": "HUB 蒸发器角色端口映射",
+      "short_name": "蒸发器",
+      "group": "energy",
+      "model_root_xyz": [
+        -58.0,
+        35.0,
+        157.67196655273438
+      ],
+      "model_revision": "m12-connected-v1",
+      "installation_status": "候选规划 · 角色映射示意",
+      "model_footprint_m2": null,
+      "planning_area": null,
+      "circuits": [
+        "CO2",
+        "SOURCE"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v2/HUB_011.png",
+      "description": "源侧水进入蒸发器并与 CO₂ 闭环换热的角色标记。",
+      "gaps": [
+        "设备喷嘴与端口坐标待核"
+      ]
+    },
+    {
+      "object_id": "HUB_011_COMP",
+      "parent_id": "HUB_011",
+      "name": "HUB 压缩机角色端口映射",
+      "short_name": "压缩机",
+      "group": "energy",
+      "model_root_xyz": [
+        -15.0,
+        35.0,
+        161.67196655273438
+      ],
+      "model_revision": "m12-connected-v1",
+      "installation_status": "候选规划 · 角色映射示意",
+      "model_footprint_m2": null,
+      "planning_area": null,
+      "circuits": [
+        "CO2",
+        "HUB_POWER"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v2/HUB_011.png",
+      "description": "CO₂ 压缩机的闭环角色和独立电输入角色标记。",
+      "gaps": [
+        "压缩机型号、功率和电气接口待核"
+      ]
+    },
+    {
+      "object_id": "HUB_011_GAS",
+      "parent_id": "HUB_011",
+      "name": "HUB 气冷器用户水角色端口映射",
+      "short_name": "气冷器",
+      "group": "energy",
+      "model_root_xyz": [
+        28.0,
+        35.0,
+        157.67196655273438
+      ],
+      "model_revision": "m12-connected-v1",
+      "installation_status": "候选规划 · 角色映射示意",
+      "model_footprint_m2": null,
+      "planning_area": null,
+      "circuits": [
+        "CO2",
+        "USER"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v2/HUB_011.png",
+      "description": "CO₂ 侧放热到用户水侧的角色标记，CO₂ 不向温室输送。",
+      "gaps": [
+        "用户水喷嘴和分列管口待核"
+      ]
+    },
+    {
+      "object_id": "HUB_011_EXP",
+      "parent_id": "HUB_011",
+      "name": "HUB 节流阀角色端口映射",
+      "short_name": "节流阀",
+      "group": "energy",
+      "model_root_xyz": [
+        65.0,
+        35.0,
+        155.67196655273438
+      ],
+      "model_revision": "m12-connected-v1",
+      "installation_status": "候选规划 · 角色映射示意",
+      "model_footprint_m2": null,
+      "planning_area": null,
+      "circuits": [
+        "CO2"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v2/HUB_011.png",
+      "description": "CO₂ 闭环节流角色标记。",
+      "gaps": [
+        "阀型、压降和喷嘴位置待核"
+      ]
+    },
+    {
+      "object_id": "HUB_011_WATER",
+      "parent_id": "HUB_011",
+      "name": "HUB P2供回水总管角色端口映射",
+      "short_name": "P2供回水",
+      "group": "energy",
+      "model_root_xyz": [
+        35.0,
+        -35.0,
+        153.67196655273438
+      ],
+      "model_revision": "m12-connected-v1",
+      "installation_status": "候选规划 · 角色映射示意",
+      "model_footprint_m2": null,
+      "planning_area": null,
+      "circuits": [
+        "USER"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v2/HUB_011.png",
+      "description": "用户水供回总管角色标记，与 CO₂ 内循环和源侧水隔离表达。",
+      "gaps": [
+        "分列、管径、流量和供回端口坐标待核"
+      ]
+    },
+    {
+      "object_id": "HUB_011_P1_HX",
+      "parent_id": "HUB_011",
+      "name": "HUB P1隔离板换角色端口映射",
+      "short_name": "P1板换",
+      "group": "energy",
+      "model_root_xyz": [
+        -58.0,
+        -35.0,
+        153.67196655273438
+      ],
+      "model_revision": "m12-connected-v1",
+      "installation_status": "候选规划 · 角色映射示意",
+      "model_footprint_m2": null,
+      "planning_area": null,
+      "circuits": [
+        "P1_USER",
+        "SOURCE"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v2/HUB_011.png",
+      "description": "一期近端隔离板换角色标记，源侧水与用户水只做热传递。",
+      "gaps": [
+        "设备喷嘴、一次/二次侧容量和位置待核"
+      ]
+    },
+    {
+      "object_id": "HUB_POWER_CAND",
+      "parent_id": "HUB_011",
+      "name": "HUB 压缩机候选电输入接口",
+      "short_name": "压缩机电输入",
+      "group": "energy",
+      "model_root_xyz": [
+        88.0,
+        -35.0,
+        152.67196655273438
+      ],
+      "model_revision": "m12-connected-v1",
+      "installation_status": "候选规划 · 来源/容量待核",
+      "model_footprint_m2": null,
+      "planning_area": null,
+      "circuits": [
+        "HUB_POWER"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v2/HUB_011.png",
+      "description": "压缩机独立电输入候选接口，与条件电锅炉和机房备用电分开。",
+      "gaps": [
+        "来源、容量、保护和接入位置待核"
+      ]
+    },
+    {
+      "object_id": "STORE_012_DIS_VRETURN",
+      "parent_id": "STORE_012",
+      "name": "PTES 放热回水隔离阀候选",
+      "short_name": "放热回水阀",
+      "group": "energy",
+      "model_root_xyz": [
+        -502.02801513671875,
+        502.03912353515625,
+        151.95858764648438
+      ],
+      "model_revision": "m12-connected-v1",
+      "installation_status": "候选规划 · 示意补模",
+      "model_footprint_m2": null,
+      "planning_area": null,
+      "circuits": [
+        "PTES_CONTROL",
+        "USER"
+      ],
+      "preview_url": "../map-viewer/assets/integrated-v2/STORE_012.png",
+      "description": "phase2 合同已有的独立放热回水阀，本批补齐候选几何。",
+      "gaps": [
+        "阀位反馈和现场管口待核"
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "connection_id": "M12_EDGE_003",
+      "from_port_id": "HUB_011_EVAP:CO2:out:flow",
+      "to_port_id": "HUB_011_COMP:CO2:in:flow",
+      "from_object_id": "HUB_011_EVAP",
+      "to_object_id": "HUB_011_COMP",
+      "circuit_id": "CO2",
+      "medium": "co2",
+      "role": "supply",
+      "branch": null,
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_EDGE_004",
+      "from_port_id": "HUB_011_COMP:CO2:out:flow",
+      "to_port_id": "HUB_011_GAS:CO2:in:flow",
+      "from_object_id": "HUB_011_COMP",
+      "to_object_id": "HUB_011_GAS",
+      "circuit_id": "CO2",
+      "medium": "co2",
+      "role": "supply",
+      "branch": null,
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_EDGE_005",
+      "from_port_id": "HUB_011_GAS:CO2:out:flow",
+      "to_port_id": "HUB_011_EXP:CO2:in:flow",
+      "from_object_id": "HUB_011_GAS",
+      "to_object_id": "HUB_011_EXP",
+      "circuit_id": "CO2",
+      "medium": "co2",
+      "role": "supply",
+      "branch": null,
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_EDGE_006",
+      "from_port_id": "HUB_011_EXP:CO2:out:flow",
+      "to_port_id": "HUB_011_EVAP:CO2:in:flow",
+      "from_object_id": "HUB_011_EXP",
+      "to_object_id": "HUB_011_EVAP",
+      "circuit_id": "CO2",
+      "medium": "co2",
+      "role": "supply",
+      "branch": null,
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_EDGE_007",
+      "from_port_id": "HUB_011_GAS:USER:out:flow",
+      "to_port_id": "HUB_011_WATER:USER:in:flow",
+      "from_object_id": "HUB_011_GAS",
+      "to_object_id": "HUB_011_WATER",
+      "circuit_id": "USER",
+      "medium": "water",
+      "role": "supply",
+      "branch": null,
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_B349_HUB_BRANCH_RETURN",
+      "from_port_id": "HUB_011_WATER:USER:out:branch_return",
+      "to_port_id": "HUB_011_GAS:USER:in:flow",
+      "from_object_id": "HUB_011_WATER",
+      "to_object_id": "HUB_011_GAS",
+      "circuit_id": "USER",
+      "medium": "water",
+      "role": "return",
+      "branch": null,
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_B349_HUB_COMPRESSOR_POWER",
+      "from_port_id": "HUB_POWER_CAND:HUB_POWER:out:power",
+      "to_port_id": "HUB_011_COMP:HUB_POWER:in:power",
+      "from_object_id": "HUB_POWER_CAND",
+      "to_object_id": "HUB_011_COMP",
+      "circuit_id": "HUB_POWER",
+      "medium": "electricity",
+      "role": "power",
+      "branch": null,
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_B349_BOILER_POWER",
+      "from_port_id": "GREEN_POWER_CAND_001:CONDITIONAL_POWER:out:power",
+      "to_port_id": "BOILER_CAND_001:CONDITIONAL_POWER:in:power",
+      "from_object_id": "GREEN_POWER_CAND_001",
+      "to_object_id": "BOILER_CAND_001",
+      "circuit_id": "CONDITIONAL_POWER",
+      "medium": "electricity",
+      "role": "power",
+      "branch": null,
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_B349_BOILER_RETURN",
+      "from_port_id": "HUB_011_WATER:USER:out:boiler_return",
+      "to_port_id": "BOILER_CAND_001_RETURN_VALVE:USER:in:flow",
+      "from_object_id": "HUB_011_WATER",
+      "to_object_id": "BOILER_CAND_001_RETURN_VALVE",
+      "circuit_id": "USER",
+      "medium": "water",
+      "role": "return",
+      "branch": null,
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_B349_BOILER_INLET",
+      "from_port_id": "BOILER_CAND_001_RETURN_VALVE:USER:out:flow",
+      "to_port_id": "BOILER_CAND_001:USER:in:flow",
+      "from_object_id": "BOILER_CAND_001_RETURN_VALVE",
+      "to_object_id": "BOILER_CAND_001",
+      "circuit_id": "USER",
+      "medium": "water",
+      "role": "supply",
+      "branch": null,
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_B349_BOILER_OUTLET",
+      "from_port_id": "BOILER_CAND_001:USER:out:flow",
+      "to_port_id": "BOILER_CAND_001_PUMP:USER:in:flow",
+      "from_object_id": "BOILER_CAND_001",
+      "to_object_id": "BOILER_CAND_001_PUMP",
+      "circuit_id": "USER",
+      "medium": "water",
+      "role": "supply",
+      "branch": null,
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_B349_BOILER_CHECK",
+      "from_port_id": "BOILER_CAND_001_PUMP:USER:out:flow",
+      "to_port_id": "BOILER_CAND_001_CHECK:USER:in:flow",
+      "from_object_id": "BOILER_CAND_001_PUMP",
+      "to_object_id": "BOILER_CAND_001_CHECK",
+      "circuit_id": "USER",
+      "medium": "water",
+      "role": "supply",
+      "branch": null,
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_B349_BOILER_SUPPLY",
+      "from_port_id": "BOILER_CAND_001_CHECK:USER:out:flow",
+      "to_port_id": "HUB_011_WATER:USER:in:boiler_supply",
+      "from_object_id": "BOILER_CAND_001_CHECK",
+      "to_object_id": "HUB_011_WATER",
+      "circuit_id": "USER",
+      "medium": "water",
+      "role": "supply",
+      "branch": null,
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_B349_PTES_CHARGE_0",
+      "from_port_id": "HUB_011_WATER:USER:out:charge",
+      "to_port_id": "STORE_012_CHARGE_VHOT:USER:in:flow",
+      "from_object_id": "HUB_011_WATER",
+      "to_object_id": "STORE_012_CHARGE_VHOT",
+      "circuit_id": "USER",
+      "medium": "water",
+      "role": "supply",
+      "branch": "charge",
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_B349_PTES_CHARGE_1",
+      "from_port_id": "STORE_012_CHARGE_VHOT:USER:out:flow",
+      "to_port_id": "STORE_012_CHARGE_PUMP:USER:in:flow",
+      "from_object_id": "STORE_012_CHARGE_VHOT",
+      "to_object_id": "STORE_012_CHARGE_PUMP",
+      "circuit_id": "USER",
+      "medium": "water",
+      "role": "supply",
+      "branch": "charge",
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_B349_PTES_CHARGE_END",
+      "from_port_id": "STORE_012_CHARGE_PUMP:USER:out:flow",
+      "to_port_id": "STORE_012:USER:in:charge",
+      "from_object_id": "STORE_012_CHARGE_PUMP",
+      "to_object_id": "STORE_012",
+      "circuit_id": "USER",
+      "medium": "water",
+      "role": "supply",
+      "branch": "charge",
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_B349_PTES_CHARGE_RETURN_0",
+      "from_port_id": "STORE_012:USER:out:charge_return",
+      "to_port_id": "STORE_012_CHARGE_VRETURN:USER:in:flow",
+      "from_object_id": "STORE_012",
+      "to_object_id": "STORE_012_CHARGE_VRETURN",
+      "circuit_id": "USER",
+      "medium": "water",
+      "role": "return",
+      "branch": "charge",
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_B349_PTES_CHARGE_RETURN_END",
+      "from_port_id": "STORE_012_CHARGE_VRETURN:USER:out:flow",
+      "to_port_id": "HUB_011_WATER:USER:in:charge_return",
+      "from_object_id": "STORE_012_CHARGE_VRETURN",
+      "to_object_id": "HUB_011_WATER",
+      "circuit_id": "USER",
+      "medium": "water",
+      "role": "return",
+      "branch": "charge",
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_B349_PTES_DISCHARGE_0",
+      "from_port_id": "STORE_012:USER:out:discharge",
+      "to_port_id": "STORE_012_DIS_VHOT:USER:in:flow",
+      "from_object_id": "STORE_012",
+      "to_object_id": "STORE_012_DIS_VHOT",
+      "circuit_id": "USER",
+      "medium": "water",
+      "role": "supply",
+      "branch": "discharge",
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_B349_PTES_DISCHARGE_1",
+      "from_port_id": "STORE_012_DIS_VHOT:USER:out:flow",
+      "to_port_id": "STORE_012_DIS_PUMP:USER:in:flow",
+      "from_object_id": "STORE_012_DIS_VHOT",
+      "to_object_id": "STORE_012_DIS_PUMP",
+      "circuit_id": "USER",
+      "medium": "water",
+      "role": "supply",
+      "branch": "discharge",
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_B349_PTES_DISCHARGE_2",
+      "from_port_id": "STORE_012_DIS_PUMP:USER:out:flow",
+      "to_port_id": "STORE_012_DIS_CHECK:USER:in:flow",
+      "from_object_id": "STORE_012_DIS_PUMP",
+      "to_object_id": "STORE_012_DIS_CHECK",
+      "circuit_id": "USER",
+      "medium": "water",
+      "role": "supply",
+      "branch": "discharge",
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_B349_PTES_DISCHARGE_END",
+      "from_port_id": "STORE_012_DIS_CHECK:USER:out:flow",
+      "to_port_id": "HUB_011_WATER:USER:in:discharge",
+      "from_object_id": "STORE_012_DIS_CHECK",
+      "to_object_id": "HUB_011_WATER",
+      "circuit_id": "USER",
+      "medium": "water",
+      "role": "supply",
+      "branch": "discharge",
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_B349_PTES_DISCHARGE_RETURN_0",
+      "from_port_id": "HUB_011_WATER:USER:out:discharge_return",
+      "to_port_id": "STORE_012_DIS_VRETURN:USER:in:flow",
+      "from_object_id": "HUB_011_WATER",
+      "to_object_id": "STORE_012_DIS_VRETURN",
+      "circuit_id": "USER",
+      "medium": "water",
+      "role": "return",
+      "branch": "discharge",
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_B349_PTES_DISCHARGE_RETURN_END",
+      "from_port_id": "STORE_012_DIS_VRETURN:USER:out:flow",
+      "to_port_id": "STORE_012:USER:in:discharge_return",
+      "from_object_id": "STORE_012_DIS_VRETURN",
+      "to_object_id": "STORE_012",
+      "circuit_id": "USER",
+      "medium": "water",
+      "role": "return",
+      "branch": "discharge",
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_B349_PTES_MEASUREMENT",
+      "from_port_id": "STORE_012_SENSOR:PTES_CONTROL:out:measurement",
+      "to_port_id": "STORE_012_CTRL:PTES_CONTROL:in:measurement",
+      "from_object_id": "STORE_012_SENSOR",
+      "to_object_id": "STORE_012_CTRL",
+      "circuit_id": "PTES_CONTROL",
+      "medium": "signal",
+      "role": "control",
+      "branch": null,
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_STORE_012_CHARGE_VHOT_COMMAND",
+      "from_port_id": "STORE_012_CTRL:PTES_CONTROL:out:command",
+      "to_port_id": "STORE_012_CHARGE_VHOT:PTES_CONTROL:in:command",
+      "from_object_id": "STORE_012_CTRL",
+      "to_object_id": "STORE_012_CHARGE_VHOT",
+      "circuit_id": "PTES_CONTROL",
+      "medium": "signal",
+      "role": "control",
+      "branch": "charge",
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_STORE_012_CHARGE_VRETURN_COMMAND",
+      "from_port_id": "STORE_012_CTRL:PTES_CONTROL:out:command",
+      "to_port_id": "STORE_012_CHARGE_VRETURN:PTES_CONTROL:in:command",
+      "from_object_id": "STORE_012_CTRL",
+      "to_object_id": "STORE_012_CHARGE_VRETURN",
+      "circuit_id": "PTES_CONTROL",
+      "medium": "signal",
+      "role": "control",
+      "branch": "charge",
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_STORE_012_DIS_VHOT_COMMAND",
+      "from_port_id": "STORE_012_CTRL:PTES_CONTROL:out:command",
+      "to_port_id": "STORE_012_DIS_VHOT:PTES_CONTROL:in:command",
+      "from_object_id": "STORE_012_CTRL",
+      "to_object_id": "STORE_012_DIS_VHOT",
+      "circuit_id": "PTES_CONTROL",
+      "medium": "signal",
+      "role": "control",
+      "branch": null,
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_STORE_012_DIS_VRETURN_COMMAND",
+      "from_port_id": "STORE_012_CTRL:PTES_CONTROL:out:command",
+      "to_port_id": "STORE_012_DIS_VRETURN:PTES_CONTROL:in:command",
+      "from_object_id": "STORE_012_CTRL",
+      "to_object_id": "STORE_012_DIS_VRETURN",
+      "circuit_id": "PTES_CONTROL",
+      "medium": "signal",
+      "role": "control",
+      "branch": null,
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_STORE_012_CHARGE_PUMP_COMMAND",
+      "from_port_id": "STORE_012_CTRL:PTES_CONTROL:out:command",
+      "to_port_id": "STORE_012_CHARGE_PUMP:PTES_CONTROL:in:command",
+      "from_object_id": "STORE_012_CTRL",
+      "to_object_id": "STORE_012_CHARGE_PUMP",
+      "circuit_id": "PTES_CONTROL",
+      "medium": "signal",
+      "role": "control",
+      "branch": "charge",
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_STORE_012_DIS_PUMP_COMMAND",
+      "from_port_id": "STORE_012_CTRL:PTES_CONTROL:out:command",
+      "to_port_id": "STORE_012_DIS_PUMP:PTES_CONTROL:in:command",
+      "from_object_id": "STORE_012_CTRL",
+      "to_object_id": "STORE_012_DIS_PUMP",
+      "circuit_id": "PTES_CONTROL",
+      "medium": "signal",
+      "role": "control",
+      "branch": null,
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_PASSAGE_0",
+      "from_port_id": "HUB_011_P1_HX:SOURCE:in:flow",
+      "to_port_id": "HUB_011_P1_HX:SOURCE:out:flow",
+      "from_object_id": "HUB_011_P1_HX",
+      "to_object_id": "HUB_011_P1_HX",
+      "circuit_id": "SOURCE",
+      "medium": "water",
+      "role": "internal",
+      "branch": null,
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false,
+      "requires": []
+    },
+    {
+      "connection_id": "M12_PASSAGE_41",
+      "from_port_id": "HUB_011_P1_HX:P1_USER:in:AGRI_014_return",
+      "to_port_id": "HUB_011_P1_HX:P1_USER:out:AGRI_014_supply",
+      "from_object_id": "HUB_011_P1_HX",
+      "to_object_id": "HUB_011_P1_HX",
+      "circuit_id": "P1_USER",
+      "medium": "water",
+      "role": "internal",
+      "branch": null,
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false,
+      "requires": []
+    },
+    {
+      "connection_id": "M12_PASSAGE_42",
+      "from_port_id": "HUB_011_P1_HX:P1_USER:in:AGRI_014_return",
+      "to_port_id": "HUB_011_P1_HX:P1_USER:out:AGRI_015_supply",
+      "from_object_id": "HUB_011_P1_HX",
+      "to_object_id": "HUB_011_P1_HX",
+      "circuit_id": "P1_USER",
+      "medium": "water",
+      "role": "internal",
+      "branch": null,
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false,
+      "requires": []
+    },
+    {
+      "connection_id": "M12_PASSAGE_43",
+      "from_port_id": "HUB_011_P1_HX:P1_USER:in:AGRI_015_return",
+      "to_port_id": "HUB_011_P1_HX:P1_USER:out:AGRI_014_supply",
+      "from_object_id": "HUB_011_P1_HX",
+      "to_object_id": "HUB_011_P1_HX",
+      "circuit_id": "P1_USER",
+      "medium": "water",
+      "role": "internal",
+      "branch": null,
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false,
+      "requires": []
+    },
+    {
+      "connection_id": "M12_PASSAGE_44",
+      "from_port_id": "HUB_011_P1_HX:P1_USER:in:AGRI_015_return",
+      "to_port_id": "HUB_011_P1_HX:P1_USER:out:AGRI_015_supply",
+      "from_object_id": "HUB_011_P1_HX",
+      "to_object_id": "HUB_011_P1_HX",
+      "circuit_id": "P1_USER",
+      "medium": "water",
+      "role": "internal",
+      "branch": null,
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false,
+      "requires": []
+    },
+    {
+      "connection_id": "M12_PASSAGE_50",
+      "from_port_id": "BOILER_CAND_001:USER:in:flow",
+      "to_port_id": "BOILER_CAND_001:USER:out:flow",
+      "from_object_id": "BOILER_CAND_001",
+      "to_object_id": "BOILER_CAND_001",
+      "circuit_id": "USER",
+      "medium": "water",
+      "role": "internal",
+      "branch": null,
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false,
+      "requires": [
+        "boiler_enabled"
+      ]
+    },
+    {
+      "connection_id": "M12_PASSAGE_51",
+      "from_port_id": "BOILER_CAND_001_RETURN_VALVE:USER:in:flow",
+      "to_port_id": "BOILER_CAND_001_RETURN_VALVE:USER:out:flow",
+      "from_object_id": "BOILER_CAND_001_RETURN_VALVE",
+      "to_object_id": "BOILER_CAND_001_RETURN_VALVE",
+      "circuit_id": "USER",
+      "medium": "water",
+      "role": "internal",
+      "branch": null,
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false,
+      "requires": [
+        "BOILER_CAND_001_RETURN_VALVE_open"
+      ]
+    },
+    {
+      "connection_id": "M12_PASSAGE_52",
+      "from_port_id": "BOILER_CAND_001_PUMP:USER:in:flow",
+      "to_port_id": "BOILER_CAND_001_PUMP:USER:out:flow",
+      "from_object_id": "BOILER_CAND_001_PUMP",
+      "to_object_id": "BOILER_CAND_001_PUMP",
+      "circuit_id": "USER",
+      "medium": "water",
+      "role": "internal",
+      "branch": null,
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false,
+      "requires": []
+    },
+    {
+      "connection_id": "M12_PASSAGE_53",
+      "from_port_id": "BOILER_CAND_001_CHECK:USER:in:flow",
+      "to_port_id": "BOILER_CAND_001_CHECK:USER:out:flow",
+      "from_object_id": "BOILER_CAND_001_CHECK",
+      "to_object_id": "BOILER_CAND_001_CHECK",
+      "circuit_id": "USER",
+      "medium": "water",
+      "role": "internal",
+      "branch": null,
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false,
+      "requires": []
+    },
+    {
+      "connection_id": "M12_PASSAGE_54",
+      "from_port_id": "STORE_012_CHARGE_VHOT:USER:in:flow",
+      "to_port_id": "STORE_012_CHARGE_VHOT:USER:out:flow",
+      "from_object_id": "STORE_012_CHARGE_VHOT",
+      "to_object_id": "STORE_012_CHARGE_VHOT",
+      "circuit_id": "USER",
+      "medium": "water",
+      "role": "internal",
+      "branch": null,
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false,
+      "requires": [
+        "STORE_012_CHARGE_VHOT_open"
+      ]
+    },
+    {
+      "connection_id": "M12_PASSAGE_55",
+      "from_port_id": "STORE_012_CHARGE_VRETURN:USER:in:flow",
+      "to_port_id": "STORE_012_CHARGE_VRETURN:USER:out:flow",
+      "from_object_id": "STORE_012_CHARGE_VRETURN",
+      "to_object_id": "STORE_012_CHARGE_VRETURN",
+      "circuit_id": "USER",
+      "medium": "water",
+      "role": "internal",
+      "branch": null,
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false,
+      "requires": [
+        "STORE_012_CHARGE_VRETURN_open"
+      ]
+    },
+    {
+      "connection_id": "M12_PASSAGE_56",
+      "from_port_id": "STORE_012_DIS_VHOT:USER:in:flow",
+      "to_port_id": "STORE_012_DIS_VHOT:USER:out:flow",
+      "from_object_id": "STORE_012_DIS_VHOT",
+      "to_object_id": "STORE_012_DIS_VHOT",
+      "circuit_id": "USER",
+      "medium": "water",
+      "role": "internal",
+      "branch": null,
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false,
+      "requires": [
+        "STORE_012_DIS_VHOT_open"
+      ]
+    },
+    {
+      "connection_id": "M12_PASSAGE_57",
+      "from_port_id": "STORE_012_DIS_VRETURN:USER:in:flow",
+      "to_port_id": "STORE_012_DIS_VRETURN:USER:out:flow",
+      "from_object_id": "STORE_012_DIS_VRETURN",
+      "to_object_id": "STORE_012_DIS_VRETURN",
+      "circuit_id": "USER",
+      "medium": "water",
+      "role": "internal",
+      "branch": null,
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false,
+      "requires": [
+        "STORE_012_DIS_VRETURN_open"
+      ]
+    },
+    {
+      "connection_id": "M12_PASSAGE_58",
+      "from_port_id": "STORE_012_CHARGE_PUMP:USER:in:flow",
+      "to_port_id": "STORE_012_CHARGE_PUMP:USER:out:flow",
+      "from_object_id": "STORE_012_CHARGE_PUMP",
+      "to_object_id": "STORE_012_CHARGE_PUMP",
+      "circuit_id": "USER",
+      "medium": "water",
+      "role": "internal",
+      "branch": null,
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false,
+      "requires": []
+    },
+    {
+      "connection_id": "M12_PASSAGE_59",
+      "from_port_id": "STORE_012_DIS_PUMP:USER:in:flow",
+      "to_port_id": "STORE_012_DIS_PUMP:USER:out:flow",
+      "from_object_id": "STORE_012_DIS_PUMP",
+      "to_object_id": "STORE_012_DIS_PUMP",
+      "circuit_id": "USER",
+      "medium": "water",
+      "role": "internal",
+      "branch": null,
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false,
+      "requires": []
+    },
+    {
+      "connection_id": "M12_PASSAGE_60",
+      "from_port_id": "STORE_012_DIS_CHECK:USER:in:flow",
+      "to_port_id": "STORE_012_DIS_CHECK:USER:out:flow",
+      "from_object_id": "STORE_012_DIS_CHECK",
+      "to_object_id": "STORE_012_DIS_CHECK",
+      "circuit_id": "USER",
+      "medium": "water",
+      "role": "internal",
+      "branch": null,
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false,
+      "requires": []
+    },
+    {
+      "connection_id": "M12_PASSAGE_61",
+      "from_port_id": "STORE_012:USER:in:charge",
+      "to_port_id": "STORE_012:USER:out:charge_return",
+      "from_object_id": "STORE_012",
+      "to_object_id": "STORE_012",
+      "circuit_id": "USER",
+      "medium": "water",
+      "role": "internal",
+      "branch": null,
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false,
+      "requires": [
+        "mode_CHARGING"
+      ]
+    },
+    {
+      "connection_id": "M12_PASSAGE_62",
+      "from_port_id": "STORE_012:USER:in:discharge_return",
+      "to_port_id": "STORE_012:USER:out:discharge",
+      "from_object_id": "STORE_012",
+      "to_object_id": "STORE_012",
+      "circuit_id": "USER",
+      "medium": "water",
+      "role": "internal",
+      "branch": null,
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false,
+      "requires": [
+        "mode_DISCHARGING"
+      ]
+    },
+    {
+      "connection_id": "M12_PASSAGE_63",
+      "from_port_id": "HUB_011_WATER:USER:in:flow",
+      "to_port_id": "HUB_011_WATER:USER:out:charge",
+      "from_object_id": "HUB_011_WATER",
+      "to_object_id": "HUB_011_WATER",
+      "circuit_id": "USER",
+      "medium": "water",
+      "role": "internal",
+      "branch": null,
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false,
+      "requires": [
+        "mode_CHARGING"
+      ]
+    },
+    {
+      "connection_id": "M12_PASSAGE_64",
+      "from_port_id": "HUB_011_WATER:USER:in:charge_return",
+      "to_port_id": "HUB_011_WATER:USER:out:branch_return",
+      "from_object_id": "HUB_011_WATER",
+      "to_object_id": "HUB_011_WATER",
+      "circuit_id": "USER",
+      "medium": "water",
+      "role": "internal",
+      "branch": null,
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false,
+      "requires": [
+        "mode_CHARGING"
+      ]
+    },
+    {
+      "connection_id": "M12_PASSAGE_69",
+      "from_port_id": "HUB_011_EVAP:SOURCE:in:flow",
+      "to_port_id": "HUB_011_EVAP:SOURCE:out:flow",
+      "from_object_id": "HUB_011_EVAP",
+      "to_object_id": "HUB_011_EVAP",
+      "circuit_id": "SOURCE",
+      "medium": "water",
+      "role": "internal",
+      "branch": null,
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false,
+      "requires": []
+    },
+    {
+      "connection_id": "M12_PASSAGE_70",
+      "from_port_id": "HUB_011_EVAP:CO2:in:flow",
+      "to_port_id": "HUB_011_EVAP:CO2:out:flow",
+      "from_object_id": "HUB_011_EVAP",
+      "to_object_id": "HUB_011_EVAP",
+      "circuit_id": "CO2",
+      "medium": "co2",
+      "role": "internal",
+      "branch": null,
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false,
+      "requires": []
+    },
+    {
+      "connection_id": "M12_PASSAGE_71",
+      "from_port_id": "HUB_011_COMP:CO2:in:flow",
+      "to_port_id": "HUB_011_COMP:CO2:out:flow",
+      "from_object_id": "HUB_011_COMP",
+      "to_object_id": "HUB_011_COMP",
+      "circuit_id": "CO2",
+      "medium": "co2",
+      "role": "internal",
+      "branch": null,
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false,
+      "requires": []
+    },
+    {
+      "connection_id": "M12_PASSAGE_72",
+      "from_port_id": "HUB_011_GAS:CO2:in:flow",
+      "to_port_id": "HUB_011_GAS:CO2:out:flow",
+      "from_object_id": "HUB_011_GAS",
+      "to_object_id": "HUB_011_GAS",
+      "circuit_id": "CO2",
+      "medium": "co2",
+      "role": "internal",
+      "branch": null,
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false,
+      "requires": []
+    },
+    {
+      "connection_id": "M12_PASSAGE_73",
+      "from_port_id": "HUB_011_EXP:CO2:in:flow",
+      "to_port_id": "HUB_011_EXP:CO2:out:flow",
+      "from_object_id": "HUB_011_EXP",
+      "to_object_id": "HUB_011_EXP",
+      "circuit_id": "CO2",
+      "medium": "co2",
+      "role": "internal",
+      "branch": null,
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false,
+      "requires": []
+    },
+    {
+      "connection_id": "M12_PASSAGE_74",
+      "from_port_id": "HUB_011_GAS:USER:in:flow",
+      "to_port_id": "HUB_011_GAS:USER:out:flow",
+      "from_object_id": "HUB_011_GAS",
+      "to_object_id": "HUB_011_GAS",
+      "circuit_id": "USER",
+      "medium": "water",
+      "role": "internal",
+      "branch": null,
+      "source": "phase2",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false,
+      "requires": []
+    },
+    {
+      "connection_id": "M12_C2_LOAD_SUPPLY",
+      "from_port_id": "DRY_019_BOOSTER:C2_SECONDARY:out:flow",
+      "to_port_id": "DRY_019:C2_SECONDARY:in:process_supply",
+      "from_object_id": "DRY_019_BOOSTER",
+      "to_object_id": "DRY_019",
+      "circuit_id": "C2_SECONDARY",
+      "medium": "water",
+      "role": "supply",
+      "branch": null,
+      "source": "M12_C2_PROPOSAL",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_C2_HX1_SUPPLY",
+      "from_port_id": "DRY_019:DRY_019_HEAT:out:primary_supply",
+      "to_port_id": "DRY_019_HX_1:DRY_019_HEAT:in:flow",
+      "from_object_id": "DRY_019",
+      "to_object_id": "DRY_019_HX_1",
+      "circuit_id": "DRY_019_HEAT",
+      "medium": "water",
+      "role": "supply",
+      "branch": null,
+      "source": "M12_C2_PROPOSAL",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_C2_HX1_RETURN",
+      "from_port_id": "DRY_019_HX_1:DRY_019_HEAT:out:flow",
+      "to_port_id": "DRY_019:DRY_019_HEAT:in:primary_return",
+      "from_object_id": "DRY_019_HX_1",
+      "to_object_id": "DRY_019",
+      "circuit_id": "DRY_019_HEAT",
+      "medium": "water",
+      "role": "return",
+      "branch": null,
+      "source": "M12_C2_PROPOSAL",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_C2_HX1_SECONDARY_HOT",
+      "from_port_id": "DRY_019_HX_1:C2_SECONDARY:out:flow",
+      "to_port_id": "DRY_019_BOOSTER:C2_SECONDARY:in:flow",
+      "from_object_id": "DRY_019_HX_1",
+      "to_object_id": "DRY_019_BOOSTER",
+      "circuit_id": "C2_SECONDARY",
+      "medium": "water",
+      "role": "supply",
+      "branch": null,
+      "source": "M12_C2_PROPOSAL",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_C2_HX1_SECONDARY_RETURN",
+      "from_port_id": "DRY_019:C2_SECONDARY:out:process_return",
+      "to_port_id": "DRY_019_HX_1:C2_SECONDARY:in:flow",
+      "from_object_id": "DRY_019",
+      "to_object_id": "DRY_019_HX_1",
+      "circuit_id": "C2_SECONDARY",
+      "medium": "water",
+      "role": "return",
+      "branch": null,
+      "source": "M12_C2_PROPOSAL",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_C2_HX1_PRIMARY_INTERNAL",
+      "from_port_id": "DRY_019_HX_1:DRY_019_HEAT:in:flow",
+      "to_port_id": "DRY_019_HX_1:DRY_019_HEAT:out:flow",
+      "from_object_id": "DRY_019_HX_1",
+      "to_object_id": "DRY_019_HX_1",
+      "circuit_id": "DRY_019_HEAT",
+      "medium": "water",
+      "role": "internal",
+      "branch": null,
+      "source": "M12_C2_PROPOSAL",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_C2_HX1_SECONDARY_INTERNAL",
+      "from_port_id": "DRY_019_HX_1:C2_SECONDARY:in:flow",
+      "to_port_id": "DRY_019_HX_1:C2_SECONDARY:out:flow",
+      "from_object_id": "DRY_019_HX_1",
+      "to_object_id": "DRY_019_HX_1",
+      "circuit_id": "C2_SECONDARY",
+      "medium": "water",
+      "role": "internal",
+      "branch": null,
+      "source": "M12_C2_PROPOSAL",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_C2_HX2_SUPPLY",
+      "from_port_id": "DRY_019:DRY_019_HEAT:out:primary_supply",
+      "to_port_id": "DRY_019_HX_2:DRY_019_HEAT:in:flow",
+      "from_object_id": "DRY_019",
+      "to_object_id": "DRY_019_HX_2",
+      "circuit_id": "DRY_019_HEAT",
+      "medium": "water",
+      "role": "supply",
+      "branch": null,
+      "source": "M12_C2_PROPOSAL",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_C2_HX2_RETURN",
+      "from_port_id": "DRY_019_HX_2:DRY_019_HEAT:out:flow",
+      "to_port_id": "DRY_019:DRY_019_HEAT:in:primary_return",
+      "from_object_id": "DRY_019_HX_2",
+      "to_object_id": "DRY_019",
+      "circuit_id": "DRY_019_HEAT",
+      "medium": "water",
+      "role": "return",
+      "branch": null,
+      "source": "M12_C2_PROPOSAL",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_C2_HX2_SECONDARY_HOT",
+      "from_port_id": "DRY_019_HX_2:C2_SECONDARY:out:flow",
+      "to_port_id": "DRY_019_BOOSTER:C2_SECONDARY:in:flow",
+      "from_object_id": "DRY_019_HX_2",
+      "to_object_id": "DRY_019_BOOSTER",
+      "circuit_id": "C2_SECONDARY",
+      "medium": "water",
+      "role": "supply",
+      "branch": null,
+      "source": "M12_C2_PROPOSAL",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_C2_HX2_SECONDARY_RETURN",
+      "from_port_id": "DRY_019:C2_SECONDARY:out:process_return",
+      "to_port_id": "DRY_019_HX_2:C2_SECONDARY:in:flow",
+      "from_object_id": "DRY_019",
+      "to_object_id": "DRY_019_HX_2",
+      "circuit_id": "C2_SECONDARY",
+      "medium": "water",
+      "role": "return",
+      "branch": null,
+      "source": "M12_C2_PROPOSAL",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_C2_HX2_PRIMARY_INTERNAL",
+      "from_port_id": "DRY_019_HX_2:DRY_019_HEAT:in:flow",
+      "to_port_id": "DRY_019_HX_2:DRY_019_HEAT:out:flow",
+      "from_object_id": "DRY_019_HX_2",
+      "to_object_id": "DRY_019_HX_2",
+      "circuit_id": "DRY_019_HEAT",
+      "medium": "water",
+      "role": "internal",
+      "branch": null,
+      "source": "M12_C2_PROPOSAL",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_C2_HX2_SECONDARY_INTERNAL",
+      "from_port_id": "DRY_019_HX_2:C2_SECONDARY:in:flow",
+      "to_port_id": "DRY_019_HX_2:C2_SECONDARY:out:flow",
+      "from_object_id": "DRY_019_HX_2",
+      "to_object_id": "DRY_019_HX_2",
+      "circuit_id": "C2_SECONDARY",
+      "medium": "water",
+      "role": "internal",
+      "branch": null,
+      "source": "M12_C2_PROPOSAL",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_C2_HX3_SUPPLY",
+      "from_port_id": "DRY_019:DRY_019_HEAT:out:primary_supply",
+      "to_port_id": "DRY_019_HX_3:DRY_019_HEAT:in:flow",
+      "from_object_id": "DRY_019",
+      "to_object_id": "DRY_019_HX_3",
+      "circuit_id": "DRY_019_HEAT",
+      "medium": "water",
+      "role": "supply",
+      "branch": null,
+      "source": "M12_C2_PROPOSAL",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_C2_HX3_RETURN",
+      "from_port_id": "DRY_019_HX_3:DRY_019_HEAT:out:flow",
+      "to_port_id": "DRY_019:DRY_019_HEAT:in:primary_return",
+      "from_object_id": "DRY_019_HX_3",
+      "to_object_id": "DRY_019",
+      "circuit_id": "DRY_019_HEAT",
+      "medium": "water",
+      "role": "return",
+      "branch": null,
+      "source": "M12_C2_PROPOSAL",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_C2_HX3_SECONDARY_HOT",
+      "from_port_id": "DRY_019_HX_3:C2_SECONDARY:out:flow",
+      "to_port_id": "DRY_019_BOOSTER:C2_SECONDARY:in:flow",
+      "from_object_id": "DRY_019_HX_3",
+      "to_object_id": "DRY_019_BOOSTER",
+      "circuit_id": "C2_SECONDARY",
+      "medium": "water",
+      "role": "supply",
+      "branch": null,
+      "source": "M12_C2_PROPOSAL",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_C2_HX3_SECONDARY_RETURN",
+      "from_port_id": "DRY_019:C2_SECONDARY:out:process_return",
+      "to_port_id": "DRY_019_HX_3:C2_SECONDARY:in:flow",
+      "from_object_id": "DRY_019",
+      "to_object_id": "DRY_019_HX_3",
+      "circuit_id": "C2_SECONDARY",
+      "medium": "water",
+      "role": "return",
+      "branch": null,
+      "source": "M12_C2_PROPOSAL",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_C2_HX3_PRIMARY_INTERNAL",
+      "from_port_id": "DRY_019_HX_3:DRY_019_HEAT:in:flow",
+      "to_port_id": "DRY_019_HX_3:DRY_019_HEAT:out:flow",
+      "from_object_id": "DRY_019_HX_3",
+      "to_object_id": "DRY_019_HX_3",
+      "circuit_id": "DRY_019_HEAT",
+      "medium": "water",
+      "role": "internal",
+      "branch": null,
+      "source": "M12_C2_PROPOSAL",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_C2_HX3_SECONDARY_INTERNAL",
+      "from_port_id": "DRY_019_HX_3:C2_SECONDARY:in:flow",
+      "to_port_id": "DRY_019_HX_3:C2_SECONDARY:out:flow",
+      "from_object_id": "DRY_019_HX_3",
+      "to_object_id": "DRY_019_HX_3",
+      "circuit_id": "C2_SECONDARY",
+      "medium": "water",
+      "role": "internal",
+      "branch": null,
+      "source": "M12_C2_PROPOSAL",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_C2_BOOST_INTERNAL",
+      "from_port_id": "DRY_019_BOOSTER:C2_SECONDARY:in:flow",
+      "to_port_id": "DRY_019_BOOSTER:C2_SECONDARY:out:flow",
+      "from_object_id": "DRY_019_BOOSTER",
+      "to_object_id": "DRY_019_BOOSTER",
+      "circuit_id": "C2_SECONDARY",
+      "medium": "water",
+      "role": "internal",
+      "branch": null,
+      "source": "M12_C2_PROPOSAL",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_C2_PROCESS_INTERNAL",
+      "from_port_id": "DRY_019:C2_SECONDARY:in:process_supply",
+      "to_port_id": "DRY_019:C2_SECONDARY:out:process_return",
+      "from_object_id": "DRY_019",
+      "to_object_id": "DRY_019",
+      "circuit_id": "C2_SECONDARY",
+      "medium": "water",
+      "role": "internal",
+      "branch": null,
+      "source": "M12_C2_PROPOSAL",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_C2_POWER",
+      "from_port_id": "DRY_019_POWER:DRY_019_POWER:out:power",
+      "to_port_id": "DRY_019_BOOSTER:DRY_019_POWER:in:power",
+      "from_object_id": "DRY_019_POWER",
+      "to_object_id": "DRY_019_BOOSTER",
+      "circuit_id": "DRY_019_POWER",
+      "medium": "electricity",
+      "role": "power",
+      "branch": null,
+      "source": "M12_C2_PROPOSAL",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_C2_CONTROL_DRY_019_BOOSTER",
+      "from_port_id": "DRY_019_CTRL:DRY_019_CONTROL:out:command",
+      "to_port_id": "DRY_019_BOOSTER:DRY_019_CONTROL:in:command",
+      "from_object_id": "DRY_019_CTRL",
+      "to_object_id": "DRY_019_BOOSTER",
+      "circuit_id": "DRY_019_CONTROL",
+      "medium": "signal",
+      "role": "control",
+      "branch": null,
+      "source": "M12_C2_PROPOSAL",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_C2_CONTROL_DRY_019_HX_1",
+      "from_port_id": "DRY_019_CTRL:DRY_019_CONTROL:out:command",
+      "to_port_id": "DRY_019_HX_1:DRY_019_CONTROL:in:command",
+      "from_object_id": "DRY_019_CTRL",
+      "to_object_id": "DRY_019_HX_1",
+      "circuit_id": "DRY_019_CONTROL",
+      "medium": "signal",
+      "role": "control",
+      "branch": null,
+      "source": "M12_C2_PROPOSAL",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_C2_CONTROL_DRY_019_HX_2",
+      "from_port_id": "DRY_019_CTRL:DRY_019_CONTROL:out:command",
+      "to_port_id": "DRY_019_HX_2:DRY_019_CONTROL:in:command",
+      "from_object_id": "DRY_019_CTRL",
+      "to_object_id": "DRY_019_HX_2",
+      "circuit_id": "DRY_019_CONTROL",
+      "medium": "signal",
+      "role": "control",
+      "branch": null,
+      "source": "M12_C2_PROPOSAL",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    },
+    {
+      "connection_id": "M12_C2_CONTROL_DRY_019_HX_3",
+      "from_port_id": "DRY_019_CTRL:DRY_019_CONTROL:out:command",
+      "to_port_id": "DRY_019_HX_3:DRY_019_CONTROL:in:command",
+      "from_object_id": "DRY_019_CTRL",
+      "to_object_id": "DRY_019_HX_3",
+      "circuit_id": "DRY_019_CONTROL",
+      "medium": "signal",
+      "role": "control",
+      "branch": null,
+      "source": "M12_C2_PROPOSAL",
+      "status": "candidate_unverified",
+      "model_status": "schematic_connected",
+      "execution_allowed": false
+    }
+  ],
+  "ports": [
+    {
+      "port_id": "HUB_011_EVAP:SOURCE:in:flow",
+      "object_id": "HUB_011_EVAP",
+      "circuit_id": "SOURCE",
+      "medium": "water",
+      "direction": "in",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          -6,
+          -3,
+          2
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "HUB_011_EVAP:SOURCE:out:flow",
+      "object_id": "HUB_011_EVAP",
+      "circuit_id": "SOURCE",
+      "medium": "water",
+      "direction": "out",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          6,
+          -3,
+          2
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "HUB_011_EVAP:CO2:out:flow",
+      "object_id": "HUB_011_EVAP",
+      "circuit_id": "CO2",
+      "medium": "co2",
+      "direction": "out",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          6,
+          -3,
+          6
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "HUB_011_COMP:CO2:in:flow",
+      "object_id": "HUB_011_COMP",
+      "circuit_id": "CO2",
+      "medium": "co2",
+      "direction": "in",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          -6,
+          -3,
+          6
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "HUB_011_COMP:CO2:out:flow",
+      "object_id": "HUB_011_COMP",
+      "circuit_id": "CO2",
+      "medium": "co2",
+      "direction": "out",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          6,
+          -3,
+          6
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "HUB_011_GAS:CO2:in:flow",
+      "object_id": "HUB_011_GAS",
+      "circuit_id": "CO2",
+      "medium": "co2",
+      "direction": "in",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          -6,
+          -3,
+          6
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "HUB_011_GAS:CO2:out:flow",
+      "object_id": "HUB_011_GAS",
+      "circuit_id": "CO2",
+      "medium": "co2",
+      "direction": "out",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          6,
+          -3,
+          6
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "HUB_011_EXP:CO2:in:flow",
+      "object_id": "HUB_011_EXP",
+      "circuit_id": "CO2",
+      "medium": "co2",
+      "direction": "in",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          -6,
+          -3,
+          6
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "HUB_011_EXP:CO2:out:flow",
+      "object_id": "HUB_011_EXP",
+      "circuit_id": "CO2",
+      "medium": "co2",
+      "direction": "out",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          6,
+          -3,
+          6
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "HUB_011_EVAP:CO2:in:flow",
+      "object_id": "HUB_011_EVAP",
+      "circuit_id": "CO2",
+      "medium": "co2",
+      "direction": "in",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          -6,
+          -3,
+          6
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "HUB_011_GAS:USER:out:flow",
+      "object_id": "HUB_011_GAS",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "out",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          6,
+          -3,
+          2
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "HUB_011_WATER:USER:in:flow",
+      "object_id": "HUB_011_WATER",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "in",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          -6,
+          -3,
+          2
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "HUB_011_GAS:USER:in:flow",
+      "object_id": "HUB_011_GAS",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "in",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          -6,
+          -3,
+          2
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "HUB_011_WATER:USER:out:charge",
+      "object_id": "HUB_011_WATER",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "out",
+      "role": "charge",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          6,
+          -3,
+          2
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "STORE_012:USER:in:charge",
+      "object_id": "STORE_012",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "in",
+      "role": "charge",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          95,
+          -40,
+          10
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "STORE_012:USER:out:charge_return",
+      "object_id": "STORE_012",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "out",
+      "role": "charge_return",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          95,
+          40,
+          10
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "HUB_011_WATER:USER:in:charge_return",
+      "object_id": "HUB_011_WATER",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "in",
+      "role": "charge_return",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          -6,
+          0,
+          2
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "STORE_012:USER:out:discharge",
+      "object_id": "STORE_012",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "out",
+      "role": "discharge",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          -95,
+          40,
+          10
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "HUB_011_WATER:USER:in:discharge",
+      "object_id": "HUB_011_WATER",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "in",
+      "role": "discharge",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          -6,
+          3,
+          2
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "HUB_011_WATER:USER:out:discharge_return",
+      "object_id": "HUB_011_WATER",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "out",
+      "role": "discharge_return",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          6,
+          0,
+          2
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "STORE_012:USER:in:discharge_return",
+      "object_id": "STORE_012",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "in",
+      "role": "discharge_return",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          -95,
+          -40,
+          10
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "port_id": "HUB_011_P1_HX:SOURCE:in:flow",
+      "object_id": "HUB_011_P1_HX",
+      "circuit_id": "SOURCE",
+      "medium": "water",
+      "direction": "in",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          -6,
+          -3,
+          2
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "DESIGN_SLICE"
+      ]
+    },
+    {
+      "port_id": "HUB_011_P1_HX:SOURCE:out:flow",
+      "object_id": "HUB_011_P1_HX",
+      "circuit_id": "SOURCE",
+      "medium": "water",
+      "direction": "out",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          6,
+          -3,
+          2
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "DESIGN_SLICE"
+      ]
+    },
+    {
+      "port_id": "HUB_011_P1_HX:P1_USER:out:AGRI_014_supply",
+      "object_id": "HUB_011_P1_HX",
+      "circuit_id": "P1_USER",
+      "medium": "water",
+      "direction": "out",
+      "role": "AGRI_014_supply",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          6,
+          0,
+          6
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "DESIGN_SLICE"
+      ]
+    },
+    {
+      "port_id": "HUB_011_P1_HX:P1_USER:in:AGRI_014_return",
+      "object_id": "HUB_011_P1_HX",
+      "circuit_id": "P1_USER",
+      "medium": "water",
+      "direction": "in",
+      "role": "AGRI_014_return",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          -6,
+          0,
+          6
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "DESIGN_SLICE"
+      ]
+    },
+    {
+      "port_id": "HUB_011_P1_HX:P1_USER:out:AGRI_015_supply",
+      "object_id": "HUB_011_P1_HX",
+      "circuit_id": "P1_USER",
+      "medium": "water",
+      "direction": "out",
+      "role": "AGRI_015_supply",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          6,
+          3,
+          6
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "DESIGN_SLICE"
+      ]
+    },
+    {
+      "port_id": "HUB_011_P1_HX:P1_USER:in:AGRI_015_return",
+      "object_id": "HUB_011_P1_HX",
+      "circuit_id": "P1_USER",
+      "medium": "water",
+      "direction": "in",
+      "role": "AGRI_015_return",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          -6,
+          3,
+          6
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "DESIGN_SLICE"
+      ]
+    },
+    {
+      "port_id": "HUB_011_WATER:USER:out:branch_return",
+      "object_id": "HUB_011_WATER",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "out",
+      "role": "branch_return",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          6,
+          3,
+          2
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "DESIGN_SLICE"
+      ]
+    },
+    {
+      "port_id": "HUB_POWER_CAND:HUB_POWER:out:power",
+      "object_id": "HUB_POWER_CAND",
+      "circuit_id": "HUB_POWER",
+      "medium": "electricity",
+      "direction": "out",
+      "role": "power",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          0,
+          -6,
+          3
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "DESIGN_SLICE"
+      ]
+    },
+    {
+      "port_id": "HUB_011_COMP:HUB_POWER:in:power",
+      "object_id": "HUB_011_COMP",
+      "circuit_id": "HUB_POWER",
+      "medium": "electricity",
+      "direction": "in",
+      "role": "power",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          0,
+          -6,
+          3
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "DESIGN_SLICE"
+      ]
+    },
+    {
+      "port_id": "BOILER_CAND_001:CONDITIONAL_POWER:in:power",
+      "object_id": "BOILER_CAND_001",
+      "circuit_id": "CONDITIONAL_POWER",
+      "medium": "electricity",
+      "direction": "in",
+      "role": "power",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          0,
+          -6,
+          3
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "DESIGN_SLICE"
+      ]
+    },
+    {
+      "port_id": "GREEN_POWER_CAND_001:CONDITIONAL_POWER:out:power",
+      "object_id": "GREEN_POWER_CAND_001",
+      "circuit_id": "CONDITIONAL_POWER",
+      "medium": "electricity",
+      "direction": "out",
+      "role": "power",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          0,
+          -6,
+          3
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "DESIGN_SLICE"
+      ]
+    },
+    {
+      "port_id": "BOILER_CAND_001:USER:in:flow",
+      "object_id": "BOILER_CAND_001",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "in",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          -6,
+          -3,
+          2
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "DESIGN_SLICE"
+      ]
+    },
+    {
+      "port_id": "BOILER_CAND_001:USER:out:flow",
+      "object_id": "BOILER_CAND_001",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "out",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          6,
+          -3,
+          2
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "DESIGN_SLICE"
+      ]
+    },
+    {
+      "port_id": "BOILER_CAND_001_RETURN_VALVE:USER:in:flow",
+      "object_id": "BOILER_CAND_001_RETURN_VALVE",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "in",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          -6,
+          -3,
+          2
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "DESIGN_SLICE"
+      ]
+    },
+    {
+      "port_id": "BOILER_CAND_001_RETURN_VALVE:USER:out:flow",
+      "object_id": "BOILER_CAND_001_RETURN_VALVE",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "out",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          6,
+          -3,
+          2
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "DESIGN_SLICE"
+      ]
+    },
+    {
+      "port_id": "BOILER_CAND_001_PUMP:USER:in:flow",
+      "object_id": "BOILER_CAND_001_PUMP",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "in",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          -6,
+          -3,
+          2
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "DESIGN_SLICE"
+      ]
+    },
+    {
+      "port_id": "BOILER_CAND_001_PUMP:USER:out:flow",
+      "object_id": "BOILER_CAND_001_PUMP",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "out",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          6,
+          -3,
+          2
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "DESIGN_SLICE"
+      ]
+    },
+    {
+      "port_id": "BOILER_CAND_001_CHECK:USER:in:flow",
+      "object_id": "BOILER_CAND_001_CHECK",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "in",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          -6,
+          -3,
+          2
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "DESIGN_SLICE"
+      ]
+    },
+    {
+      "port_id": "BOILER_CAND_001_CHECK:USER:out:flow",
+      "object_id": "BOILER_CAND_001_CHECK",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "out",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          6,
+          -3,
+          2
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "DESIGN_SLICE"
+      ]
+    },
+    {
+      "port_id": "HUB_011_WATER:USER:out:boiler_return",
+      "object_id": "HUB_011_WATER",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "out",
+      "role": "boiler_return",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          6,
+          6,
+          2
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "DESIGN_SLICE"
+      ]
+    },
+    {
+      "port_id": "HUB_011_WATER:USER:in:boiler_supply",
+      "object_id": "HUB_011_WATER",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "in",
+      "role": "boiler_supply",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          -6,
+          6,
+          2
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "DESIGN_SLICE"
+      ]
+    },
+    {
+      "port_id": "STORE_012_CHARGE_VHOT:USER:in:flow",
+      "object_id": "STORE_012_CHARGE_VHOT",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "in",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          -6,
+          -3,
+          2
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "DESIGN_SLICE"
+      ]
+    },
+    {
+      "port_id": "STORE_012_CHARGE_VHOT:USER:out:flow",
+      "object_id": "STORE_012_CHARGE_VHOT",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "out",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          6,
+          -3,
+          2
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "DESIGN_SLICE"
+      ]
+    },
+    {
+      "port_id": "STORE_012_CHARGE_VRETURN:USER:in:flow",
+      "object_id": "STORE_012_CHARGE_VRETURN",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "in",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          -6,
+          -3,
+          2
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "DESIGN_SLICE"
+      ]
+    },
+    {
+      "port_id": "STORE_012_CHARGE_VRETURN:USER:out:flow",
+      "object_id": "STORE_012_CHARGE_VRETURN",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "out",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          6,
+          -3,
+          2
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "DESIGN_SLICE"
+      ]
+    },
+    {
+      "port_id": "STORE_012_DIS_VHOT:USER:in:flow",
+      "object_id": "STORE_012_DIS_VHOT",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "in",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          -6,
+          -3,
+          2
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "DESIGN_SLICE"
+      ]
+    },
+    {
+      "port_id": "STORE_012_DIS_VHOT:USER:out:flow",
+      "object_id": "STORE_012_DIS_VHOT",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "out",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          6,
+          -3,
+          2
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "DESIGN_SLICE"
+      ]
+    },
+    {
+      "port_id": "STORE_012_DIS_VRETURN:USER:in:flow",
+      "object_id": "STORE_012_DIS_VRETURN",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "in",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          -6,
+          -3,
+          2
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "DESIGN_SLICE"
+      ]
+    },
+    {
+      "port_id": "STORE_012_DIS_VRETURN:USER:out:flow",
+      "object_id": "STORE_012_DIS_VRETURN",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "out",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          6,
+          -3,
+          2
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "DESIGN_SLICE"
+      ]
+    },
+    {
+      "port_id": "STORE_012_CHARGE_PUMP:USER:in:flow",
+      "object_id": "STORE_012_CHARGE_PUMP",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "in",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          -6,
+          -3,
+          2
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "DESIGN_SLICE"
+      ]
+    },
+    {
+      "port_id": "STORE_012_CHARGE_PUMP:USER:out:flow",
+      "object_id": "STORE_012_CHARGE_PUMP",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "out",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          6,
+          -3,
+          2
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "DESIGN_SLICE"
+      ]
+    },
+    {
+      "port_id": "STORE_012_DIS_PUMP:USER:in:flow",
+      "object_id": "STORE_012_DIS_PUMP",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "in",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          -6,
+          -3,
+          2
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "DESIGN_SLICE"
+      ]
+    },
+    {
+      "port_id": "STORE_012_DIS_PUMP:USER:out:flow",
+      "object_id": "STORE_012_DIS_PUMP",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "out",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          6,
+          -3,
+          2
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "DESIGN_SLICE"
+      ]
+    },
+    {
+      "port_id": "STORE_012_DIS_CHECK:USER:in:flow",
+      "object_id": "STORE_012_DIS_CHECK",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "in",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          -6,
+          -3,
+          2
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "DESIGN_SLICE"
+      ]
+    },
+    {
+      "port_id": "STORE_012_DIS_CHECK:USER:out:flow",
+      "object_id": "STORE_012_DIS_CHECK",
+      "circuit_id": "USER",
+      "medium": "water",
+      "direction": "out",
+      "role": "flow",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          6,
+          -3,
+          2
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "DESIGN_SLICE"
+      ]
+    },
+    {
+      "port_id": "STORE_012_SENSOR:PTES_CONTROL:out:measurement",
+      "object_id": "STORE_012_SENSOR",
+      "circuit_id": "PTES_CONTROL",
+      "medium": "signal",
+      "direction": "out",
+      "role": "measurement",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          0,
+          6,
+          3
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "DESIGN_SLICE"
+      ]
+    },
+    {
+      "port_id": "STORE_012_CTRL:PTES_CONTROL:in:measurement",
+      "object_id": "STORE_012_CTRL",
+      "circuit_id": "PTES_CONTROL",
+      "medium": "signal",
+      "direction": "in",
+      "role": "measurement",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          0,
+          6,
+          3
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "DESIGN_SLICE"
+      ]
+    },
+    {
+      "port_id": "STORE_012_CTRL:PTES_CONTROL:out:command",
+      "object_id": "STORE_012_CTRL",
+      "circuit_id": "PTES_CONTROL",
+      "medium": "signal",
+      "direction": "out",
+      "role": "command",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          0,
+          6,
+          3
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "DESIGN_SLICE"
+      ]
+    },
+    {
+      "port_id": "STORE_012_CHARGE_VHOT:PTES_CONTROL:in:command",
+      "object_id": "STORE_012_CHARGE_VHOT",
+      "circuit_id": "PTES_CONTROL",
+      "medium": "signal",
+      "direction": "in",
+      "role": "command",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          0,
+          6,
+          3
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "DESIGN_SLICE"
+      ]
+    },
+    {
+      "port_id": "STORE_012_CHARGE_VRETURN:PTES_CONTROL:in:command",
+      "object_id": "STORE_012_CHARGE_VRETURN",
+      "circuit_id": "PTES_CONTROL",
+      "medium": "signal",
+      "direction": "in",
+      "role": "command",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          0,
+          6,
+          3
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "DESIGN_SLICE"
+      ]
+    },
+    {
+      "port_id": "STORE_012_DIS_VHOT:PTES_CONTROL:in:command",
+      "object_id": "STORE_012_DIS_VHOT",
+      "circuit_id": "PTES_CONTROL",
+      "medium": "signal",
+      "direction": "in",
+      "role": "command",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          0,
+          6,
+          3
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "DESIGN_SLICE"
+      ]
+    },
+    {
+      "port_id": "STORE_012_DIS_VRETURN:PTES_CONTROL:in:command",
+      "object_id": "STORE_012_DIS_VRETURN",
+      "circuit_id": "PTES_CONTROL",
+      "medium": "signal",
+      "direction": "in",
+      "role": "command",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          0,
+          6,
+          3
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "DESIGN_SLICE"
+      ]
+    },
+    {
+      "port_id": "STORE_012_CHARGE_PUMP:PTES_CONTROL:in:command",
+      "object_id": "STORE_012_CHARGE_PUMP",
+      "circuit_id": "PTES_CONTROL",
+      "medium": "signal",
+      "direction": "in",
+      "role": "command",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          0,
+          6,
+          3
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "DESIGN_SLICE"
+      ]
+    },
+    {
+      "port_id": "STORE_012_DIS_PUMP:PTES_CONTROL:in:command",
+      "object_id": "STORE_012_DIS_PUMP",
+      "circuit_id": "PTES_CONTROL",
+      "medium": "signal",
+      "direction": "in",
+      "role": "command",
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          0,
+          6,
+          3
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      },
+      "source_ids": [
+        "DESIGN_SLICE"
+      ]
+    },
+    {
+      "port_id": "DRY_019:DRY_019_HEAT:out:primary_supply",
+      "object_id": "DRY_019",
+      "circuit_id": "DRY_019_HEAT",
+      "medium": "water",
+      "direction": "out",
+      "role": "primary_supply",
+      "source_ids": [
+        "M12_C2_PROPOSAL"
+      ],
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          -85,
+          -60,
+          12
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      }
+    },
+    {
+      "port_id": "DRY_019:DRY_019_HEAT:in:primary_return",
+      "object_id": "DRY_019",
+      "circuit_id": "DRY_019_HEAT",
+      "medium": "water",
+      "direction": "in",
+      "role": "primary_return",
+      "source_ids": [
+        "M12_C2_PROPOSAL"
+      ],
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          -85,
+          60,
+          12
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      }
+    },
+    {
+      "port_id": "DRY_019:C2_SECONDARY:in:process_supply",
+      "object_id": "DRY_019",
+      "circuit_id": "C2_SECONDARY",
+      "medium": "water",
+      "direction": "in",
+      "role": "process_supply",
+      "source_ids": [
+        "M12_C2_PROPOSAL"
+      ],
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          10,
+          60,
+          12
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      }
+    },
+    {
+      "port_id": "DRY_019:C2_SECONDARY:out:process_return",
+      "object_id": "DRY_019",
+      "circuit_id": "C2_SECONDARY",
+      "medium": "water",
+      "direction": "out",
+      "role": "process_return",
+      "source_ids": [
+        "M12_C2_PROPOSAL"
+      ],
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          10,
+          -60,
+          12
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      }
+    },
+    {
+      "port_id": "DRY_019_BOOSTER:C2_SECONDARY:in:flow",
+      "object_id": "DRY_019_BOOSTER",
+      "circuit_id": "C2_SECONDARY",
+      "medium": "water",
+      "direction": "in",
+      "role": "flow",
+      "source_ids": [
+        "M12_C2_PROPOSAL"
+      ],
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          -6,
+          -3,
+          6
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      }
+    },
+    {
+      "port_id": "DRY_019_BOOSTER:C2_SECONDARY:out:flow",
+      "object_id": "DRY_019_BOOSTER",
+      "circuit_id": "C2_SECONDARY",
+      "medium": "water",
+      "direction": "out",
+      "role": "flow",
+      "source_ids": [
+        "M12_C2_PROPOSAL"
+      ],
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          6,
+          -3,
+          6
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      }
+    },
+    {
+      "port_id": "DRY_019_HX_1:DRY_019_HEAT:in:flow",
+      "object_id": "DRY_019_HX_1",
+      "circuit_id": "DRY_019_HEAT",
+      "medium": "water",
+      "direction": "in",
+      "role": "flow",
+      "source_ids": [
+        "M12_C2_PROPOSAL"
+      ],
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          -6,
+          -3,
+          2
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      }
+    },
+    {
+      "port_id": "DRY_019_HX_1:DRY_019_HEAT:out:flow",
+      "object_id": "DRY_019_HX_1",
+      "circuit_id": "DRY_019_HEAT",
+      "medium": "water",
+      "direction": "out",
+      "role": "flow",
+      "source_ids": [
+        "M12_C2_PROPOSAL"
+      ],
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          6,
+          -3,
+          2
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      }
+    },
+    {
+      "port_id": "DRY_019_HX_1:C2_SECONDARY:in:flow",
+      "object_id": "DRY_019_HX_1",
+      "circuit_id": "C2_SECONDARY",
+      "medium": "water",
+      "direction": "in",
+      "role": "flow",
+      "source_ids": [
+        "M12_C2_PROPOSAL"
+      ],
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          -6,
+          0,
+          6
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      }
+    },
+    {
+      "port_id": "DRY_019_HX_1:C2_SECONDARY:out:flow",
+      "object_id": "DRY_019_HX_1",
+      "circuit_id": "C2_SECONDARY",
+      "medium": "water",
+      "direction": "out",
+      "role": "flow",
+      "source_ids": [
+        "M12_C2_PROPOSAL"
+      ],
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          6,
+          0,
+          6
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      }
+    },
+    {
+      "port_id": "DRY_019_HX_2:DRY_019_HEAT:in:flow",
+      "object_id": "DRY_019_HX_2",
+      "circuit_id": "DRY_019_HEAT",
+      "medium": "water",
+      "direction": "in",
+      "role": "flow",
+      "source_ids": [
+        "M12_C2_PROPOSAL"
+      ],
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          -6,
+          -3,
+          2
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      }
+    },
+    {
+      "port_id": "DRY_019_HX_2:DRY_019_HEAT:out:flow",
+      "object_id": "DRY_019_HX_2",
+      "circuit_id": "DRY_019_HEAT",
+      "medium": "water",
+      "direction": "out",
+      "role": "flow",
+      "source_ids": [
+        "M12_C2_PROPOSAL"
+      ],
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          6,
+          -3,
+          2
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      }
+    },
+    {
+      "port_id": "DRY_019_HX_2:C2_SECONDARY:in:flow",
+      "object_id": "DRY_019_HX_2",
+      "circuit_id": "C2_SECONDARY",
+      "medium": "water",
+      "direction": "in",
+      "role": "flow",
+      "source_ids": [
+        "M12_C2_PROPOSAL"
+      ],
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          -6,
+          0,
+          6
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      }
+    },
+    {
+      "port_id": "DRY_019_HX_2:C2_SECONDARY:out:flow",
+      "object_id": "DRY_019_HX_2",
+      "circuit_id": "C2_SECONDARY",
+      "medium": "water",
+      "direction": "out",
+      "role": "flow",
+      "source_ids": [
+        "M12_C2_PROPOSAL"
+      ],
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          6,
+          0,
+          6
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      }
+    },
+    {
+      "port_id": "DRY_019_HX_3:DRY_019_HEAT:in:flow",
+      "object_id": "DRY_019_HX_3",
+      "circuit_id": "DRY_019_HEAT",
+      "medium": "water",
+      "direction": "in",
+      "role": "flow",
+      "source_ids": [
+        "M12_C2_PROPOSAL"
+      ],
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          -6,
+          -3,
+          2
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      }
+    },
+    {
+      "port_id": "DRY_019_HX_3:DRY_019_HEAT:out:flow",
+      "object_id": "DRY_019_HX_3",
+      "circuit_id": "DRY_019_HEAT",
+      "medium": "water",
+      "direction": "out",
+      "role": "flow",
+      "source_ids": [
+        "M12_C2_PROPOSAL"
+      ],
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          6,
+          -3,
+          2
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      }
+    },
+    {
+      "port_id": "DRY_019_HX_3:C2_SECONDARY:in:flow",
+      "object_id": "DRY_019_HX_3",
+      "circuit_id": "C2_SECONDARY",
+      "medium": "water",
+      "direction": "in",
+      "role": "flow",
+      "source_ids": [
+        "M12_C2_PROPOSAL"
+      ],
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          -6,
+          0,
+          6
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      }
+    },
+    {
+      "port_id": "DRY_019_HX_3:C2_SECONDARY:out:flow",
+      "object_id": "DRY_019_HX_3",
+      "circuit_id": "C2_SECONDARY",
+      "medium": "water",
+      "direction": "out",
+      "role": "flow",
+      "source_ids": [
+        "M12_C2_PROPOSAL"
+      ],
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          6,
+          0,
+          6
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      }
+    },
+    {
+      "port_id": "DRY_019_POWER:DRY_019_POWER:out:power",
+      "object_id": "DRY_019_POWER",
+      "circuit_id": "DRY_019_POWER",
+      "medium": "electricity",
+      "direction": "out",
+      "role": "power",
+      "source_ids": [
+        "M12_C2_PROPOSAL"
+      ],
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          0,
+          -6,
+          3
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      }
+    },
+    {
+      "port_id": "DRY_019_BOOSTER:DRY_019_POWER:in:power",
+      "object_id": "DRY_019_BOOSTER",
+      "circuit_id": "DRY_019_POWER",
+      "medium": "electricity",
+      "direction": "in",
+      "role": "power",
+      "source_ids": [
+        "M12_C2_PROPOSAL"
+      ],
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          0,
+          -6,
+          3
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      }
+    },
+    {
+      "port_id": "DRY_019_CTRL:DRY_019_CONTROL:out:command",
+      "object_id": "DRY_019_CTRL",
+      "circuit_id": "DRY_019_CONTROL",
+      "medium": "signal",
+      "direction": "out",
+      "role": "command",
+      "source_ids": [
+        "M12_C2_PROPOSAL"
+      ],
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          0,
+          6,
+          3
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      }
+    },
+    {
+      "port_id": "DRY_019_BOOSTER:DRY_019_CONTROL:in:command",
+      "object_id": "DRY_019_BOOSTER",
+      "circuit_id": "DRY_019_CONTROL",
+      "medium": "signal",
+      "direction": "in",
+      "role": "command",
+      "source_ids": [
+        "M12_C2_PROPOSAL"
+      ],
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          0,
+          6,
+          3
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      }
+    },
+    {
+      "port_id": "DRY_019_HX_1:DRY_019_CONTROL:in:command",
+      "object_id": "DRY_019_HX_1",
+      "circuit_id": "DRY_019_CONTROL",
+      "medium": "signal",
+      "direction": "in",
+      "role": "command",
+      "source_ids": [
+        "M12_C2_PROPOSAL"
+      ],
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          0,
+          6,
+          3
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      }
+    },
+    {
+      "port_id": "DRY_019_HX_2:DRY_019_CONTROL:in:command",
+      "object_id": "DRY_019_HX_2",
+      "circuit_id": "DRY_019_CONTROL",
+      "medium": "signal",
+      "direction": "in",
+      "role": "command",
+      "source_ids": [
+        "M12_C2_PROPOSAL"
+      ],
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          0,
+          6,
+          3
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      }
+    },
+    {
+      "port_id": "DRY_019_HX_3:DRY_019_CONTROL:in:command",
+      "object_id": "DRY_019_HX_3",
+      "circuit_id": "DRY_019_CONTROL",
+      "medium": "signal",
+      "direction": "in",
+      "role": "command",
+      "source_ids": [
+        "M12_C2_PROPOSAL"
+      ],
+      "position": {
+        "space": "object_local_z_up",
+        "xyz_m": [
+          0,
+          6,
+          3
+        ],
+        "status": "candidate_model_socket_not_field_nozzle"
+      }
+    }
+  ],
+  "energy_transfers": [
+    {
+      "transfer_id": "TRANSFER_HUB_011_EVAP",
+      "object_id": "HUB_011_EVAP",
+      "from_circuit_id": "SOURCE",
+      "to_circuit_id": "CO2",
+      "kind": "heat_transfer_no_mass_flow",
+      "power_kw": null,
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "transfer_id": "TRANSFER_HUB_011_GAS",
+      "object_id": "HUB_011_GAS",
+      "from_circuit_id": "CO2",
+      "to_circuit_id": "USER",
+      "kind": "heat_transfer_no_mass_flow",
+      "power_kw": null,
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "transfer_id": "TRANSFER_HUB_011_P1_HX",
+      "object_id": "HUB_011_P1_HX",
+      "from_circuit_id": "SOURCE",
+      "to_circuit_id": "P1_USER",
+      "kind": "heat_transfer_no_mass_flow",
+      "power_kw": null,
+      "source_ids": [
+        "DESIGN_SLICE"
+      ]
+    },
+    {
+      "transfer_id": "M12_TRANSFER_DRY_019_HX_1",
+      "object_id": "DRY_019_HX_1",
+      "from_circuit_id": "DRY_019_HEAT",
+      "to_circuit_id": "C2_SECONDARY",
+      "kind": "heat_transfer_no_mass_flow",
+      "power_kw": null,
+      "source_ids": [
+        "M12_C2_PROPOSAL"
+      ]
+    },
+    {
+      "transfer_id": "M12_TRANSFER_DRY_019_HX_2",
+      "object_id": "DRY_019_HX_2",
+      "from_circuit_id": "DRY_019_HEAT",
+      "to_circuit_id": "C2_SECONDARY",
+      "kind": "heat_transfer_no_mass_flow",
+      "power_kw": null,
+      "source_ids": [
+        "M12_C2_PROPOSAL"
+      ]
+    },
+    {
+      "transfer_id": "M12_TRANSFER_DRY_019_HX_3",
+      "object_id": "DRY_019_HX_3",
+      "from_circuit_id": "DRY_019_HEAT",
+      "to_circuit_id": "C2_SECONDARY",
+      "kind": "heat_transfer_no_mass_flow",
+      "power_kw": null,
+      "source_ids": [
+        "M12_C2_PROPOSAL"
+      ]
+    }
+  ],
+  "energy_conversions": [
+    {
+      "conversion_id": "HUB_COMPRESSOR_WORK",
+      "object_id": "HUB_011_COMP",
+      "kind": "electric_to_refrigerant_work",
+      "electric_input_port_id": "HUB_011_COMP:HUB_POWER:in:power",
+      "thermal_output_port_id": "HUB_011_COMP:CO2:out:flow",
+      "efficiency": null,
+      "electric_power_kw": null,
+      "status": "proposed_not_measured"
+    },
+    {
+      "conversion_id": "BOILER_ELECTRIC_TO_HEAT",
+      "object_id": "BOILER_CAND_001",
+      "kind": "electric_to_water_heat",
+      "electric_input_port_id": "BOILER_CAND_001:CONDITIONAL_POWER:in:power",
+      "thermal_output_port_id": "BOILER_CAND_001:USER:out:flow",
+      "efficiency": null,
+      "electric_power_kw": null,
+      "status": "proposed_not_measured"
+    }
+  ],
+  "ptes": {
+    "status": "proposed_separate_charge_discharge_branches_pending_hydraulic_review",
+    "charge_valves": [
+      "STORE_012_CHARGE_VHOT",
+      "STORE_012_CHARGE_VRETURN"
+    ],
+    "discharge_valves": [
+      "STORE_012_DIS_VHOT",
+      "STORE_012_DIS_VRETURN"
+    ],
+    "charge_pump": "STORE_012_CHARGE_PUMP",
+    "discharge_pump": "STORE_012_DIS_PUMP",
+    "discharge_check_valve": "STORE_012_DIS_CHECK",
+    "controller": "STORE_012_CTRL",
+    "sensor": "STORE_012_SENSOR",
+    "execution_allowed": false,
+    "initial_mode": "IDLE",
+    "simultaneous_charge_discharge_allowed": false,
+    "transition_sequence": [
+      "request",
+      "stop_other_pump",
+      "confirm_zero_flow",
+      "close_other_branch",
+      "open_requested_branch",
+      "confirm_valve_positions",
+      "confirm_thermal_and_power_gates",
+      "start_requested_pump"
+    ],
+    "stop_sequence": [
+      "stop_requested_pump",
+      "confirm_zero_flow",
+      "close_requested_branch",
+      "IDLE"
+    ],
+    "required_true": [
+      "hydraulic_reviewed",
+      "owner_approval",
+      "valve_feedback_ready",
+      "power_ready",
+      "thermal_window_ready",
+      "flow_instrument_ready"
+    ],
+    "legacy_runtime_route_roles": {
+      "PTES_CHARGE": "charge_only",
+      "PTES_RETURN": "charge_return_not_verified_discharge"
+    }
+  },
+  "execution_allowed": false,
+  "original_relations_status": "superseded_by_declared_candidate_ports",
+  "boundary": "候选模型连接；不是现场喷嘴、已施工管路或水力验收",
+  "parent_previews": {
+    "DRY_019": {
+      "preview_url": "../map-viewer/assets/integrated-v2/DRY_019.png",
+      "model_revision": "m12-connected-v1"
+    },
+    "STORE_012": {
+      "preview_url": "../map-viewer/assets/integrated-v2/STORE_012.png",
+      "model_revision": "m12-connected-v1"
+    },
+    "HUB_011": {
+      "preview_url": "../map-viewer/assets/integrated-v2/HUB_011.png",
+      "model_revision": "m12-connected-v1"
+    },
+    "BOILER_CAND_001": {
+      "preview_url": "../map-viewer/assets/integrated-v2/BOILER_CAND_001.png",
+      "model_revision": "m12-connected-v1"
+    }
+  }
+}

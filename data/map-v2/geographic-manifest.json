@@ -1,0 +1,1043 @@
+{
+  "revision": "map-build-v2",
+  "crs": "EPSG:32649",
+  "origin": [
+    687361.2359406124,
+    4540425.231254176,
+    1200.0
+  ],
+  "bbox_wgs84": [
+    113.065,
+    40.935,
+    113.328,
+    41.0883
+  ],
+  "utm_bounds": [
+    673442.8685937531,
+    4533594.575852437,
+    695988.3133210572,
+    4551170.795480724
+  ],
+  "terrain_grid": [
+    564,
+    440
+  ],
+  "sample_spacing_m": [
+    39.97419277890808,
+    39.94595370065336
+  ],
+  "height_multiplier": 1.0,
+  "height_range_m": [
+    1279.519775390625,
+    1522.015625
+  ],
+  "valid_pixel_count": 248160,
+  "nodata_pixel_count": 0,
+  "vertical_reference": "Copernicus DEM EGM2008 orthometric heights; not engineering ground survey",
+  "position_status": "source seed geometry remains unverified; projection roundtrip is not field validation",
+  "controls": [
+    {
+      "lonlat": [
+        113.2275,
+        40.9935
+      ],
+      "utm": [
+        687361.2359406124,
+        4540425.231254176
+      ],
+      "roundtrip_error_m": 9.615332772497167e-10
+    },
+    {
+      "lonlat": [
+        113.2045,
+        41.016
+      ],
+      "utm": [
+        685363.4141000309,
+        4542874.096998669
+      ],
+      "roundtrip_error_m": 0.0
+    },
+    {
+      "lonlat": [
+        113.185,
+        41.0335
+      ],
+      "utm": [
+        683675.0050894443,
+        4544775.727665247
+      ],
+      "roundtrip_error_m": 1.102879075799892e-09
+    }
+  ],
+  "texture_request": {
+    "url": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless-2024_3857&styles=&srs=EPSG%3A3857&bbox=12586338.226541476%2C5002758.900993127%2C12615615.252620107%2C5025374.630804788&width=4096&height=3170&format=image%2Fjpeg",
+    "lonlat_bbox": [
+      113.065,
+      40.935,
+      113.328,
+      41.0883
+    ],
+    "webmercator_bbox": [
+      12586338.226541476,
+      5002758.900993127,
+      12615615.252620107,
+      5025374.630804788
+    ],
+    "size": [
+      4096,
+      3170
+    ],
+    "layer": "s2cloudless-2024_3857",
+    "attribution": "EOxCloudless by EOX IT Services GmbH; contains modified Copernicus Sentinel data 2024",
+    "license": "CC BY-NC-SA 4.0",
+    "purpose": "noncommercial course/research geographic model; retain attribution and share-alike for imagery adaptation",
+    "not_google": true
+  },
+  "dem_sources": [
+    {
+      "file": "copernicus_N40_E113.tif",
+      "sha256": "53941163242592c32b2d2b3f32b917f516351e2b213f2355073e1e699832711d",
+      "crs": "EPSG:4326",
+      "transform": [
+        0.0002777777777777778,
+        0.0,
+        112.99986111111112,
+        0.0,
+        -0.0002777777777777778,
+        41.00013888888889,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "nodata": null,
+      "tags": {
+        "AREA_OR_POINT": "Point"
+      }
+    },
+    {
+      "file": "copernicus_N41_E113.tif",
+      "sha256": "274bb51bdcb880edad8e536d18e3a014bc991a10f1e8e2497df24cabba3938d5",
+      "crs": "EPSG:4326",
+      "transform": [
+        0.0002777777777777778,
+        0.0,
+        112.99986111111112,
+        0.0,
+        -0.0002777777777777778,
+        42.00013888888889,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "nodata": null,
+      "tags": {
+        "AREA_OR_POINT": "Point"
+      }
+    }
+  ],
+  "features": [
+    {
+      "id": "HEAT_001",
+      "properties": {
+        "object_id": "HEAT_001",
+        "name": "京能集宁电厂（京宁热电）",
+        "kind": "heat",
+        "phase": "existing_context",
+        "geometry_status": "legacy_approximate_unverified",
+        "operational_status": "unverified",
+        "license": "project annotation; underlying coordinates provenance requires review",
+        "source": "historical project map/data.py",
+        "coordinate_assumption": "WGS84 assumed; not independently checked",
+        "note": "历史地图近似坐标，未做本轮设施级定位；不证明权属、签约、审批或精确建筑位置。 仅作现状背景；不作本方案备用，不自动代表拟接入点。"
+      },
+      "type": "Point",
+      "xyz": [
+        -5670.9698,
+        6367.3167,
+        186.8691
+      ]
+    },
+    {
+      "id": "HEAT_002",
+      "properties": {
+        "object_id": "HEAT_002",
+        "name": "内蒙古华宁热电",
+        "kind": "heat",
+        "phase": "existing_context",
+        "geometry_status": "legacy_approximate_unverified",
+        "operational_status": "unverified",
+        "license": "project annotation; underlying coordinates provenance requires review",
+        "source": "historical project map/data.py",
+        "coordinate_assumption": "WGS84 assumed; not independently checked",
+        "note": "历史地图近似坐标，未做本轮设施级定位；不证明权属、签约、审批或精确建筑位置。 仅作现状背景；不作本方案备用，不自动代表拟接入点。"
+      },
+      "type": "Point",
+      "xyz": [
+        -5431.1392,
+        3140.5584,
+        138.2294
+      ]
+    },
+    {
+      "id": "HEAT_003",
+      "properties": {
+        "object_id": "HEAT_003",
+        "name": "乌兰察布热力公司",
+        "kind": "heat",
+        "phase": "existing_context",
+        "geometry_status": "legacy_approximate_unverified",
+        "operational_status": "unverified",
+        "license": "project annotation; underlying coordinates provenance requires review",
+        "source": "historical project map/data.py",
+        "coordinate_assumption": "WGS84 assumed; not independently checked",
+        "note": "历史地图近似坐标，未做本轮设施级定位；不证明权属、签约、审批或精确建筑位置。 仅作现状背景；不作本方案备用，不自动代表拟接入点。"
+      },
+      "type": "Point",
+      "xyz": [
+        -9333.7256,
+        2056.146,
+        233.4309
+      ]
+    },
+    {
+      "id": "DC_004",
+      "properties": {
+        "object_id": "DC_004",
+        "name": "华为云乌兰察布数据中心",
+        "kind": "dc",
+        "phase": "existing_context",
+        "geometry_status": "legacy_approximate_unverified",
+        "operational_status": "unverified",
+        "license": "project annotation; underlying coordinates provenance requires review",
+        "source": "historical project map/data.py",
+        "coordinate_assumption": "WGS84 assumed; not independently checked",
+        "note": "历史地图近似坐标，未做本轮设施级定位；不证明权属、签约、审批或精确建筑位置。"
+      },
+      "type": "Point",
+      "xyz": [
+        980.773,
+        158.4036,
+        130.0686
+      ]
+    },
+    {
+      "id": "DC_005",
+      "properties": {
+        "object_id": "DC_005",
+        "name": "阿里巴巴乌兰察布数据中心",
+        "kind": "dc",
+        "phase": "existing_context",
+        "geometry_status": "legacy_approximate_unverified",
+        "operational_status": "unverified",
+        "license": "project annotation; underlying coordinates provenance requires review",
+        "source": "historical project map/data.py",
+        "coordinate_assumption": "WGS84 assumed; not independently checked",
+        "note": "历史地图近似坐标，未做本轮设施级定位；不证明权属、签约、审批或精确建筑位置。"
+      },
+      "type": "Point",
+      "xyz": [
+        1334.3602,
+        -1154.5439,
+        124.2452
+      ]
+    },
+    {
+      "id": "DC_006",
+      "properties": {
+        "object_id": "DC_006",
+        "name": "益武堂数据中心组团（苹果/优刻得/快手/大唐等）",
+        "kind": "dc",
+        "phase": "candidate_unverified",
+        "geometry_status": "schematic",
+        "operational_status": "unverified",
+        "license": "project annotation; underlying coordinates provenance requires review",
+        "source": "historical project map/data.py",
+        "coordinate_assumption": "WGS84 assumed; not independently checked",
+        "note": "历史地图近似坐标，未做本轮设施级定位；不证明权属、签约、审批或精确建筑位置。"
+      },
+      "type": "Point",
+      "xyz": [
+        234.4003,
+        -938.3111,
+        127.3901
+      ]
+    },
+    {
+      "id": "DC_007",
+      "properties": {
+        "object_id": "DC_007",
+        "name": "四号村/巴音东段组团（疑中金/华为三期等）",
+        "kind": "dc",
+        "phase": "candidate_unverified",
+        "geometry_status": "schematic",
+        "operational_status": "unverified",
+        "license": "project annotation; underlying coordinates provenance requires review",
+        "source": "historical project map/data.py",
+        "coordinate_assumption": "WGS84 assumed; not independently checked",
+        "note": "历史地图近似坐标，未做本轮设施级定位；不证明权属、签约、审批或精确建筑位置。"
+      },
+      "type": "Point",
+      "xyz": [
+        7623.0997,
+        -190.3846,
+        116.3629
+      ]
+    },
+    {
+      "id": "SUB_008",
+      "properties": {
+        "object_id": "SUB_008",
+        "name": "220kV 玉岭变（示意位置）",
+        "kind": "sub",
+        "phase": "candidate_unverified",
+        "geometry_status": "schematic",
+        "operational_status": "unverified",
+        "license": "project annotation; underlying coordinates provenance requires review",
+        "source": "historical project map/data.py",
+        "coordinate_assumption": "WGS84 assumed; not independently checked",
+        "note": "历史地图近似坐标，未做本轮设施级定位；不证明权属、签约、审批或精确建筑位置。 变电站位置示意，不代表接入容量或可获批。"
+      },
+      "type": "Point",
+      "xyz": [
+        -1205.0858,
+        6023.9196,
+        156.7977
+      ]
+    },
+    {
+      "id": "SUB_009",
+      "properties": {
+        "object_id": "SUB_009",
+        "name": "220kV 集宁变（示意位置）",
+        "kind": "sub",
+        "phase": "candidate_unverified",
+        "geometry_status": "schematic",
+        "operational_status": "unverified",
+        "license": "project annotation; underlying coordinates provenance requires review",
+        "source": "historical project map/data.py",
+        "coordinate_assumption": "WGS84 assumed; not independently checked",
+        "note": "历史地图近似坐标，未做本轮设施级定位；不证明权属、签约、审批或精确建筑位置。 变电站位置示意，不代表接入容量或可获批。"
+      },
+      "type": "Point",
+      "xyz": [
+        -10998.7378,
+        4115.4385,
+        212.4215
+      ]
+    },
+    {
+      "id": "SUB_010",
+      "properties": {
+        "object_id": "SUB_010",
+        "name": "110kV 集宁工业园变（示意位置）",
+        "kind": "sub",
+        "phase": "candidate_unverified",
+        "geometry_status": "schematic",
+        "operational_status": "unverified",
+        "license": "project annotation; underlying coordinates provenance requires review",
+        "source": "historical project map/data.py",
+        "coordinate_assumption": "WGS84 assumed; not independently checked",
+        "note": "历史地图近似坐标，未做本轮设施级定位；不证明权属、签约、审批或精确建筑位置。 变电站位置示意，不代表接入容量或可获批。"
+      },
+      "type": "Point",
+      "xyz": [
+        -1826.7897,
+        -2657.0363,
+        120.3162
+      ]
+    },
+    {
+      "id": "HUB_011",
+      "properties": {
+        "object_id": "HUB_011",
+        "name": "CO2 跨临界热泵枢纽站（P2）",
+        "kind": "hub",
+        "phase": "candidate_unverified",
+        "geometry_status": "schematic",
+        "operational_status": "unverified",
+        "license": "project annotation; underlying coordinates provenance requires review",
+        "source": "historical project map/data.py",
+        "coordinate_assumption": "WGS84 assumed; not independently checked",
+        "note": "历史地图近似坐标，未做本轮设施级定位；不证明权属、签约、审批或精确建筑位置。 拟设热泵站；源侧与用户侧温度分别定义，性能待测。"
+      },
+      "type": "Point",
+      "xyz": [
+        0.0,
+        0.0,
+        134.3546
+      ]
+    },
+    {
+      "id": "STORE_012",
+      "properties": {
+        "object_id": "STORE_012",
+        "name": "水坑储热 PTES（日/周调节）",
+        "kind": "store",
+        "phase": "candidate_unverified",
+        "geometry_status": "schematic",
+        "operational_status": "unverified",
+        "license": "project annotation; underlying coordinates provenance requires review",
+        "source": "historical project map/data.py",
+        "coordinate_assumption": "WGS84 assumed; not independently checked",
+        "note": "历史地图近似坐标，未做本轮设施级定位；不证明权属、签约、审批或精确建筑位置。 拟设热库；能量、功率、温度和可用容量待核。"
+      },
+      "type": "Point",
+      "xyz": [
+        -352.028,
+        602.0391,
+        135.1245
+      ]
+    },
+    {
+      "id": "DEMO_013",
+      "properties": {
+        "object_id": "DEMO_013",
+        "name": "农业园 MW级 CO2 冷热 + 土壤跨季节储热示范（P1）",
+        "kind": "demo",
+        "phase": "candidate_unverified",
+        "geometry_status": "schematic",
+        "operational_status": "unverified",
+        "license": "project annotation; underlying coordinates provenance requires review",
+        "source": "historical project map/data.py",
+        "coordinate_assumption": "WGS84 assumed; not independently checked",
+        "note": "历史地图近似坐标，未做本轮设施级定位；不证明权属、签约、审批或精确建筑位置。 业务与接入候选；不承诺产量、年收入或一期已接入。"
+      },
+      "type": "Point",
+      "xyz": [
+        -532.9664,
+        1097.3517,
+        136.7797
+      ]
+    },
+    {
+      "id": "AGRI_014",
+      "properties": {
+        "object_id": "AGRI_014",
+        "name": "脱毒种薯组培楼 + 原原种温室",
+        "kind": "agri",
+        "phase": "candidate_unverified",
+        "geometry_status": "schematic",
+        "operational_status": "unverified",
+        "license": "project annotation; underlying coordinates provenance requires review",
+        "source": "historical project map/data.py",
+        "coordinate_assumption": "WGS84 assumed; not independently checked",
+        "note": "历史地图近似坐标，未做本轮设施级定位；不证明权属、签约、审批或精确建筑位置。 业务与接入候选；不承诺产量、年收入或一期已接入。"
+      },
+      "type": "Point",
+      "xyz": [
+        104.9166,
+        835.8802,
+        133.2292
+      ]
+    },
+    {
+      "id": "AGRI_015",
+      "properties": {
+        "object_id": "AGRI_015",
+        "name": "工厂化食用菌",
+        "kind": "agri",
+        "phase": "candidate_unverified",
+        "geometry_status": "schematic",
+        "operational_status": "unverified",
+        "license": "project annotation; underlying coordinates provenance requires review",
+        "source": "historical project map/data.py",
+        "coordinate_assumption": "WGS84 assumed; not independently checked",
+        "note": "历史地图近似坐标，未做本轮设施级定位；不证明权属、签约、审批或精确建筑位置。 业务与接入候选；不承诺产量、年收入或一期已接入。"
+      },
+      "type": "Point",
+      "xyz": [
+        493.3508,
+        456.9805,
+        133.0852
+      ]
+    },
+    {
+      "id": "AGRI_016",
+      "properties": {
+        "object_id": "AGRI_016",
+        "name": "冬季番茄连栋温室",
+        "kind": "agri",
+        "phase": "candidate_unverified",
+        "geometry_status": "schematic",
+        "operational_status": "unverified",
+        "license": "project annotation; underlying coordinates provenance requires review",
+        "source": "historical project map/data.py",
+        "coordinate_assumption": "WGS84 assumed; not independently checked",
+        "note": "历史地图近似坐标，未做本轮设施级定位；不证明权属、签约、审批或精确建筑位置。 业务与接入候选；不承诺产量、年收入或一期已接入。"
+      },
+      "type": "Point",
+      "xyz": [
+        -1997.8218,
+        2448.8657,
+        146.3395
+      ]
+    },
+    {
+      "id": "AGRI_017",
+      "properties": {
+        "object_id": "AGRI_017",
+        "name": "冬春草莓",
+        "kind": "agri",
+        "phase": "candidate_unverified",
+        "geometry_status": "schematic",
+        "operational_status": "unverified",
+        "license": "project annotation; underlying coordinates provenance requires review",
+        "source": "historical project map/data.py",
+        "coordinate_assumption": "WGS84 assumed; not independently checked",
+        "note": "历史地图近似坐标，未做本轮设施级定位；不证明权属、签约、审批或精确建筑位置。 业务与接入候选；不承诺产量、年收入或一期已接入。"
+      },
+      "type": "Point",
+      "xyz": [
+        -2360.8328,
+        1828.699,
+        140.6649
+      ]
+    },
+    {
+      "id": "AGRI_018",
+      "properties": {
+        "object_id": "AGRI_018",
+        "name": "叶菜水培 + 冷凉蔬菜种苗",
+        "kind": "agri",
+        "phase": "candidate_unverified",
+        "geometry_status": "schematic",
+        "operational_status": "unverified",
+        "license": "project annotation; underlying coordinates provenance requires review",
+        "source": "historical project map/data.py",
+        "coordinate_assumption": "WGS84 assumed; not independently checked",
+        "note": "历史地图近似坐标，未做本轮设施级定位；不证明权属、签约、审批或精确建筑位置。 业务与接入候选；不承诺产量、年收入或一期已接入。"
+      },
+      "type": "Point",
+      "xyz": [
+        -3686.2309,
+        4350.4964,
+        141.5281
+      ]
+    },
+    {
+      "id": "DRY_019",
+      "properties": {
+        "object_id": "DRY_019",
+        "name": "秋季低温烘干中心（燕麦/脱水蔬菜）",
+        "kind": "dry",
+        "phase": "candidate_unverified",
+        "geometry_status": "schematic",
+        "operational_status": "unverified",
+        "license": "project annotation; underlying coordinates provenance requires review",
+        "source": "historical project map/data.py",
+        "coordinate_assumption": "WGS84 assumed; not independently checked",
+        "note": "历史地图近似坐标，未做本轮设施级定位；不证明权属、签约、审批或精确建筑位置。 业务与接入候选；不承诺产量、年收入或一期已接入。"
+      },
+      "type": "Point",
+      "xyz": [
+        -4120.4414,
+        4895.0869,
+        161.4354
+      ]
+    },
+    {
+      "id": "PROC_020",
+      "properties": {
+        "object_id": "PROC_020",
+        "name": "民丰薯业",
+        "kind": "proc",
+        "phase": "existing_context",
+        "geometry_status": "legacy_approximate_unverified",
+        "operational_status": "unverified",
+        "license": "project annotation; underlying coordinates provenance requires review",
+        "source": "historical project map/data.py",
+        "coordinate_assumption": "WGS84 assumed; not independently checked",
+        "note": "历史地图近似坐标，未做本轮设施级定位；不证明权属、签约、审批或精确建筑位置。"
+      },
+      "type": "Point",
+      "xyz": [
+        -8733.8655,
+        9202.5068,
+        182.7476
+      ]
+    },
+    {
+      "id": "PROC_021",
+      "properties": {
+        "object_id": "PROC_021",
+        "name": "察哈尔工业园（蓝威斯顿薯条厂附近）",
+        "kind": "proc",
+        "phase": "candidate_unverified",
+        "geometry_status": "schematic",
+        "operational_status": "unverified",
+        "license": "project annotation; underlying coordinates provenance requires review",
+        "source": "historical project map/data.py",
+        "coordinate_assumption": "WGS84 assumed; not independently checked",
+        "note": "历史地图近似坐标，未做本轮设施级定位；不证明权属、签约、审批或精确建筑位置。"
+      },
+      "type": "Point",
+      "xyz": [
+        -460.0785,
+        -5410.8223,
+        101.6455
+      ]
+    },
+    {
+      "id": "TOWN_022",
+      "properties": {
+        "object_id": "TOWN_022",
+        "name": "白海子镇（白海子村委）",
+        "kind": "town",
+        "phase": "existing_context",
+        "geometry_status": "legacy_approximate_unverified",
+        "operational_status": "unverified",
+        "license": "project annotation; underlying coordinates provenance requires review",
+        "source": "historical project map/data.py",
+        "coordinate_assumption": "WGS84 assumed; not independently checked",
+        "note": "历史地图近似坐标，未做本轮设施级定位；不证明权属、签约、审批或精确建筑位置。"
+      },
+      "type": "Point",
+      "xyz": [
+        -1556.8753,
+        1982.3207,
+        136.8678
+      ]
+    },
+    {
+      "id": "TOWN_023",
+      "properties": {
+        "object_id": "TOWN_023",
+        "name": "泉玉岭村",
+        "kind": "town",
+        "phase": "existing_context",
+        "geometry_status": "legacy_approximate_unverified",
+        "operational_status": "unverified",
+        "license": "project annotation; underlying coordinates provenance requires review",
+        "source": "historical project map/data.py",
+        "coordinate_assumption": "WGS84 assumed; not independently checked",
+        "note": "历史地图近似坐标，未做本轮设施级定位；不证明权属、签约、审批或精确建筑位置。"
+      },
+      "type": "Point",
+      "xyz": [
+        228.5034,
+        6860.3565,
+        150.9401
+      ]
+    },
+    {
+      "id": "TOWN_024",
+      "properties": {
+        "object_id": "TOWN_024",
+        "name": "集宁城区",
+        "kind": "town",
+        "phase": "existing_context",
+        "geometry_status": "legacy_approximate_unverified",
+        "operational_status": "unverified",
+        "license": "project annotation; underlying coordinates provenance requires review",
+        "source": "historical project map/data.py",
+        "coordinate_assumption": "WGS84 assumed; not independently checked",
+        "note": "历史地图近似坐标，未做本轮设施级定位；不证明权属、签约、审批或精确建筑位置。"
+      },
+      "type": "Point",
+      "xyz": [
+        -9487.447,
+        2496.7609,
+        216.2601
+      ]
+    },
+    {
+      "id": "PIPE_P2_SEED",
+      "properties": {
+        "object_id": "PIPE_P2_SEED",
+        "name": "二期历史示意走廊：设计11km，手绘几何约8.55km，待重选线",
+        "kind": "heat_route",
+        "phase": "candidate_unverified",
+        "route_status": "hand_drawn_schematic",
+        "source": "historical project map/data.py",
+        "license": "project annotation; source provenance requires review",
+        "note": "不能用于工程量或接入批准；路径端点不证明该机构是热源备用或已同意接入。",
+        "design_cost_length_m": 11000,
+        "drawn_geodesic_length_m": 8552.7609
+      },
+      "type": "LineString",
+      "xyz": [
+        [
+          0.0,
+          0.0,
+          134.3546
+        ],
+        [
+          -440.3798,
+          766.429,
+          136.1226
+        ],
+        [
+          -1086.6988,
+          1361.0111,
+          136.673
+        ],
+        [
+          -1649.3803,
+          1979.9792,
+          139.6464
+        ],
+        [
+          -2426.6668,
+          2771.3199,
+          154.1993
+        ],
+        [
+          -3163.7016,
+          3641.5089,
+          161.8802
+        ],
+        [
+          -3858.5334,
+          4512.819,
+          146.4391
+        ],
+        [
+          -4808.1359,
+          5488.9279,
+          169.3485
+        ],
+        [
+          -5670.9698,
+          6367.3167,
+          186.8691
+        ]
+      ]
+    },
+    {
+      "id": "PIPE_P1_SEED",
+      "properties": {
+        "object_id": "PIPE_P1_SEED",
+        "name": "一期历史示意环线：几何约3.13km，不是3km服务半径",
+        "kind": "lowtemp_route",
+        "phase": "candidate_unverified",
+        "route_status": "hand_drawn_schematic",
+        "source": "historical project map/data.py",
+        "license": "project annotation; source provenance requires review",
+        "note": "不能用于工程量或接入批准；路径端点不证明该机构是热源备用或已同意接入。"
+      },
+      "type": "LineString",
+      "xyz": [
+        [
+          0.0,
+          0.0,
+          134.3546
+        ],
+        [
+          493.3508,
+          456.9805,
+          133.0852
+        ],
+        [
+          104.9166,
+          835.8802,
+          133.2292
+        ],
+        [
+          -532.9664,
+          1097.3517,
+          136.7797
+        ],
+        [
+          -352.028,
+          602.0391,
+          135.1245
+        ],
+        [
+          0.0,
+          0.0,
+          134.3546
+        ]
+      ]
+    },
+    {
+      "id": "POWER_SEED",
+      "properties": {
+        "object_id": "POWER_SEED",
+        "name": "历史供电示意线：未核电压、位置或批复",
+        "kind": "electric_route",
+        "phase": "candidate_unverified",
+        "route_status": "hand_drawn_schematic",
+        "source": "historical project map/data.py",
+        "license": "project annotation; source provenance requires review",
+        "note": "不能用于工程量或接入批准；路径端点不证明该机构是热源备用或已同意接入。"
+      },
+      "type": "LineString",
+      "xyz": [
+        [
+          0.0,
+          0.0,
+          134.3546
+        ],
+        [
+          -621.6403,
+          2928.1353,
+          142.0238
+        ],
+        [
+          -1205.0858,
+          6023.9196,
+          156.7977
+        ]
+      ]
+    },
+    {
+      "id": "ZONE_DCZONE",
+      "properties": {
+        "object_id": "ZONE_DCZONE",
+        "name": "察哈尔高新区·益武堂算力组团（P1 直供 3 km 圈）",
+        "kind": "study_zone",
+        "geometry_status": "schematic_rectangle",
+        "phase": "candidate_unverified",
+        "source": "historical project map/data.py",
+        "license": "project annotation",
+        "note": "人为讨论区块，不是地籍、基本农田、行政边界、服务承诺或已批准用地。"
+      },
+      "type": "Polygon",
+      "xyz": [
+        [
+          [
+            -1086.3392,
+            -1971.7536,
+            118.6786
+          ],
+          [
+            2111.0224,
+            -1889.9989,
+            112.579
+          ],
+          [
+            2048.024,
+            552.4712,
+            124.8834
+          ],
+          [
+            -1159.537,
+            914.7923,
+            129.8757
+          ],
+          [
+            -1086.3392,
+            -1971.7536,
+            118.6786
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "ZONE_AGRIA",
+      "properties": {
+        "object_id": "ZONE_AGRIA",
+        "name": "片区 A｜近端 0–3 km：种薯 · 食用菌 · CO2 示范",
+        "kind": "study_zone",
+        "geometry_status": "schematic_rectangle",
+        "phase": "candidate_unverified",
+        "source": "historical project map/data.py",
+        "license": "project annotation",
+        "note": "人为讨论区块，不是地籍、基本农田、行政边界、服务承诺或已批准用地。"
+      },
+      "type": "Polygon",
+      "xyz": [
+        [
+          [
+            -1142.6417,
+            248.6653,
+            129.1823
+          ],
+          [
+            707.9007,
+            295.8319,
+            132.653
+          ],
+          [
+            678.0386,
+            1461.5569,
+            129.7048
+          ],
+          [
+            -1172.2097,
+            1414.3879,
+            136.8236
+          ],
+          [
+            -1142.6417,
+            248.6653,
+            129.1823
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "ZONE_AGRIB",
+      "properties": {
+        "object_id": "ZONE_AGRIB",
+        "name": "片区 B｜中段 3–7 km：冬季番茄 · 草莓（白海子镇）",
+        "kind": "study_zone",
+        "geometry_status": "schematic_rectangle",
+        "phase": "candidate_unverified",
+        "source": "historical project map/data.py",
+        "license": "project annotation",
+        "note": "人为讨论区块，不是地籍、基本农田、行政边界、服务承诺或已批准用地。"
+      },
+      "type": "Polygon",
+      "xyz": [
+        [
+          [
+            -2939.747,
+            1425.309,
+            141.7208
+          ],
+          [
+            -1173.6179,
+            1469.8985,
+            137.1685
+          ],
+          [
+            -1215.8692,
+            3135.2197,
+            138.0563
+          ],
+          [
+            -2981.5971,
+            3090.6269,
+            160.2877
+          ],
+          [
+            -2939.747,
+            1425.309,
+            141.7208
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "ZONE_AGRIC",
+      "properties": {
+        "object_id": "ZONE_AGRIC",
+        "name": "C区中远端候选：接入阶段与支线成本待核",
+        "kind": "study_zone",
+        "geometry_status": "schematic_rectangle",
+        "phase": "candidate_unverified",
+        "source": "historical project map/data.py",
+        "license": "project annotation",
+        "note": "人为讨论区块，不是地籍、基本农田、行政边界、服务承诺或已批准用地。"
+      },
+      "type": "Polygon",
+      "xyz": [
+        [
+          [
+            -4932.0534,
+            3708.4022,
+            177.959
+          ],
+          [
+            -3082.4152,
+            3754.6422,
+            161.2654
+          ],
+          [
+            -3121.4736,
+            5308.9435,
+            147.3799
+          ],
+          [
+            -4970.7193,
+            5262.7003,
+            169.0403
+          ],
+          [
+            -4932.0534,
+            3708.4022,
+            177.959
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "ZONE_CITY",
+      "properties": {
+        "object_id": "ZONE_CITY",
+        "name": "城市既有热网背景：不作本方案煤热备用",
+        "kind": "study_zone",
+        "geometry_status": "schematic_rectangle",
+        "phase": "candidate_unverified",
+        "source": "historical project map/data.py",
+        "license": "project annotation",
+        "note": "人为讨论区块，不是地籍、基本农田、行政边界、服务承诺或已批准用地。"
+      },
+      "type": "Polygon",
+      "xyz": [
+        [
+          [
+            -12752.8429,
+            -3480.1498,
+            219.8555
+          ],
+          [
+            -6441.2823,
+            -3327.5174,
+            130.3031
+          ],
+          [
+            -6701.119,
+            7219.4508,
+            191.1764
+          ],
+          [
+            -13003.6058,
+            7066.747,
+            187.6327
+          ],
+          [
+            -12752.8429,
+            -3480.1498,
+            219.8555
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "ZONE_NEWAREA",
+      "properties": {
+        "object_id": "ZONE_NEWAREA",
+        "name": "城区新增签约热用户候选区：非批准供热边界",
+        "kind": "study_zone",
+        "geometry_status": "schematic_rectangle",
+        "phase": "candidate_unverified",
+        "source": "historical project map/data.py",
+        "license": "project annotation",
+        "note": "人为讨论区块，不是地籍、基本农田、行政边界、服务承诺或已批准用地。"
+      },
+      "type": "Polygon",
+      "xyz": [
+        [
+          [
+            -6523.2821,
+            3.0879,
+            149.7648
+          ],
+          [
+            -4672.7227,
+            48.896,
+            136.876
+          ],
+          [
+            -4824.7263,
+            6155.0569,
+            177.5005
+          ],
+          [
+            -6673.7443,
+            6109.2365,
+            191.4104
+          ],
+          [
+            -6523.2821,
+            3.0879,
+            149.7648
+          ]
+        ]
+      ]
+    }
+  ]
+}

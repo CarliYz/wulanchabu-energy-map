@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "revision": "m10-object-analysis-v1",
+  "requirement_revision": "ui-design-v2+c-zone-completeness-v1+reference-study-20261116-v1",
+  "basis": "synthetic teaching, no local operational validation",
+  "source_asset": "../map-viewer/assets/analysis-results.json",
+  "source_sha256": "e5819a31bb537a41b357bfccf960240bb918c4c0abea76c648a8705bd98cd603",
+  "unit": "MW / MWh",
+  "objects": {
+    "AGRI_018": {
+      "result_status": "available",
+      "role": "C1 叶菜水培与冷凉种苗设施对象级演示绑定",
+      "scenario_results": {
+        "normal": "MVP_NORMAL",
+        "source-outage": "MVP_SOURCE_OUTAGE",
+        "storage-depleted": "MVP_SOURCE_OUTAGE"
+      },
+      "scope": "用于展示对象、方案工况、能量账和缺口的绑定方式；不代表 C1 的现场热负荷、泵扬程或运行数据。",
+      "limits": [
+        "结果来自合成教学数据，不是乌兰察布现场实测",
+        "当前没有绑定到 C1 的水力、热力或设备铭牌参数",
+        "储能耗尽是从源退出结果派生的审查视图，不是新的求解结果"
+      ]
+    },
+    "HUB_011": {
+      "result_status": "unavailable",
+      "role": "CO₂跨临界热泵枢纽",
+      "scope": "当前没有绑定到热泵枢纽的对象级分析结果",
+      "limits": [
+        "不得把其他对象的教学结果显示在热泵卡片上",
+        "待接入同对象源侧、用户侧和 PTES 工况结果"
+      ]
+    }
+  },
+  "scenarios": {
+    "normal": {
+      "result_id": "MVP_NORMAL",
+      "label": "正常工况",
+      "status": "available",
+      "recommendation": "近端直供 + 余热入库",
+      "reason": "源热高于热负荷，余量进入 PTES；当前教学结果无未供热。"
+    },
+    "source-outage": {
+      "result_id": "MVP_SOURCE_OUTAGE",
+      "label": "源退出",
+      "status": "warning",
+      "recommendation": "PTES 放热补峰",
+      "reason": "源侧退出时先由 PTES 缓冲；后续教学结果出现未供热缺口。"
+    },
+    "storage-depleted": {
+      "result_id": "MVP_SOURCE_OUTAGE",
+      "label": "储能耗尽（派生）",
+      "status": "risk",
+      "recommendation": "先核对负荷优先级，再执行削峰",
+      "reason": "从源退出结果中定位首次库存为 0 的时段；具体削峰对象与优先级仍待核。",
+      "derived": true
+    }
+  }
+}

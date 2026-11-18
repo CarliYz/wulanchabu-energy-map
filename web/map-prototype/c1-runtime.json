@@ -1,0 +1,1047 @@
+{
+  "revision": "c1-runtime-v1",
+  "parent_id": "AGRI_018",
+  "asset_sha256": "f5f6c93d4abb4a576f5d9904ff2dc8940727625d851366c6f646666e88262aab",
+  "model_revision": "c1-dual-loop-v1",
+  "objects": [
+    {
+      "object_id": "AGRI_018_CTRL",
+      "parent_id": "AGRI_018",
+      "name": "PLC控制柜",
+      "short_name": "PLC",
+      "group": "c",
+      "gltf_root_index": 2538,
+      "model_root_xyz": [
+        -3622.23095703125,
+        4288.49658203125,
+        146.38973999023438
+      ],
+      "model_revision": "c1-dual-loop-v1",
+      "installation_status": "候选规划 · 未验收投运",
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "description": "C1同版示意子设备；型号、容量、工况与工程尺寸待核。",
+      "gaps": [
+        "非厂家施工模型",
+        "无实测温度、流量或泵扬程"
+      ],
+      "preview_url": "../map-viewer/assets/c1-devices-v1/AGRI_018_CTRL.png",
+      "circuits": [
+        "C1_CONTROL"
+      ]
+    },
+    {
+      "object_id": "AGRI_018_GH1",
+      "parent_id": "AGRI_018",
+      "name": "第一组温室",
+      "short_name": "温室1",
+      "group": "c",
+      "gltf_root_index": 2795,
+      "model_root_xyz": [
+        -3733.23095703125,
+        4360.49658203125,
+        146.38973999023438
+      ],
+      "model_revision": "c1-dual-loop-v1",
+      "installation_status": "候选规划 · 未验收投运",
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "description": "C1同版示意子设备；型号、容量、工况与工程尺寸待核。",
+      "gaps": [
+        "非厂家施工模型",
+        "无实测温度、流量或泵扬程"
+      ],
+      "preview_url": "../map-viewer/assets/c1-devices-v1/AGRI_018_GH1.png",
+      "circuits": [
+        "C1_HEAT",
+        "C1_NUTRIENT"
+      ]
+    },
+    {
+      "object_id": "AGRI_018_GH2",
+      "parent_id": "AGRI_018",
+      "name": "第二组温室",
+      "short_name": "温室2",
+      "group": "c",
+      "gltf_root_index": 3052,
+      "model_root_xyz": [
+        -3666.23095703125,
+        4360.49658203125,
+        146.38973999023438
+      ],
+      "model_revision": "c1-dual-loop-v1",
+      "installation_status": "候选规划 · 未验收投运",
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "description": "C1同版示意子设备；型号、容量、工况与工程尺寸待核。",
+      "gaps": [
+        "非厂家施工模型",
+        "无实测温度、流量或泵扬程"
+      ],
+      "preview_url": "../map-viewer/assets/c1-devices-v1/AGRI_018_GH2.png",
+      "circuits": [
+        "C1_HEAT",
+        "C1_NUTRIENT"
+      ]
+    },
+    {
+      "object_id": "AGRI_018_HEADER",
+      "parent_id": "AGRI_018",
+      "name": "热水供回分集水器",
+      "short_name": "热水集管",
+      "group": "c",
+      "gltf_root_index": 3061,
+      "model_root_xyz": [
+        -3701.23095703125,
+        4301.49658203125,
+        146.38973999023438
+      ],
+      "model_revision": "c1-dual-loop-v1",
+      "installation_status": "候选规划 · 未验收投运",
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "description": "C1同版示意子设备；型号、容量、工况与工程尺寸待核。",
+      "gaps": [
+        "非厂家施工模型",
+        "无实测温度、流量或泵扬程"
+      ],
+      "preview_url": "../map-viewer/assets/c1-devices-v1/AGRI_018_HEADER.png",
+      "circuits": [
+        "C1_HEAT"
+      ]
+    },
+    {
+      "object_id": "AGRI_018_HX",
+      "parent_id": "AGRI_018",
+      "name": "隔离板换：仅传热不混水",
+      "short_name": "板换",
+      "group": "c",
+      "gltf_root_index": 3089,
+      "model_root_xyz": [
+        -3770.23095703125,
+        4290.49658203125,
+        146.38973999023438
+      ],
+      "model_revision": "c1-dual-loop-v1",
+      "installation_status": "候选规划 · 未验收投运",
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "description": "C1同版示意子设备；型号、容量、工况与工程尺寸待核。",
+      "gaps": [
+        "非厂家施工模型",
+        "无实测温度、流量或泵扬程"
+      ],
+      "preview_url": "../map-viewer/assets/c1-devices-v1/AGRI_018_HX.png",
+      "circuits": [
+        "C1_HEAT",
+        "USER"
+      ]
+    },
+    {
+      "object_id": "AGRI_018_NHEADER",
+      "parent_id": "AGRI_018",
+      "name": "营养液分配回收集管",
+      "short_name": "营养集管",
+      "group": "c",
+      "gltf_root_index": 3098,
+      "model_root_xyz": [
+        -3701.23095703125,
+        4306.49658203125,
+        146.38973999023438
+      ],
+      "model_revision": "c1-dual-loop-v1",
+      "installation_status": "候选规划 · 未验收投运",
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "description": "C1同版示意子设备；型号、容量、工况与工程尺寸待核。",
+      "gaps": [
+        "非厂家施工模型",
+        "无实测温度、流量或泵扬程"
+      ],
+      "preview_url": "../map-viewer/assets/c1-devices-v1/AGRI_018_NHEADER.png",
+      "circuits": [
+        "C1_NUTRIENT"
+      ]
+    },
+    {
+      "object_id": "AGRI_018_NPUMP",
+      "parent_id": "AGRI_018",
+      "name": "营养液专用循环泵",
+      "short_name": "营养泵",
+      "group": "c",
+      "gltf_root_index": 3113,
+      "model_root_xyz": [
+        -3648.23095703125,
+        4286.49658203125,
+        146.38973999023438
+      ],
+      "model_revision": "c1-dual-loop-v1",
+      "installation_status": "候选规划 · 未验收投运",
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "description": "C1同版示意子设备；型号、容量、工况与工程尺寸待核。",
+      "gaps": [
+        "非厂家施工模型",
+        "无实测温度、流量或泵扬程"
+      ],
+      "preview_url": "../map-viewer/assets/c1-devices-v1/AGRI_018_NPUMP.png",
+      "circuits": [
+        "C1_CONTROL",
+        "C1_NUTRIENT"
+      ]
+    },
+    {
+      "object_id": "AGRI_018_PUMP",
+      "parent_id": "AGRI_018",
+      "name": "二次热水循环泵",
+      "short_name": "热水泵",
+      "group": "c",
+      "gltf_root_index": 3128,
+      "model_root_xyz": [
+        -3752.23095703125,
+        4292.49658203125,
+        146.38973999023438
+      ],
+      "model_revision": "c1-dual-loop-v1",
+      "installation_status": "候选规划 · 未验收投运",
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "description": "C1同版示意子设备；型号、容量、工况与工程尺寸待核。",
+      "gaps": [
+        "非厂家施工模型",
+        "无实测温度、流量或泵扬程"
+      ],
+      "preview_url": "../map-viewer/assets/c1-devices-v1/AGRI_018_PUMP.png",
+      "circuits": [
+        "C1_CONTROL",
+        "C1_HEAT"
+      ]
+    },
+    {
+      "object_id": "AGRI_018_SENSOR",
+      "parent_id": "AGRI_018",
+      "name": "温度/流量测点",
+      "short_name": "测点",
+      "group": "c",
+      "gltf_root_index": 3135,
+      "model_root_xyz": [
+        -3747.23095703125,
+        4302.49658203125,
+        146.38973999023438
+      ],
+      "model_revision": "c1-dual-loop-v1",
+      "installation_status": "候选规划 · 未验收投运",
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "description": "C1同版示意子设备；型号、容量、工况与工程尺寸待核。",
+      "gaps": [
+        "非厂家施工模型",
+        "无实测温度、流量或泵扬程"
+      ],
+      "preview_url": "../map-viewer/assets/c1-devices-v1/AGRI_018_SENSOR.png",
+      "circuits": [
+        "C1_CONTROL"
+      ]
+    },
+    {
+      "object_id": "AGRI_018_TANK",
+      "parent_id": "AGRI_018",
+      "name": "营养液箱",
+      "short_name": "营养箱",
+      "group": "c",
+      "gltf_root_index": 3142,
+      "model_root_xyz": [
+        -3659.23095703125,
+        4288.49658203125,
+        146.38973999023438
+      ],
+      "model_revision": "c1-dual-loop-v1",
+      "installation_status": "候选规划 · 未验收投运",
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "description": "C1同版示意子设备；型号、容量、工况与工程尺寸待核。",
+      "gaps": [
+        "非厂家施工模型",
+        "无实测温度、流量或泵扬程"
+      ],
+      "preview_url": "../map-viewer/assets/c1-devices-v1/AGRI_018_TANK.png",
+      "circuits": [
+        "C1_NUTRIENT"
+      ]
+    },
+    {
+      "object_id": "AGRI_018_VALVE",
+      "parent_id": "AGRI_018",
+      "name": "调节阀与隔离阀",
+      "short_name": "调节阀",
+      "group": "c",
+      "gltf_root_index": 3154,
+      "model_root_xyz": [
+        -3740.23095703125,
+        4292.49658203125,
+        146.38973999023438
+      ],
+      "model_revision": "c1-dual-loop-v1",
+      "installation_status": "候选规划 · 未验收投运",
+      "planning_area": null,
+      "model_footprint_m2": null,
+      "description": "C1同版示意子设备；型号、容量、工况与工程尺寸待核。",
+      "gaps": [
+        "非厂家施工模型",
+        "无实测温度、流量或泵扬程"
+      ],
+      "preview_url": "../map-viewer/assets/c1-devices-v1/AGRI_018_VALVE.png",
+      "circuits": [
+        "C1_CONTROL",
+        "C1_HEAT"
+      ]
+    }
+  ],
+  "ports": [
+    {
+      "port_id": "AGRI_018_CTRL:C1_CONTROL:in:measurement",
+      "object_id": "AGRI_018_CTRL",
+      "circuit_id": "C1_CONTROL",
+      "direction": "in",
+      "medium": "signal",
+      "model_xyz": [
+        -3624.23095703125,
+        4288.49658203125,
+        149.78973388671875
+      ],
+      "gltf_node_index": 2536
+    },
+    {
+      "port_id": "AGRI_018_CTRL:C1_CONTROL:out:command",
+      "object_id": "AGRI_018_CTRL",
+      "circuit_id": "C1_CONTROL",
+      "direction": "out",
+      "medium": "signal",
+      "model_xyz": [
+        -3620.23095703125,
+        4288.49658203125,
+        149.78973388671875
+      ],
+      "gltf_node_index": 2537
+    },
+    {
+      "port_id": "AGRI_018_GH1:C1_HEAT:in:AGRI_018_GH1_supply",
+      "object_id": "AGRI_018_GH1",
+      "circuit_id": "C1_HEAT",
+      "direction": "in",
+      "medium": "water",
+      "model_xyz": [
+        -3757.73095703125,
+        4310.49658203125,
+        147.38973999023438
+      ],
+      "gltf_node_index": 2562
+    },
+    {
+      "port_id": "AGRI_018_GH1:C1_HEAT:out:AGRI_018_GH1_return",
+      "object_id": "AGRI_018_GH1",
+      "circuit_id": "C1_HEAT",
+      "direction": "out",
+      "medium": "water",
+      "model_xyz": [
+        -3757.73095703125,
+        4308.99658203125,
+        147.38973999023438
+      ],
+      "gltf_node_index": 2563
+    },
+    {
+      "port_id": "AGRI_018_GH1:C1_NUTRIENT:in:AGRI_018_GH1_supply",
+      "object_id": "AGRI_018_GH1",
+      "circuit_id": "C1_NUTRIENT",
+      "direction": "in",
+      "medium": "nutrient",
+      "model_xyz": [
+        -3753.531005859375,
+        4312.99658203125,
+        147.38973999023438
+      ],
+      "gltf_node_index": 2564
+    },
+    {
+      "port_id": "AGRI_018_GH1:C1_NUTRIENT:out:AGRI_018_GH1_return",
+      "object_id": "AGRI_018_GH1",
+      "circuit_id": "C1_NUTRIENT",
+      "direction": "out",
+      "medium": "nutrient",
+      "model_xyz": [
+        -3753.531005859375,
+        4407.99658203125,
+        147.38973999023438
+      ],
+      "gltf_node_index": 2565
+    },
+    {
+      "port_id": "AGRI_018_GH2:C1_HEAT:in:AGRI_018_GH2_supply",
+      "object_id": "AGRI_018_GH2",
+      "circuit_id": "C1_HEAT",
+      "direction": "in",
+      "medium": "water",
+      "model_xyz": [
+        -3690.73095703125,
+        4310.49658203125,
+        147.38973999023438
+      ],
+      "gltf_node_index": 2819
+    },
+    {
+      "port_id": "AGRI_018_GH2:C1_HEAT:out:AGRI_018_GH2_return",
+      "object_id": "AGRI_018_GH2",
+      "circuit_id": "C1_HEAT",
+      "direction": "out",
+      "medium": "water",
+      "model_xyz": [
+        -3690.73095703125,
+        4308.99658203125,
+        147.38973999023438
+      ],
+      "gltf_node_index": 2820
+    },
+    {
+      "port_id": "AGRI_018_GH2:C1_NUTRIENT:in:AGRI_018_GH2_supply",
+      "object_id": "AGRI_018_GH2",
+      "circuit_id": "C1_NUTRIENT",
+      "direction": "in",
+      "medium": "nutrient",
+      "model_xyz": [
+        -3686.531005859375,
+        4312.99658203125,
+        147.38973999023438
+      ],
+      "gltf_node_index": 2821
+    },
+    {
+      "port_id": "AGRI_018_GH2:C1_NUTRIENT:out:AGRI_018_GH2_return",
+      "object_id": "AGRI_018_GH2",
+      "circuit_id": "C1_NUTRIENT",
+      "direction": "out",
+      "medium": "nutrient",
+      "model_xyz": [
+        -3686.531005859375,
+        4407.99658203125,
+        147.38973999023438
+      ],
+      "gltf_node_index": 2822
+    },
+    {
+      "port_id": "AGRI_018_HEADER:C1_HEAT:in:flow",
+      "object_id": "AGRI_018_HEADER",
+      "circuit_id": "C1_HEAT",
+      "direction": "in",
+      "medium": "water",
+      "model_xyz": [
+        -3734.23095703125,
+        4302.49658203125,
+        147.78973388671875
+      ],
+      "gltf_node_index": 3055
+    },
+    {
+      "port_id": "AGRI_018_HEADER:C1_HEAT:out:flow",
+      "object_id": "AGRI_018_HEADER",
+      "circuit_id": "C1_HEAT",
+      "direction": "out",
+      "medium": "water",
+      "model_xyz": [
+        -3762.23095703125,
+        4299.49658203125,
+        147.03973388671875
+      ],
+      "gltf_node_index": 3056
+    },
+    {
+      "port_id": "AGRI_018_HEADER:C1_HEAT:out:AGRI_018_GH1_supply",
+      "object_id": "AGRI_018_HEADER",
+      "circuit_id": "C1_HEAT",
+      "direction": "out",
+      "medium": "water",
+      "model_xyz": [
+        -3757.73095703125,
+        4302.49658203125,
+        147.78973388671875
+      ],
+      "gltf_node_index": 3057
+    },
+    {
+      "port_id": "AGRI_018_HEADER:C1_HEAT:in:AGRI_018_GH1_return",
+      "object_id": "AGRI_018_HEADER",
+      "circuit_id": "C1_HEAT",
+      "direction": "in",
+      "medium": "water",
+      "model_xyz": [
+        -3757.73095703125,
+        4299.49658203125,
+        147.03973388671875
+      ],
+      "gltf_node_index": 3058
+    },
+    {
+      "port_id": "AGRI_018_HEADER:C1_HEAT:out:AGRI_018_GH2_supply",
+      "object_id": "AGRI_018_HEADER",
+      "circuit_id": "C1_HEAT",
+      "direction": "out",
+      "medium": "water",
+      "model_xyz": [
+        -3690.73095703125,
+        4302.49658203125,
+        147.78973388671875
+      ],
+      "gltf_node_index": 3059
+    },
+    {
+      "port_id": "AGRI_018_HEADER:C1_HEAT:in:AGRI_018_GH2_return",
+      "object_id": "AGRI_018_HEADER",
+      "circuit_id": "C1_HEAT",
+      "direction": "in",
+      "medium": "water",
+      "model_xyz": [
+        -3690.73095703125,
+        4299.49658203125,
+        147.03973388671875
+      ],
+      "gltf_node_index": 3060
+    },
+    {
+      "port_id": "AGRI_018_HX:USER:in:flow",
+      "object_id": "AGRI_018_HX",
+      "circuit_id": "USER",
+      "direction": "in",
+      "medium": "water",
+      "model_xyz": [
+        -3777.23095703125,
+        4292.49658203125,
+        149.38973999023438
+      ],
+      "gltf_node_index": 3085
+    },
+    {
+      "port_id": "AGRI_018_HX:USER:out:flow",
+      "object_id": "AGRI_018_HX",
+      "circuit_id": "USER",
+      "direction": "out",
+      "medium": "water",
+      "model_xyz": [
+        -3777.23095703125,
+        4288.49658203125,
+        149.38973999023438
+      ],
+      "gltf_node_index": 3086
+    },
+    {
+      "port_id": "AGRI_018_HX:C1_HEAT:out:flow",
+      "object_id": "AGRI_018_HX",
+      "circuit_id": "C1_HEAT",
+      "direction": "out",
+      "medium": "water",
+      "model_xyz": [
+        -3767.930908203125,
+        4292.49658203125,
+        149.38973999023438
+      ],
+      "gltf_node_index": 3087
+    },
+    {
+      "port_id": "AGRI_018_HX:C1_HEAT:in:flow",
+      "object_id": "AGRI_018_HX",
+      "circuit_id": "C1_HEAT",
+      "direction": "in",
+      "medium": "water",
+      "model_xyz": [
+        -3767.930908203125,
+        4288.49658203125,
+        148.38973999023438
+      ],
+      "gltf_node_index": 3088
+    },
+    {
+      "port_id": "AGRI_018_NHEADER:C1_NUTRIENT:in:flow",
+      "object_id": "AGRI_018_NHEADER",
+      "circuit_id": "C1_NUTRIENT",
+      "direction": "in",
+      "medium": "nutrient",
+      "model_xyz": [
+        -3642.23095703125,
+        4306.49658203125,
+        148.28973388671875
+      ],
+      "gltf_node_index": 3092
+    },
+    {
+      "port_id": "AGRI_018_NHEADER:C1_NUTRIENT:out:flow",
+      "object_id": "AGRI_018_NHEADER",
+      "circuit_id": "C1_NUTRIENT",
+      "direction": "out",
+      "medium": "nutrient",
+      "model_xyz": [
+        -3637.23095703125,
+        4414.49658203125,
+        146.83973693847656
+      ],
+      "gltf_node_index": 3093
+    },
+    {
+      "port_id": "AGRI_018_NHEADER:C1_NUTRIENT:out:AGRI_018_GH1_supply",
+      "object_id": "AGRI_018_NHEADER",
+      "circuit_id": "C1_NUTRIENT",
+      "direction": "out",
+      "medium": "nutrient",
+      "model_xyz": [
+        -3753.531005859375,
+        4306.49658203125,
+        148.28973388671875
+      ],
+      "gltf_node_index": 3094
+    },
+    {
+      "port_id": "AGRI_018_NHEADER:C1_NUTRIENT:in:AGRI_018_GH1_return",
+      "object_id": "AGRI_018_NHEADER",
+      "circuit_id": "C1_NUTRIENT",
+      "direction": "in",
+      "medium": "nutrient",
+      "model_xyz": [
+        -3753.531005859375,
+        4414.49658203125,
+        146.83973693847656
+      ],
+      "gltf_node_index": 3095
+    },
+    {
+      "port_id": "AGRI_018_NHEADER:C1_NUTRIENT:out:AGRI_018_GH2_supply",
+      "object_id": "AGRI_018_NHEADER",
+      "circuit_id": "C1_NUTRIENT",
+      "direction": "out",
+      "medium": "nutrient",
+      "model_xyz": [
+        -3686.531005859375,
+        4306.49658203125,
+        148.28973388671875
+      ],
+      "gltf_node_index": 3096
+    },
+    {
+      "port_id": "AGRI_018_NHEADER:C1_NUTRIENT:in:AGRI_018_GH2_return",
+      "object_id": "AGRI_018_NHEADER",
+      "circuit_id": "C1_NUTRIENT",
+      "direction": "in",
+      "medium": "nutrient",
+      "model_xyz": [
+        -3686.531005859375,
+        4414.49658203125,
+        146.83973693847656
+      ],
+      "gltf_node_index": 3097
+    },
+    {
+      "port_id": "AGRI_018_NPUMP:C1_NUTRIENT:in:flow",
+      "object_id": "AGRI_018_NPUMP",
+      "circuit_id": "C1_NUTRIENT",
+      "direction": "in",
+      "medium": "nutrient",
+      "model_xyz": [
+        -3650.23095703125,
+        4286.49658203125,
+        147.78973388671875
+      ],
+      "gltf_node_index": 3110
+    },
+    {
+      "port_id": "AGRI_018_NPUMP:C1_NUTRIENT:out:flow",
+      "object_id": "AGRI_018_NPUMP",
+      "circuit_id": "C1_NUTRIENT",
+      "direction": "out",
+      "medium": "nutrient",
+      "model_xyz": [
+        -3646.23095703125,
+        4286.49658203125,
+        147.78973388671875
+      ],
+      "gltf_node_index": 3111
+    },
+    {
+      "port_id": "AGRI_018_NPUMP:C1_CONTROL:in:command",
+      "object_id": "AGRI_018_NPUMP",
+      "circuit_id": "C1_CONTROL",
+      "direction": "in",
+      "medium": "signal",
+      "model_xyz": [
+        -3648.23095703125,
+        4289.49658203125,
+        147.78973388671875
+      ],
+      "gltf_node_index": 3112
+    },
+    {
+      "port_id": "AGRI_018_PUMP:C1_HEAT:in:flow",
+      "object_id": "AGRI_018_PUMP",
+      "circuit_id": "C1_HEAT",
+      "direction": "in",
+      "medium": "water",
+      "model_xyz": [
+        -3754.23095703125,
+        4292.49658203125,
+        147.78973388671875
+      ],
+      "gltf_node_index": 3125
+    },
+    {
+      "port_id": "AGRI_018_PUMP:C1_HEAT:out:flow",
+      "object_id": "AGRI_018_PUMP",
+      "circuit_id": "C1_HEAT",
+      "direction": "out",
+      "medium": "water",
+      "model_xyz": [
+        -3750.23095703125,
+        4292.49658203125,
+        147.78973388671875
+      ],
+      "gltf_node_index": 3126
+    },
+    {
+      "port_id": "AGRI_018_PUMP:C1_CONTROL:in:command",
+      "object_id": "AGRI_018_PUMP",
+      "circuit_id": "C1_CONTROL",
+      "direction": "in",
+      "medium": "signal",
+      "model_xyz": [
+        -3752.23095703125,
+        4295.49658203125,
+        147.78973388671875
+      ],
+      "gltf_node_index": 3127
+    },
+    {
+      "port_id": "AGRI_018_SENSOR:C1_CONTROL:out:measurement",
+      "object_id": "AGRI_018_SENSOR",
+      "circuit_id": "C1_CONTROL",
+      "direction": "out",
+      "medium": "signal",
+      "model_xyz": [
+        -3747.23095703125,
+        4302.49658203125,
+        149.08973693847656
+      ],
+      "gltf_node_index": 3134
+    },
+    {
+      "port_id": "AGRI_018_TANK:C1_NUTRIENT:out:flow",
+      "object_id": "AGRI_018_TANK",
+      "circuit_id": "C1_NUTRIENT",
+      "direction": "out",
+      "medium": "nutrient",
+      "model_xyz": [
+        -3656.23095703125,
+        4286.49658203125,
+        147.78973388671875
+      ],
+      "gltf_node_index": 3140
+    },
+    {
+      "port_id": "AGRI_018_TANK:C1_NUTRIENT:in:flow",
+      "object_id": "AGRI_018_TANK",
+      "circuit_id": "C1_NUTRIENT",
+      "direction": "in",
+      "medium": "nutrient",
+      "model_xyz": [
+        -3656.23095703125,
+        4289.49658203125,
+        148.38973999023438
+      ],
+      "gltf_node_index": 3141
+    },
+    {
+      "port_id": "AGRI_018_VALVE:C1_HEAT:in:flow",
+      "object_id": "AGRI_018_VALVE",
+      "circuit_id": "C1_HEAT",
+      "direction": "in",
+      "medium": "water",
+      "model_xyz": [
+        -3742.23095703125,
+        4292.49658203125,
+        147.78973388671875
+      ],
+      "gltf_node_index": 3151
+    },
+    {
+      "port_id": "AGRI_018_VALVE:C1_HEAT:out:flow",
+      "object_id": "AGRI_018_VALVE",
+      "circuit_id": "C1_HEAT",
+      "direction": "out",
+      "medium": "water",
+      "model_xyz": [
+        -3738.23095703125,
+        4292.49658203125,
+        147.78973388671875
+      ],
+      "gltf_node_index": 3152
+    },
+    {
+      "port_id": "AGRI_018_VALVE:C1_CONTROL:in:command",
+      "object_id": "AGRI_018_VALVE",
+      "circuit_id": "C1_CONTROL",
+      "direction": "in",
+      "medium": "signal",
+      "model_xyz": [
+        -3740.23095703125,
+        4292.49658203125,
+        150.08973693847656
+      ],
+      "gltf_node_index": 3153
+    }
+  ],
+  "connections": [
+    {
+      "connection_id": "EDGE_014",
+      "from_port_id": "AGRI_018_HX:C1_HEAT:out:flow",
+      "to_port_id": "AGRI_018_PUMP:C1_HEAT:in:flow",
+      "circuit_id": "C1_HEAT",
+      "design_status": "proposed",
+      "gltf_node_index": 3156,
+      "status": "schematic_not_commissioned",
+      "from_object_id": "AGRI_018_HX",
+      "to_object_id": "AGRI_018_PUMP",
+      "medium": "water",
+      "role": "supply"
+    },
+    {
+      "connection_id": "EDGE_015",
+      "from_port_id": "AGRI_018_PUMP:C1_HEAT:out:flow",
+      "to_port_id": "AGRI_018_VALVE:C1_HEAT:in:flow",
+      "circuit_id": "C1_HEAT",
+      "design_status": "proposed",
+      "gltf_node_index": 3157,
+      "status": "schematic_not_commissioned",
+      "from_object_id": "AGRI_018_PUMP",
+      "to_object_id": "AGRI_018_VALVE",
+      "medium": "water",
+      "role": "supply"
+    },
+    {
+      "connection_id": "EDGE_016",
+      "from_port_id": "AGRI_018_VALVE:C1_HEAT:out:flow",
+      "to_port_id": "AGRI_018_HEADER:C1_HEAT:in:flow",
+      "circuit_id": "C1_HEAT",
+      "design_status": "proposed",
+      "gltf_node_index": 3158,
+      "status": "schematic_not_commissioned",
+      "from_object_id": "AGRI_018_VALVE",
+      "to_object_id": "AGRI_018_HEADER",
+      "medium": "water",
+      "role": "supply"
+    },
+    {
+      "connection_id": "EDGE_017",
+      "from_port_id": "AGRI_018_HEADER:C1_HEAT:out:flow",
+      "to_port_id": "AGRI_018_HX:C1_HEAT:in:flow",
+      "circuit_id": "C1_HEAT",
+      "design_status": "proposed",
+      "gltf_node_index": 3159,
+      "status": "schematic_not_commissioned",
+      "from_object_id": "AGRI_018_HEADER",
+      "to_object_id": "AGRI_018_HX",
+      "medium": "water",
+      "role": "return"
+    },
+    {
+      "connection_id": "EDGE_018",
+      "from_port_id": "AGRI_018_HEADER:C1_HEAT:out:AGRI_018_GH1_supply",
+      "to_port_id": "AGRI_018_GH1:C1_HEAT:in:AGRI_018_GH1_supply",
+      "circuit_id": "C1_HEAT",
+      "design_status": "proposed",
+      "gltf_node_index": 3160,
+      "status": "schematic_not_commissioned",
+      "from_object_id": "AGRI_018_HEADER",
+      "to_object_id": "AGRI_018_GH1",
+      "medium": "water",
+      "role": "supply"
+    },
+    {
+      "connection_id": "EDGE_019",
+      "from_port_id": "AGRI_018_GH1:C1_HEAT:out:AGRI_018_GH1_return",
+      "to_port_id": "AGRI_018_HEADER:C1_HEAT:in:AGRI_018_GH1_return",
+      "circuit_id": "C1_HEAT",
+      "design_status": "proposed",
+      "gltf_node_index": 3161,
+      "status": "schematic_not_commissioned",
+      "from_object_id": "AGRI_018_GH1",
+      "to_object_id": "AGRI_018_HEADER",
+      "medium": "water",
+      "role": "return"
+    },
+    {
+      "connection_id": "EDGE_020",
+      "from_port_id": "AGRI_018_HEADER:C1_HEAT:out:AGRI_018_GH2_supply",
+      "to_port_id": "AGRI_018_GH2:C1_HEAT:in:AGRI_018_GH2_supply",
+      "circuit_id": "C1_HEAT",
+      "design_status": "proposed",
+      "gltf_node_index": 3162,
+      "status": "schematic_not_commissioned",
+      "from_object_id": "AGRI_018_HEADER",
+      "to_object_id": "AGRI_018_GH2",
+      "medium": "water",
+      "role": "supply"
+    },
+    {
+      "connection_id": "EDGE_021",
+      "from_port_id": "AGRI_018_GH2:C1_HEAT:out:AGRI_018_GH2_return",
+      "to_port_id": "AGRI_018_HEADER:C1_HEAT:in:AGRI_018_GH2_return",
+      "circuit_id": "C1_HEAT",
+      "design_status": "proposed",
+      "gltf_node_index": 3163,
+      "status": "schematic_not_commissioned",
+      "from_object_id": "AGRI_018_GH2",
+      "to_object_id": "AGRI_018_HEADER",
+      "medium": "water",
+      "role": "return"
+    },
+    {
+      "connection_id": "EDGE_022",
+      "from_port_id": "AGRI_018_TANK:C1_NUTRIENT:out:flow",
+      "to_port_id": "AGRI_018_NPUMP:C1_NUTRIENT:in:flow",
+      "circuit_id": "C1_NUTRIENT",
+      "design_status": "proposed",
+      "gltf_node_index": 3164,
+      "status": "schematic_not_commissioned",
+      "from_object_id": "AGRI_018_TANK",
+      "to_object_id": "AGRI_018_NPUMP",
+      "medium": "nutrient",
+      "role": "supply"
+    },
+    {
+      "connection_id": "EDGE_023",
+      "from_port_id": "AGRI_018_NPUMP:C1_NUTRIENT:out:flow",
+      "to_port_id": "AGRI_018_NHEADER:C1_NUTRIENT:in:flow",
+      "circuit_id": "C1_NUTRIENT",
+      "design_status": "proposed",
+      "gltf_node_index": 3165,
+      "status": "schematic_not_commissioned",
+      "from_object_id": "AGRI_018_NPUMP",
+      "to_object_id": "AGRI_018_NHEADER",
+      "medium": "nutrient",
+      "role": "supply"
+    },
+    {
+      "connection_id": "EDGE_024",
+      "from_port_id": "AGRI_018_NHEADER:C1_NUTRIENT:out:flow",
+      "to_port_id": "AGRI_018_TANK:C1_NUTRIENT:in:flow",
+      "circuit_id": "C1_NUTRIENT",
+      "design_status": "proposed",
+      "gltf_node_index": 3166,
+      "status": "schematic_not_commissioned",
+      "from_object_id": "AGRI_018_NHEADER",
+      "to_object_id": "AGRI_018_TANK",
+      "medium": "nutrient",
+      "role": "return"
+    },
+    {
+      "connection_id": "EDGE_025",
+      "from_port_id": "AGRI_018_NHEADER:C1_NUTRIENT:out:AGRI_018_GH1_supply",
+      "to_port_id": "AGRI_018_GH1:C1_NUTRIENT:in:AGRI_018_GH1_supply",
+      "circuit_id": "C1_NUTRIENT",
+      "design_status": "proposed",
+      "gltf_node_index": 3167,
+      "status": "schematic_not_commissioned",
+      "from_object_id": "AGRI_018_NHEADER",
+      "to_object_id": "AGRI_018_GH1",
+      "medium": "nutrient",
+      "role": "supply"
+    },
+    {
+      "connection_id": "EDGE_026",
+      "from_port_id": "AGRI_018_GH1:C1_NUTRIENT:out:AGRI_018_GH1_return",
+      "to_port_id": "AGRI_018_NHEADER:C1_NUTRIENT:in:AGRI_018_GH1_return",
+      "circuit_id": "C1_NUTRIENT",
+      "design_status": "proposed",
+      "gltf_node_index": 3168,
+      "status": "schematic_not_commissioned",
+      "from_object_id": "AGRI_018_GH1",
+      "to_object_id": "AGRI_018_NHEADER",
+      "medium": "nutrient",
+      "role": "return"
+    },
+    {
+      "connection_id": "EDGE_027",
+      "from_port_id": "AGRI_018_NHEADER:C1_NUTRIENT:out:AGRI_018_GH2_supply",
+      "to_port_id": "AGRI_018_GH2:C1_NUTRIENT:in:AGRI_018_GH2_supply",
+      "circuit_id": "C1_NUTRIENT",
+      "design_status": "proposed",
+      "gltf_node_index": 3169,
+      "status": "schematic_not_commissioned",
+      "from_object_id": "AGRI_018_NHEADER",
+      "to_object_id": "AGRI_018_GH2",
+      "medium": "nutrient",
+      "role": "supply"
+    },
+    {
+      "connection_id": "EDGE_028",
+      "from_port_id": "AGRI_018_GH2:C1_NUTRIENT:out:AGRI_018_GH2_return",
+      "to_port_id": "AGRI_018_NHEADER:C1_NUTRIENT:in:AGRI_018_GH2_return",
+      "circuit_id": "C1_NUTRIENT",
+      "design_status": "proposed",
+      "gltf_node_index": 3170,
+      "status": "schematic_not_commissioned",
+      "from_object_id": "AGRI_018_GH2",
+      "to_object_id": "AGRI_018_NHEADER",
+      "medium": "nutrient",
+      "role": "return"
+    },
+    {
+      "connection_id": "EDGE_029",
+      "from_port_id": "AGRI_018_SENSOR:C1_CONTROL:out:measurement",
+      "to_port_id": "AGRI_018_CTRL:C1_CONTROL:in:measurement",
+      "circuit_id": "C1_CONTROL",
+      "design_status": "proposed",
+      "gltf_node_index": 3171,
+      "status": "schematic_not_commissioned",
+      "from_object_id": "AGRI_018_SENSOR",
+      "to_object_id": "AGRI_018_CTRL",
+      "medium": "signal",
+      "role": "supply"
+    },
+    {
+      "connection_id": "EDGE_030",
+      "from_port_id": "AGRI_018_CTRL:C1_CONTROL:out:command",
+      "to_port_id": "AGRI_018_PUMP:C1_CONTROL:in:command",
+      "circuit_id": "C1_CONTROL",
+      "design_status": "proposed",
+      "gltf_node_index": 3172,
+      "status": "schematic_not_commissioned",
+      "from_object_id": "AGRI_018_CTRL",
+      "to_object_id": "AGRI_018_PUMP",
+      "medium": "signal",
+      "role": "supply"
+    },
+    {
+      "connection_id": "EDGE_031",
+      "from_port_id": "AGRI_018_CTRL:C1_CONTROL:out:command",
+      "to_port_id": "AGRI_018_VALVE:C1_CONTROL:in:command",
+      "circuit_id": "C1_CONTROL",
+      "design_status": "proposed",
+      "gltf_node_index": 3173,
+      "status": "schematic_not_commissioned",
+      "from_object_id": "AGRI_018_CTRL",
+      "to_object_id": "AGRI_018_VALVE",
+      "medium": "signal",
+      "role": "supply"
+    },
+    {
+      "connection_id": "EDGE_032",
+      "from_port_id": "AGRI_018_CTRL:C1_CONTROL:out:command",
+      "to_port_id": "AGRI_018_NPUMP:C1_CONTROL:in:command",
+      "circuit_id": "C1_CONTROL",
+      "design_status": "proposed",
+      "gltf_node_index": 3174,
+      "status": "schematic_not_commissioned",
+      "from_object_id": "AGRI_018_CTRL",
+      "to_object_id": "AGRI_018_NPUMP",
+      "medium": "signal",
+      "role": "supply"
+    }
+  ],
+  "external_status": "reserved_not_operating",
+  "hydraulic_validation": "not_run"
+}

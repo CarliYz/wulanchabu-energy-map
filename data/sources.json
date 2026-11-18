@@ -1,0 +1,26 @@
+{
+  "retrieved": "2026-11-15",
+  "items": [
+    {
+      "id": "anchor-announcement-2024.pdf",
+      "url": "https://a4ws.org/wp-content/uploads/2024/07/AWS-000760_iCloud-China-Data-Center-Ulanqab_StakeholderAnnouncement_0724.pdf",
+      "sha256": "450346398a1530f0cdf2de1b1b0f4eb5304a96b59bf808b3526a101d929e9526",
+      "use": "第2页GPS坐标事实",
+      "rights": "原文版权保留；仅研究留档与引用定位事实，不将图片/地图/徽标纳入成片"
+    },
+    {
+      "id": "anchor-certification-2024.pdf",
+      "url": "https://a4ws.org/wp-content/uploads/2024/12/AWS-000760-iCloud-China-Data-Center-Ulanqab-Certification-Report-20Dec-2024.pdf",
+      "sha256": "63e3087af850aafbfe7f630c83cc9064f19c0e2f7253fd73227e2372e0e39d7e",
+      "use": "第1页地址事实",
+      "rights": "原文版权保留；仅研究留档与引用定位事实，不将图片/地图/徽标纳入成片"
+    }
+  ],
+  "media": {
+    "models": "本工程程序化原创",
+    "materials": "本工程程序化原创，无商业底图纹理",
+    "font": "macOS系统字体本地渲染，嵌入工程供本机重开；对外分发前复核字体许可",
+    "historical_layers": "保全但不作为已核GIS展示",
+    "geographic_render_status": "schematic_only_not_local_reconstruction"
+  }
+}

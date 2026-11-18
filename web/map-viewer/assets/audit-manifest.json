@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-15",
+  "branch": "codex/energy-map-v2",
+  "git_commit": "564c959700ae6c2c1fe955494d65fc4d02d45f91",
+  "git_commit_role": "tested-code-head",
+  "qa_receipt": "qc/mcp-qa-ui-v3.json",
+  "delivery_receipt": "work/delivery-receipt.json",
+  "blender": {
+    "version": "5.2.1 LTS",
+    "addon_protocol": "16",
+    "addon_up_to_date": true,
+    "telemetry_consent": false,
+    "scene_file": "outputs/map-v2/乌兰察布_真实地理场景_v2.blend",
+    "scene_file_sha256": "9cd2f11e20307ccaf0f6d27dc863fb6181605424da2cc764369c00c78561e9b8",
+    "scene_name": "00 | 交互地图·小手平移",
+    "camera": "CAM_01 区域总览",
+    "render_engine": "BLENDER_EEVEE",
+    "top_level_objects": 99,
+    "mesh_objects": 2820
+  },
+  "web_model": {
+    "path": "web/map-viewer/assets/乌兰察布_真实地理场景_v2.glb",
+    "sha256": "72dd96326e5ba21fdbe116be0d497378e4e7102ce44518117c81df4100181475",
+    "pickable_objects": 59,
+    "terrain_source": "Copernicus GLO30 actual elevations",
+    "satellite_source": "EOxCloudless Sentinel-2 2024 | CC BY-NC-SA 4.0"
+  },
+  "analysis": {
+    "path": "web/map-viewer/assets/analysis-results.json",
+    "sha256": "e5819a31bb537a41b357bfccf960240bb918c4c0abea76c648a8705bd98cd603",
+    "source_path": "data/generated/results.json",
+    "source_sha256": "b146d091b8a6042b31144b76ad1661c34ab71d063ff49ec7e265db06032e2a2e",
+    "basis": "synthetic teaching, no local operational validation",
+    "scenarios": [
+      "MVP_NORMAL",
+      "MVP_SOURCE_OUTAGE"
+    ],
+    "derived_scenario": "storage-depleted from MVP_SOURCE_OUTAGE first storage_end_mwh <= 0"
+  },
+  "status_counts": {
+    "verified": 18,
+    "candidate": 23,
+    "pending": 18
+  },
+  "limitations": [
+    "候选设施、候选管线、历史坐标和概念参数仍需工程核验",
+    "当前展示不表达管径、埋深、水力、热分层、经济性或当地运营验证",
+    "标准地图当前使用 OpenStreetMap 标准瓦片并保留署名；未接入 Google Maps API key 或 Google 外部瓦片服务"
+  ]
+}

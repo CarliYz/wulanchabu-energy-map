@@ -1,0 +1,392 @@
+{
+  "schema_version": "energy-contracts-v1",
+  "connections": [
+    {
+      "connection_id": "EDGE_001",
+      "from_port_id": "CONCEPT_SOURCE:SOURCE:out:flow",
+      "to_port_id": "HUB_011_EVAP:SOURCE:in:flow",
+      "phase": "p2_candidate",
+      "design_status": "proposed",
+      "model_status": "not_built",
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "connection_id": "EDGE_002",
+      "from_port_id": "HUB_011_EVAP:SOURCE:out:flow",
+      "to_port_id": "CONCEPT_SOURCE:SOURCE:in:flow",
+      "phase": "p2_candidate",
+      "design_status": "proposed",
+      "model_status": "not_built",
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "connection_id": "EDGE_003",
+      "from_port_id": "HUB_011_EVAP:CO2:out:flow",
+      "to_port_id": "HUB_011_COMP:CO2:in:flow",
+      "phase": "p2_candidate",
+      "design_status": "proposed",
+      "model_status": "not_built",
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "connection_id": "EDGE_004",
+      "from_port_id": "HUB_011_COMP:CO2:out:flow",
+      "to_port_id": "HUB_011_GAS:CO2:in:flow",
+      "phase": "p2_candidate",
+      "design_status": "proposed",
+      "model_status": "not_built",
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "connection_id": "EDGE_005",
+      "from_port_id": "HUB_011_GAS:CO2:out:flow",
+      "to_port_id": "HUB_011_EXP:CO2:in:flow",
+      "phase": "p2_candidate",
+      "design_status": "proposed",
+      "model_status": "not_built",
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "connection_id": "EDGE_006",
+      "from_port_id": "HUB_011_EXP:CO2:out:flow",
+      "to_port_id": "HUB_011_EVAP:CO2:in:flow",
+      "phase": "p2_candidate",
+      "design_status": "proposed",
+      "model_status": "not_built",
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "connection_id": "EDGE_007",
+      "from_port_id": "HUB_011_GAS:USER:out:flow",
+      "to_port_id": "HUB_011_WATER:USER:in:flow",
+      "phase": "p2_candidate",
+      "design_status": "proposed",
+      "model_status": "not_built",
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "connection_id": "EDGE_008",
+      "from_port_id": "HUB_011_WATER:USER:out:flow",
+      "to_port_id": "AGRI_018_HX:USER:in:flow",
+      "phase": "future_candidate",
+      "design_status": "proposed",
+      "model_status": "not_built",
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "connection_id": "EDGE_009",
+      "from_port_id": "AGRI_018_HX:USER:out:flow",
+      "to_port_id": "HUB_011_GAS:USER:in:flow",
+      "phase": "future_candidate",
+      "design_status": "proposed",
+      "model_status": "not_built",
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "connection_id": "EDGE_010",
+      "from_port_id": "HUB_011_WATER:USER:out:charge",
+      "to_port_id": "STORE_012:USER:in:charge",
+      "phase": "p2_candidate",
+      "design_status": "proposed",
+      "model_status": "not_built",
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "connection_id": "EDGE_011",
+      "from_port_id": "STORE_012:USER:out:charge_return",
+      "to_port_id": "HUB_011_WATER:USER:in:charge_return",
+      "phase": "p2_candidate",
+      "design_status": "proposed",
+      "model_status": "not_built",
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "connection_id": "EDGE_012",
+      "from_port_id": "STORE_012:USER:out:discharge",
+      "to_port_id": "HUB_011_WATER:USER:in:discharge",
+      "phase": "p2_candidate",
+      "design_status": "proposed",
+      "model_status": "not_built",
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "connection_id": "EDGE_013",
+      "from_port_id": "HUB_011_WATER:USER:out:discharge_return",
+      "to_port_id": "STORE_012:USER:in:discharge_return",
+      "phase": "p2_candidate",
+      "design_status": "proposed",
+      "model_status": "not_built",
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "connection_id": "EDGE_014",
+      "from_port_id": "AGRI_018_HX:C1_HEAT:out:flow",
+      "to_port_id": "AGRI_018_PUMP:C1_HEAT:in:flow",
+      "phase": "future_candidate",
+      "design_status": "proposed",
+      "model_status": "not_built",
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "connection_id": "EDGE_015",
+      "from_port_id": "AGRI_018_PUMP:C1_HEAT:out:flow",
+      "to_port_id": "AGRI_018_VALVE:C1_HEAT:in:flow",
+      "phase": "future_candidate",
+      "design_status": "proposed",
+      "model_status": "not_built",
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "connection_id": "EDGE_016",
+      "from_port_id": "AGRI_018_VALVE:C1_HEAT:out:flow",
+      "to_port_id": "AGRI_018_HEADER:C1_HEAT:in:flow",
+      "phase": "future_candidate",
+      "design_status": "proposed",
+      "model_status": "not_built",
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "connection_id": "EDGE_017",
+      "from_port_id": "AGRI_018_HEADER:C1_HEAT:out:flow",
+      "to_port_id": "AGRI_018_HX:C1_HEAT:in:flow",
+      "phase": "future_candidate",
+      "design_status": "proposed",
+      "model_status": "not_built",
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "connection_id": "EDGE_018",
+      "from_port_id": "AGRI_018_HEADER:C1_HEAT:out:AGRI_018_GH1_supply",
+      "to_port_id": "AGRI_018_GH1:C1_HEAT:in:AGRI_018_GH1_supply",
+      "phase": "future_candidate",
+      "design_status": "proposed",
+      "model_status": "not_built",
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "connection_id": "EDGE_019",
+      "from_port_id": "AGRI_018_GH1:C1_HEAT:out:AGRI_018_GH1_return",
+      "to_port_id": "AGRI_018_HEADER:C1_HEAT:in:AGRI_018_GH1_return",
+      "phase": "future_candidate",
+      "design_status": "proposed",
+      "model_status": "not_built",
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "connection_id": "EDGE_020",
+      "from_port_id": "AGRI_018_HEADER:C1_HEAT:out:AGRI_018_GH2_supply",
+      "to_port_id": "AGRI_018_GH2:C1_HEAT:in:AGRI_018_GH2_supply",
+      "phase": "future_candidate",
+      "design_status": "proposed",
+      "model_status": "not_built",
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "connection_id": "EDGE_021",
+      "from_port_id": "AGRI_018_GH2:C1_HEAT:out:AGRI_018_GH2_return",
+      "to_port_id": "AGRI_018_HEADER:C1_HEAT:in:AGRI_018_GH2_return",
+      "phase": "future_candidate",
+      "design_status": "proposed",
+      "model_status": "not_built",
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "connection_id": "EDGE_022",
+      "from_port_id": "AGRI_018_TANK:C1_NUTRIENT:out:flow",
+      "to_port_id": "AGRI_018_NPUMP:C1_NUTRIENT:in:flow",
+      "phase": "future_candidate",
+      "design_status": "proposed",
+      "model_status": "not_built",
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "connection_id": "EDGE_023",
+      "from_port_id": "AGRI_018_NPUMP:C1_NUTRIENT:out:flow",
+      "to_port_id": "AGRI_018_NHEADER:C1_NUTRIENT:in:flow",
+      "phase": "future_candidate",
+      "design_status": "proposed",
+      "model_status": "not_built",
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "connection_id": "EDGE_024",
+      "from_port_id": "AGRI_018_NHEADER:C1_NUTRIENT:out:flow",
+      "to_port_id": "AGRI_018_TANK:C1_NUTRIENT:in:flow",
+      "phase": "future_candidate",
+      "design_status": "proposed",
+      "model_status": "not_built",
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "connection_id": "EDGE_025",
+      "from_port_id": "AGRI_018_NHEADER:C1_NUTRIENT:out:AGRI_018_GH1_supply",
+      "to_port_id": "AGRI_018_GH1:C1_NUTRIENT:in:AGRI_018_GH1_supply",
+      "phase": "future_candidate",
+      "design_status": "proposed",
+      "model_status": "not_built",
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "connection_id": "EDGE_026",
+      "from_port_id": "AGRI_018_GH1:C1_NUTRIENT:out:AGRI_018_GH1_return",
+      "to_port_id": "AGRI_018_NHEADER:C1_NUTRIENT:in:AGRI_018_GH1_return",
+      "phase": "future_candidate",
+      "design_status": "proposed",
+      "model_status": "not_built",
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "connection_id": "EDGE_027",
+      "from_port_id": "AGRI_018_NHEADER:C1_NUTRIENT:out:AGRI_018_GH2_supply",
+      "to_port_id": "AGRI_018_GH2:C1_NUTRIENT:in:AGRI_018_GH2_supply",
+      "phase": "future_candidate",
+      "design_status": "proposed",
+      "model_status": "not_built",
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "connection_id": "EDGE_028",
+      "from_port_id": "AGRI_018_GH2:C1_NUTRIENT:out:AGRI_018_GH2_return",
+      "to_port_id": "AGRI_018_NHEADER:C1_NUTRIENT:in:AGRI_018_GH2_return",
+      "phase": "future_candidate",
+      "design_status": "proposed",
+      "model_status": "not_built",
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "connection_id": "EDGE_029",
+      "from_port_id": "AGRI_018_SENSOR:C1_CONTROL:out:measurement",
+      "to_port_id": "AGRI_018_CTRL:C1_CONTROL:in:measurement",
+      "phase": "future_candidate",
+      "design_status": "proposed",
+      "model_status": "not_built",
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "connection_id": "EDGE_030",
+      "from_port_id": "AGRI_018_CTRL:C1_CONTROL:out:command",
+      "to_port_id": "AGRI_018_PUMP:C1_CONTROL:in:command",
+      "phase": "future_candidate",
+      "design_status": "proposed",
+      "model_status": "not_built",
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "connection_id": "EDGE_031",
+      "from_port_id": "AGRI_018_CTRL:C1_CONTROL:out:command",
+      "to_port_id": "AGRI_018_VALVE:C1_CONTROL:in:command",
+      "phase": "future_candidate",
+      "design_status": "proposed",
+      "model_status": "not_built",
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "connection_id": "EDGE_032",
+      "from_port_id": "AGRI_018_CTRL:C1_CONTROL:out:command",
+      "to_port_id": "AGRI_018_NPUMP:C1_CONTROL:in:command",
+      "phase": "future_candidate",
+      "design_status": "proposed",
+      "model_status": "not_built",
+      "source_ids": [
+        "PLAN"
+      ]
+    }
+  ],
+  "energy_transfers": [
+    {
+      "transfer_id": "TRANSFER_HUB_011_EVAP",
+      "object_id": "HUB_011_EVAP",
+      "from_circuit_id": "SOURCE",
+      "to_circuit_id": "CO2",
+      "kind": "heat_transfer_no_mass_flow",
+      "power_kw": null,
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "transfer_id": "TRANSFER_HUB_011_GAS",
+      "object_id": "HUB_011_GAS",
+      "from_circuit_id": "CO2",
+      "to_circuit_id": "USER",
+      "kind": "heat_transfer_no_mass_flow",
+      "power_kw": null,
+      "source_ids": [
+        "PLAN"
+      ]
+    },
+    {
+      "transfer_id": "TRANSFER_AGRI_018_HX",
+      "object_id": "AGRI_018_HX",
+      "from_circuit_id": "USER",
+      "to_circuit_id": "C1_HEAT",
+      "kind": "heat_transfer_no_mass_flow",
+      "power_kw": null,
+      "source_ids": [
+        "PLAN"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "requirement_revision": "map-design-v2",
+  "build_revision": "map-build-v2",
+  "base_head": "5c09b5049a71d438cbee88dabc9028d413af3e02",
+  "branch": "codex/energy-map-v2",
+  "source_count": 33,
+  "source_point_count": 24,
+  "source_line_count": 3,
+  "source_polygon_count": 6,
+  "all_legacy_geometry_status": "unchanged and unverified",
+  "dem_pixel_read_status": "not_run",
+  "dem_availability_status": "pass HTTP200 for N40/E113 and N41/E113 only",
+  "google_capture_status": "pass actual satellite and tilted views saved with original attribution",
+  "editable_geographic_model_status": "not_built",
+  "sources": [
+    {
+      "path": "inputs/original/地图三维工程_总规划.md",
+      "sha256": "af7665fcddcc06007bf5c7afd40f01b4e9955a5c009a92a265345d6f36b205f0"
+    },
+    {
+      "path": "inputs/original/清理版地图图层使用说明.md",
+      "sha256": "39b3564664cd1ba091845643d78bcd17527cfa353a0cd6afecdd43a20b2b9e7a"
+    },
+    {
+      "path": "inputs/original/地图成果保留规则.md",
+      "sha256": "a9327ad87ede162030d3882f441665ba9dc093420a46b8ac8be14a39e4cbbfde"
+    },
+    {
+      "path": "inputs/original/乌兰察布算热储_建模种子图层_待核.geojson",
+      "sha256": "c7cb1f2c535b84c6ad9a059df102ab90438b0663b4b69488d1140166c320fbb6"
+    },
+    {
+      "path": "inputs/original/report/作业4_第9组_地图恢复版_20261115.docx",
+      "sha256": "f15599e60c6e335214b10ebd337a8a6a5dd62823016d6f8e348e90b70754d1f0"
+    },
+    {
+      "path": "research/map-v2/copernicus-registry.html",
+      "sha256": "04b2d63198acecd854a2a04100feb63d71aeecd83773c692b7f5093a0a4defca"
+    },
+    {
+      "path": "research/map-v2/google-capture.json",
+      "sha256": "a076ee646a1703268ef4acc0c0a0a8b91987edeb1c82742dd1d11b0b02ff6785"
+    },
+    {
+      "path": "research/map-v2/google-geo-guidelines.html",
+      "sha256": "683baca07f1fb27d8c376b92cbe1152e3c2d49dff87949a8186c9d58860d1a9d"
+    },
+    {
+      "path": "research/map-v2/google-satellite-overview.jpg",
+      "sha256": "29836361ae89998c99c81a5a13595c6c38a5449b7a2d1c6a7c0065637cecb9f1"
+    },
+    {
+      "path": "research/map-v2/google-satellite-tilted.jpg",
+      "sha256": "2eaefbb5681b6f713bd4b07a26330a3d7aaf01bb9b4c72f9eb90f8168808621e"
+    },
+    {
+      "path": "research/map-v2/google-tile-policies.html",
+      "sha256": "9b9e76478fa766ededde3e70495f8122fb29367854e0cd03f49606cbcafac61b"
+    },
+    {
+      "path": "research/map-v2/source-fetch.json",
+      "sha256": "39037895715b42ff92b976a2fb15d72859c90a84c2ac0778e09f13b4336e2f2b"
+    },
+    {
+      "path": "research/map-v2/user-map-reference.png",
+      "sha256": "c89f4fc4679552a0c9a78d1bec2baa40286b582c5fe95b1e3b9828c127d839b4"
+    }
+  ]
+}

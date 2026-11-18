@@ -1,0 +1,24 @@
+{
+  "url": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless-2024_3857&styles=&srs=EPSG%3A3857&bbox=12586338.226541476%2C5002758.900993127%2C12615615.252620107%2C5025374.630804788&width=4096&height=3170&format=image%2Fjpeg",
+  "lonlat_bbox": [
+    113.065,
+    40.935,
+    113.328,
+    41.0883
+  ],
+  "webmercator_bbox": [
+    12586338.226541476,
+    5002758.900993127,
+    12615615.252620107,
+    5025374.630804788
+  ],
+  "size": [
+    4096,
+    3170
+  ],
+  "layer": "s2cloudless-2024_3857",
+  "attribution": "EOxCloudless by EOX IT Services GmbH; contains modified Copernicus Sentinel data 2024",
+  "license": "CC BY-NC-SA 4.0",
+  "purpose": "noncommercial course/research geographic model; retain attribution and share-alike for imagery adaptation",
+  "not_google": true
+}
