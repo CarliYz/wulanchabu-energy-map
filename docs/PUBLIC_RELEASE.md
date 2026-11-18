@@ -1,4 +1,4 @@
-# 公共发布 v0.3.0-rc.1
+# 公共发布 v0.3.0-rc.2
 
 2026-11-18。用户明确要求推送当前代码、整理背景与操作说明，并公开 GitHub 仓库；随后确认目标账号为当前已登录的 **CarliYz**。
 
@@ -8,7 +8,7 @@
 
 - 本地来源分支：codex/energy-map-v2。
 - 发布准备前代码提交：100ca65e2f3b1acc1627ca4a4e9646188c64127e。
-- 当前运行模型：m14-sensors-integrated-v1；设计同步：M15。
+- 当前运行模型：m14-sensors-integrated-v1；设计同步：M15；网页交互收尾：M16。
 - 设施 GLB SHA-256：aa00fa4c3502197f77851c3a2eb6617875462862c0bbd7351ceeaf4c0cf1869f。
 - 公共初始历史使用经检查的当前快照，不导入含原始上传材料的本地历史。
 
@@ -22,6 +22,6 @@
 
 ## 启动与验证
 
-README 是面向使用者的统一入口。launch.py 的动态端口不影响开发 / e2e 的固定 8767 入口。公共快照复验记录在 qc/public-release-verification.json；审查为协调者单代理 Standards / Spec 分轴检查，不宣称独立 QA。
+README 是面向使用者的统一入口。launch.py 使用动态端口；开发入口仍为8767，当前e2e隔离服务默认18867，不接管用户服务。M16补分析空态、审计模态/下载/失败恢复与三尺寸面板回归；公共快照复验记录在 qc/public-release-verification.json。GitHub Actions执行同一合同与网页套件，实际结果另记；审查为协调者单代理 Standards / Spec 分轴检查，不宣称独立 QA。
 
 GitHub 公共版本是候选演示预发行版。既有地理、工程、真实数据、Google / Jev、联合验收和生产部署缺口保持开放。

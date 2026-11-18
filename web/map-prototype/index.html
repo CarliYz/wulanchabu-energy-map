@@ -5,7 +5,7 @@
 <title>乌兰察布 · 区域能源设施工作台</title>
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/maplibre-gl@5.6.1/dist/maplibre-gl.css">
-<link rel="stylesheet" href="./style.css?v=m13-geographic-review-1">
+<link rel="stylesheet" href="./style.css?v=m16-closeout-1">
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"}}</script>
 <div id="map" aria-label="候选走廊地图"></div>
 <header>
@@ -124,7 +124,7 @@
         <option value="20">h20</option><option value="21">h21</option><option value="22">h22</option><option value="23">h23</option>
       </select>
     </label>
-    <span id="analysis-time-state" class="analysis-time-state">h14 · synthetic_teaching_not_local</span>
+    <span id="analysis-time-state" class="analysis-time-state">时段未绑定</span>
     <button id="analysis-expand" aria-expanded="false" aria-controls="analysis-body">展开分析</button>
     <button id="analysis-close" aria-label="关闭决策分析">×</button>
   </div>
@@ -139,9 +139,9 @@
   <p id="analysis-limits" class="analysis-limits"></p>
 </section>
 <div id="audit-backdrop" hidden></div>
-<section id="audit-panel" hidden aria-label="审计与系统状态" tabindex="-1">
+<section id="audit-panel" hidden role="dialog" aria-modal="true" aria-label="审计与系统状态" tabindex="-1">
   <div id="audit-head"><div><h2>审计与系统状态</h2><p>核对当前地图、模型、分析来源、版本和工程边界。</p></div><button id="audit-close" aria-label="关闭审计页">×</button></div>
-  <div class="audit-toolbar"><button id="audit-refresh">重新读取来源</button><button id="audit-export" class="secondary">导出审计 JSON</button></div>
+  <div class="audit-toolbar"><button id="audit-refresh">重新读取来源</button><button id="audit-export" class="secondary" disabled>导出审计 JSON</button></div>
   <div class="audit-grid">
     <article class="audit-card"><h3>当前代码与页面</h3><p id="audit-code">正在读取…</p></article>
     <article class="audit-card"><h3>Blender 与 GLB</h3><p id="audit-blender">正在读取…</p></article>
@@ -175,5 +175,5 @@ window.addEventListener('unhandledrejection', event => {
 });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/maplibre-gl@5.6.1/dist/maplibre-gl.js"></script>
-<script type="module" src="./app.mjs?v=m13-geographic-review-1"></script>
+<script type="module" src="./app.mjs?v=m16-closeout-1"></script>
 </html>

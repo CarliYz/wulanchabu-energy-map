@@ -1,6 +1,6 @@
 {
   "name": "energy-map-workbench",
-  "version": "0.3.0-rc.1",
+  "version": "0.3.0-rc.2",
   "private": true,
   "type": "module",
   "scripts": {
@@ -8,7 +8,9 @@
     "qa:headed": "playwright test --headed",
     "qa:report": "playwright show-report",
     "qa:mcp": "node qa/mcp-server.mjs",
-    "qa:mcp:smoke": "node qa/mcp-smoke.mjs"
+    "qa:mcp:smoke": "node qa/mcp-smoke.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "qa:current": "npm --prefix qa/agent-e2e test -- --config e2e.closeout.config.js"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.14.0",

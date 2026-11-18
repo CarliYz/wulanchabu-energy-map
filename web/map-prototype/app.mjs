@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { createWorkspaceLayout } from './workspace-layout.mjs?v=m16-closeout-1';
 import { createFacilityIndex } from './facility-index.mjs?v=c1-devices-1';
 import { CIRCUITS, renderC1Relations } from './c1-relations.mjs?v=c1-devices-1';
 import { renderABRelations } from './ab-relations.mjs?v=m9-ab-terminals-1';
@@ -12,6 +13,8 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { ORIGIN, MERCATOR_ORIGIN, WORLD_SCALE, glbToLocal, glbToWorld, localToLonLat, localToWorld } from './projection.mjs';
 
 const $ = id => document.getElementById(id);
+const workspace = createWorkspaceLayout();
+const auditBackground = new Map();
 const state = { view: 'standard', previousMap: 'standard', selected: null, ready: false,
   independent_registration: 'not_run', modelVisible: true, routesVisible: true, route: null, circuit: 'all', connection: null,
   scenario: 'normal', analysisHour: 14, analysisOpen: false, analysisExpanded: false, auditOpen: false,
@@ -51,6 +54,9 @@ function resetAnalysisExpanded() {
 function renderAnalysis() {
   const status = $('analysis-status'), empty = $('analysis-empty'), body = $('analysis-body');
   const id = state.selected;
+  // Start from an unbound state so no previous object's time or controls leak.
+  $('analysis-time-state').textContent = '时段未绑定';
+  for (const name of ['analysis-scenario', 'analysis-hour', 'analysis-expand']) $(name).disabled = true;
   $('analysis-scenario').value = state.scenario;
   $('analysis-hour').value = String(state.analysisHour);
   $('analysis-object').textContent = id ? `${objects[id]?.contract?.name || id} · ${id}` : '请选择一个设施';
@@ -70,6 +76,7 @@ function renderAnalysis() {
     body.hidden = true; $('analysis-limits').textContent = result.binding?.limits?.join('；') || ''; resetAnalysisExpanded(); return;
   }
   status.textContent = result.scenario.label;
+  for (const name of ['analysis-scenario', 'analysis-hour', 'analysis-expand']) $(name).disabled = false;
   $('analysis-summary').textContent = analysisSummary(result);
   $('analysis-time-state').textContent = `h${result.time.hour_index} · ${result.time.basis}`;
   empty.hidden = true;
@@ -88,7 +95,10 @@ function renderAnalysis() {
 }
 function setAnalysisOpen(open, focus = false) {
   if (open) geographicReview?.close({ restoreFocus: false });
+  if (open && innerWidth <= 850) index.setExpanded(false);
   state.analysisOpen = open; $('analysis-panel').hidden = !open;
+  document.body.classList.toggle('analysis-open', open);
+  workspace.sync();
   $('analysis-open').setAttribute('aria-expanded', String(open));
   $('analysis-open').dataset.analysisOpen = String(open);
   if (open) { renderAnalysis(); if (focus) $('analysis-panel').focus(); }
@@ -116,17 +126,29 @@ function renderAudit() {
   $('audit-limitations').replaceChildren(...auditManifest.limitations.map(item => { const li = document.createElement('li'); li.textContent = item; return li; }));
 }
 async function loadAuditManifest() {
-  try { auditManifest = await json('./audit-manifest.json'); renderAudit(); }
+  auditManifest = null;
+  $('audit-export').disabled = true; $('audit-refresh').disabled = true;
+  $('audit-code').textContent = '正在重新读取来源…';
+  try { auditManifest = await json('./audit-manifest.json'); renderAudit(); $('audit-export').disabled = false; }
   catch (error) {
     auditManifest = null;
     fail('audit/load', error); $('audit-code').textContent = '审计清单加载失败，不能把当前状态视为已核验。';
     $('audit-blender').textContent = '当前无法确认 Blender / GLB 版本。'; $('audit-map-source').textContent = '当前无法确认地图与线路来源。';
     $('audit-analysis-source').textContent = '当前无法确认分析绑定来源。'; $('audit-sources').textContent = '逐项来源清单加载失败；不能把旧版本来源当作当前证据。'; $('audit-status-pills').innerHTML = '<span class="pending">来源待核</span>';
     $('audit-limitations').replaceChildren(Object.assign(document.createElement('li'), { textContent: error.message }));
-  }
+  } finally { $('audit-refresh').disabled = false; }
 }
 function setAuditOpen(open) {
   if (open) geographicReview?.close({ restoreFocus: false });
+  if (open && !state.auditOpen) {
+    for (const element of document.body.children) {
+      if (element === $('audit-panel') || element === $('audit-backdrop') || element.tagName === 'SCRIPT') continue;
+      auditBackground.set(element, element.inert); element.inert = true;
+    }
+  } else if (!open) {
+    for (const [element, inert] of auditBackground) element.inert = inert;
+    auditBackground.clear();
+  }
   state.auditOpen = open; $('audit-panel').hidden = !open; $('audit-backdrop').hidden = !open;
   $('audit-toggle').setAttribute('aria-expanded', String(open));
   if (open) { renderAudit(); $('audit-panel').focus(); } else $('audit-toggle').focus();
@@ -134,7 +156,10 @@ function setAuditOpen(open) {
 }
 function exportAudit() {
   if (!auditManifest) return;
-  const payload = { audit: auditManifest, analysis_bindings: analysisBindings, selected: state.selected, scenario: state.scenario, analysis_time: { hour_index: state.analysisHour, timestamp: null } };
+  const analysis = state.selected ? resolveAnalysis({ asset: analysisAsset, bindings: analysisBindings, objectId: state.selected, scenarioId: state.scenario, hourIndex: state.analysisHour }) : null;
+  const payload = { audit: auditManifest, analysis_bindings: analysisBindings, selected: state.selected, scenario: state.scenario,
+    analysis_status: analysis?.status || 'unavailable',
+    analysis_time: analysis?.status === 'available' ? { hour_index: analysis.time.hour_index, timestamp: null, basis: analysis.time.basis } : null };
   const link = document.createElement('a'); link.href = URL.createObjectURL(new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' }));
   link.download = `energy-map-audit-${auditManifest.runtime_revision}.json`; link.click(); URL.revokeObjectURL(link.href); trace('exportAudit');
 }
@@ -446,12 +471,7 @@ function rememberView() {
   if (viewHistory.length > 30) viewHistory.shift(); $('back-view').disabled = false;
 }
 function safeArea() {
-  const header = $('toolbar').getBoundingClientRect(), footer = document.querySelector('footer').getBoundingClientRect();
-  const card = !$('route-detail').hidden ? $('route-detail') : $('detail');
-  const detail = card.hidden ? null : card.getBoundingClientRect();
-  const left = innerWidth <= 850 ? 90 : (index?.expanded ? $('index-panel').getBoundingClientRect().right + 20 : 96);
-  return { left, right: innerWidth <= 850 ? innerWidth - 24 : (detail ? detail.left - 20 : innerWidth - 64),
-    top: header.bottom + 20, bottom: innerWidth <= 850 && detail ? detail.top - 18 : footer.top - 20 };
+  return workspace.safeArea();
 }
 function setModels(visible) {
   state.modelVisible = visible; $('models').checked = visible;
@@ -869,11 +889,20 @@ async function boot() {
   $('angle').onclick = () => { rememberView(); map.jumpTo({pitch:map.getPitch() > 1 ? 0 : 42}); };
   map.on('pitchend', () => $('angle').setAttribute('aria-pressed', String(map.getPitch() > 1)));
   document.addEventListener('keydown', event => {
+    if (state.auditOpen && event.key === 'Tab') {
+      const panel = $('audit-panel');
+      const controls = [...panel.querySelectorAll('button:not(:disabled), [href], input:not(:disabled), select:not(:disabled), [tabindex="0"]')].filter(el => el.getClientRects().length);
+      const first = controls[0], last = controls.at(-1), active = document.activeElement;
+      if (!controls.length) { event.preventDefault(); panel.focus(); }
+      else if (event.shiftKey && (active === first || active === panel || !panel.contains(active))) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && (active === last || active === panel || !panel.contains(active))) { event.preventDefault(); first.focus(); }
+      return;
+    }
     if (event.key !== 'Escape') return;
+    if (state.auditOpen) { setAuditOpen(false); return; }
     if (index.resizing) { index.escape(); return; }
     if (!$('route-picker').hidden) closeRoutePicker(true);
     else if (!$('layers-panel').hidden) layers(false, true);
-    else if (state.auditOpen) setAuditOpen(false);
     else if (geographicReview.escape()) {}
     else if (state.analysisOpen && state.analysisExpanded) setAnalysisExpanded(false);
     else if (state.analysisOpen) setAnalysisOpen(false);
