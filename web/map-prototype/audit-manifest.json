@@ -2,7 +2,7 @@
   "schema_version": 2,
   "generated_at": "2026-11-17T13:32:06.772Z",
   "branch": "codex/energy-map-v2",
-  "runtime_revision": "m16-runtime-closeout-v1 · m14-sensors-integrated-v1",
+  "runtime_revision": "m17-responsive-closeout-v1 · m14-sensors-integrated-v1",
   "requirement_revision": "M11+phase2-system-contract+M12-C2-proposal+M13-public-geographic-review+M14-four-visible-sensors",
   "blender": {
     "version": "5.2.1 LTS",
@@ -115,8 +115,8 @@
     {
       "label": "网页运行时",
       "path": "web/map-prototype/app.mjs",
-      "version": "m16-runtime-closeout-v1",
-      "sha256": "5c21ddbeb814a4f2fb2ca320af5f1bb8f0d2d945e784e7012c667436c508fb8e",
+      "version": "m17-responsive-closeout-v1",
+      "sha256": "4aab14c435a9b8c6722687385ededcdbcd508df74c7f61b1afc677f481ed6b18",
       "status": "verified",
       "status_label": "统一GLB接入·候选"
     },
@@ -405,16 +405,16 @@
       "label": "工作台入口",
       "status": "candidate",
       "status_label": "源码身份；工程状态另列",
-      "sha256": "b34a02af249878e70829295f69ef5ba261faa26733cf2e903431e57bb5404c43",
-      "version": "m16-runtime-closeout-v1"
+      "sha256": "4e057bb5defe62e719f6bee888e23c5059596964244e70702a8e3255f6f69ad1",
+      "version": "m17-responsive-closeout-v1"
     },
     {
       "path": "web/map-prototype/style.css",
       "label": "工作台布局",
       "status": "candidate",
       "status_label": "源码身份；工程状态另列",
-      "sha256": "141a09dd894bd03e2d6b6199fb23687c7fafd49d9da068b37a1fc63874de8266",
-      "version": "m16-runtime-closeout-v1"
+      "sha256": "e596674f5dda2463f82ac7ac769edabcabc36f9535d471f1055e3eb1b24bdcbc",
+      "version": "m17-responsive-closeout-v1"
     },
     {
       "path": "web/map-prototype/workspace-layout.mjs",
@@ -422,7 +422,7 @@
       "status": "candidate",
       "status_label": "源码身份；工程状态另列",
       "sha256": "9ebf5f5a3b8b456dadbcaf62c4428b042b1e05c6a4b96496855956a0e2025203",
-      "version": "m16-runtime-closeout-v1"
+      "version": "m17-responsive-closeout-v1"
     }
   ]
 }

@@ -13,4 +13,4 @@ E2E_TELEMETRY_DISABLED=1 npx e2e run --config e2e.closeout.config.js
 
 Jev preflight：node jev-preflight.mjs。缺 TYPESAFE_AI_API_KEY 时明确退出2，不发起模型调用。凭据仅经进程环境提供，不写入仓库。全局 MCP 注册不随克隆自动完成；查看演示不需要 MCP。
 
-历史 M14 的96种行为为分组通过证据；本次发布是否复跑以根目录 qc/public-release-verification.json 为准。
+历史 M14 的96种行为为分组通过证据；本次发布的文件身份以根目录 public-release-manifest.json 为准，当前运行边界见 RELEASE.md。

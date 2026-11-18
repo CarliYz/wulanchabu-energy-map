@@ -2,7 +2,7 @@
 
 将数据中心余热、热泵、储热和农业用能设施放到同一张可交互的三维地图中，帮助方案讨论者看清**设备在哪里、热量如何传递、各区域做什么、哪些信息尚待核实**。
 
-当前版本：**v0.3.0-rc.2 · 候选方案演示版**（2026-11-18）。主要入口是 `web/map-prototype/`，采用 MapLibre GL JS + Three.js，模型由 Blender 制作并导出为 GLB。
+当前版本：**v0.3.0-rc.3 · 候选方案演示版**（2026-11-18）。主要入口是 `web/map-prototype/`，采用 MapLibre GL JS + Three.js，模型由 Blender 制作并导出为 GLB。
 
 ![三维地图工作台总览](docs/images/overview.png)
 
@@ -138,11 +138,13 @@ launch.py                使用空闲端口的本机启动器
 
 ## 版本与验收范围
 
-当前版本为 **v0.3.0-rc.2**，基于 M14 模型、M15 设计同步和 M16 网页交互收尾。版本变化见 [CHANGELOG](CHANGELOG.md)，公共快照的来源和排除范围见 [发布说明](docs/PUBLIC_RELEASE.md)。
+当前版本为 **v0.3.0-rc.3**，基于 M14 模型、M15 设计同步、M16 网页交互收尾和 M17 响应式/索引复核修订。版本变化见 [CHANGELOG](CHANGELOG.md)，公共快照的来源和排除范围见 [发布说明](docs/PUBLIC_RELEASE.md)。
 
-原 M14 已有分组 96 种交互行为证据、三尺寸路线 66/66、Node 38/38、Python 35/35；这些是当时受测身份下的结果，不等于本次重新执行完整 96 项。M15 完成 39 个设计状态和 4 个浮层，并实点 8 条代表性 Figma 路径；不代表全部页面或独立 QA 已通过。当前公共版本的实际复验结果以 `qc/public-release-verification.json` 为准。
+原 M14 已有分组 96 种交互行为证据、三尺寸路线 66/66、Node 38/38、Python 35/35；这些是当时受测身份下的结果，不等于本次重新执行完整 96 项。M15 完成 39 个设计状态和 4 个浮层，并实点 8 条代表性 Figma 路径；不代表全部页面或独立 QA 已通过。当前公共快照的文件身份以 `public-release-manifest.json` 为准；本地启动和验收边界见 `RELEASE.md`。
 
 当前测试入口为 `npm run qa:current`；完整依赖安装、隔离服务与回执说明见 [当前QA说明](docs/QA_CURRENT.md)。根目录 `npm run qa` 保留历史viewer配置。CI包含合同、来源SHA和当前网页交互；配置不代表运行通过，结果以Actions实际回执为准。
+
+本次 rc.3 工作树的最终完整 e2e 为 **122/122 通过**（10 个测试文件，0 失败，0 跳过）；证据保存在 `qc/m17-figma-responsive-closeout/e2e-final/`。合同测试使用仓库锁定的 `.venv-contracts` 环境，系统 Python 未安装 `jsonschema` 时会先报依赖导入错误。
 
 ## 当前边界与后续
 

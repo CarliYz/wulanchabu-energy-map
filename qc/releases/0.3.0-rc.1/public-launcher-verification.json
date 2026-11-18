@@ -1,8 +1,0 @@
-{
-  "status": "pass",
-  "command": "python3 launch.py (browser opener stubbed only)",
-  "http_status": 200,
-  "exit_code": 0,
-  "binding": "127.0.0.1:dynamic",
-  "stop": "SIGINT/Ctrl+C"
-}
