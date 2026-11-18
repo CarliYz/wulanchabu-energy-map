@@ -26,10 +26,12 @@ Python 3、支持 WebGL 的桌面浏览器，以及固定版本 Three.js / MapLi
 
 ## 版本证据
 
-- 源提交：`3fe1cd9`
-- 最终完整 e2e：122/122 passed，0 failed，0 skipped
-- 模型校验：85 entities、188 ports、162 visible connections
-- 发布包校验：`scripts/verify_public_release.py` exit 0
+- 源提交：`1fd2598`
+- 本文件由导出器生成，不代表已经执行测试。
+- 当前运行测试命令与范围：`docs/QA_CURRENT.md`。
+- 实际 CI 结果：<https://github.com/CarliYz/wulanchabu-energy-map/actions>。
+- 本版本发行回执与附件校验：<https://github.com/CarliYz/wulanchabu-energy-map/releases/tag/v0.3.0-rc.4> 中的 `release-verification.json` 和 `SHA256SUMS.txt`。
+- 可执行发布包校验：`python3 scripts/verify_public_release.py`。
 
 ## 当前边界
 

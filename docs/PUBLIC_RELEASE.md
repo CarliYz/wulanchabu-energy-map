@@ -1,5 +1,7 @@
 # 公共发布 v0.3.0-rc.4
 
+2026-11-18 发布后更正：HTML 附件使用 `energy-map-workbench-single-v0.3.0-rc.4.html`，ZIP/HTML 字节和 rc.4 标签保持原版。Release 的 `release-verification.json` 只记录三个固定产物的哈希，`SHA256SUMS.txt` 最后覆盖这三个产物及回执，避免校验循环。main 后续说明和生成器修订通过单独 PR 交付；Release 附件仍对应 rc.4 标签快照。生成的 `RELEASE.md` 只提供验收入口，不能把模板中的固定通过数量当作新执行结果。
+
 2026-11-18。用户明确要求推送当前代码、整理背景与操作说明，并公开 GitHub 仓库；随后确认目标账号为当前已登录的 **CarliYz**。
 
 目标仓库：`CarliYz/wulanchabu-energy-map`。这是独立三维地图项目，保留已有 Energy-System / Energy-System-v2.0 仓库。

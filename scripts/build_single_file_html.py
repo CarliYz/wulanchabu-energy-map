@@ -221,7 +221,7 @@ def main() -> None:
     parser.add_argument("--output", type=Path, default=None, help="Output HTML path")
     args = parser.parse_args()
     version = args.version or package_version()
-    out = (args.output or (ROOT / "outputs" / "releases" / f"乌兰察布能源地图-单文件-v{version}.html")).resolve()
+    out = (args.output or (ROOT / "outputs" / "releases" / f"energy-map-workbench-single-v{version}.html")).resolve()
     assets = collect_assets()
     embedded = make_embedded_assets(assets)
     index = (ROOT / "web/map-prototype/index.html").read_text(encoding="utf-8")
