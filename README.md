@@ -79,7 +79,7 @@ GitHub Release 附件提供可以直接双击的单文件 HTML。它内嵌当前
 python3 scripts/build_single_file_html.py
 ```
 
-生成文件位于 `outputs/releases/乌兰察布能源地图-单文件-v0.3.0-rc.4.html`。单文件适合快速查看和演示，完整本地 HTTP 包适合稳定运行与调试。
+生成文件位于 `outputs/releases/energy-map-workbench-single-v0.3.0-rc.4.html`，GitHub Release 使用相同名称。单文件适合快速查看和演示，完整本地 HTTP 包适合稳定运行与调试。
 
 ### 下载 ZIP
 
@@ -154,7 +154,7 @@ launch.py                使用空闲端口的本机启动器
 
 当前测试入口为 `npm run qa:current`；完整依赖安装、隔离服务与回执说明见 [当前QA说明](docs/QA_CURRENT.md)。根目录 `npm run qa` 保留历史viewer配置。CI包含合同、来源SHA和当前网页交互；配置不代表运行通过，结果以Actions实际回执为准。
 
-本次 rc.4 复用已验证的运行代码，最终完整 e2e 为 **122/122 通过**（10 个测试文件，0 失败，0 跳过）；本轮还会重新执行 Node、Python、公开快照、单文件生成和浏览器直开检查；证据保存在 `qc/m17-figma-responsive-closeout/e2e-final/`。合同测试使用仓库锁定的 `.venv-contracts` 环境，系统 Python 未安装 `jsonschema` 时会先报依赖导入错误。
+rc.4 标签提交 `0a8d466` 的 [合并后 CI](https://github.com/CarliYz/wulanchabu-energy-map/actions/runs/44291011783) 已完成：Node 38/38、Python 35/35、完整 e2e **122/122 通过**（10 个测试文件，0 失败，0 跳过），发布快照与模型校验通过。公开单文件另已通过 `file://` 初始化、三底图、索引和 Escape 冒烟检查。实际回执和下载文件校验见 [rc.4 Release](https://github.com/CarliYz/wulanchabu-energy-map/releases/tag/v0.3.0-rc.4) 的 `release-verification.json` 和 `SHA256SUMS.txt`；Release 附件对应标签快照，main 后续文档更新不改写该快照。合同测试按 `requirements-contracts.txt` 安装依赖后执行。
 
 ## 当前边界与后续
 
