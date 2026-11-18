@@ -2,7 +2,7 @@
 
 将数据中心余热、热泵、储热和农业用能设施放到同一张可交互的三维地图中，帮助方案讨论者看清**设备在哪里、热量如何传递、各区域做什么、哪些信息尚待核实**。
 
-当前版本：**v0.3.0-rc.1 · 候选方案演示版**（2026-11-18）。主要入口是 `web/map-prototype/`，采用 MapLibre GL JS + Three.js，模型由 Blender 制作并导出为 GLB。
+当前版本：**v0.3.0-rc.2 · 候选方案演示版**（2026-11-18）。主要入口是 `web/map-prototype/`，采用 MapLibre GL JS + Three.js，模型由 Blender 制作并导出为 GLB。
 
 ![三维地图工作台总览](docs/images/overview.png)
 

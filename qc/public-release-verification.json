@@ -1,8 +1,8 @@
 {
-  "status": "in_validation",
+  "status": "pass_local_snapshot",
   "version": "0.3.0-rc.2",
-  "source_head": "a78c929",
-  "tested_scope": "current public snapshot; remote final full suite pending",
+  "source_head": "8addb1a9ba732c5692e3aec3fe58d9c1f8bdd0a8",
+  "tested_scope": "Local public snapshot checks; final remote CI is recorded separately in Actions and release verification attachment.",
   "review_mode": "coordinator_single_agent",
   "historical_receipts": "qc/releases/0.3.0-rc.1/",
   "checks": {
@@ -20,7 +20,10 @@
       "passed": 16
     },
     "remote_ci": {
-      "status": "not_run"
+      "status": "external_live_result",
+      "workflow": ".github/workflows/ci.yml",
+      "pull_request": "https://github.com/CarliYz/wulanchabu-energy-map/pull/1",
+      "run_scope": "Final 112-test suite; use the run matching the current commit. This receipt does not claim its result."
     },
     "node": {
       "command": "node --test tests/*.test.mjs",
@@ -46,11 +49,34 @@
       "command": "python3 scripts/refresh_runtime_audit.py",
       "exit_code": 0,
       "sources": 4
+    },
+    "browser": {
+      "status": "pass",
+      "exit_code": 0,
+      "evidence": "qc/public-browser-verification.json",
+      "command": "node scripts/verify_geographic_package.mjs PUBLIC_ROOT OUTPUT_DIR",
+      "tool_output": "ead062",
+      "identity_reuse": "README-only correction after browser run; runtime assets unchanged"
+    },
+    "launcher": {
+      "status": "pass",
+      "exit_code": 0,
+      "evidence": "qc/public-launcher-verification.json",
+      "tool_output": "560c1c"
     }
   },
   "limits": [
     "independent engineering acceptance open",
     "survey/shoreline/C1/P2 public water observation open",
     "sensors/PLC, actual time series, Google/Jev, production open"
-  ]
+  ],
+  "Standards": {
+    "status": "pass",
+    "scope": "reviewed public export and M16 code",
+    "independence": "coordinator_single_agent"
+  },
+  "Spec": {
+    "status": "pass_local_slice",
+    "scope": "local source 111-before-Escape + final16, public smoke/launcher; remote112 result separate"
+  }
 }
