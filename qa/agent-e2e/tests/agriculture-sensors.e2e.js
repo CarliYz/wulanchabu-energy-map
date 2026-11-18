@@ -11,6 +11,25 @@ async function select(app, screen, id) {
   await screen.getByRole('searchbox', { name: '搜索设施' }).fill(id);
   await button(screen, `测点 温度/流量测点 ${id}`).click();
 }
+async function escapeChildToParent(screen, browser, childId) {
+  const parentId = childId.replace(/_SENSOR$/, '');
+  const indexWasExpanded = await browser.evaluate(() => m9.index.expanded);
+  if (indexWasExpanded) {
+    const searchHasValue = await browser.evaluate(() => Boolean(document.getElementById('entity-search').value));
+    if (searchHasValue) {
+      await browser.keyboard.press('Escape');
+      expect(await browser.evaluate(() => m9.state.selected)).toEqual(childId);
+      expect(await browser.evaluate(() => document.getElementById('entity-search').value)).toEqual('');
+    }
+    await browser.keyboard.press('Escape');
+    expect(await browser.evaluate(() => m9.state.selected)).toEqual(childId);
+    expect(await browser.evaluate(() => m9.index.expanded)).toEqual(false);
+  }
+  await browser.keyboard.press('Escape');
+  expect(await browser.evaluate(() => m9.state.selected)).toEqual(parentId);
+  await browser.keyboard.press('Escape');
+  await expect(screen.getByRole('complementary', { name: '设施详情', exact: true })).toBeHidden();
+}
 
 describe('四农业测点网页实体', () => {
   for (const n of ['014', '015', '016', '017']) {
@@ -40,10 +59,7 @@ describe('四农业测点网页实体', () => {
       await expect.poll(async () => browser.evaluate(() => m9.state.cameraPending)).toEqual(false);
       await button(screen, '测点 温度/流量测点 地图选择').click();
       expect(await browser.evaluate(() => m9.state.selected)).toEqual(id);
-      await browser.keyboard.press('Escape');
-      expect(await browser.evaluate(() => m9.state.selected)).toEqual(`AGRI_${n}`);
-      await browser.keyboard.press('Escape');
-      await expect(detail).toBeHidden();
+      await escapeChildToParent(screen, browser, id);
     });
   }
   for (const width of [1440, 1100, 760]) {
@@ -60,10 +76,7 @@ describe('四农业测点网页实体', () => {
       await browser.mouse.down();
       await browser.mouse.up();
       await expect(screen.getByRole('complementary', { name: '设施详情', exact: true })).toContainText('AGRI_016_SENSOR');
-      await browser.keyboard.press('Escape');
-      expect(await browser.evaluate(() => m9.state.selected)).toEqual('AGRI_016');
-      await browser.keyboard.press('Escape');
-      await expect(screen.getByRole('complementary', { name: '设施详情', exact: true })).toBeHidden();
+      await escapeChildToParent(screen, browser, 'AGRI_016_SENSOR');
     });
   }
   test('测点实体网格丢失时明确失败', async ({ app, screen, browser }) => {

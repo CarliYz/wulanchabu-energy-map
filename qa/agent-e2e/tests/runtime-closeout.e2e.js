@@ -5,7 +5,7 @@ import { readFileSync } from 'node:fs';
 const button = (screen, name) => screen.getByRole('button', { name, exact: true });
 async function ready(app, screen) {
   await app.open();
-  await expect(screen.getByRole('status')).toContainText('85对象统一模型');
+  await expect(screen.getByRole('status')).toContainText('85对象统一模型', { timeout: 30000 });
 }
 async function choose(screen, id, name) {
   await button(screen, '展开实体索引').click();
@@ -14,6 +14,67 @@ async function choose(screen, id, name) {
 }
 
 describe('M16 网页交互收尾', () => {
+  for (const [width, height] of [[1440, 900], [1100, 800], [760, 600]]) {
+    test(`${width}×${height}索引退出恢复原地理复核详情`, async ({ app, screen, browser }) => {
+      await browser.setViewport({ width, height });
+      await ready(app, screen);
+      await button(screen, '地理复核').click();
+      await button(screen, '定位复核 pad/AGRI_018/waterbody/relation/7763319').click();
+      await button(screen, '展开实体索引').click();
+      await button(screen, '收起实体索引').waitFor();
+
+      await browser.keyboard.press('Escape');
+
+      await expect(button(screen, '关闭地理复核')).toBeVisible();
+      await expect(button(screen, '展开实体索引')).toBeVisible();
+      expect(await browser.evaluate(() => m9.state.reviewObservation)).toEqual('pad/AGRI_018/waterbody/relation/7763319');
+      await expect(button(screen, '返回复核列表')).toBeVisible();
+    });
+
+    test(`${width}×${height}设施卡打开时Escape先收起可见索引`, async ({ app, screen, browser }) => {
+      await browser.setViewport({ width, height });
+      await ready(app, screen);
+      await choose(screen, 'AGRI_018', 'C1 叶菜水培与冷凉种苗 AGRI_018');
+      if (width <= 850) await button(screen, '展开实体索引').click();
+      await button(screen, '清除搜索').click();
+      await button(screen, '收起实体索引').waitFor();
+
+      await browser.keyboard.press('Escape');
+
+      await expect(button(screen, '关闭设施详情')).toBeVisible();
+      await expect(button(screen, '展开实体索引')).toBeVisible();
+      expect(await browser.evaluate(() => m9.state.selected)).toEqual('AGRI_018');
+    });
+
+    test(`${width}×${height}显式打开复核让实体索引收起`, async ({ app, screen, browser }) => {
+      await browser.setViewport({ width, height });
+      await ready(app, screen);
+      await button(screen, '展开实体索引').click();
+      await button(screen, '收起实体索引').waitFor();
+
+      await button(screen, '地理复核').click();
+
+      await expect(button(screen, '关闭地理复核')).toBeVisible();
+      await expect(button(screen, '展开实体索引')).toBeVisible();
+      expect(await browser.evaluate(() => m9.index.expanded)).toEqual(false);
+    });
+  }
+
+  test('窄屏Escape先收索引并恢复已选设施卡', async ({ app, screen, browser }) => {
+    await browser.setViewport({ width:760, height:600 });
+    await ready(app, screen);
+    await choose(screen, 'AGRI_018', 'C1 叶菜水培与冷凉种苗 AGRI_018');
+    await button(screen, '展开实体索引').click();
+    await button(screen, '清除搜索').click();
+    await button(screen, '收起实体索引').waitFor();
+
+    await browser.keyboard.press('Escape');
+
+    await expect(button(screen, '关闭设施详情')).toBeVisible();
+    expect(await browser.evaluate(() => m9.state.selected)).toEqual('AGRI_018');
+    await expect(button(screen, '展开实体索引')).toBeFocused();
+  });
+
   test('未选对象时分析不提供未绑定工况与时段', async ({ app, screen }) => {
     await ready(app, screen);
 

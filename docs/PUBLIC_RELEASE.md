@@ -22,6 +22,6 @@
 
 ## 启动与验证
 
-README 是面向使用者的统一入口。launch.py 使用动态端口；开发入口仍为8767，当前e2e隔离服务默认18867，不接管用户服务。M16补分析空态、审计模态/下载/失败恢复与三尺寸面板回归；公共快照复验记录在 qc/public-release-verification.json。GitHub Actions执行同一合同与网页套件，实际结果另记；审查为协调者单代理 Standards / Spec 分轴检查，不宣称独立 QA。
+README 是面向使用者的统一入口。launch.py 使用动态端口；开发入口仍为8767，当前e2e隔离服务默认18867，不接管用户服务。M16补分析空态、审计模态/下载/失败恢复与三尺寸面板回归；公共快照文件身份记录在 public-release-manifest.json；本地启动和当前版本边界见 RELEASE.md。GitHub Actions执行同一合同与网页套件，实际结果另记；审查为协调者单代理 Standards / Spec 分轴检查，不宣称独立 QA。
 
 GitHub 公共版本是候选演示预发行版。既有地理、工程、真实数据、Google / Jev、联合验收和生产部署缺口保持开放。

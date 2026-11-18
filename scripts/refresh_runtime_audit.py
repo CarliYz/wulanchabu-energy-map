@@ -27,12 +27,12 @@ def main():
             if item is None:
                 item = {'path': name, 'label': label, 'status': 'candidate', 'status_label': '源码身份；工程状态另列'}
                 audit['source_inventory'].append(item)
-            item.update(sha256=digest, version='m16-runtime-closeout-v1')
+            item.update(sha256=digest, version='m17-responsive-closeout-v1')
         else:
             if name not in entries or entries[name]['sha256'] != digest:
                 raise SystemExit(f'Stale runtime audit identity: {name}; review then run --write')
     if args.write:
-        audit['runtime_revision'] = 'm16-runtime-closeout-v1 · m14-sensors-integrated-v1'
+        audit['runtime_revision'] = 'm17-responsive-closeout-v1 · m14-sensors-integrated-v1'
         for item in audit['source_inventory']:
             if item['path'] == 'web/map-prototype/integrated-asset.json':
                 item['status_label'] = '85对象·位置待独立配准'

@@ -772,6 +772,7 @@ async function boot() {
     identity: { routes: ROUTES_SHA256, asset: integrated.sha256 },
     suspend() {
       focusToken++; state.cameraPending = false; closeRoutePicker();
+      index.setExpanded(false);
       panMode(false);
       if (state.auditOpen) setAuditOpen(false);
       if (state.analysisOpen) setAnalysisOpen(false);
@@ -903,6 +904,7 @@ async function boot() {
     if (index.resizing) { index.escape(); return; }
     if (!$('route-picker').hidden) closeRoutePicker(true);
     else if (!$('layers-panel').hidden) layers(false, true);
+    else if (index.expanded && index.escape()) {}
     else if (geographicReview.escape()) {}
     else if (state.analysisOpen && state.analysisExpanded) setAnalysisExpanded(false);
     else if (state.analysisOpen) setAnalysisOpen(false);

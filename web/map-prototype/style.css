@@ -95,6 +95,7 @@ button[data-analysis-open=true]{background:#293b44;color:white;border-color:#293
 #index{max-height:calc(var(--workspace-bottom) - 96px)}
 #icon-rail{max-height:calc(var(--workspace-bottom) - 96px);overflow:auto}
 #index-panel{margin-top:calc(var(--workspace-top) - 96px);max-height:calc(var(--workspace-bottom) - var(--workspace-top))}
+body:has(#index.expanded) #geo-panel{display:none}
 #analysis-panel{left:var(--analysis-left);bottom:calc(100vh - var(--workspace-bottom));max-height:min(390px,calc(var(--workspace-bottom) - var(--workspace-top) - 96px))}
 .analysis-head{flex-wrap:wrap}.analysis-head>div{min-width:0}.analysis-head small{overflow-wrap:anywhere}
 .analysis-scenario{margin-left:0}.analysis-time-state{white-space:normal;overflow-wrap:anywhere}
