@@ -1,2 +1,1 @@
-# CSVs retain their original CRLF bytes so source hashes remain reproducible.
 *.csv -text whitespace=cr-at-eol

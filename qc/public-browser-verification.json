@@ -1,12 +1,12 @@
 {
   "status": "pass",
   "exit_code": 0,
-  "package_root": "public repository root",
-  "date": "2026-11-18T01:18:20.242Z",
+  "package_root": "public snapshot",
+  "date": "2026-11-18T02:27:15.345Z",
   "scope": "Actual packaged 85-object runtime, 293 observations, C1/P2 water review, three base maps and screen widths, focus, filter, Escape, original context and preview; four agricultural sensor meshes/previews, actual canvas pick and layered exit",
   "errors": [],
   "checks": {
-    "package_hashes": 257,
+    "package_hashes": 264,
     "entities": 85,
     "observations": 293,
     "features": 2814,
@@ -137,9 +137,10 @@
     "web/map-prototype/projection.mjs": "4fe7b22575193f893dedf63ea9aa542f87684be1ba55013f2a80f555edfac1c2",
     "web/map-prototype/c1-relations.mjs": "996eaaa5f4b6db38b3e5a811ef43a02ccefce84fb97958bdae21394e71561df4",
     "web/map-prototype/validate.mjs": "4bde296181726cfa674b783331912def90abed56dc15d58fa304247355d335dd",
-    "web/map-prototype/index.html": "1b6d1cffa6904b054c030def325085125806b9f06635c51bc5cada6128e30693",
+    "web/map-prototype/index.html": "b34a02af249878e70829295f69ef5ba261faa26733cf2e903431e57bb5404c43",
+    "web/map-prototype/workspace-layout.mjs": "9ebf5f5a3b8b456dadbcaf62c4428b042b1e05c6a4b96496855956a0e2025203",
     "web/map-prototype/validate-c1-devices.mjs": "5abe3820025da862cb110e78f6d33934ee1e60e95f2718a2f38bbf85343d3c46",
-    "web/map-prototype/audit-manifest.json": "b1944087208539f91c6b5bcbe0f353f2f7fe395e7e140afeff880ebc12b7a31d",
+    "web/map-prototype/audit-manifest.json": "04555ae8e9f162b850236d755dfae798ecef5053a933005616a85b252e480569",
     "web/map-prototype/geographic-review.mjs": "c1e88c5de8e4b380cae41b1ebe3b3a92f7120b3132a26967157aea7b2a1e7a0c",
     "web/map-prototype/validate-facilities.mjs": "b318201a0498f3d9e77c1ceee627762d9b559356f3f550ad27b1773128aee777",
     "web/map-prototype/serve.py": "15ef736402b0a2ba91943e7e46aed2f6b62e7c1aec9591d89336e32325b5d9cb",
@@ -151,10 +152,10 @@
     "web/map-prototype/m10-relations.mjs": "646b9f049e94fef31629c48955b5024a3264a1dee233f7b74424c2be0fe3e5ab",
     "web/map-prototype/.gitignore": "913a5e80446aad84df3f5d4efba5f43196845a8a0c2611394f0fbfff8d4bac3d",
     "web/map-prototype/package.json": "c98b77416852be13fe44b1f66868e2ba570023e0c9bb1946a32c59ad9abf522d",
-    "web/map-prototype/style.css": "01c00cd99c86b9133574131a7145d8e73957327c187208df6ef516c5f98cf343",
+    "web/map-prototype/style.css": "141a09dd894bd03e2d6b6199fb23687c7fafd49d9da068b37a1fc63874de8266",
     "web/map-prototype/c1-runtime.json": "01aa25b2ef6b1d21fb428a312318fd6d049da1bbd9c8f1e9d35294607055cb73",
     "web/map-prototype/geographic-review-source.mjs": "87b716eaea3118987bf2b6687f1ad074e2ad26cdfef072dd564978e88ab644ef",
-    "web/map-prototype/app.mjs": "168d5d40af8d9138a741be50324b887f82ffa1a78290792d01d78bafcf40af30",
+    "web/map-prototype/app.mjs": "5c21ddbeb814a4f2fb2ca320af5f1bb8f0d2d945e784e7012c667436c508fb8e",
     "web/map-prototype/facility-index.mjs": "467e1fc18d6a026861ae2f4f84d9d386c2422c0da681580a35ac368b580888e7",
     "web/map-prototype/asset-bindings.json": "4fc50ea97609b188a2e9ba18f5c7b1548fb11772f60d72eff5c29f2a6eddba4a",
     "web/map-prototype/m10-graph.mjs": "f1bde80df35e515d05782cb345a4554be21037c3615a9628df8f793891da11ed",
@@ -190,5 +191,6 @@
     "qc/m14-sensors-integrated-v1/geography/display-pads.json": "dbed7db86b41c8b427f497731603870d4777c0b6bc97065427e70a36310cbc43",
     "qc/m14-sensors-integrated-v1/geography/geographic-review.json": "98d0d1723d124a5243b90cf872e86b0f82f4404adb904ce8b5f7aa4070148020",
     "qc/m14-sensors-integrated-v1/geography/public-features.geojson": "7c4241f1b2f1155e9633f7609ed268e4cd69373a4212f88e363d84afbc68f41d"
-  }
+  },
+  "publication_transform": "Local absolute package path replaced; runtime hashes and observations retained."
 }

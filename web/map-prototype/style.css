@@ -85,3 +85,26 @@ footer{bottom:12px;left:96px;right:16px;padding:8px 12px;font-size:10px;pointer-
 [data-analysis-open=true]{background:#293b44;color:white;border-color:#293b44}
 .audit-sources{display:grid;gap:7px;margin-top:8px}.audit-source-row{display:grid;grid-template-columns:auto 1fr;gap:8px;align-items:start;padding:7px 0;border-top:1px solid #e3e8ea;color:var(--muted);font-size:10px;line-height:1.5}.audit-source-row:first-child{border-top:0;padding-top:0}.audit-source-status{padding:3px 6px;border:1px solid;border-radius:10px;font-size:9px;font-weight:650;white-space:nowrap}.audit-source-status.verified{border-color:#5e9d77;background:#edf8f0;color:#356f4b}.audit-source-status.candidate{border-color:#c78a3d;background:#fff5e7;color:#805c23}.audit-source-status.pending{border-color:#9d8bc8;background:#f5f1ff;color:#685395}.audit-source-row strong{color:var(--ink)}
 @media(max-width:850px){#analysis-panel{left:96px;right:16px;bottom:110px;max-height:42vh}.analysis-head{flex-wrap:wrap}.analysis-scenario{margin-left:0}#analysis-body{grid-template-columns:repeat(2,minmax(0,1fr))}#analysis-body .wide{grid-column:span 2}.audit-grid{grid-template-columns:1fr}.audit-card.wide{grid-column:span 1}}
+
+/* Measured workspace bounds keep floating cards clear of controls and credits. */
+:root{--workspace-top:160px;--workspace-bottom:calc(100vh - 130px);--analysis-left:96px}
+.header-status{min-width:0;flex:1}.header-status span{display:block}
+.header-actions{flex-shrink:0}
+button[data-analysis-open=true]{background:#293b44;color:white;border-color:#293b44}
+#detail,#route-detail,#geo-panel{top:var(--workspace-top);max-height:calc(var(--workspace-bottom) - var(--workspace-top))}
+#index{max-height:calc(var(--workspace-bottom) - 96px)}
+#icon-rail{max-height:calc(var(--workspace-bottom) - 96px);overflow:auto}
+#index-panel{margin-top:calc(var(--workspace-top) - 96px);max-height:calc(var(--workspace-bottom) - var(--workspace-top))}
+#analysis-panel{left:var(--analysis-left);bottom:calc(100vh - var(--workspace-bottom));max-height:min(390px,calc(var(--workspace-bottom) - var(--workspace-top) - 96px))}
+.analysis-head{flex-wrap:wrap}.analysis-head>div{min-width:0}.analysis-head small{overflow-wrap:anywhere}
+.analysis-scenario{margin-left:0}.analysis-time-state{white-space:normal;overflow-wrap:anywhere}
+body:has(#detail:not([hidden]),#route-detail:not([hidden])) #analysis-panel{right:396px}
+.maplibregl-ctrl-top-right{top:var(--workspace-top)}
+@media(max-width:1150px) and (min-width:851px){body:has(#detail:not([hidden]),#route-detail:not([hidden])) #analysis-panel{right:356px}}
+@media(max-width:850px){
+  #detail,#route-detail,#geo-panel{top:auto;bottom:calc(100vh - var(--workspace-bottom));max-height:min(38vh,calc(var(--workspace-bottom) - var(--workspace-top) - 96px))}
+  #analysis-panel,body:has(#detail:not([hidden]),#route-detail:not([hidden])) #analysis-panel{left:96px;right:16px}
+  body.analysis-open #detail,body.analysis-open #route-detail,body:has(#index.expanded) #detail,body:has(#index.expanded) #route-detail,body:has(#index.expanded) #analysis-panel{display:none}
+  .header-status{max-width:45%;font-size:9px;line-height:1.35}
+  #scope-note{display:none}
+}

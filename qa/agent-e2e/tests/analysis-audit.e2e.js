@@ -99,7 +99,7 @@ describe('M10 对象级分析与 M11 来源审计', () => {
     await ready(app, screen);
     await button(screen, '审计').click();
 
-    const panel = screen.getByRole('region', audit);
+    const panel = screen.getByRole('dialog', audit);
     await expect(panel).toBeVisible();
     await expect(panel).toContainText('codex/energy-map-v2');
     await expect(panel).toContainText('facilities.glb');
@@ -122,7 +122,7 @@ describe('M10 对象级分析与 M11 来源审计', () => {
     await ready(app, screen);
     await button(screen, '审计').click();
 
-    const panel = screen.getByRole('region', audit);
+    const panel = screen.getByRole('dialog', audit);
     await expect(panel).toContainText('审计清单加载失败');
     await expect(panel).toContainText('来源待核');
 

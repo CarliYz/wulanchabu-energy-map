@@ -1,126 +1,82 @@
 {
-  "status": "pass",
-  "version": "0.3.0-rc.1",
-  "date": "2026-11-18",
-  "source_head": "4edb7728e69ae4f1e67aeb1b77e1b7ae4cf0c138",
-  "tested_scope": "exported public snapshot; see public-release-manifest.json",
+  "status": "pass_local_snapshot",
+  "version": "0.3.0-rc.2",
+  "source_head": "8addb1a9ba732c5692e3aec3fe58d9c1f8bdd0a8",
+  "tested_scope": "Local public snapshot checks; final remote CI is recorded separately in Actions and release verification attachment.",
   "review_mode": "coordinator_single_agent",
+  "historical_receipts": "qc/releases/0.3.0-rc.1/",
   "checks": {
+    "snapshot_manifest": {
+      "status": "pass",
+      "manifest_files": 264
+    },
+    "local_source_full": {
+      "status": "pass",
+      "passed": 111,
+      "identity": "before final audit Escape fix"
+    },
+    "local_source_final_slice": {
+      "status": "pass",
+      "passed": 16
+    },
+    "remote_ci": {
+      "status": "external_live_result",
+      "workflow": ".github/workflows/ci.yml",
+      "pull_request": "https://github.com/CarliYz/wulanchabu-energy-map/pull/1",
+      "run_scope": "Final 112-test suite; use the run matching the current commit. This receipt does not claim its result."
+    },
     "node": {
       "command": "node --test tests/*.test.mjs",
       "exit_code": 0,
       "passed": 38,
-      "failed": 0,
-      "tool_output": "751407"
+      "tool_output": "079dc4"
     },
     "python": {
-      "command": "python -m unittest discover -s tests -p test_*.py",
+      "command": "python -m unittest discover -s tests -p 'test_*.py'",
       "exit_code": 0,
       "passed": 35,
-      "failed": 0,
-      "environment": "existing contract venv; public snapshot working directory",
-      "tool_output": "a8baab"
+      "tool_output": "2b32f3"
     },
     "model": {
-      "command": "python3 scripts/validate_integrated_model.py --output qc/public-model-validation.json",
+      "command": "python3 scripts/validate_integrated_model.py --output /private/tmp/energy-public-rc2-model.json",
       "exit_code": 0,
       "entities": 85,
       "ports": 188,
-      "visible_connections": 162
+      "connections": 162,
+      "tool_output": "251f73"
+    },
+    "audit_identity": {
+      "command": "python3 scripts/refresh_runtime_audit.py",
+      "exit_code": 0,
+      "sources": 4
     },
     "browser": {
-      "command": "node scripts/verify_geographic_package.mjs PUBLIC_ROOT OUTPUT_DIR",
+      "status": "pass",
       "exit_code": 0,
       "evidence": "qc/public-browser-verification.json",
-      "tool_output": "8a1761",
-      "scope": {
-        "package_hashes": 257,
-        "entities": 85,
-        "observations": 293,
-        "features": 2814,
-        "sizes": [
-          1440,
-          1100,
-          760
-        ],
-        "return_to_original_context": "pass",
-        "ptes_preview": "decoded",
-        "agricultural_sensors": [
-          {
-            "id": "AGRI_014_SENSOR",
-            "source_mesh_nodes": 37,
-            "rendered_batches": 5,
-            "vertices": 2496,
-            "image": "decoded",
-            "canvas_pick": "pass",
-            "exit": "parent_then_closed"
-          },
-          {
-            "id": "AGRI_015_SENSOR",
-            "source_mesh_nodes": 37,
-            "rendered_batches": 5,
-            "vertices": 2496,
-            "image": "decoded",
-            "canvas_pick": "pass",
-            "exit": "parent_then_closed"
-          },
-          {
-            "id": "AGRI_016_SENSOR",
-            "source_mesh_nodes": 37,
-            "rendered_batches": 5,
-            "vertices": 2496,
-            "image": "decoded",
-            "canvas_pick": "pass",
-            "exit": "parent_then_closed"
-          },
-          {
-            "id": "AGRI_017_SENSOR",
-            "source_mesh_nodes": 37,
-            "rendered_batches": 5,
-            "vertices": 2496,
-            "image": "decoded",
-            "canvas_pick": "pass",
-            "exit": "parent_then_closed"
-          }
-        ]
-      }
+      "command": "node scripts/verify_geographic_package.mjs PUBLIC_ROOT OUTPUT_DIR",
+      "tool_output": "ead062",
+      "identity_reuse": "README-only correction after browser run; runtime assets unchanged"
     },
     "launcher": {
       "status": "pass",
-      "command": "python3 launch.py (browser opener stubbed only)",
-      "http_status": 200,
       "exit_code": 0,
-      "binding": "127.0.0.1:dynamic",
-      "stop": "SIGINT/Ctrl+C"
-    },
-    "publication_manifest": {
-      "command": "python3 scripts/verify_public_release.py",
-      "exit_code": 0,
-      "files": 257
-    },
-    "ci": "not_configured"
-  },
-  "Standards": {
-    "status": "pass",
-    "basis": [
-      "explicit public export; no original private git history",
-      "credential-pattern and file-size scan",
-      "runtime/hash and input contracts preserved; documented fixture/path transforms",
-      "README startup and actual browser checks"
-    ]
-  },
-  "Spec": {
-    "status": "pass_before_remote_write",
-    "basis": [
-      "current code and required GLB/map data present",
-      "Chinese project background, purpose, features and operations in README",
-      "version metadata and changelog prepared"
-    ],
-    "remote_verification": "pending push/API readback"
+      "evidence": "qc/public-launcher-verification.json",
+      "tool_output": "560c1c"
+    }
   },
   "limits": [
-    "No new full96-behavior run",
-    "No independent engineering acceptance",
-    "Current engineering/data gaps remain open"
-  ]
+    "independent engineering acceptance open",
+    "survey/shoreline/C1/P2 public water observation open",
+    "sensors/PLC, actual time series, Google/Jev, production open"
+  ],
+  "Standards": {
+    "status": "pass",
+    "scope": "reviewed public export and M16 code",
+    "independence": "coordinator_single_agent"
+  },
+  "Spec": {
+    "status": "pass_local_slice",
+    "scope": "local source 111-before-Escape + final16, public smoke/launcher; remote112 result separate"
+  }
 }

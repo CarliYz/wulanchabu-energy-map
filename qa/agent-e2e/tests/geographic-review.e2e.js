@@ -15,7 +15,7 @@ describe('公开地理复核', () => {
 
     await button(screen, '审计').click();
 
-    const audit = screen.getByRole('region', { name: '审计与系统状态', exact: true });
+    const audit = screen.getByRole('dialog', { name: '审计与系统状态', exact: true });
     await expect(audit).toContainText('m14-sensors-integrated-v1');
     await expect(audit).toContainText('公开地物复核报告');
     await expect(audit).toContainText('公开地物几何');
