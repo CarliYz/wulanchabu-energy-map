@@ -2,7 +2,7 @@
 
 将数据中心余热、热泵、储热和农业用能设施放到同一张可交互的三维地图中，帮助方案讨论者看清**设备在哪里、热量如何传递、各区域做什么、哪些信息尚待核实**。
 
-当前版本：**v0.3.0-rc.3 · 候选方案演示版**（2026-11-18）。主要入口是 `web/map-prototype/`，采用 MapLibre GL JS + Three.js，模型由 Blender 制作并导出为 GLB。
+当前版本：**v0.3.0-rc.4 · 候选方案演示版**（2026-11-18）。主要入口是 `web/map-prototype/`，采用 MapLibre GL JS + Three.js，模型由 Blender 制作并导出为 GLB。
 
 ![三维地图工作台总览](docs/images/overview.png)
 
@@ -71,6 +71,16 @@ python3 web/map-prototype/serve.py
 
 也可以从仓库根目录运行 `python3 -m http.server 8080 --bind 127.0.0.1`，访问 `http://127.0.0.1:8080/web/map-prototype/`。**不要直接双击 index.html 以 file:// 方式打开**，模型和 JSON 需要通过 HTTP 读取。
 
+### 方式三：单文件 HTML
+
+GitHub Release 附件提供可以直接双击的单文件 HTML。它内嵌当前演示所需的数据、GLB、地图资源和设施图片；浏览器仍需联网加载固定版本的 Three.js 与 MapLibre CDN。开发者也可以在仓库根目录执行：
+
+```sh
+python3 scripts/build_single_file_html.py
+```
+
+生成文件位于 `outputs/releases/乌兰察布能源地图-单文件-v0.3.0-rc.4.html`。单文件适合快速查看和演示，完整本地 HTTP 包适合稳定运行与调试。
+
 ### 下载 ZIP
 
 GitHub 页面的 **Code → Download ZIP** 可下载代码与已提交的地图、模型资源；解压后进入目录，执行 `python3 launch.py`。发行版附件提供相同版本的启动包与 SHA-256 校验文件。
@@ -138,13 +148,13 @@ launch.py                使用空闲端口的本机启动器
 
 ## 版本与验收范围
 
-当前版本为 **v0.3.0-rc.3**，基于 M14 模型、M15 设计同步、M16 网页交互收尾和 M17 响应式/索引复核修订。版本变化见 [CHANGELOG](CHANGELOG.md)，公共快照的来源和排除范围见 [发布说明](docs/PUBLIC_RELEASE.md)。
+当前版本为 **v0.3.0-rc.4**，基于 M14 模型、M15 设计同步、M16 网页交互收尾和 M17 响应式/索引复核修订，并补充可直接双击的单文件 HTML 发布路径。版本变化见 [CHANGELOG](CHANGELOG.md)，公共快照的来源和排除范围见 [发布说明](docs/PUBLIC_RELEASE.md)。
 
 原 M14 已有分组 96 种交互行为证据、三尺寸路线 66/66、Node 38/38、Python 35/35；这些是当时受测身份下的结果，不等于本次重新执行完整 96 项。M15 完成 39 个设计状态和 4 个浮层，并实点 8 条代表性 Figma 路径；不代表全部页面或独立 QA 已通过。当前公共快照的文件身份以 `public-release-manifest.json` 为准；本地启动和验收边界见 `RELEASE.md`。
 
 当前测试入口为 `npm run qa:current`；完整依赖安装、隔离服务与回执说明见 [当前QA说明](docs/QA_CURRENT.md)。根目录 `npm run qa` 保留历史viewer配置。CI包含合同、来源SHA和当前网页交互；配置不代表运行通过，结果以Actions实际回执为准。
 
-本次 rc.3 工作树的最终完整 e2e 为 **122/122 通过**（10 个测试文件，0 失败，0 跳过）；证据保存在 `qc/m17-figma-responsive-closeout/e2e-final/`。合同测试使用仓库锁定的 `.venv-contracts` 环境，系统 Python 未安装 `jsonschema` 时会先报依赖导入错误。
+本次 rc.4 复用已验证的运行代码，最终完整 e2e 为 **122/122 通过**（10 个测试文件，0 失败，0 跳过）；本轮还会重新执行 Node、Python、公开快照、单文件生成和浏览器直开检查；证据保存在 `qc/m17-figma-responsive-closeout/e2e-final/`。合同测试使用仓库锁定的 `.venv-contracts` 环境，系统 Python 未安装 `jsonschema` 时会先报依赖导入错误。
 
 ## 当前边界与后续
 
